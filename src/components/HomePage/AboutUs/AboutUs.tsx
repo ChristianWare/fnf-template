@@ -2,6 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
+// import Specialize from "../Specialize/Specialize";
 
 export default function AboutUs() {
   return (
@@ -16,6 +17,7 @@ export default function AboutUs() {
             reliably.
           </h2>
         <ImageCluster />
+        {/* <Specialize /> */}
         </div>
       </LayoutWrapper>
     </section>

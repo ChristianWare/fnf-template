@@ -1,6 +1,6 @@
 :root {
   --black: #1a1a18;
-  --gray: rgba(26, 26, 24, 0.32);
+  --gray: #d3d3d2;
   --tan: #f4f3ea;
   --darkTan: #e8eae0;
   --darkerTan: #e6e8dd;
@@ -21,7 +21,7 @@
   scroll-behavior: smooth;
   scroll-margin-top: 10px;
   -webkit-tap-highlight-color: transparent;
-  font-family: var(--inter);
+  font-family: var(--DotSansMedium);
   overscroll-behavior: none;
 }
 
@@ -108,9 +108,9 @@ p,
 input,
 textarea {
   hyphens: auto;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.2;
-  font-family: var(--DotSansMedium);
+  font-family: var(--DotSansRegular);
   text-transform: none;
   /* letter-spacing: -0.3px; */
 }

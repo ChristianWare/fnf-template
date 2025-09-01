@@ -1,0 +1,120 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.right,
+.rightTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40rem;
+}
+
+.right {
+  border-top: 1px solid var(--gray);
+  padding-top: 2rem;
+}
+
+.rightTop {
+  gap: 2rem;
+}
+
+.heading {
+  font-family: var(--Merriweather);
+  font-size: 4rem;
+  letter-spacing: -1px;
+}
+
+.mapDataBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.iconBox {
+  background-color: var(--lime);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+}
+
+.icon {
+  font-size: 3rem;
+  color: var(--black);
+}
+
+.mapDataContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.title {
+  font-family: var(--DotSansBold);
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+.desc {
+  width: 80%;
+}
+
+@media screen and (max-width: 1268px) {
+  .right {
+    gap: 20rem;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .imgContainer {
+    height: 50rem;
+  }
+
+  .right {
+    gap: 10rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .right {
+    gap: 5rem;
+  }
+}

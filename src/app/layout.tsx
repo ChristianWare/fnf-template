@@ -30,6 +30,12 @@ const DotSansMedium = localFont({
   display: "swap",
 });
 
+const DotSansBold = localFont({
+  src: "../../public/fonts/DotSansBold.ttf",
+  variable: "--DotSansBold",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -59,7 +65,7 @@ export default async function RootLayout({
     // <SessionProvider session={session}>
     <html lang='en'>
       <body
-        className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable}`}
+        className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
       >
         {children}
       </body>
