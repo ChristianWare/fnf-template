@@ -4,10 +4,12 @@ import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
+import Nav from "@/components/shared/Nav/Nav";
 
 export default function Hero() {
   return (
     <div className={styles.container}>
+      <Nav />
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>

@@ -148,14 +148,14 @@ button {
   background: var(--secondary);
 } */
 
-::selection {
+/* ::selection {
   background: var(--yellow);
   color: var(--black);
 }
 ::-moz-selection {
   background: var(--yellow);
   color: var(--black);
-}
+} */
 
 @media screen and (max-width: 968px) {
   html {
