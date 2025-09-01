@@ -15,9 +15,7 @@ export default function SectionIntro({
   return (
     <div className={`${styles.container} ${styles[borderColor]}`}>
       <Star className={`${styles.icon} ${styles[color]}`} />
-      <span className={`${styles.text} ${styles[color]}`}>
-       {title}
-      </span>
+      <span className={`${styles.text} ${styles[color]}`}>{title}</span>
     </div>
   );
 }

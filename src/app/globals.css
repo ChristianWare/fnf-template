@@ -4,7 +4,7 @@
   --tan: #f4f3ea;
   --darkTan: #e8eae0;
   --darkerTan: #e6e8dd;
-  --white: #F4F3EA;
+  --white: #f4f3ea;
   --lime: #b6e400;
   --stickyTop: 20vh;
   --cardGap: 1rem;
@@ -108,7 +108,7 @@ p,
 input,
 textarea {
   hyphens: auto;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   font-family: var(--DotSansMedium);
   text-transform: none;
@@ -202,7 +202,8 @@ button {
   }
 
   h1 {
-    font-size: 10vw;
+    font-size: 8vw;
+    letter-spacing: -1.5px;
     /* line-height: 1.2; */
   }
 
@@ -211,6 +212,10 @@ button {
   select,
   button {
     font-size: initial;
+  }
+
+  p {
+    font-size: 1.5rem;
   }
 }
 
