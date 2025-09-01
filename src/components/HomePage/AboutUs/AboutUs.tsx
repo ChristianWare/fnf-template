@@ -9,15 +9,15 @@ export default function AboutUs() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <SectionIntroii title='About Us' color='tan' />
+          <SectionIntroii title='the why' color='tan' />
           <h2 className={styles.heading}>
-            Fonts & Footers is a specialist studio focused on one thing: turning
-            visitors into booked appointments. We replace clunky DMs and
-            marketplace fees with one-tap designed to launch quickly and convert
-            reliably.
+            Overbooked by busywork? You won’t be alone. We’ve helped salons,
+            wellness studios, trainers, chauffeurs, pet groomers, clinics, and
+            tutors replace DM juggling with reliable, paid-in-advance
+            appointments.
           </h2>
-        <ImageCluster />
-        {/* <Specialize /> */}
+          <ImageCluster />
+          {/* <Specialize /> */}
         </div>
       </LayoutWrapper>
     </section>
