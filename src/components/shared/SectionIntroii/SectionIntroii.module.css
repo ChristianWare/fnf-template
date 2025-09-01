@@ -1,0 +1,42 @@
+/* src/components/SectionIntroii/SectionIntroii.module.css */
+
+.container {
+    background-color: var(--black);
+    border: 1px solid var(--text);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .text {
+    font-family: var(--JetBrainsMonoRegular);
+    color: var(--gray);
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .month {
+    color: var(--yellow);
+    font-weight: 700;
+  }
+  
+  .icon {
+    color: var(--yellow);
+    font-size: 2rem;
+    animation: spin 5s linear infinite;
+    /* ensure the rotation happens around the center */
+    transform-origin: center center;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

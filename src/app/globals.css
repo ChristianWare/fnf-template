@@ -1,19 +1,11 @@
 :root {
-  --black: #2c2c2c;
-  --blackii: #4e4c4c;
-  --text: #6c6868;
-  --textii: #9c9797;
-  --yellow: #fdc600;
-  --blue: #4e94ec;
-  --blueii: #002bba;
-  --lightBlue: #86b9fa;
-  --purple: #cea7ff;
-  --pink: #ffa5dc;
-  --green: #0aad62;
-  --white: #fffefa;
-  --tan: #f0efeb;
-  --gray: #d3d1ce;
-  --lightGray: rgba(15, 12, 12, 0.1);
+  --black: #1a1a18;
+  --gray: rgba(26, 26, 24, 0.32);
+  --tan: #f4f3ea;
+  --darkTan: #e8eae0;
+  --darkerTan: #e6e8dd;
+  --white: #F4F3EA;
+  --lime: #b6e400;
   --stickyTop: 20vh;
   --cardGap: 1rem;
   --cardMinH: clamp(300px, 20vh, 480px);
@@ -62,7 +54,8 @@ h5,
 h6,
 span {
   color: var(--black);
-  font-family: var(--PPNeueMontrealMediumThick);
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 span {
@@ -71,30 +64,38 @@ span {
 
 h1 {
   font-size: 6rem;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  font-family: var(--Merriweather);
+  letter-spacing: -2.5px;
 }
 
 h2 {
-  font-size: 4.2rem;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
+  font-size: 4.8rem;
+  font-family: var(--Merriweather);
+  letter-spacing: -2px;
   font-weight: 500;
 }
 
-h3,
+h3 {
+  font-family: var(--Merriweather);
+  font-size: 4rem;
+  letter-spacing: -1px;
+}
+
 h4 {
-  font-size: 2rem;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  font-family: var(--DotSansMedium);
+  letter-spacing: -1px;
 }
 
 h5 {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
+  font-family: var(--DotSansMedium);
+  letter-spacing: -1px;
 }
 
 h6 {
-  font-size: 1.6rem;
-  letter-spacing: -0.04em;
+  font-size: 2.4rem;
+  font-family: var(--DotSansMedium);
 }
 
 button {
@@ -107,11 +108,11 @@ p,
 input,
 textarea {
   hyphens: auto;
-  font-size: 1.4rem;
-  line-height: 1.3;
-  font-family: var(--inter);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-family: var(--DotSansMedium);
   text-transform: none;
-  letter-spacing: -0.3px;
+  /* letter-spacing: -0.3px; */
 }
 
 input:focus,

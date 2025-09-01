@@ -1,0 +1,160 @@
+.container {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.3rem 2rem;
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 1.5rem;
+  /* text-transform: capitalize; */
+  border-radius: 50px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.imgContainer {
+  position: relative;
+  width: 35px;
+  height: 35px;
+}
+
+.img {
+  border: 1px solid var(--white);
+  padding: 3px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.white {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--white);
+  border-top: 1px solid var(--tan);
+  border-left: 1px solid var(--tan);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  box-shadow:
+    rgba(255, 255, 255, 0.4) 5px 5px,
+    rgba(255, 255, 255, 0.3) 10px 10px,
+    rgba(254, 255, 255, 0.2) 15px 15px;
+}
+
+.white:hover {
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border: 1px solid var(--white);
+
+  box-shadow: none;
+}
+
+.blue {
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid var(--blue);
+}
+
+.blue:hover {
+  background-color: var(--lightBlue);
+  color: var(--white);
+  border-top: 1px solid var(--blue);
+  border-left: 1px solid var(--blue);
+  border-bottom: 1px solid rgb(78, 148, 236);
+  border-right: 1px solid rgb(78, 148, 236);
+  box-shadow:
+    rgba(78, 148, 236, 0.4) 5px 5px,
+    rgba(78, 148, 236, 0.3) 10px 10px,
+    rgba(78, 148, 236, 0.2) 15px 15px;
+}
+
+.noBackgroundWhiteText {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--black);
+}
+
+.noBackgroundWhiteText:hover {
+  border-top: 1px solid var(--tan);
+  border-left: 1px solid var(--tan);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  box-shadow:
+    rgba(255, 255, 255, 0.4) 5px 5px,
+    rgba(255, 255, 255, 0.3) 10px 10px,
+    rgba(254, 255, 255, 0.2) 15px 15px;
+}
+
+.noBackgroundBlueText {
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.5rem 0.8rem;
+  padding-right: 1.4rem;
+}
+
+.noBackgroundBlackText {
+  background-color: transparent;
+  color: var(--black);
+}
+
+.blackOutline {
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.black {
+  background-color: var(--black);
+  color: var(--tan);
+  border: 1px solid var(--black);
+}
+
+.black:hover {
+  background-color: transparent;
+  color: var(--black);
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 5px 5px,
+    rgba(0, 0, 0, 0.3) 10px 10px,
+    rgba(0, 0, 0, 0.2) 15px 15px;
+}
+
+.arrow {
+  transform: rotate(90deg);
+  font-size: 1.4rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  top: 2px;
+}
+
+.noBackgroundBlackText .arrow {
+  color: var(--black);
+}
+
+.noBackgroundBlueText .arrow {
+  color: var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .container:hover .arrow {
+    transform: rotate(90deg) translateY(-5px);
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .noBackgroundBlueText {
+    border: 1px solid var(--lightBlue);
+  }
+}

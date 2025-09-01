@@ -1,0 +1,75 @@
+.container {
+  border: 1px solid var(--text);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.borderColorWhite {
+  border: 1px solid var(--white);
+}
+
+.borderColorBlue {
+  border: 1px solid var(--blue);
+}
+
+.borderColorBlue {
+  border: 1px solid var(--blue);
+}
+
+.borderColorYellow {
+  border: 1px solid var(--yellow);
+}
+
+.borderColorBlack {
+  border: 1px solid var(--black);
+}
+
+.text {
+  font-family: var(--JetBrainsMonoRegular);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.month {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.icon {
+  color: var(--black);
+  font-size: 2rem;
+  animation: spin 5s linear infinite;
+  transform-origin: center center;
+}
+
+.white {
+  color: var(--white);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.yellow {
+  color: var(--black);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

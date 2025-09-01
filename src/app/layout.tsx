@@ -18,6 +18,18 @@ const Merriweather = localFont({
   display: "swap",
 });
 
+const DotSansRegular = localFont({
+  src: "../../public/fonts/DotSansRegular.ttf",
+  variable: "--DotSansRegular",
+  display: "swap",
+});
+
+const DotSansMedium = localFont({
+  src: "../../public/fonts/DotSansMedium.ttf",
+  variable: "--DotSansMedium",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -46,7 +58,9 @@ export default async function RootLayout({
   return (
     // <SessionProvider session={session}>
     <html lang='en'>
-      <body className={`${inter.variable}  ${Merriweather.variable}`}>
+      <body
+        className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable}`}
+      >
         {children}
       </body>
     </html>
