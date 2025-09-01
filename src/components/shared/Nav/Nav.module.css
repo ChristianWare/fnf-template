@@ -97,7 +97,7 @@
     gap: 3rem;
     padding: 2rem;
     padding-top: 7rem;
-    background: var(--blue);
+    background: var(--darkTan);
     border-radius: 15px;
     transition: right 0.3s ease-in;
     z-index: 1000;
@@ -108,9 +108,10 @@
   }
 
   .navItem {
-    color: var(--tan);
     font-size: 5vw;
-    font-family: var(--PPNeueMontrealMediumThick);
+    font-family: var(--Merriweather);
+    letter-spacing: -2px;
+    font-weight: 400;
     line-height: 1;
     width: 100%;
     padding: 2rem;
@@ -141,7 +142,7 @@
   .hamburger.active .whiteBar:nth-child(1) {
     -webkit-transform: translateY(8px) rotate(45deg);
     transform: translateY(8px) rotate(45deg);
-    background-color: var(--tan);
+    /* background-color: var(--tan); */
   }
 
   .hamburger.active .whiteBar:nth-child(2) {
@@ -151,12 +152,6 @@
   .hamburger.active .whiteBar:nth-child(3) {
     -webkit-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
-    background-color: var(--tan);
+    /* background-color: var(--tan); */
   }
 }
-
-/* @media screen and (max-width: 380px) {
-  .navbar {
-    padding: 2rem 1.5rem;
-  }
-} */
