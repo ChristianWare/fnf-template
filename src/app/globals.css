@@ -1,33 +1,52 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --black: #2c2c2c;
+  --blackii: #4e4c4c;
+  --text: #6c6868;
+  --textii: #9c9797;
+  --yellow: #fdc600;
+  --blue: #4e94ec;
+  --blueii: #002bba;
+  --lightBlue: #86b9fa;
+  --purple: #cea7ff;
+  --pink: #ffa5dc;
+  --green: #0aad62;
+  --white: #fffefa;
+  --tan: #f0efeb;
+  --gray: #d3d1ce;
+  --lightGray: rgba(15, 12, 12, 0.1);
+  --stickyTop: 20vh;
+  --cardGap: 1rem;
+  --cardMinH: clamp(300px, 20vh, 480px);
+  --cardStep: 28vh;
+  --fadeDur: 340ms;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  scroll-margin-top: 10px;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--inter);
+  overscroll-behavior: none;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+body {
+  font-size: 1.6rem;
 }
 
 a {
@@ -35,8 +54,201 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  color: var(--black);
+  font-family: var(--PPNeueMontrealMediumThick);
+}
+
+span {
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 4.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+
+h3,
+h4 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h5 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+p,
+input,
+textarea {
+  hyphens: auto;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  font-family: var(--inter);
+  text-transform: none;
+  letter-spacing: -0.3px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: 16px; /* ≥16px stops Safari zoom */
+  line-height: 1.4; /* optional, for better readability */
+}
+
+/* .toastFont {
+  font-family: var(--ABCSocialLight);
+} */
+
+/* ::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+::selection {
+  background: var(--secondary);
+}
+::-moz-selection {
+  background: var(--secondary);
+} */
+
+::selection {
+  background: var(--yellow);
+  color: var(--black);
+}
+::-moz-selection {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+@media screen and (max-width: 968px) {
   html {
-    color-scheme: dark;
+    font-size: 55%;
   }
+
+  p {
+    font-size: 113.7%;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: initial;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 5.4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    letter-spacing: 0px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: initial;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  :root {
+    --stickyTop: 15vh;
+  }
+
+  html {
+    font-size: 50%;
+  }
+
+  h1 {
+    font-size: 10vw;
+    /* line-height: 1.2; */
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: initial;
+  }
+}
+
+/* .toastFont {
+} */
+
+/* Only use in production */
+/* @media screen and (max-width: 400px) {
+  h1 {
+    letter-spacing: -1px;
+    font-size: 9vw;
+  }
+  h2 {
+    letter-spacing: -2px;
+    line-height: 110%;
+  }
+} */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
 }

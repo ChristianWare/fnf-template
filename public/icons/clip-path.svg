@@ -1,0 +1,7 @@
+<svg width="0" height="0" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clipPolygon">
+      <polygon points="100,0 200,76 164,200 36,200 0,76" />
+    </clipPath>
+  </defs>
+</svg>
