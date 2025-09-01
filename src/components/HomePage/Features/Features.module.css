@@ -1,9 +1,7 @@
 .container {
-  padding: 3rem;
-  padding: 5rem 0rem;
-  border-radius: 25px;
   z-index: 2;
   background-color: var(--tan);
+  padding-bottom: 10rem;
 }
 
 .top {
@@ -12,24 +10,15 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: 3rem;
-  width: 100%;
 }
 
-.span {
-  color: var(--blue);
-  font-family: var(--PerfectlyNinetiesItalic);
-  font-weight: 700;
+.heading {
+  font-size: 3.2rem;
+  letter-spacing: -1px;
 }
-
 .copy {
   width: 40%;
   margin-bottom: 3rem;
-  /* color: var(--text); */
-  /* text-align: right; */
-  /* font-family: var(--inter); */
-  /* font-weight: 500; */
-  /* font-size: 2rem; */
 }
 
 .dataContainer {
@@ -48,22 +37,8 @@
   padding-top: 3rem;
   border-radius: 10px;
   background-color: var(--darkTan);
-  /* border: 2px solid var(--textii);
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(15, 12, 12, 0.1),
-    #f1f1f1 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-size: 10px 10px; */
   transition: 0.2s all ease-in;
 }
-
-/* .content:hover {
-  background-color: var(--text);
-  background-image: none;
-} */
 
 .content:nth-child(1),
 .content:nth-child(2),
@@ -75,16 +50,12 @@
   background-color: transparent;
 }
 
-/* .content:hover .title {
-  color: var(--tan);
-} */
-
 .title,
 .titleMobile {
   text-align: center;
   font-size: 1.4rem;
   text-transform: none;
-letter-spacing: normal;
+  letter-spacing: normal;
   transition: 0.2s all ease-in;
 }
 
@@ -105,10 +76,6 @@ letter-spacing: normal;
   transition: 0.2s all ease-in;
 }
 
-/* .content:hover .icon {
-  color: var(--white);
-} */
-
 .imgContainer {
   position: relative;
   width: 100%;
@@ -121,10 +88,6 @@ letter-spacing: normal;
 }
 
 @media screen and (max-width: 1068px) {
-  /* .container {
-    padding: 2rem;
-  } */
-
   .top {
     display: flex;
     flex-direction: column;
@@ -176,10 +139,6 @@ letter-spacing: normal;
 }
 
 @media screen and (max-width: 568px) {
-  /* .cornerContainer {
-    display: none;
-  } */
-
   .top {
     align-items: center;
     justify-content: center;
