@@ -1,0 +1,42 @@
+.container {
+  background-color: var(--black);
+  padding: 10rem 0rem;
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.heading {
+  font-family: var(--DotSansMedium);
+  color: var(--tan);
+  text-align: center;
+  font-size: 2.8rem;
+  letter-spacing: -1px;
+  width: 60%;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1268px) {
+  .heading {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .heading {
+    width: 100%;
+    text-align: left;
+  }
+}

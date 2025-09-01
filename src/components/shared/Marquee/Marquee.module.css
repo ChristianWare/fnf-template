@@ -1,0 +1,51 @@
+.slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  cursor: pointer;
+  background-color: var(--floral-white);
+  
+}
+
+.track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.imgContainer {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider:hover .track {
+  animation-play-state: paused;
+}
+
+@media screen and (max-width: 568px) {
+  .track {
+    gap: 2rem;
+  }
+
+  .imgContainer {
+    height: 250px;
+    width: 250px;
+  }
+}
