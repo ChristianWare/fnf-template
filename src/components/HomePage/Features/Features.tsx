@@ -12,7 +12,7 @@ import Listing from "@/components/icons/Listing/Listing";
 import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
-import Img1 from '../../../../public/images/calendarii.png'
+import Img1 from '../../../../public/images/work.png'
 
 const ecommerceFeatures = [
   {

@@ -31,8 +31,17 @@
   position: relative;
   width: 100%;
   height: 450px;
+  border-radius: 10px;
+  overflow: hidden; /* ensure fades don’t spill */
 }
 
+/* new: layer to animate/fade each image */
+.imgLayer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ensure full-bleed image */
 .img {
   object-fit: cover;
   border-radius: 10px;
@@ -162,10 +171,7 @@
 }
 
 @media screen and (max-width: 568px) {
-
   .imgContainer {
     height: 30rem;
   }
-
-  
 }

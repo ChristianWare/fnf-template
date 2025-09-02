@@ -1,18 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useMotionValueEvent,
+  AnimatePresence,
 } from "motion/react";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./HowItWorks.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import { process } from "@/lib/data";
-import Image from "next/image";
-import Img1 from '../../../../public/images/how.jpg'
+import Image, { StaticImageData } from "next/image";
+import Img1 from "../../../../public/images/how.jpg";
+import Img2 from "../../../../public/images/speed.jpg";
+import Img3 from "../../../../public/images/ecomm.jpeg";
+import Img4 from "../../../../public/images/alice.jpg";
+import Img5 from "../../../../public/images/Jim&Connie.jpg";
+import Img6 from "../../../../public/images/Adam.jpg";
 
 export default function HowItWorks() {
   const rightRef = useRef<HTMLDivElement>(null);
@@ -21,27 +27,28 @@ export default function HowItWorks() {
 
   const [trackHeight, setTrackHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-
   const stepTopsRef = useRef<number[]>([]);
+
+  // 🔗 images to rotate through
+  const gallery: StaticImageData[] = useMemo(
+    () => [Img1, Img2, Img3, Img4, Img5, Img6],
+    []
+  );
 
   const measure = () => {
     if (!listRef.current) return;
     const r = listRef.current.getBoundingClientRect();
     setTrackHeight(r.height);
-
     stepTopsRef.current = stepRefs.current.map((el) => (el ? el.offsetTop : 0));
   };
 
   useEffect(() => {
     const ro = new ResizeObserver(measure);
     if (listRef.current) ro.observe(listRef.current);
-
     measure();
     const id = requestAnimationFrame(measure);
-
     window.addEventListener("resize", measure);
     window.addEventListener("load", measure);
-
     return () => {
       ro.disconnect();
       cancelAnimationFrame(id);
@@ -49,10 +56,12 @@ export default function HowItWorks() {
       window.removeEventListener("load", measure);
     };
   }, []);
+
   const { scrollYProgress } = useScroll({
     target: rightRef,
-    offset: ["start 10%", "end 55%"], 
+    offset: ["start 10%", "end 55%"],
   });
+
   const heightTransform = useTransform(
     scrollYProgress,
     [0, 1],
@@ -72,6 +81,15 @@ export default function HowItWorks() {
     setActiveIndex(idx);
   });
 
+  // Map 0..(steps-1) to 0..(images-1) evenly
+  const imageIndex = useMemo(() => {
+    if (process.length <= 1) return 0;
+    const mapped = Math.floor(
+      (activeIndex / (process.length - 1)) * (gallery.length - 1)
+    );
+    return Math.min(Math.max(mapped, 0), gallery.length - 1);
+  }, [activeIndex, gallery.length]);
+
   return (
     <section className={styles.container}>
       <LayoutWrapper>
@@ -80,8 +98,28 @@ export default function HowItWorks() {
             <div className={styles.leftContent}>
               <SectionIntroii title='Our Process' />
               <h2 className={styles.heading}>How it works</h2>
+
+              {/* Swapping image tied to activeIndex */}
               <div className={styles.imgContainer}>
-                <Image src={Img1} fill alt='' title='' className={styles.img} />
+                <AnimatePresence mode='wait'>
+                  <motion.div
+                    key={imageIndex} /* triggers cross-fade on change */
+                    className={styles.imgLayer}
+                    initial={{ opacity: 0, scale: 1.02 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.985 }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
+                  >
+                    <Image
+                      src={gallery[imageIndex]}
+                      alt=''
+                      fill
+                      priority={imageIndex === 0}
+                      className={styles.img}
+                      sizes='(min-width:1068px) 40vw, 100vw'
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -93,13 +131,12 @@ export default function HowItWorks() {
                 style={{ height: heightTransform, opacity: opacityTransform }}
               />
             </div>
+
             <div ref={listRef} className={styles.mapDataBox}>
               {process.map((item, i) => (
                 <div
                   key={item.id}
-                  ref={(el) => {
-                    stepRefs.current[i] = el;
-                  }}
+                  ref={(el) => { stepRefs.current[i] = el; }}
                   data-index={i}
                   className={[
                     styles.card,

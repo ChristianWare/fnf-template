@@ -1,0 +1,151 @@
+.container {
+  background-color: var(--black);
+  padding: 10rem 0rem;
+}
+
+.top {
+  margin-bottom: 3rem;
+}
+
+.heading {
+  color: var(--tan);
+}
+
+.btnContainer {
+  margin-top: 2rem;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.right {
+  border-top: 1px solid var(--grayii);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rem;
+}
+
+.rightTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.copy {
+  color: var(--tan);
+}
+
+.rightBottom {
+  width: 100%;
+}
+
+.mapDataContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  grid-row-gap: 5rem;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding-left: 2rem;
+  border-left: 1px solid var(--lime);
+}
+
+.title {
+  font-size: 4.8rem;
+  font-family: var(--Merriweather);
+  letter-spacing: -2px;
+  font-weight: 500;
+  color: var(--tan);
+}
+
+.desc {
+  color: var(--tan);
+}
+
+@media screen and (max-width: 1268px) {
+  .bottom {
+    grid-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .bottom {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .heading {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+  }
+
+  .imgContainer {
+    min-height: 50rem;
+    min-width: 50rem;
+    aspect-ratio: auto;
+    width: auto;
+  }
+
+  .right {
+    grid-gap: 10rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .imgContainer {
+    min-height: 30rem;
+    min-width: 30rem;
+  }
+
+  .right {
+    grid-gap: 5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    letter-spacing: 0px;
+  }
+}
