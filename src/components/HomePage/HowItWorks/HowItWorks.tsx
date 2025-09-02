@@ -81,7 +81,6 @@ export default function HowItWorks() {
     setActiveIndex(idx);
   });
 
-  // Map 0..(steps-1) to 0..(images-1) evenly
   const imageIndex = useMemo(() => {
     if (process.length <= 1) return 0;
     const mapped = Math.floor(
@@ -99,11 +98,10 @@ export default function HowItWorks() {
               <SectionIntroii title='Our Process' />
               <h2 className={styles.heading}>How it works</h2>
 
-              {/* Swapping image tied to activeIndex */}
               <div className={styles.imgContainer}>
                 <AnimatePresence mode='wait'>
                   <motion.div
-                    key={imageIndex} /* triggers cross-fade on change */
+                    key={imageIndex}
                     className={styles.imgLayer}
                     initial={{ opacity: 0, scale: 1.02 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -136,7 +134,9 @@ export default function HowItWorks() {
               {process.map((item, i) => (
                 <div
                   key={item.id}
-                  ref={(el) => { stepRefs.current[i] = el; }}
+                  ref={(el) => {
+                    stepRefs.current[i] = el;
+                  }}
                   data-index={i}
                   className={[
                     styles.card,
@@ -151,6 +151,27 @@ export default function HowItWorks() {
                     <strong className={styles.title}>{item.title}</strong>
                   </div>
                   <p className={styles.desc}>{item.desc}</p>
+                  <div className={styles.imgContainerii}>
+                    <AnimatePresence mode='wait'>
+                        <motion.div
+                        key={i}
+                        className={styles.imgLayer}
+                        initial={{ opacity: 0, scale: 1.02 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.985 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        >
+                        <Image
+                          src={gallery[i]}
+                          alt=''
+                          fill
+                          priority={i === 0}
+                          className={styles.img}
+                          sizes='(min-width:1068px) 40vw, 100vw'
+                        />
+                        </motion.div>
+                    </AnimatePresence>
+                  </div>
                 </div>
               ))}
             </div>

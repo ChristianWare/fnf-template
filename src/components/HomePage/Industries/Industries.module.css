@@ -1,5 +1,190 @@
 .container {
   background-color: var(--tan);
-  padding: 10rem 0rem;
-  padding-bottom: 0rem;
+  padding: 10rem 0 0 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray);
+  margin-bottom: 5rem;
+}
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.scrollBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.arrowLeft,
+.arrowRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray);
+  padding: 1rem;
+  cursor: pointer;
+  background: transparent;
+}
+
+.arrowLeft {
+  transform: rotate(-90deg);
+}
+
+.arrowRight {
+  transform: rotate(90deg);
+}
+
+.arrow {
+  color: var(--black);
+  font-size: 2rem;
+}
+
+.carouselViewport {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  overflow: hidden;
+  padding-bottom: 6rem;
+}
+
+.track {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem; 
+  will-change: transform;
+}
+
+.trackAnimating {
+  transition: transform 420ms ease;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 auto; 
+  width: 500px;
+  height: 640px;
+  border-radius: 20px;
+  overflow: hidden; 
+  background: #000;
+}
+
+.img {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28); 
+  z-index: 2;
+}
+
+.textLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #fff;
+  pointer-events: none;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.feature {
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.trackAnimating {
+  transition: transform 420ms ease;
+}
+
+.arrowLeft[aria-disabled="true"],
+.arrowRight[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.img {
+  position: absolute !important;
+  inset: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+  z-index: 2;
+}
+
+.textLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1068px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 0rem;
+  }
+
+  .card {
+    width: 400px;
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 300px;
+    height: 440px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .card {
+    width: 200px;
+    height: 340px;
+  }
 }

@@ -22,9 +22,9 @@
 }
 
 .left {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   padding: 5rem;
 }
 
@@ -33,6 +33,11 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+   align-self: flex-start;
+  justify-content: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 
 .img {
@@ -118,11 +123,21 @@
     margin-bottom: 5rem;
   }
 
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .imgContainer {
-    min-height: 50rem;
-    min-width: 50rem;
-    aspect-ratio: auto;
+    height: 30rem;
+    width: 30rem;
+    /* aspect-ratio: auto; */
     width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: static; */
   }
 
   .right {
