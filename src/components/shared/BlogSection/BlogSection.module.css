@@ -1,0 +1,29 @@
+.container {
+  /* padding: 10rem 0rem; */
+  background-color: var(--tan);
+}
+
+.top {
+  border-top: 1px solid var(--gray);
+  padding-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.bottom,
+.bottomRight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+@media screen and (max-width: 1068px) {
+  .bottom {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .bottomRight {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
