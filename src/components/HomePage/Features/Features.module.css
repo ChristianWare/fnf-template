@@ -21,6 +21,16 @@
   margin-bottom: 3rem;
 }
 
+.imgContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.img {
+  object-fit: contain;
+}
+
 .dataContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -76,17 +86,6 @@
   transition: 0.2s all ease-in;
 }
 
-.imgContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-}
-
-.img {
-  object-fit: contain;
-}
-
 @media screen and (max-width: 1068px) {
   .top {
     display: flex;
@@ -94,6 +93,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 5rem;
   }
 
   .heading,
@@ -106,8 +106,9 @@
     text-align: center;
   }
 
-  .lottie {
-    margin-bottom: 5rem;
+  .imgContainer {
+    width: 275px;
+    height: 275px;
   }
 
   .copy {
@@ -158,5 +159,10 @@
 
   .box {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .imgContainer {
+    width: 250px;
+    height: 250px;
   }
 }

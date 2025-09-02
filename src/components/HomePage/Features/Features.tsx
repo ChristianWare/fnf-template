@@ -10,9 +10,9 @@ import Edit from "@/components/icons/Edit/Edit";
 import Clock from "@/components/icons/Clock/Clock";
 import Listing from "@/components/icons/Listing/Listing";
 import Payment from "@/components/icons/Payment/Payment";
-// import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-// import ReviewSection from "../ReviewSection/ReviewSection";
+import Image from "next/image";
+import Img1 from '../../../../public/images/calendarii.png'
 
 const ecommerceFeatures = [
   {
@@ -115,13 +115,12 @@ export default function Features() {
             What we provide <br />
             in all of our projects
           </h2>
-          {/* <span className={styles.span}>
+          <span className={styles.copy}>
             Everything you need to fill calendars and cut no-shows
-          </span> */}
-          <p className={styles.copy}>
-            Fonts & Footers delivers a fully custom booking solution—so you
-            spend less time scheduling and more time serving.
-          </p>
+          </span>
+          <div className={styles.imgContainer}>
+            <Image src={Img1} alt='' fill className={styles.img} />
+          </div>
         </div>
 
         <div className={styles.parent}>
