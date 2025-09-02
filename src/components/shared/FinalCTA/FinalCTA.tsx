@@ -1,52 +1,42 @@
 "use client";
 
 import styles from "./FinalCTA.module.css";
-import Button from "../Button/Button";
-import LayoutWrapper from "../LayoutWrapper";
-import SectionIntro from "../SectionIntro/SectionIntro";
+// import LayoutWrapper from "../LayoutWrapper";
 import Image from "next/image";
-import Happy from "../../../../public/images/smileii.png";
+import Img1 from "../../../../public/images/whydb.jpg";
+import Button from "../Button/Button";
+import SectionIntroii from "../SectionIntroii/SectionIntroii";
+import Logo from "../Logo/Logo";
 
 export default function FinalCTA() {
   return (
-    <div className={styles.container}>
-      <LayoutWrapper>
+    <section className={styles.parent}>
+      <div className={styles.container}>
+        <div className={styles.imgOverlay} />
+        <Image src={Img1} alt='Hero Image' fill className={styles.img} />
+        {/* <LayoutWrapper> */}
         <div className={styles.content}>
           <div className={styles.left}>
-              <SectionIntro title='Fonts & Footers' color='tan' />
-            <div className={styles.imgContainer}>
-              <Image
-                src={Happy}
-                alt='Happy illustration'
-                fill
-                className={styles.img}
-              />
-            </div>
-          </div>
-          <div className={styles.right}>
-            <h2 className={styles.heading}>Ready to fill your calendar?</h2>
-            <p className={styles.copy}>
-              Let&apos;s get started with a quick chat to discuss your needs and
-              how we can help.
-            </p>
+            <SectionIntroii title='Fonts & Footers' color='tan' />
+
+            <h2 className={styles.heading}>
+              Ready to stop chasing <br /> and start booking?
+            </h2>
 
             <div className={styles.btnContainer}>
-              <Button
-                href='/contact'
-                btnType='blue'
-                text='Book a 15-minute call'
-                arrow
-              />
-              {/* <Button
-              href='/contact'
-              btnType='noBackgroundWhiteText'
-              text='Prefer email?'
-              arrow
-            /> */}
+              <Button href='/' btnType='lime' text='Book your discovery call' />
+              <Button href='/' btnType='grayOutline' text='About us' />
             </div>
           </div>
+          <div className={styles.footerContainer}>
+            <div className={styles.footerLeft}>
+              <Logo />
+            </div>
+            <div className={styles.footerRight}></div>
+          </div>
         </div>
-      </LayoutWrapper>
-    </div>
+        {/* </LayoutWrapper> */}
+      </div>
+    </section>
   );
 }
