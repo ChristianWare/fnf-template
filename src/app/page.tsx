@@ -16,10 +16,10 @@ export default function HomePage() {
       <AboutUs />
       <WhyDB />
       <ProjectSection />
-      <Features />
-      <HowItWorks />
       <Outcomes />
       <Industries />
+      <Features />
+      <HowItWorks />
       <BlogSection />
       <FinalCTA />
     </main>
