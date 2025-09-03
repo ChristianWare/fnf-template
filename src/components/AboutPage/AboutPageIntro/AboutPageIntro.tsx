@@ -17,7 +17,7 @@ export default function AboutPageIntro() {
           </div>
           <SectionIntroii title='About us' />
           <h1 className={styles.heading}>
-            Direct booking <br /> is our #1 sport.
+            We build booking websites <br /> that respect everyone’s time{" "}
           </h1>
           <p className={styles.copy}>
             We build websites where great service meets zero scheduling drama.

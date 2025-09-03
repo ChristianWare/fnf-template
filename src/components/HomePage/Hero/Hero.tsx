@@ -17,12 +17,12 @@ export default function Hero() {
             <div className={styles.top}>
               <SectionIntro title='Taking Projects for September' />
               <h1 className={styles.heading}>
-                Direct booking websites <br /> that actually book
+                Custom booking websites <br /> that actually book
               </h1>
               <p className={styles.copy}>
-                We design and build direct-booking websites for service
-                businesses. Take deposits, prevent no-shows, and let clients
-                self-schedule 24/7—all wrapped in a brand you’re proud of.
+                We design and build online booking websites for businesses based in the service
+                industry. Take deposits, prevent no-shows, and let clients
+                self-schedule 24/7.
               </p>
               <div className={styles.btnContainer}>
                 <Button
