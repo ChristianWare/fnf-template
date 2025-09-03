@@ -3,7 +3,7 @@
   padding: 1rem;
   background-image: radial-gradient(#efeded 2px, transparent 2px);
   background-size: calc(10 * 2px) calc(10 * 2px);
-  padding-bottom: 10rem;
+  /* padding-bottom: 10rem; */
 }
 
 .content {

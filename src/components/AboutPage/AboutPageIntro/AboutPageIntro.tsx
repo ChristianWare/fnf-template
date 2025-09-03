@@ -4,6 +4,7 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Img1 from "../../../../public/images/specialize.png";
 import Nav from "@/components/shared/Nav/Nav";
+import Marquee from "@/components/shared/Marquee/Marquee";
 
 export default function AboutPageIntro() {
   return (
@@ -23,6 +24,7 @@ export default function AboutPageIntro() {
           </p>
         </div>
       </LayoutWrapper>
+      <Marquee />
     </section>
   );
 }

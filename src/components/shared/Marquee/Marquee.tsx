@@ -1,12 +1,12 @@
 import styles from "./Marquee.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/ecomm.jpeg";
-import Img2 from "../../../../public/images/ecomm.jpeg";
-import Img3 from "../../../../public/images/ecomm.jpeg";
-import Img4 from "../../../../public/images/ecomm.jpeg";
-import Img5 from "../../../../public/images/ecomm.jpeg";
-import Img6 from "../../../../public/images/ecomm.jpeg";
-import Img7 from "../../../../public/images/ecomm.jpeg";
+import Img2 from "../../../../public/images/salon.jpg";
+import Img3 from "../../../../public/images/equipment.jpg";
+import Img4 from "../../../../public/images/whydb.jpg";
+import Img5 from "../../../../public/images/vacation.jpg";
+import Img6 from "../../../../public/images/transport.jpg";
+import Img7 from "../../../../public/images/membership.jpg";
 
 export default function Marquee() {
   const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7];
