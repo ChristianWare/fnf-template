@@ -118,12 +118,14 @@
 
 .small {
   color: var(--lightBlack);
+  white-space: nowrap;
 }
 
 .footerBottomRight {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -163,13 +165,22 @@
     justify-content: center;
   }
 
-  .heading,
-  .copy {
+  .heading {
     text-align: center;
   }
 
   .copy {
-    width: 80%;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .footerTop {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footerRight {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -182,14 +193,6 @@
     padding: 10rem 5rem;
   }
 
-  .imgOverlay {
-    clip-path: var(--clip-path-1);
-  }
-
-  .img {
-    clip-path: var(--clip-path-1);
-  }
-
   .copy {
     width: 100%;
   }
@@ -197,6 +200,48 @@
 
 @media screen and (max-width: 568px) {
   .content {
-    padding: 10rem 5rem;
+    padding: 10rem 2rem;
+    padding-bottom: 1rem;
   }
+
+  .footerTop {
+    gap: 5rem;
+  }
+
+  .footerLeft {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copy {
+    text-align: center;
+
+  }
+
+  .optionSection:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .optionSection:nth-child(2) .title,
+  .optionSection:nth-child(2) .option {
+    text-align: right;
+    width: 100%;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+  }
+
+  .footerSocials {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* .footerBottomRight {
+    align-items: flex-start;
+    justify-content: flex-start;
+  } */
 }
