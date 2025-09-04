@@ -39,8 +39,27 @@
   object-fit: cover;
 }
 
+@media screen and (max-width: 1068px) {
+  .imgContainer {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .copy {
     width: 90%;
+  }
+
+  .imgContainer {
+    width: 275px;
+    height: 275px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .imgContainer {
+    width: 200px;
+    height: 200px;
   }
 }

@@ -3,7 +3,7 @@ import styles from "./WorkPageIntro.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Nav from "@/components/shared/Nav/Nav";
 import Image from "next/image";
-import Img1 from "../../../../public/images/newhero.png";
+import Img1 from "../../../../public/images/plants.png";
 
 
 export default function WorkPageIntro() {

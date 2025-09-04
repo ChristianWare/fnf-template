@@ -1,0 +1,116 @@
+/* Container (unchanged) */
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+/* 2-col grid, same spacing you had */
+.mapDataContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+/* ───── Card: match Industries card look & feel ───── */
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+
+  /* Since this is a grid (not fixed px width like the carousel),
+     use aspect-ratio to preserve the same feel as 500x640 ≈ 25/32 */
+  /* aspect-ratio: 25 / 32; */
+
+  /* Fallback min-height so very narrow layouts don’t collapse */
+  min-height: 390px;
+}
+
+.img {
+  position: absolute !important;
+  inset: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.textLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 2rem;
+  color: #fff;
+  pointer-events: none; /* match carousel behavior; see link override below */
+}
+
+/* Typography mirrors your Industries styles */
+.projectTitle {
+  color: var(--tan);
+  font-size: 2.8rem;
+  font-family: var(--DotSansMedium);
+  line-height: 1.1;
+}
+
+.projectDescription {
+  color: var(--tan);
+}
+
+/* Link button lives inside textLayer, so re-enable pointer events */
+.projectLink {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  padding: 0 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--gray);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--tan);
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: transform 160ms ease, opacity 160ms ease, background 160ms ease;
+}
+.projectLink:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0.95;
+}
+
+/* ───── Responsive: mirror the carousel’s feel ───── */
+
+@media screen and (max-width: 1068px) {
+  /* Stack to single column earlier if you prefer */
+  .mapDataContainer {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    /* approximate 400x540 feel */
+    min-height: 540px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    /* approximate 300x440 feel */
+    min-height: 440px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .card {
+    /* approximate 250x390 feel */
+    min-height: 390px;
+  }
+}

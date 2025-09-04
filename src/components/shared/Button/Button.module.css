@@ -33,6 +33,12 @@
   border: 1px solid var(--gray);
 }
 
+.grayOutlineii {
+  background-color: transparent;
+  border: 1px solid var(--tan);
+  color: var(--tan);
+}
+
 .imgContainer {
   position: relative;
   width: 35px;
