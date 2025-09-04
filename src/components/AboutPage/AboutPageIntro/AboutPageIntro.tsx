@@ -20,7 +20,7 @@ export default function AboutPageIntro() {
             Our custom booking websites <br /> respect your time{" "}
           </h1>
           <p className={styles.copy}>
-            We build websites where great service meets zero scheduling drama.
+          At Fonts & Footers, we believe that technology should simplify your workflow, not complicate it. Our mission is to craft booking solutions that are intuitive, efficient, and tailored to your unique needs—so you can focus on what matters most.
           </p>
         </div>
       </LayoutWrapper>

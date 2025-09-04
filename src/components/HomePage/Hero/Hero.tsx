@@ -1,28 +1,26 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Hero.module.css";
-import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
 import Nav from "@/components/shared/Nav/Nav";
-// import Marquee from "@/components/shared/Marquee/Marquee";
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 export default function Hero() {
   return (
-    <>
       <div className={styles.container}>
         <Nav />
         <LayoutWrapper>
           <div className={styles.content}>
             <div className={styles.top}>
-              <SectionIntro title='Taking Projects for September' />
+              <SectionIntroii title='Web Development Agency' />
               <h1 className={styles.heading}>
                 Custom booking websites <br /> that actually book
               </h1>
               <p className={styles.copy}>
-                We design and build online booking websites for businesses based in the service
-                industry. Take deposits, prevent no-shows, and let clients
-                self-schedule 24/7.
+                We design and build online booking websites for businesses based
+                in the service industry. Take deposits, prevent no-shows, and
+                let clients self-schedule 24/7.
               </p>
               <div className={styles.btnContainer}>
                 <Button
@@ -41,7 +39,5 @@ export default function Hero() {
           </div>
         </LayoutWrapper>
       </div>
-      {/* <Marquee /> */}
-    </>
   );
 }
