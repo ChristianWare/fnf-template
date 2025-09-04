@@ -10,8 +10,8 @@ export default function AboutPage() {
     <main>
       <AboutPageIntro />
       <BrandStory />
-      <Different />
       <FinalCTA />
+      <Different />
       <HowItWorks />
       <BlogSection />
     </main>
