@@ -1,0 +1,90 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+  padding-top: 0rem;
+}
+
+.imgContainer {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  margin-left: auto;
+}
+
+.img {
+  object-fit: contain;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray);
+  margin-bottom: 5rem;
+}
+
+.mapDataContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--darkerTan);
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 7rem;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.iconBox {
+  background-color: var(--lime);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  display: flex;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1068px) {
+  .mapDataContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .imgContainer {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+  }
+
+  .mapDataContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .card {
+    gap: 5rem;
+  }
+}
