@@ -1,6 +1,6 @@
 :root {
   --black: #1a1a18;
-  --lightBlack: rgba(26, 26, 24, 0.64);
+  --lightBlack: rgba(42, 42, 39, 0.64);
   --gray: #d3d3d2;
   --grayii: #706f6f;
   --tan: #f4f3ea;
@@ -194,7 +194,7 @@ button {
   }
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 668px) {
   :root {
     --stickyTop: 15vh;
   }
@@ -204,7 +204,7 @@ button {
   }
 
   h1 {
-    font-size: 8vw;
+    font-size: 7vw;
     letter-spacing: -1.5px;
     /* line-height: 1.2; */
   }
@@ -218,6 +218,12 @@ button {
 
   p {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  h1 {
+    font-size: 8vw;
   }
 }
 

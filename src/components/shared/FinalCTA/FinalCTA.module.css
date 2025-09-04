@@ -185,9 +185,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  .parent {
+  /* .parent {
     margin: 1rem;
-  }
+  } */
 
   .content {
     padding: 10rem 5rem;

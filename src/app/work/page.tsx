@@ -1,3 +1,9 @@
+import WorkPageIntro from "@/components/WorkPage/WorkPageIntro/WorkPageIntro";
+
 export default function WorkPage() {
-  return <main>Work Page</main>;
+  return (
+    <main>
+      <WorkPageIntro />
+    </main>
+  );
 }
