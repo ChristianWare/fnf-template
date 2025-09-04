@@ -7,7 +7,7 @@
 /* 2-col grid, same spacing you had */
 .mapDataContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
 }
 
@@ -88,29 +88,27 @@
   opacity: 0.95;
 }
 
-/* ───── Responsive: mirror the carousel’s feel ───── */
-
-@media screen and (max-width: 1068px) {
-  /* Stack to single column earlier if you prefer */
+@media screen and (max-width: 1268px) {
   .mapDataContainer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .card {
-    /* approximate 400x540 feel */
     min-height: 540px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .card {
-    /* approximate 300x440 feel */
     min-height: 440px;
   }
 }
 
 @media screen and (max-width: 568px) {
+  .mapDataContainer {
+    grid-template-columns: 1fr;
+  }
+
   .card {
-    /* approximate 250x390 feel */
     min-height: 390px;
   }
 }
