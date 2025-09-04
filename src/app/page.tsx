@@ -7,7 +7,6 @@ import Outcomes from "@/components/HomePage/Outcomes/Outcomes";
 import ProjectSection from "@/components/HomePage/ProjectSection/ProjectSection";
 import WhyDB from "@/components/HomePage/WhyDB/WhyDB";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
-import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
 
 export default function HomePage() {
   return (
@@ -21,7 +20,7 @@ export default function HomePage() {
       <Features />
       <HowItWorks />
       <BlogSection />
-      <FinalCTA />
+      
     </main>
   );
 }

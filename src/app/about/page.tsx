@@ -1,8 +1,9 @@
 import AboutPageIntro from "@/components/AboutPage/AboutPageIntro/AboutPageIntro";
 import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import Different from "@/components/AboutPage/Different/Different";
+import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
+import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
-import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
 
 export default function AboutPage() {
   return (
@@ -10,8 +11,9 @@ export default function AboutPage() {
       <AboutPageIntro />
       <BrandStory />
       <Different />
-      <BlogSection />
       <FinalCTA />
+      <HowItWorks />
+      <BlogSection />
     </main>
   );
 }

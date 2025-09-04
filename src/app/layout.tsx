@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
 // import { auth } from "../../auth";
 // import { SessionProvider } from "next-auth/react";
 // import styles from "./Layout.module.css";
@@ -68,6 +69,7 @@ export default async function RootLayout({
         className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
       >
         {children}
+        <FinalCTA />
       </body>
     </html>
     // </SessionProvider>
