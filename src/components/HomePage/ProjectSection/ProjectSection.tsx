@@ -53,7 +53,9 @@ export default function ProjectSection() {
       <LayoutWrapper>
         <div className={styles.top}>
           <SectionIntroii title='Our Work' />
-          <h2 className={styles.heading}>Our work speaks for itself</h2>
+          <h2 className={styles.heading}>
+            Custom booking websites <br /> we&#39;ve built
+          </h2>
         </div>
         <div className={styles.content}>
           <div className={styles.left}>

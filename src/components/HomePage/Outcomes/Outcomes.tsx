@@ -2,29 +2,34 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Outcomes.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/newhero.png";
-import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+// import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
 
 const data = [
   {
     id: 1,
-    title: "Under 60s",
-    desc: "From service to paid on a single screen—designed to book in under a minute.",
+    title: "Stored Cards",
+    desc: "Process payments against your client’s stored credit cards.",
   },
   {
     id: 2,
-    title: "24/7",
-    desc: "Clients self-schedule anytime; you wake up to confirmed appointments, not DMs.",
+    title: "On-site QR Codes",
+    desc: "Display on-site QR codes for direct mobile payments.",
   },
   {
     id: 3,
-    title: "No-Shows ↓",
-    desc: "Deposits, card-on-file, and policy acceptance reduce flakes and last-minute cancels.",
+    title: "Payment Links",
+    desc: "Send payment links for easy mobile transactions.",
   },
   {
     id: 4,
-    title: "AOV ↑",
-    desc: "Checkout add-ons, packages, tips, and gift cards lift the value of every booking.",
+    title: "Tap & Pay",
+    desc: "Enable Tap & Pay and integrate with terminals.",
+  },
+  {
+    id: 5,
+    title: "Tips",
+    desc: "Encourage clients to leave tips during payment.",
   },
 ];
 
@@ -42,27 +47,18 @@ export default function Outcomes() {
             </div>
             <div className={styles.right}>
               <div className={styles.rightTop}>
-              <h2 className={styles.heading}>
-                A booking engine for ambitious service brands
-              </h2>
-                <SectionIntroii title='Outcomes' color='tan' />
+                <h2 className={styles.heading}>
+                  Enhance in-store payments for your clients{" "}
+                </h2>
+                {/* <SectionIntroii title='Outcomes' color='tan' /> */}
                 <p className={styles.copy}>
-                  Fonts &amp; Footers isn’t just a website—it’s a complete
-                  direct-booking system built like resilient infrastructure.
-                </p>
-                <p className={styles.copy}>
-                  With a one-screen flow, deposits and policy capture, automated
-                  reminders, and real-time staff/location logic, your calendar
-                  stays accurate while clients breeze from browse to booked. Add
-                  analytics, SEO schema, and fast mobile performance, and you
-                  get a calmer pipeline that keeps revenue predictable.
+                  When using payment providers that support Apple Pay and Google
+                  Pay, the payment process becomes a breeze. Just a simple
+                  confirmation is all it takes, eliminating the need for manual
+                  data entry. Discover the seamless payment experience today!
                 </p>
                 <div className={styles.btnContainer}>
-                  <Button
-                    href='/about'
-                    btnType='lime'
-                    text='About Fonts & Footers'
-                  />
+                  <Button href='/about' btnType='lime' text='More details' />
                 </div>
               </div>
               <div className={styles.rightBottom}>

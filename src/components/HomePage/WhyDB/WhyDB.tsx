@@ -41,10 +41,10 @@ export default function WhyDB() {
             <div className={styles.rightTop}>
               <SectionIntroii title='Benefits' />
               <h2 className={styles.heading}>
-                Why choose a direct booking website for your business?
+                Why choose a custom booking website for your business?
               </h2>
               <p className={styles.copy}>
-                A direct booking website allows you to have full control over
+                A custom booking website allows you to have full control over
                 your bookings, reduce reliance on third-party platforms, and
                 improve your profit margins. It also enhances your brand
                 identity and customer experience.
