@@ -1,6 +1,7 @@
 .container {
   /* padding-top: 5rem; */
   background-color: var(--tan);
+  padding-bottom: 10rem;
 }
 
 .content {
@@ -21,10 +22,6 @@
   top: 90px; */
 }
 
-.heading {
-  font-size: 6rem;
-}
-
 .copy {
   font-size: 1.8rem;
   color: var(--textii);
@@ -33,7 +30,7 @@
 
 .right {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
 }
 
@@ -54,14 +51,14 @@
   border: 1px solid var(--gray);
 }
 
-.card:nth-child(2), .card:nth-child(3) {
+.card:nth-child(2),
+.card:nth-child(3) {
   background-color: var(--darkerTan);
 }
 
 .index {
   font-size: 3.2rem;
   font-weight: 700;
-  font-family: var(--PPNeueMontrealMediumThick);
   letter-spacing: -0.3px;
 }
 
@@ -107,7 +104,7 @@
 
 .descii {
   font-size: 1.8rem;
-  letter-spacing: -.3px;
+  letter-spacing: -0.3px;
 }
 
 .headline {
@@ -243,7 +240,6 @@
 .titleii {
   color: var(--black);
   font-size: 2rem;
-
 }
 
 .titleMobile {
@@ -365,8 +361,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-  
 
   .icon {
     display: block;

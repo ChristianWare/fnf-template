@@ -10,13 +10,13 @@ export default function ServiceDetails() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <SectionIntro title='Pricing Plans' />
+            {/* <SectionIntro title='Pricing Plans' />
             <h2 className={styles.heading}>Packages</h2>
             <p className={styles.copy}>
               Transparent pricing for any stage of your business. We offer
               flexible packages tailored to your needs. No hidden fees. No long
               term contracts.
-            </p>
+            </p> */}
           </div>
           <div className={styles.right}>
             {pricingData.map((x) => (
