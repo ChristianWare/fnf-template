@@ -7,7 +7,11 @@ import Img4 from "../../../../public/images/jane.jpg";
 import Img5 from "../../../../public/images/person.jpg";
 import Starii from "@/components/icons/Starii/Starii";
 
-export default function ImageCluster() {
+interface Props {
+  color?: string;
+}
+
+export default function ImageCluster({ color = "" }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.imageCluster}>
@@ -21,7 +25,9 @@ export default function ImageCluster() {
         </div>
       </div>
       <div className={styles.bottom}>
-        <span className={styles.copy}>Trusted by 500+ clients (4.9/5)</span>
+        <span className={`${styles.copy} ${styles[color]}`}>
+          Trusted by 500+ clients (4.9/5)
+        </span>
       </div>
     </div>
   );

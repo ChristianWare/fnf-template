@@ -39,6 +39,10 @@
   display: block;
 }
 
+.black {
+  color: var(--black);
+}
+
 @media screen and (max-width: 568px) {
   .image,
   .starContainer {

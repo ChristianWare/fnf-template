@@ -1,7 +1,8 @@
 /* Container (unchanged) */
 .container {
   background-color: var(--tan);
-  padding: 10rem 0rem;
+  /* padding: 10rem 0rem; */
+  padding-top: 5rem;
 }
 
 /* 2-col grid, same spacing you had */

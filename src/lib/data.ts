@@ -127,7 +127,8 @@ export const footerData2 = [
   },
 ] as const;
 
-export const projects = [
+export const 
+projects = [
   {
     id: 1,
     title: "Thundertrails",
@@ -367,7 +368,6 @@ export const projects = [
 ] as const;
 
 export const pricingData = [
-  /* ────────────────────────────── 1 — Solo Starter Booking */
   {
     id: 1,
     service: "Solo Starter Booking",
@@ -375,7 +375,7 @@ export const pricingData = [
     desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with card-on-file payments. Go live in two weeks.",
     descii:
       "Built for independent pros who want to stop back-and-forth scheduling and double-bookings. A branded calendar with deposits, automated reminders, and easy rescheduling reduces no-shows and protects your income. Move from DMs to a reliable, professional booking experience—without the overhead of staff or multiple locations.",
-    price: "$2,900", // unchanged
+    price: "$2,900", 
     servicesInclude: [
       {
         id: 1.1,

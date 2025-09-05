@@ -108,6 +108,9 @@ export default function Features() {
     <section className={styles.container} id='features'>
       <LayoutWrapper>
         <div className={styles.top}>
+          <div className={styles.imgContainer}>
+            <Image src={Img1} alt='' fill className={styles.img} />
+          </div>
           <div className={styles.sectionHeadingContainer}>
             <SectionIntroii title='Features' />
           </div>
@@ -118,9 +121,6 @@ export default function Features() {
           <span className={styles.copy}>
             Everything you need to fill calendars and cut no-shows
           </span>
-          <div className={styles.imgContainer}>
-            <Image src={Img1} alt='' fill className={styles.img} />
-          </div>
         </div>
 
         <div className={styles.parent}>

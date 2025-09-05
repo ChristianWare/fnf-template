@@ -10,7 +10,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: -45rem;
+  margin-bottom: -30rem;
 }
 
 .heading {
@@ -163,7 +163,7 @@
   }
 
   .imgContainer {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 }

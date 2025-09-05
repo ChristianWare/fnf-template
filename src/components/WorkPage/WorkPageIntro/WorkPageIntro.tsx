@@ -14,7 +14,7 @@ export default function WorkPageIntro() {
         <div className={styles.content}>
           <SectionIntroii title='Our Work' color='tan' />
           <h1 className={styles.heading}>
-            Proof that booking can be <br /> beautiful—and profitable.
+            Proof that booking can be <br /> beautiful—and profitable
           </h1>
           <p className={styles.copy}>
             A few favorites and demos to show what a one-screen flow + deposit
