@@ -54,17 +54,8 @@
   border: 1px solid var(--gray);
 }
 
-.card:nth-child(2) {
+.card:nth-child(2), .card:nth-child(3) {
   background-color: var(--darkerTan);
-}
-.card:nth-child(3) {
-  background-color: var(--black);
-}
-.card:nth-child(4) {
-  background-color: var(--lime);
-}
-.card:nth-child(5) {
-  background-color: var(--gray);
 }
 
 .index {
