@@ -1,5 +1,5 @@
 .container {
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
   background-color: var(--tan);
 }
 
@@ -115,8 +115,8 @@
 }
 
 .descii {
-  font-family: var(--PPNeueMontrealMediumThick);
-  font-size: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: -.3px;
 }
 
 .headline {
@@ -134,7 +134,7 @@
 
 .icon {
   color: var(--black);
-  display: none;
+  /* display: none; */
 }
 
 .servicesCard {
@@ -290,6 +290,43 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 1268000px) {
+  .serviceCardTopA {
+    grid-template-columns: repeat(1, 1fr);
+    border-bottom: none;
+  }
+
+  .serviceCardTopB {
+    display: none;
+  }
+
+  .serviceCardDots {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .servicesCardBottom {
+    display: none;
+  }
+
+  .serviceName {
+    border-bottom: 1px solid var(--blackii);
+  }
+
+  .serviceName::after {
+    top: 5px;
+    left: 0;
+  }
+
+  .descriptionMobile {
+    display: block;
+    width: 100%;
+    color: var(--black);
+  }
+
+  .addonSection {
+    margin-top: 2rem;
+  }
+}
 @media screen and (max-width: 1268px) {
   .content,
   .right {
@@ -338,43 +375,7 @@
     margin-right: auto;
   }
 
-  .serviceCardTopA {
-    grid-template-columns: repeat(1, 1fr);
-    border-bottom: none;
-  }
-
-  .serviceCardTopB {
-    display: none;
-  }
-
-  .serviceCardDots {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .servicesCardBottom {
-    display: none;
-  }
-
-  .serviceName {
-    border-bottom: 1px solid var(--blackii);
-    padding-bottom: 1rem;
-  }
-
-  .serviceName::after {
-    top: 5px;
-    left: 0;
-  }
-
-  .descriptionMobile {
-    display: block;
-    width: 100%;
-    margin-top: 0.5rem;
-    color: var(--black);
-  }
-
-  .addonSection {
-    margin-top: 2rem;
-  }
+  
 
   .icon {
     display: block;
