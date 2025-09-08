@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FalseButton from "../FalseButton/FalseButton";
-// import Corner from "../Corner/Corner";
 
 interface Inputs {
   firstName: string;
@@ -196,7 +195,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div className={styles.btnBtnContainer}>
-        <FalseButton text={loading ? "Sending..." : "Submit"} btnType='blue' />
+        <FalseButton text={loading ? "Sending..." : "Submit"} btnType='lime' />
       </div>
     </form>
   );
