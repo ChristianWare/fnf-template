@@ -9,6 +9,7 @@ import Clock from "@/components/icons/Clock/Clock";
 import Email from "@/components/icons/Email/Email";
 import Instagram from "@/components/icons/Instagram/Instagram";
 import Phone from "@/components/icons/Phone/Phone";
+import Arrow from "@/components/icons/Arrow/Arrow";
 
 const data = [
   {
@@ -52,6 +53,27 @@ export default function ContactPageIntro() {
           <div className={styles.left}>
             <div className={styles.imgContainer}>
               <Image src={Img1} alt='Contact' fill className={styles.img} />
+              <div className={styles.calendlyContainer}>
+                <div className={styles.cardTop}>
+                  <SectionIntroii title='Plan a meeting' />
+                  <div className={styles.subheading}>
+                    Our HQ is based in Brussels — close to decision-makers,
+                    climate goals, and good coffee.
+                  </div>
+                </div>
+                <div className={styles.ccBottom}>
+                  <div className={styles.ccBottomLeft}>
+                    Avenue Louise 231 <br />
+                    1050 Brussels, Belgium
+                  </div>
+                  <div className={styles.ccBottomRight}>
+                    Show on map
+                    <div className={styles.arrowContainer}>
+                      <Arrow className={styles.icon} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={styles.right}>

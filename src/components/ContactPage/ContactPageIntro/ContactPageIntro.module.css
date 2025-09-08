@@ -22,6 +22,68 @@
   border-radius: 10px;
 }
 
+.calendlyContainer {
+  position: absolute;
+  background-color: var(--tan);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.subheading {
+  font-size: 1.6rem;
+  font-family: var(--DotSansRegular);
+  color: var(--lightBlack);
+}
+
+.ccBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ccBottomLeft,
+.ccBottomRight {
+  color: var(--black);
+}
+
+.ccBottomRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.arrowContainer {
+  background-color: var(--lime);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 1.3rem;
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+
 .right {
   padding: 5rem;
   padding-top: 10rem;
@@ -93,7 +155,7 @@
 
 .icon {
   font-size: 3rem;
-  color: var(--black);
+  color: var(--lightBlack);
 }
 
 @media screen and (max-width: 1268px) {
@@ -158,5 +220,24 @@
 
   .card {
     padding: 1.5rem 0rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calendlyContainer {
+    gap: 5rem;
+  }
+
+  .cardTop,
+  .ccBottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .subheading,
+  .ccBottomLeft {
+    text-align: center;
   }
 }
