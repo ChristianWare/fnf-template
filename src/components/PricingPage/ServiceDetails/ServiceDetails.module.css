@@ -52,15 +52,16 @@
 }
 
 .card:nth-child(3) {
-  background-color: var(--tan600);
+  background-color: var(--lime);
 }
 
 .card:nth-child(4) {
-  background-color: var(--tan700);
+  background-color: var(--black);
+  color: var(--tan);
 }
 
 .card:nth-child(5) {
-  background-color: var(--black);
+  background-color: white;
 }
 
 .index {
@@ -91,6 +92,21 @@
   font-weight: 400;
   font-family: var(--PPNeueMontrealMediumThick);
   width: 100%;
+}
+
+.card:nth-child(4) .serviceNameHeading,
+.card:nth-child(4) .price,
+.card:nth-child(4) .descii,
+.card:nth-child(4) .headline,
+.card:nth-child(4) .serviceName,
+.card:nth-child(4) .icon,
+.card:nth-child(4) .descriptionMobile,
+.card:nth-child(4) .title {
+  color: var(--tan);
+}
+
+.card:nth-child(4) .addonSectionTableHeadings {
+  border-bottom: 1px solid var(--tan);
 }
 
 .price {
