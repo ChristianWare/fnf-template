@@ -48,7 +48,7 @@ const data = [
   {
     id: 6,
     feature: "Multi-Location Chains",
-    desc: "One backend for franchises or studio chains, allowing location switchers, per-branch pricing, and centralised analytics.",
+    desc: "One backend for franchises or studio chains, allowing location switchers, per-branch pricing, and centralized analytics.",
     src: Multi,
   },
   {

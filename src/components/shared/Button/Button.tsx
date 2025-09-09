@@ -14,6 +14,7 @@ interface Props {
   children?: ReactNode;
   arrow?: boolean;
   image?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function Button({
@@ -23,13 +24,14 @@ export default function Button({
   target = "",
   disabled,
   children,
+  onClick,
   arrow,
   image,
 }: Props) {
   const content = text || children;
 
   return (
-    <button className={styles.container} disabled={disabled}>
+    <button className={styles.container} disabled={disabled} onClick={onClick}>
       <Link
         href={href}
         className={`${styles.btn} ${styles[btnType]}`}

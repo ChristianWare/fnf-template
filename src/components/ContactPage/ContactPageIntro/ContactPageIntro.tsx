@@ -4,6 +4,7 @@ import Nav from "@/components/shared/Nav/Nav";
 import Image from "next/image";
 import Img1 from "../../../../public/images/contact.jpg";
 import Img2 from "../../../../public/images/chris.jpg";
+import Img3 from "../../../../public/images/contactusiv.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Email from "@/components/icons/Email/Email";
@@ -77,6 +78,9 @@ export default function ContactPageIntro() {
             </div>
           </div>
           <div className={styles.right}>
+            <div className={styles.imgContaineriii}>
+              <Image src={Img3} alt='thinking' fill className={styles.imgiii} />
+            </div>
             <div className={styles.rightContent}>
               <SectionIntroii title='Contact' />
               <h1 className={styles.heading}>

@@ -52,6 +52,23 @@
   object-fit: cover;
 }
 
+.noBackgroundBlueText {
+  border: 1px solid var(--black);
+  padding: 0.4rem 0.5rem;
+  padding-right: 1rem;
+}
+
+.black {
+  background-color: var(--black);
+  color: var(--tan);
+  border: 1px solid var(--black);
+}
+
+.black:hover {
+  background-color: transparent;
+  color: var(--black);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .container:hover .arrow {
     transform: rotate(90deg) translateY(-5px);

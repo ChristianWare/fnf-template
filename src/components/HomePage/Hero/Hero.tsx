@@ -24,11 +24,11 @@ export default function Hero() {
               </p>
               <div className={styles.btnContainer}>
                 <Button
-                  href='/'
+                  href='/contact'
                   btnType='lime'
                   text='Book your discovery call'
                 />
-                <Button href='/' btnType='grayOutline' text='About us' />
+                <Button href='/about' btnType='grayOutline' text='About us' />
               </div>
             </div>
             <div className={styles.bottom}>

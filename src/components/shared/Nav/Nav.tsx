@@ -4,14 +4,7 @@ import Link from "next/link";
 import styles from "./Nav.module.css";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
-// import { MouseEvent, useEffect, useState } from "react";
-import {
-  //  MouseEvent,
-  useEffect,
-  useState,
-} from "react";
-// import { useSession } from "next-auth/react";
-// import { useRouter } from "next/navigation";
+import { useEffect, useState, MouseEvent } from "react";
 
 const navItems = [
   { text: "Home", href: "/" },
@@ -28,12 +21,11 @@ interface Props {
 
 export default function Nav({ color = "", hamburgerColor = "" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  // const { data: session, status } = useSession();
 
   useEffect(() => {
     const body = document.body;
     body.style.overflow =
-      window.innerWidth <= 910 && isOpen ? "hidden" : "auto";
+      window.innerWidth <= 968 && isOpen ? "hidden" : "auto";
 
     const handleResize = () => setIsOpen(false);
     window.addEventListener("resize", handleResize);
@@ -43,18 +35,13 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
     };
   }, [isOpen]);
 
-  const openMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((s) => !s);
+  const closeMenu = () => setIsOpen(false);
+
+  const handleHamburgerClick = (e: MouseEvent<HTMLSpanElement>) => {
+    e.stopPropagation();
+    toggleMenu();
   };
-
-  // const router = useRouter();
-
-  // const handleAccountClick = (e: MouseEvent<HTMLAnchorElement>) => {
-  //   e.preventDefault();
-  //   setIsOpen(false);
-  //   if (status === "loading") return; // optional: ignore until known
-  //   router.push(session ? "/dashboard" : "/login");
-  // };
 
   return (
     <header className={styles.header}>
@@ -65,36 +52,26 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
 
         <div
           className={
-            isOpen === false
-              ? styles.navItems
-              : `${styles.navItems} ${styles.active}`
+            isOpen ? `${styles.navItems} ${styles.active}` : styles.navItems
           }
-          onClick={openMenu}
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={`${styles.navItem} ${styles[color]}`}
+              onClick={closeMenu}
             >
               {item.text}
             </Link>
           ))}
 
-          {/* <Link
-            href={session ? "/dashboard" : "/login"}
-            onClick={handleAccountClick}
-            className={`${styles.navItem} ${styles[color]}`}
-            prefetch={false}
-          >
-            My Account
-          </Link> */}
           <div className={styles.btnContainerii}>
             <Button
               href='/contact'
-              text='Book a call with Chris'
-              btnType='noBackgroundBlueText'
-              image
+              text='Book your discovery call'
+              btnType='black'
+              onClick={closeMenu}
             />
           </div>
         </div>
@@ -102,19 +79,18 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
         <div className={styles.btnContainer}>
           <Button
             href='/contact'
-            text='Book a call with Chris'
-            btnType='noBackgroundBlueText'
-            image
+            text='Book your discovery call'
+            btnType='black'
           />
         </div>
 
         <span
           className={
-            isOpen === false
-              ? styles.hamburger
-              : `${styles.hamburger} ${styles.active}`
+            isOpen ? `${styles.hamburger} ${styles.active}` : styles.hamburger
           }
-          onClick={openMenu}
+          onClick={handleHamburgerClick}
+          aria-expanded={isOpen}
+          role='button'
         >
           <span
             className={`${styles.whiteBar} ${styles[hamburgerColor]}`}

@@ -13,10 +13,9 @@ export default function OurTeam() {
           <SectionIntroii title='From Founder' />
 
           <h2 className={styles.heading}>
-            &ldquo;I’m Chris, founder of Fonts & Footers—building complete,
-            deposit-ready booking websites that cut no-shows, speed checkout to
-            under a minute, and turn busywork into predictable, prepaid
-            revenue.&rdquo;
+            &ldquo;I’m Chris, founder of Fonts & Footers. We focus on building
+            custom booking websites that cut no-shows, speed checkout to under a
+            minute, and turn busywork into predictable, prepaid revenue.&rdquo;
           </h2>
           <div className={styles.imgContainer}>
             <Image src={ChrisImg} alt='' className={styles.img} />

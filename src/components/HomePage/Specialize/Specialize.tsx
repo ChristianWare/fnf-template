@@ -57,7 +57,7 @@ const specialties: readonly Specialty[] = [
   {
     id: 6,
     feature: "Multi-Location Chains",
-    desc: "→ One backend for franchises or studio chains, allowing location switchers, per-branch pricing, and centralised analytics.",
+    desc: "→ One backend for franchises or studio chains, allowing location switchers, per-branch pricing, and centralized analytics.",
     src: Img6,
   },
   {
@@ -122,103 +122,103 @@ export default function Specialize() {
 
   return (
     // <LayoutWrapper>
-      <section className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.left}>
-            <div className={styles.sectionHeadingContainer}>
-              <SectionIntroii title='Our Specialties' />
-            </div>
-
-            <h2 className={styles.heading}>
-              Whether you run a one-chair salon, manage a fleet of luxury cars,
-              or oversee a portfolio of vacation rentals, we build booking
-              platforms tailored to your exact service model and growth stage.
-            </h2>
-
-            <div className={styles.imgContainer}>
-              <div className={styles.imageStack}>
-                {specialties.map((s, idx) => (
-                  <Image
-                    key={s.id}
-                    src={s.src}
-                    alt={s.feature}
-                    className={`${styles.imgLayer} ${
-                      idx === activeIndex ? styles.visible : ""
-                    }`}
-                    fill
-                    priority={idx === 0}
-                    quality={100}
-                    sizes='(max-width: 768px) 100vw, 40vw'
-                  />
-                ))}
-              </div>
-            </div>
+    <section className={styles.container}>
+      <div className={styles.content}>
+        <div className={styles.left}>
+          <div className={styles.sectionHeadingContainer}>
+            <SectionIntroii title='Our Specialties' />
           </div>
 
-          <div className={styles.right}>
-            <span className={styles.subHeading}>Industries we work with:</span>
-            <div className={styles.mapDataBox}>
-              {specialties.map((x, idx) => {
-                const isActive = idx === activeIndex;
-                const depthBehind = Math.max(0, activeIndex - idx);
-                const PEEK_STEP = 5;
-                const translateY =
-                  idx <= activeIndex ? `-${depthBehind * PEEK_STEP}%` : "0%";
-                const opacityBehind = Math.max(0.1, 1 - depthBehind * 0.1);
-                const scaleBehind = 1 - Math.min(depthBehind, 8) * 0.04;
-                const enteringOpacity =
-                  idx > activeIndex && !visibleSet.has(idx) ? 0 : undefined;
+          <h2 className={styles.heading}>
+            Whether you run a one-chair salon, manage a fleet of luxury cars, or
+            oversee a portfolio of vacation rentals, we build booking platforms
+            tailored to your exact service model and growth stage.
+          </h2>
 
-                return (
-                  <div
-                    key={x.id}
-                    ref={(el) => {
-                      cardRefs.current[idx] = el;
-                    }}
-                    data-index={idx}
-                    className={`${styles.card} ${
-                      isActive ? styles.isActive : styles.isInactive
-                    }`}
-                    style={{
-                      zIndex: isActive ? 1000 : idx + 1,
-                      opacity:
-                        enteringOpacity !== undefined
-                          ? enteringOpacity
-                          : opacityBehind,
-                      transform: `translateY(${translateY}) scale(${
-                        idx <= activeIndex ? scaleBehind : 1
-                      })`,
-                      willChange: "opacity, transform",
-                    }}
-                  >
-                    {/* <span className={styles.blackDot} /> */}
-                    <Starii className={styles.blackDot} />
-                    <div className={styles.cardLeft}>
-                      <span className={styles.id}>
-                        {x.id.toString().padStart(2, "0")}.
-                      </span>
-                      <div className={styles.imgContainerii}>
-                        <Image
-                          src={x.src}
-                          alt={x.feature}
-                          fill
-                          quality={100}
-                          sizes='(max-width: 768px) 100vw, 100vw'
-                          className={styles.imgSingle}
-                        />
-                      </div>
-                    </div>
-                    <div className={styles.cardRight}>
-                      <h4 className={styles.feature}>{x.feature}</h4>
-                      <p className={styles.desc}>{x.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
+          <div className={styles.imgContainer}>
+            <div className={styles.imageStack}>
+              {specialties.map((s, idx) => (
+                <Image
+                  key={s.id}
+                  src={s.src}
+                  alt={s.feature}
+                  className={`${styles.imgLayer} ${
+                    idx === activeIndex ? styles.visible : ""
+                  }`}
+                  fill
+                  priority={idx === 0}
+                  quality={100}
+                  sizes='(max-width: 768px) 100vw, 40vw'
+                />
+              ))}
             </div>
           </div>
         </div>
-      </section>
+
+        <div className={styles.right}>
+          <span className={styles.subHeading}>Industries we work with:</span>
+          <div className={styles.mapDataBox}>
+            {specialties.map((x, idx) => {
+              const isActive = idx === activeIndex;
+              const depthBehind = Math.max(0, activeIndex - idx);
+              const PEEK_STEP = 5;
+              const translateY =
+                idx <= activeIndex ? `-${depthBehind * PEEK_STEP}%` : "0%";
+              const opacityBehind = Math.max(0.1, 1 - depthBehind * 0.1);
+              const scaleBehind = 1 - Math.min(depthBehind, 8) * 0.04;
+              const enteringOpacity =
+                idx > activeIndex && !visibleSet.has(idx) ? 0 : undefined;
+
+              return (
+                <div
+                  key={x.id}
+                  ref={(el) => {
+                    cardRefs.current[idx] = el;
+                  }}
+                  data-index={idx}
+                  className={`${styles.card} ${
+                    isActive ? styles.isActive : styles.isInactive
+                  }`}
+                  style={{
+                    zIndex: isActive ? 1000 : idx + 1,
+                    opacity:
+                      enteringOpacity !== undefined
+                        ? enteringOpacity
+                        : opacityBehind,
+                    transform: `translateY(${translateY}) scale(${
+                      idx <= activeIndex ? scaleBehind : 1
+                    })`,
+                    willChange: "opacity, transform",
+                  }}
+                >
+                  {/* <span className={styles.blackDot} /> */}
+                  <Starii className={styles.blackDot} />
+                  <div className={styles.cardLeft}>
+                    <span className={styles.id}>
+                      {x.id.toString().padStart(2, "0")}.
+                    </span>
+                    <div className={styles.imgContainerii}>
+                      <Image
+                        src={x.src}
+                        alt={x.feature}
+                        fill
+                        quality={100}
+                        sizes='(max-width: 768px) 100vw, 100vw'
+                        className={styles.imgSingle}
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.cardRight}>
+                    <h4 className={styles.feature}>{x.feature}</h4>
+                    <p className={styles.desc}>{x.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
     // </LayoutWrapper>
   );
 }
