@@ -25,3 +25,7 @@
   font-size: 2rem;
   transform-origin: center center;
 }
+
+.borderColorBlack {
+  border: 1px solid var(--gray);
+}

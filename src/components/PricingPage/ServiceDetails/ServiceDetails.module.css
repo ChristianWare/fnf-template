@@ -276,8 +276,8 @@
 }
 
 .addonSectionBottomContainer {
-  border: 1px solid var(--gray);
-  background-color: var(--darkerTan);
+  border: 1px solid var(--black);
+  /* background-color: var(--darkerTan); */
   padding: 2rem;
   border-radius: 8px;
   display: grid;
@@ -285,8 +285,19 @@
   grid-gap: 3rem;
 }
 
+.card:nth-child(4) .addonSectionBottomContainer {
+  border: 1px solid var(--tan);
+  /* background-color: var(--darkestTan); */
+}
+
 .info {
   color: var(--black);
+}
+
+.card:nth-child(4) .titleii,
+.card:nth-child(4) .info
+{
+  color: var(--tan);
 }
 
 .btnContainer {
