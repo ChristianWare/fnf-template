@@ -1,6 +1,5 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./ContactPageIntro.module.css";
-import Nav from "@/components/shared/Nav/Nav";
 import Image from "next/image";
 import Img1 from "../../../../public/images/contact.jpg";
 import Img2 from "../../../../public/images/chris.jpg";
@@ -48,7 +47,6 @@ const data = [
 export default function ContactPageIntro() {
   return (
     <section className={styles.container}>
-      <Nav />
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
@@ -78,15 +76,15 @@ export default function ContactPageIntro() {
             </div>
           </div>
           <div className={styles.right}>
-            <div className={styles.imgContaineriii}>
-              <Image src={Img3} alt='thinking' fill className={styles.imgiii} />
-            </div>
             <div className={styles.rightContent}>
               <SectionIntroii title='Contact' />
               <h1 className={styles.heading}>
                 {/* Let&lsquo;s stay in touch */}
                 Every meaningful project starts with a conversation.
               </h1>
+            <div className={styles.imgContaineriii}>
+              <Image src={Img3} alt='thinking' fill className={styles.imgiii} />
+            </div>
               <div className={styles.mapDataContainer}>
                 {data.map((item) => (
                   <div key={item.id} className={styles.card}>

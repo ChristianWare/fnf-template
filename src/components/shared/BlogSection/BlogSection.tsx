@@ -13,7 +13,7 @@ export default function BlogSection() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
-            <SectionIntroii title='Company insights' />
+            <SectionIntroii title='Company insights (comming soon!)' />
           </div>
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>

@@ -13,7 +13,7 @@
   transition: transform 0.35s ease-in-out, opacity 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
   will-change: transform, opacity;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);  
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .header.hide {
@@ -56,10 +56,9 @@
 .navItem {
   text-transform: capitalize;
   font-size: 1.4rem;
-  font-family: var(--inter);
+  font-family: var(--DotSansMedium);
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.5px;
   color: var(--black);
   z-index: 999;
 }

@@ -1,15 +1,12 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./WorkPageIntro.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import Nav from "@/components/shared/Nav/Nav";
 import Image from "next/image";
 import Img1 from "../../../../public/images/plants.png";
-
 
 export default function WorkPageIntro() {
   return (
     <section className={styles.container}>
-      <Nav />
       <LayoutWrapper>
         <div className={styles.content}>
           <SectionIntroii title='Our Work' color='tan' />
