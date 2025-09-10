@@ -2,17 +2,17 @@ import styles from "./Features.module.css";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Integration from "@/components/icons/Integration/Integration";
 import Design from "@/components/icons/Design/Design";
-import Seo from "@/components/icons/Seo/Seo";
 import Analytics from "@/components/icons/Analytics/Analytics";
 import Multiple from "@/components/icons/Multiple/Multiple";
 import Hosting from "@/components/icons/Hosting/Hosting";
 import Edit from "@/components/icons/Edit/Edit";
 import Clock from "@/components/icons/Clock/Clock";
-import Listing from "@/components/icons/Listing/Listing";
 import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Img1 from "../../../../public/images/work.png";
+import Money from "@/components/icons/Money/Money";
+import Stariii from "@/components/icons/Stariii/Stariii";
 
 const ecommerceFeatures = [
   {
@@ -47,13 +47,13 @@ const ecommerceFeatures = [
   },
   {
     icon: <Payment className={styles.icon} />,
-    title: "Deposits & split payments with Stripe",
+    title: "Payment Processing",
     description:
       "Secure payments, deposits, and split charges via Stripe integration.",
   },
   {
     icon: <Clock className={styles.icon} />,
-    title: "Automated SMS/email reminders + no-show policies",
+    title: "Automated SMS/email reminders",
     description:
       "Reduce no-shows with automated reminders and enforceable policies.",
   },
@@ -64,40 +64,40 @@ const ecommerceFeatures = [
   },
   {
     icon: <Integration className={styles.icon} />,
-    title: "Real-time calendar sync",
+    title: "Calendar Sync",
     description: "Sync bookings with Google, Microsoft 365, or PMS calendars.",
   },
   {
     icon: <Multiple className={styles.icon} />,
-    title: "Multi-staff & resource management",
+    title: "Multi-staff Management",
     description: "Manage teams, resources, and staff schedules with ease.",
   },
   {
     icon: <Hosting className={styles.icon} />,
-    title: "Multi-location ready with central admin",
+    title: "Multi-location Support",
     description: "Operate multiple locations from a single, unified backend.",
   },
   {
-    icon: <Seo className={styles.icon} />,
-    title: "Dynamic pricing rules and add-ons",
+    icon: <Money className={styles.icon} />,
+    title: "Dynamic Pricing",
     description:
       "Automate pricing and offer add-ons based on demand or season.",
   },
   {
-    icon: <Listing className={styles.icon} />,
-    title: "Reviews & UGC collection built in",
+    icon: <Stariii className={styles.icon} />,
+    title: "Reviews",
     description:
       "Collect guest reviews and user-generated content automatically.",
   },
   {
     icon: <Analytics className={styles.icon} />,
-    title: "Analytics dashboards & SEO schema",
+    title: "Analytics",
     description:
       "Track performance and boost visibility with built-in analytics and SEO.",
   },
   {
     icon: <Edit className={styles.icon} />,
-    title: "Included revision rounds during build",
+    title: "Unlimted Revisions",
     description:
       "Request changes and refinements during your site build—no extra cost.",
   },

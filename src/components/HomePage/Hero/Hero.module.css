@@ -20,7 +20,7 @@
 
 .copy {
   text-align: center;
-  width: 40%;
+  width: 35%;
 }
 
 .btnContainer {
@@ -29,6 +29,7 @@
   justify-content: center;
   gap: 2rem;
   z-index: 0;
+  margin-top: 1rem;
 }
 
 .bottom {
@@ -51,7 +52,7 @@
 
 @media screen and (max-width: 1268px) {
   .copy {
-    width: 60%;
+    width: 50%;
   }
 }
 

@@ -1,3 +1,4 @@
+import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
 import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import Features from "@/components/HomePage/Features/Features";
 import Hero from "@/components/HomePage/Hero/Hero";
@@ -19,8 +20,8 @@ export default function HomePage() {
       <Industries />
       <Features />
       <HowItWorks />
+      <OurTeam />
       <BlogSection />
-      
     </main>
   );
 }

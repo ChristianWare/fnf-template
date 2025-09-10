@@ -3,24 +3,23 @@
 
 import styles from "./ProjectSection.module.css";
 import { useState, useEffect } from "react";
-import Thunder from "../../../../public/images/whydb.jpg";
-import Chuxly from "../../../../public/images/Jim&Connie.jpg";
-import Honey from "../../../../public/images/speed.jpg";
-import Rentals from "../../../../public/images/charlie.jpg";
-import Img3 from "../../../../public/images/ecomm.jpeg";
-import DefaultImg from "../../../../public/images/speed.jpg";
+import Nier from "../../../../public/images/road.webp";
+import Dog from "../../../../public/images/dog.jpg";
+import ErRentals from "../../../../public/images/erRentals.png";
+import DefaultImg from "../../../../public/images/road.webp";
 import ParallaxImage from "@/components/shared/ParallaxImage/ParallaxImage";
 import Arrow from "@/components/icons/Arrow/Arrow";
 import { StaticImageData } from "next/image";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import Button from "@/components/shared/Button/Button";
 
 const data = [
-  { id: 1, title: "Thundertrails", src: Thunder },
-  { id: 2, title: "Chuxly", src: Chuxly },
-  { id: 3, title: "Golden Drips", src: Honey },
-  { id: 4, title: "Elite Retreat Rentals", src: Rentals },
-  { id: 5, title: "Furniture", src: Img3 },
+  { id: 1, title: "Nier Transportation", src: Nier },
+  { id: 2, title: "Dog Spa", src: Dog },
+  { id: 3, title: "Elite Retreat Rentals", src: ErRentals },
+  // { id: 4, title: "Elite Retreat Rentals", src: Rentals },
+  // { id: 5, title: "Furniture", src: Img3 },
 ];
 
 export default function ProjectSection() {
@@ -59,7 +58,7 @@ export default function ProjectSection() {
         </div>
         <div className={styles.content}>
           <div className={styles.left}>
-            {data.map((item) => (
+            {data.slice(0, 3).map((item) => (
               <div
                 key={item.id}
                 className={styles.card}
@@ -77,7 +76,7 @@ export default function ProjectSection() {
                   }
                 }}
               >
-                <h3 className={styles.title}>{item.title}</h3>
+                <div className={styles.title}>{item.title}</div>
                 <Arrow className={styles.arrow} />
               </div>
             ))}
@@ -92,6 +91,9 @@ export default function ProjectSection() {
               />
             </div>
           </div>
+        </div>
+        <div className={styles.btnContainer}>
+          <Button href='/work' btnType='black' text='See all of our work' />
         </div>
       </LayoutWrapper>
     </section>

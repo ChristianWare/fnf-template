@@ -35,7 +35,7 @@
 
 .card {
   background-color: var(--darkerTan);
-  padding: 3rem;
+  padding: 3.5rem 3rem;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -69,6 +69,10 @@
   height: 100%;
 }
 
+.btnContainer {
+  margin-top: 3rem;
+}
+
 @media screen and (max-width: 1068px) {
   .content {
     grid-template-columns: repeat(1, 1fr);
@@ -80,7 +84,17 @@
 }
 
 @media screen and (max-width: 568px) {
+  .card {
+    padding: 3rem;
+  }
+
   .imgContainer {
     height: 350px;
+  }
+
+  .btnContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }

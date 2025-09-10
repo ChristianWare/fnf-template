@@ -50,7 +50,7 @@ export default function WhyDB() {
                 identity and customer experience.
               </p>
               <div className={styles.btnContainer}>
-                <Button href='/' btnType='grayOutline' text='Check Pricing' />
+                <Button href='/pricing' btnType='grayOutline' text='Check Pricing' />
               </div>
             </div>
             <div className={styles.rightBottom}>

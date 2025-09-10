@@ -13,12 +13,11 @@ import styles from "./HowItWorks.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import { process } from "@/lib/data";
 import Image, { StaticImageData } from "next/image";
-import Img1 from "../../../../public/images/how.jpg";
-import Img2 from "../../../../public/images/speed.jpg";
-import Img3 from "../../../../public/images/ecomm.jpeg";
-import Img4 from "../../../../public/images/alice.jpg";
-import Img5 from "../../../../public/images/Jim&Connie.jpg";
-import Img6 from "../../../../public/images/Adam.jpg";
+import Img1 from "../../../../public/images/discovery.jpg";
+import Img2 from "../../../../public/images/strategy.jpg";
+import Img3 from "../../../../public/images/design.jpg";
+import Img4 from "../../../../public/images/launch.jpg";
+import Img5 from "../../../../public/images/scale.jpg";
 
 export default function HowItWorks() {
   const rightRef = useRef<HTMLDivElement>(null);
@@ -31,7 +30,7 @@ export default function HowItWorks() {
 
   // 🔗 images to rotate through
   const gallery: StaticImageData[] = useMemo(
-    () => [Img1, Img2, Img3, Img4, Img5, Img6],
+    () => [Img1, Img2, Img3, Img4, Img5],
     []
   );
 
@@ -153,14 +152,14 @@ export default function HowItWorks() {
                   <p className={styles.desc}>{item.desc}</p>
                   <div className={styles.imgContainerii}>
                     <AnimatePresence mode='wait'>
-                        <motion.div
+                      <motion.div
                         key={i}
                         className={styles.imgLayer}
                         initial={{ opacity: 0, scale: 1.02 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.985 }}
                         transition={{ duration: 0.15, ease: "easeOut" }}
-                        >
+                      >
                         <Image
                           src={gallery[i]}
                           alt=''
@@ -169,7 +168,7 @@ export default function HowItWorks() {
                           className={styles.img}
                           sizes='(min-width:1068px) 40vw, 100vw'
                         />
-                        </motion.div>
+                      </motion.div>
                     </AnimatePresence>
                   </div>
                 </div>

@@ -5,35 +5,31 @@ import Project3 from "../../public/images/faqii.jpg";
 export const process = [
   {
     id: 1,
-    title: "Discovery & Goal Alignment",
-    desc: "30-minute kickoff to define outcomes (fewer no-shows, higher AOV, faster checkout) and align on success metrics and timeline.",
+    title: "Project Discovery",
+    desc: "Focused conversations and light research to understand your services, audience, and goals—then define simple success metrics to guide the build.",
   },
   {
     id: 2,
-    title: "Services, Staff & Policy Mapping",
-    desc: "Inventory services, durations, buffers, staff skills, rooms/resources, blackout rules, and time zones. Refine cancellation/no-show policies so they’re clear and enforceable.",
+    title: "Strategy & Creative Direction",
+    desc: "We turn insights into a clear plan: refine your offer, name straightforward options, and outline the few easy steps clients take to book.",
   },
   {
     id: 3,
-    title: "Offer Architecture & Booking UX",
-    desc: "Structure your catalog (core services, add-ons, bundles, memberships, gift cards) and set deposit levels/upsell points. Design the one-screen flow (service → pro → date/time → pay), mobile-first.",
+    title: "Design & Project Build",
+    desc: "We craft an on-brand website and a smooth one-screen booking flow (service → pro → time → pay), built with precision, accessibility, and attention to detail.",
   },
   {
     id: 4,
-    title: "Visual Design & Build",
-    desc: "Create a branded UI (type, color, components) focused on clarity and accessibility. Implement the site and booking engine with availability, buffers, waitlists, and multi-location/staff logic; ship SEO schema.",
+    title: "Launch & Handoff",
+    desc: "We go live with a calm, confidence-building experience and show your team exactly how to manage bookings day-to-day.",
   },
   {
     id: 5,
-    title: "Payments, Intake & Integrations",
-    desc: "Configure Stripe/Square/PayPal with deposits, tips, invoices, and card-on-file. Create intake forms and email/SMS templates; connect calendar sync (Google/Outlook/iCloud), Zoom/Meet, and marketing tools.",
-  },
-  {
-    id: 6,
-    title: "QA, Launch & 30-Day Optimization",
-    desc: "Test across devices, validate analytics events, and tune accessibility/performance. Go live with training, then monitor KPIs and iterate on copy, deposits, and layout for better conversion.",
+    title: "Project Scale & Optimization",
+    desc: "We monitor early results and fine-tune copy, layout, and offer structure to lift conversions—then support growth with add-ons, memberships, and campaigns.",
   },
 ] as const;
+
 
 export const footerData = [
   {
