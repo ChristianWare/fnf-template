@@ -10,71 +10,71 @@ import Link from "next/link";
 const data = [
   {
     id: 1,
-    title: "Shop",
+    title: "Services",
     options: [
       {
         id: 1.1,
-        option: "All Honey Varieties",
+        option: "Web Design",
       },
       {
         id: 1.2,
-        option: "Gift Boxes",
+        option: "Web Development",
       },
       {
         id: 1.3,
-        option: "Raw & Unfiltered",
+        option: "Branding",
       },
       {
         id: 1.4,
-        option: "Accessories & Tools",
+        option: "SEO Optimization",
       },
       {
         id: 1.5,
-        option: "Honey Recipe Booklets",
+        option: "Maintenance & Support",
       },
     ],
   },
   {
     id: 2,
-    title: "Discover",
+    title: "About",
     options: [
       {
         id: 2.1,
-        option: "FAQ",
+        option: "Our Team",
       },
       {
         id: 2.2,
-        option: "Recipes",
+        option: "Portfolio",
       },
       {
         id: 2.3,
-        option: "Our Story",
+        option: "Testimonials",
       },
       {
         id: 2.4,
-        option: "Blog",
+        option: "Careers",
       },
     ],
   },
   {
     id: 3,
-    title: "Connect",
+    title: "Contact",
     options: [
       {
         id: 3.1,
-        option: "hello@goldendrips.com",
+        option: "hello@fontsandfooters.com",
       },
       {
         id: 3.2,
-        option: "Wholesale Inquiries",
+        option: "Request a Quote",
       },
       {
         id: 3.3,
-        option: "My Account",
+        option: "Support",
       },
       {
         id: 3.4,
-        option: "Careers",
+        option: "FAQs",
       },
     ],
   },

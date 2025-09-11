@@ -56,9 +56,9 @@ export default function FinalCTA() {
               <div className={styles.footerLeft}>
                 <Logo />
                 <p className={styles.copy}>
-                  A modular Webflow template shaped like sustainable
-                  infrastructures — designed for brands that value clarity,
-                  adaptability, and modern aesthetics.
+                  We design and build online booking websites for businesses
+                  based in the service industry. Take deposits, prevent
+                  no-shows, and let clients self-schedule 24/7.
                 </p>
               </div>
               <div className={styles.footerRight}>
