@@ -5,24 +5,58 @@ import Img1 from "../../../../public/images/whydb.jpg";
 import Button from "@/components/shared/Button/Button";
 import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import Payment from "@/components/icons/Payment/Payment";
+import Support from "@/components/icons/Support/Support";
+import Analytics from "@/components/icons/Analytics/Analytics";
+import Design from "@/components/icons/Design/Design";
 
-const data = [
+export const data = [
   {
     id: 1,
-    title: "Own the relationship",
-    desc: "Stop renting your pipeline from marketplaces. Keep the data, the margins, and the repeat business.",
-    icon: <Clock className={styles.icon} />,
+    title: "Direct-Booking Website Development",
+    desc: "We design and build fast, on-brand websites with a one-screen booking flow (service → pro → time → pay) that converts on mobile.",
+    icon: <Design className={styles.icon} />,
   },
   {
     id: 2,
-    title: "Protect your time",
-    desc: "Card-on-file, deposits, and policy acceptance reduce no-shows and last-minute cancellations.",
-    icon: <Clock className={styles.icon} />,
+    title: "Offer Architecture & UX",
+    desc: "We tidy your services, add-ons, memberships, gift cards, and deposit strategy—then shape a clear path from browse to booked.",
+    icon: <Analytics className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Delight on mobile",
-    desc: "One-screen flows and lightning-fast UX mean fewer drop-offs and more completed bookings.",
+    title: "Staff, Location & Resource Logic",
+    desc: "Configure real-world rules: multi-location hours, buffers, rooms/equipment, permissions, and time zones—without the scheduling mess.",
+    icon: <Support className={styles.icon} />,
+  },
+  {
+    id: 4,
+    title: "Payments, Policies & No-Show Protection",
+    desc: "Stripe/Square/PayPal with deposits, tips, invoices, card-on-file, and policy acceptance—so your time is respected and your revenue is protected.",
+    icon: <Payment className={styles.icon} />,
+  },
+  {
+    id: 5,
+    title: "Intake, Reminders & Client Profiles",
+    desc: "Custom forms, confirmations, and reminders, plus simple client history—so every visit feels prepared and personal.",
+    icon: <Clock className={styles.icon} />,
+  },
+  {
+    id: 6,
+    title: "Analytics, SEO & Reporting",
+    desc: "Track what matters (completion rate, AOV, no-show %, rebook velocity) and ship structured data for search visibility and smarter decisions.",
+    icon: <Clock className={styles.icon} />,
+  },
+  {
+    id: 7,
+    title: "Migrations & Integrations",
+    desc: "Move from your current system with care. Sync calendars, connect Zoom/Meet, Mailchimp/Klaviyo, Meta/IG, and more—cleanly and securely.",
+    icon: <Clock className={styles.icon} />,
+  },
+  {
+    id: 8,
+    title: "Care Plans & Optimization",
+    desc: "Post-launch tuning to lift conversion: copy tests, deposit adjustments, add-on placement, performance passes, and accessibility checks.",
     icon: <Clock className={styles.icon} />,
   },
 ];
@@ -60,7 +94,7 @@ export default function WhyDB() {
             </div>
             <div className={styles.rightBottom}>
               <div className={styles.mapDataBox}>
-                {data.map((item) => (
+                {data.slice(0, 4).map((item) => (
                   <div key={item.id} className={styles.card}>
                     <div className={styles.iconBox}>{item.icon}</div>
                     <div className={styles.mapDataContent}>

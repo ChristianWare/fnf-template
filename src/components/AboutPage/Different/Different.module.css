@@ -12,12 +12,6 @@
   margin-left: auto;
 }
 
-/* .imgContainerii {
-  margin-right: auto;
-  margin-left: 0rem;
-  margin-top: 3rem;
-} */
-
 .img {
   object-fit: contain;
 }
@@ -33,11 +27,10 @@
 
 .bottom {
   border-top: 1px solid var(--gray);
-  /* border-bottom: 1px solid var(--gray); */
   padding-top: 2rem;
-  padding-bottom: 3rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 5rem;
 }
 
 .mapDataContainer {
@@ -54,7 +47,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 7rem;
+  gap: 5rem;
 }
 
 .cardTop {
@@ -95,12 +88,12 @@
   .heading {
     text-align: center;
   }
-  
+
   .bottom {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 5rem;
   }
-  
+
   .mapDataContainer {
     grid-template-columns: repeat(2, 1fr);
   }

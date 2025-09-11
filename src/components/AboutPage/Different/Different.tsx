@@ -9,26 +9,26 @@ import IMg2 from "../../../../public/images/happyiii.png";
 const data = [
   {
     id: 1,
-    title: "Beyond Websites",
-    desc: "Agencies sell websites, but we deliver a complete booking experience tailored to your brand.",
+    title: "Booking-First Expertise",
+    desc: "We’re not a generalist web shop. We specialize in direct-booking: deposit mechanics, policy enforcement, staff/location logic, and one-screen flows that convert—especially on mobile.",
     icon: <Clock className={styles.icon} />,
   },
   {
     id: 2,
-    title: "More Than Software",
-    desc: "Tools sell software, while we provide a cohesive system that integrates UX, payments, and policies.",
+    title: "Win-Win Partnership",
+    desc: "We ask operator questions (not just design ones), align on real goals, and shape your offers so the front desk, staff, and clients all have a smoother day.",
     icon: <Clock className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Automations & Analytics",
-    desc: "Our solution includes automations and analytics, giving you actionable insights and streamlined operations.",
+    title: "Honesty & Transparency",
+    desc: "If complexity hurts conversions, we’ll say so—and show the tradeoffs. You’ll see the metrics we track (completion, AOV, no-show %, rebook rate) and how decisions impact them.",
     icon: <Clock className={styles.icon} />,
   },
   {
     id: 4,
-    title: "You Own the System",
-    desc: "Everything is shipped as a unified platform that you fully own and control.",
+    title: "No Fluff, Just Outcomes",
+    desc: "No drama, no vanity deliverables. We ship measurable improvements, provide dashboards, and run a 30-day tune-up to lift bookings and reduce no-shows.",
     icon: <Clock className={styles.icon} />,
   },
 ];

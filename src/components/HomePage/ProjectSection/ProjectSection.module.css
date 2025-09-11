@@ -73,6 +73,43 @@
   margin-top: 3rem;
 }
 
+.modalContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-family: var(--DotSansMedium);
+  letter-spacing: normal;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.modalDesc {
+  color: var(--black);
+  width: 80%;
+}
+
+.modalImageWrap {
+  width: 100%;
+}
+
+.modalImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContent {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 1068px) {
   .content {
     grid-template-columns: repeat(1, 1fr);

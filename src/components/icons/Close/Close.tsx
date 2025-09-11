@@ -9,7 +9,7 @@ export default function Close(props: SVGProps<SVGSVGElement>) {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      strokeWidth='2'
+      strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'
       className='lucide lucide-circle-x-icon lucide-circle-x'

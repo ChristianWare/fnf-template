@@ -8,29 +8,29 @@ import Button from "@/components/shared/Button/Button";
 const data = [
   {
     id: 1,
-    title: "Stored Cards",
-    desc: "Process payments against your client’s stored credit cards.",
+    title: "Own the relationship",
+    desc: "Stop renting your pipeline from marketplaces. Keep the data, the margins, and the repeat business.",
   },
   {
     id: 2,
-    title: "On-site QR Codes",
-    desc: "Display on-site QR codes for direct mobile payments.",
+    title: "Protect your time",
+    desc: "Card-on-file, deposits, and policy acceptance reduce no-shows and last-minute cancellations.",
   },
   {
     id: 3,
-    title: "Payment Links",
-    desc: "Send payment links for easy mobile transactions.",
+    title: "Delight on mobile",
+    desc: "One-screen flows and lightning-fast UX mean fewer drop-offs and more completed bookings.",
   },
   {
     id: 4,
-    title: "Tap & Pay",
-    desc: "Enable Tap & Pay and integrate with terminals.",
+    title: "Automate reminders",
+    desc: "Send automated reminders to clients to reduce missed appointments and improve attendance.",
   },
-  {
-    id: 5,
-    title: "Tips",
-    desc: "Encourage clients to leave tips during payment.",
-  },
+  // {
+  //   id: 5,
+  //   title: "Grow repeat business",
+  //   desc: "Easily offer loyalty rewards and rebooking options to encourage clients to return.",
+  // },
 ];
 
 export default function Outcomes() {
@@ -48,14 +48,13 @@ export default function Outcomes() {
             <div className={styles.right}>
               <div className={styles.rightTop}>
                 <h2 className={styles.heading}>
-                  Enhance in-store payments for your clients{" "}
+                  Why get a custom booking website for your business?
                 </h2>
                 {/* <SectionIntroii title='Outcomes' color='tan' /> */}
                 <p className={styles.copy}>
-                  When using payment providers that support Apple Pay and Google
-                  Pay, the payment process becomes a breeze. Just a simple
-                  confirmation is all it takes, eliminating the need for manual
-                  data entry. Discover the seamless payment experience today!
+                  A custom booking website can significantly enhance your
+                  business operations and customer experience. Here are some key
+                  benefits:
                 </p>
                 <div className={styles.btnContainer}>
                   <Button href='/about' btnType='lime' text='More details' />
