@@ -613,3 +613,128 @@ export const pricingData = [
     ],
   },
 ] as const;
+
+
+export const questions = [
+  {
+    id: 36,
+    question: "How long does it take to build an e-commerce website?",
+    answer:
+      "The timeline for building an e-commerce website depends on the complexity of your project. A basic online store can typically be launched in 4-6 weeks, while more complex sites with custom functionality may take 8-16 weeks. During our initial consultation, we'll provide a detailed timeline based on your specific requirements and business goals.",
+  },
+  {
+    id: 36.1,
+    question: "Which e-commerce platform do you recommend?",
+    answer:
+      "We don't believe in one-size-fits-all solutions. The best platform depends on your specific business needs, budget, and long-term goals. We have expertise in Shopify, WooCommerce, Magento, Wix, and custom solutions. During our discovery process, we'll assess your requirements and recommend the platform that offers the best balance of features, flexibility, and scalability for your business.",
+  },
+  {
+    id: 36.2,
+    question: "How much does an e-commerce website cost?",
+    answer:
+      "E-commerce website costs vary widely based on your business requirements. Our starter stores begin at $5,900, growth-focused stores at $7,500, and enterprise solutions at $10,000. We provide transparent, detailed quotes for each project after understanding your specific needs. Factors that affect pricing include design complexity, number of products, custom functionality, and integrations with other business systems.",
+  },
+  {
+    id: 36.3,
+    question: "Do you provide ongoing support after launch?",
+    answer:
+      "Absolutely! We understand that launching your store is just the beginning of your e-commerce journey. We offer flexible maintenance and support plans starting at $495 per month, which include platform updates, security patches, content updates, and technical support. We also provide growth-focused services such as conversion optimization, A/B testing, and performance enhancements for businesses looking to continuously improve their online stores.",
+  },
+  {
+    id: 36.4,
+    question:
+      "What sets Fonts & Footers apart from other web development agencies?",
+    answer:
+      "Unlike general web developers, we specialize exclusively in e-commerce, with deep expertise across multiple business models including B2C, B2B, marketplaces, subscription services, and more. Our approach balances beautiful design with data-driven strategy, ensuring your store not only looks great but delivers measurable business results. We take a limited number of clients to provide personalized attention, and our focus on long-term partnerships means we're invested in your success far beyond the initial launch.",
+  },
+  {
+    id: 37,
+    question: "How do you handle SEO for e-commerce websites?",
+    answer:
+      "We build every store with SEO best practices in mind—optimizing site structure, meta titles and descriptions, heading hierarchy, and URL slugs. We also implement schema markup for products, generate XML sitemaps, set up Google Search Console, and ensure fast load times to improve crawlability and ranking.",
+  },
+  {
+    id: 38,
+    question: "Can I request design or feature changes after launch?",
+    answer:
+      "Absolutely. After launch, you can submit change requests through our support portal. Small tweaks are often covered by your maintenance plan, and for larger scope adjustments we’ll provide a transparent quote and timeline before starting work.",
+  },
+  {
+    id: 39,
+    question: "Which payment gateways and shipping carriers do you integrate?",
+    answer:
+      "We support all major payment gateways—Shopify Payments, Stripe, PayPal, Authorize.net—as well as regional options on request. For shipping, we integrate carriers like UPS, FedEx, DHL, USPS, and real-time rate calculators so your customers see accurate shipping costs at checkout.",
+  },
+  {
+    id: 40,
+    question: "Do you provide product photography or copywriting services?",
+    answer:
+      "Yes—we partner with professional photographers and copywriters to deliver high-quality product imagery and persuasive, SEO-driven copy. These services can be bundled into your project or added on afterward to ensure your catalog shines.",
+  },
+  {
+    id: 41,
+    question: "How do you ensure my store is secure?",
+    answer:
+      "Security is paramount. We enforce HTTPS across the entire site, apply regular platform and plugin updates, configure firewalls, and set up daily backups. We also follow PCI DSS guidelines to protect your customers’ payment data.",
+  },
+  {
+    id: 42,
+    question: "Will my e-commerce site be fully responsive on mobile devices?",
+    answer:
+      "Yes. We use a mobile-first approach and rigorously test layouts on a variety of screen sizes. Your store will adapt gracefully from large desktop monitors down to smartphones and tablets, ensuring an optimal shopping experience everywhere.",
+  },
+  {
+    id: 43,
+    question: "How do you optimize site performance and loading speed?",
+    answer:
+      "We optimize images (responsive sizes, WebP), implement code-splitting and lazy loading, configure browser caching, and integrate a CDN. We also run performance audits with Lighthouse or GTmetrix to identify and resolve any remaining bottlenecks.",
+  },
+  {
+    id: 44,
+    question: "Can you integrate third-party apps, plugins, or custom APIs?",
+    answer:
+      "Yes. Whether it’s marketing automation (Klaviyo, Mailchimp), ERP/CRM systems, subscription platforms, or custom-built APIs, we’ll architect and test integrations to work seamlessly within your store’s ecosystem.",
+  },
+  {
+    id: 45,
+    question: "What does your project management process look like?",
+    answer:
+      "We follow an agile workflow with clearly defined milestones. From kickoff and discovery to design, development, and launch, you’ll get weekly progress updates via Trello or Asana, plus regular video calls to review deliverables and provide feedback.",
+  },
+  {
+    id: 46,
+    question: "Do you support international stores and multi-currency pricing?",
+    answer:
+      "Yes. We can configure multi-currency support, local tax settings, and language translations. Using geolocation or manual selectors, customers see pricing, shipping, and content tailored to their region, boosting global conversion rates.",
+  },
+  {
+    id: 47,
+    question: "Can you migrate my existing store from another platform?",
+    answer:
+      "Yes—whether you’re on Magento, BigCommerce, WooCommerce, or a custom solution, we’ll handle data export, product mapping, order history transfer, and SEO redirects to ensure a seamless transition with zero downtime.",
+  },
+  {
+    id: 48,
+    question: "Do you support multilingual and multi-region stores?",
+    answer:
+      "Absolutely. We can implement language translations, locale-based content, currency selectors, and geolocation so customers automatically see your site in their native language and currency, boosting global engagement and sales.",
+  },
+  {
+    id: 49,
+    question: "Can you integrate inventory management or ERP systems?",
+    answer:
+      "Yes—we integrate with leading inventory and ERP platforms like NetSuite, SAP, TradeGecko, and Zoho. Real-time stock syncing and order routing ensure accurate inventory levels and efficient fulfillment across all sales channels.",
+  },
+  {
+    id: 50,
+    question: "What analytics and reporting do you provide?",
+    answer:
+      "We set up Google Analytics, enhanced e-commerce tracking, and platform-specific dashboards. You’ll get custom reports on traffic, conversion funnels, product performance, and customer lifetime value, with monthly review calls to share insights.",
+  },
+  {
+    id: 51,
+    question: "Will you provide training and documentation after launch?",
+    answer:
+      "Yes. We include a comprehensive onboarding session—live video training for you and your team—plus clear written documentation covering store management, order fulfillment, and marketing tasks so you can run your business with confidence.",
+  },
+] as const;

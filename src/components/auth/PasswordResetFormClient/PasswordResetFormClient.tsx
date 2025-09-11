@@ -7,14 +7,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import FormField from "../FormField/FormField";
-import { useSearchParams } from "next/navigation";
 import {
   PasswordResetSchema,
   PasswordResetSchemaType,
 } from "@/schemas/PasswordResetSchema";
 import { passwordReset } from "../../../../actions/auth/password-reset";
 
-export default function PasswordResetFormClient() {
+type Props = {
+  token?: string;
+};
+
+export default function PasswordResetFormClient({ token }: Props) {
   const {
     register,
     handleSubmit,
@@ -27,19 +30,20 @@ export default function PasswordResetFormClient() {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
 
-  const searchParmas = useSearchParams();
-  const token = searchParmas.get("token");
-
   const onSubmit: SubmitHandler<PasswordResetSchemaType> = (data) => {
     setError("");
+
+    if (!token) {
+      setError(
+        "Missing or invalid reset token. Please use the link from your email."
+      );
+      return;
+    }
+
     startTransition(() => {
       passwordReset(data, token).then((res) => {
-        if (res?.error) {
-          setError(res.error);
-        }
-        if (res?.success) {
-          setSuccess(res.success);
-        }
+        if (res?.error) setError(res.error);
+        if (res?.success) setSuccess(res.success);
       });
     });
   };
@@ -48,6 +52,7 @@ export default function PasswordResetFormClient() {
     <div>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <p>Enter your new password:</p>
+
         <FormField
           id='password'
           register={register}
@@ -58,6 +63,7 @@ export default function PasswordResetFormClient() {
           type='password'
           eye
         />
+
         <FormField
           id='confirmPassword'
           register={register}
