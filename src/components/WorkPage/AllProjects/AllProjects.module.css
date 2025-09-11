@@ -8,7 +8,7 @@
 /* 2-col grid, same spacing you had */
 .mapDataContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
 }
 
@@ -25,7 +25,7 @@
   /* aspect-ratio: 25 / 32; */
 
   /* Fallback min-height so very narrow layouts don’t collapse */
-  min-height: 390px;
+  min-height: 400px;
 }
 
 .img {
@@ -90,9 +90,7 @@
 }
 
 @media screen and (max-width: 1268px) {
-  .mapDataContainer {
-    grid-template-columns: 1fr 1fr;
-  }
+
   .card {
     min-height: 540px;
   }
