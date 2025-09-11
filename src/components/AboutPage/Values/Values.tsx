@@ -31,7 +31,7 @@ const data: readonly ValueItem[] = [
     title: "Transparency",
     description:
       "We believe in open communication and honesty in all our dealings, ensuring our customers are always informed.",
-    src: Img1,
+    src: Img3,
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ const data: readonly ValueItem[] = [
     title: "Customer-Centricity",
     description:
       "Our customers are at the heart of everything we do. We strive to exceed their expectations and deliver exceptional value.",
-    src: Img3,
+    src: Img1,
   },
   {
     id: 4,

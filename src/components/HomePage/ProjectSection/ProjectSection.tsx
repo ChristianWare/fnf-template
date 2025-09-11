@@ -13,13 +13,27 @@ import { StaticImageData } from "next/image";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
+import Link from "next/link";
 
 const data = [
-  { id: 1, title: "Nier Transportation", src: Nier },
-  { id: 2, title: "Dog Spa", src: Dog },
-  { id: 3, title: "Elite Retreat Rentals", src: ErRentals },
-  // { id: 4, title: "Elite Retreat Rentals", src: Rentals },
-  // { id: 5, title: "Furniture", src: Img3 },
+  {
+    id: 1,
+    title: "Nier Transportation",
+    src: Nier,
+    href: "https://www.niertransportation.com/",
+  },
+  {
+    id: 2,
+    title: "Dog Spa",
+    src: Dog,
+    href: "https://www.niertransportation.com/",
+  },
+  {
+    id: 3,
+    title: "Elite Retreat Rentals",
+    src: ErRentals,
+    href: "https://www.niertransportation.com/",
+  },
 ];
 
 export default function ProjectSection() {
@@ -76,7 +90,9 @@ export default function ProjectSection() {
                   }
                 }}
               >
-                <div className={styles.title}>{item.title}</div>
+                <Link href={item.href} target='_blank' className={styles.title}>
+                  {item.title}
+                </Link>
                 <Arrow className={styles.arrow} />
               </div>
             ))}
