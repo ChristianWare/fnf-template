@@ -2,7 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
-// import Specialize from "../Specialize/Specialize";
+import { AboutUsData } from "@/lib/data";
 
 export default function AboutUs() {
   return (
@@ -20,12 +20,31 @@ export default function AboutUs() {
             marketplace fees with one-tap reservations, deposits on file, and
             real-time calendar sync — designed to launch quickly and convert
             reliably. */}
-            We offer services designed to deliver maximum value at each stage of
+            {/* We offer services designed to deliver maximum value at each stage of
+            your business. From initial consultation to final delivery, our team
+            is dedicated to ensuring your success. */}
+            Start, grow, and scale your direct-booking website—at every stage of
             your business. From initial consultation to final delivery, our team
             is dedicated to ensuring your success.
           </h2>
           <ImageCluster />
-          {/* <Specialize /> */}
+          <div className={styles.bottom}>
+            <div className={styles.mapDataContainer}>
+              {AboutUsData.map((x) => (
+                <div key={x.id} className={styles.card}>
+                  <h3 className={styles.title}>{x.title}</h3>
+                  <p className={styles.desc}>{x.desc}</p>
+                  <ul className={styles.listContainer}>
+                    {x.list.map((y) => (
+                      <li key={y.id} className={styles.listItem}>
+                        <span className={styles.dot}>•</span> {y.listItem}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </LayoutWrapper>
     </section>

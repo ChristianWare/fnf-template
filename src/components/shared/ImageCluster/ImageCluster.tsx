@@ -26,7 +26,7 @@ export default function ImageCluster({ color = "" }: Props) {
       </div>
       <div className={styles.bottom}>
         <span className={`${styles.copy} ${styles[color]}`}>
-          Trusted by 500+ clients (4.9/5)
+          Trusted by 50+ clients (4.9/5)
         </span>
       </div>
     </div>

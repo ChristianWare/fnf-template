@@ -31,7 +31,6 @@ export const process = [
   },
 ] as const;
 
-
 export const footerData = [
   {
     id: 1,
@@ -371,7 +370,7 @@ export const pricingData = [
     desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with card-on-file payments. Go live in two weeks.",
     descii:
       "Built for independent pros who want to stop back-and-forth scheduling and double-bookings. A branded calendar with deposits, automated reminders, and easy rescheduling reduces no-shows and protects your income. Move from DMs to a reliable, professional booking experience—without the overhead of staff or multiple locations.",
-    price: "$2,900", 
+    price: "$2,900",
     servicesInclude: [
       {
         id: 1.1,
@@ -614,7 +613,6 @@ export const pricingData = [
   },
 ] as const;
 
-
 export const questions = [
   {
     id: 36,
@@ -736,5 +734,82 @@ export const questions = [
     question: "Will you provide training and documentation after launch?",
     answer:
       "Yes. We include a comprehensive onboarding session—live video training for you and your team—plus clear written documentation covering store management, order fulfillment, and marketing tasks so you can run your business with confidence.",
+  },
+] as const;
+
+export const AboutUsData = [
+  {
+    id: 1,
+    title: "Starting",
+    desc: "Within a set budget, we launch fast and learn quickly.",
+    list: [
+      {
+        id: 1.1,
+        listItem: "Spin up a booking demo",
+      },
+      {
+        id: 1.2,
+        listItem: "Build a minimum viable booking site",
+      },
+      {
+        id: 1.3,
+        listItem: "Experiment with deposits, add-ons, and pricing",
+      },
+      {
+        id: 1.4,
+        listItem: "Iterate toward service–market fit",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Growth",
+    desc: "Scale what works so you can focus on your craft",
+    list: [
+      {
+        id: 2.1,
+        listItem: "Upgraded site architecture",
+      },
+      {
+        id: 2.2,
+        listItem: "Memberships, packages, gift cards, waitlists",
+      },
+      {
+        id: 2.3,
+        listItem: "Reminders, policy capture, and calendar sync",
+      },
+      {
+        id: 2.4,
+        listItem:
+          "Analytics, SEO schema, and reporting.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Enterprise",
+    desc: "Multi-location/team operations",
+    list: [
+      {
+        id: 3.1,
+        listItem: "Direct-booking transformation",
+      },
+      {
+        id: 3.2,
+        listItem: "Centralized roles/permissions",
+      },
+      {
+        id: 3.3,
+        listItem: "Advanced reporting ",
+      },
+      {
+        id: 3.4,
+        listItem: "Booking Lab",
+      },
+      {
+        id: 3.5,
+        listItem: "Compliance-friendly setups",
+      },
+    ],
   },
 ] as const;

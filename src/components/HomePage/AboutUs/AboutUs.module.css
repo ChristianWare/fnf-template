@@ -1,7 +1,6 @@
 .container {
   background-color: var(--black);
   padding: 10rem 0rem;
-  
 }
 
 .content {
@@ -22,9 +21,92 @@
   margin-bottom: 3rem;
 }
 
+.bottom {
+  margin-top: 5rem;
+}
+
+.mapDataContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--darkGray);
+  border-radius: 10px;
+}
+
+.card {
+  padding: 3rem;
+  border-right: 1px solid var(--darkGray);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.card:last-child {
+  border-right: none;
+}
+
+.title {
+  color: var(--tan);
+  font-size: 2.5rem;
+}
+
+.desc {
+  color: var(--tan);
+  opacity: 0.7;
+}
+
+.listContainer {
+  margin-top: 2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.listItem {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  color: var(--tan);
+  padding: 2rem 0rem;
+  border-bottom: 1px solid var(--darkGray);
+  width: 100%;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.dot {
+  color: var(--lime);
+}
+
 @media screen and (max-width: 1268px) {
   .heading {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .mapDataContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    border: none;
+  }
+
+  .card {
+    border: 1px solid var(--darkGray);
+    border-radius: 10px;
+  }
+
+  .card:last-child {
+    border-right: 1px solid var(--darkGray);
+    grid-column: span 2;
   }
 }
 
@@ -38,5 +120,12 @@
   .heading {
     width: 100%;
     text-align: left;
+  }
+
+  .mapDataContainer {
+    grid-template-columns: 1fr;
+  }
+  .card:last-child {
+    grid-column: span 1;
   }
 }
