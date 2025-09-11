@@ -3,7 +3,7 @@ import styles from "./Different.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Image from "next/image";
-import IMg1 from "../../../../public/images/happyii.png";
+// import IMg1 from "../../../../public/images/happyii.png";
 import IMg2 from "../../../../public/images/happyiii.png";
 
 const data = [
@@ -38,12 +38,12 @@ export default function Different() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.container}>
-          <div className={styles.imgContainer}>
+          {/* <div className={styles.imgContainer}>
             <Image src={IMg1} alt='workman' fill className={styles.img} />
-          </div>
+          </div> */}
           <div className={styles.top}>
             <SectionIntroii title='what sets us apart' />
-            <h2 className={styles.heading}>How We’re Different</h2>
+            <h2 className={styles.heading}>How we’re different</h2>
           </div>
           <div className={styles.bottom}>
             <div className={styles.mapDataContainer}>
@@ -59,9 +59,11 @@ export default function Different() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className={styles.imgContainerii}>
-            <Image src={IMg2} alt='workwoman' fill className={styles.img} />
+            <div className={styles.bottomRight}>
+              <div className={styles.imgContainerii}>
+                <Image src={IMg2} alt='workwoman' fill className={styles.img} />
+              </div>
+            </div>
           </div>
         </div>
       </LayoutWrapper>

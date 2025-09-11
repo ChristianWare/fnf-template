@@ -7,16 +7,16 @@
 .imgContainer,
 .imgContainerii {
   position: relative;
-  width: 275px;
-  height: 275px;
+  width: 100%;
+  height: 350px;
   margin-left: auto;
 }
 
-.imgContainerii {
+/* .imgContainerii {
   margin-right: auto;
   margin-left: 0rem;
   margin-top: 3rem;
-}
+} */
 
 .img {
   object-fit: contain;
@@ -28,21 +28,21 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  /* padding-top: 2rem;
-  border-top: 1px solid var(--gray); */
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .bottom {
   border-top: 1px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
-  padding-top: 3rem;
+  /* border-bottom: 1px solid var(--gray); */
+  padding-top: 2rem;
   padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .mapDataContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -80,7 +80,27 @@
   font-weight: 500;
 }
 
+.bottomRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1068px) {
+  .top {
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    text-align: center;
+  }
+  
+  .bottom {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5rem;
+  }
+  
   .mapDataContainer {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -91,8 +111,9 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  
-  .imgContainer, .imgContainerii {
+
+  .imgContainer,
+  .imgContainerii {
     width: 200px;
     height: 200px;
     margin-left: auto;

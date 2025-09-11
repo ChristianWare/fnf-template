@@ -9,17 +9,20 @@ export default function AboutUs() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <SectionIntroii title='About Us' color='tan' />
+          <SectionIntroii title='How we can help' color='tan' />
           <h2 className={styles.heading}>
             {/* Overbooked by busywork? You won’t be alone. We’ve helped salons,
             wellness studios, trainers, chauffeurs, pet groomers, clinics, and
             tutors replace DM juggling with reliable, paid-in-advance
             appointments. */}
-            Fonts & Footers is a specialist studio focused on one thing: turning
+            {/* Fonts & Footers is a specialist studio focused on one thing: turning
             visitors into booked appointments. We replace clunky DMs and
             marketplace fees with one-tap reservations, deposits on file, and
             real-time calendar sync — designed to launch quickly and convert
-            reliably.
+            reliably. */}
+            We offer services designed to deliver maximum value at each stage of
+            your business. From initial consultation to final delivery, our team
+            is dedicated to ensuring your success.
           </h2>
           <ImageCluster />
           {/* <Specialize /> */}
