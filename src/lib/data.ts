@@ -1,6 +1,7 @@
-import Project1 from "../../public/images/howItWorks.jpg";
-import Project2 from "../../public/images/speed.jpg";
-import Project3 from "../../public/images/faqii.jpg";
+import Project1 from "../../public/images/equipment.jpg";
+import Project2 from "../../public/images/road.webp";
+import Project3 from "../../public/images/dog.jpg";
+import Project4 from "../../public/images/erRentals.png";
 
 export const process = [
   {
@@ -123,8 +124,7 @@ export const footerData2 = [
   },
 ] as const;
 
-export const 
-projects = [
+export const projects = [
   {
     id: 1,
     title: "Thundertrails",
@@ -186,7 +186,7 @@ projects = [
   },
   {
     id: 2,
-    title: "Chuxly",
+    title: "Nier Transportation",
     slug: "chuxly",
     src: Project2,
     video: "/videos/chuxly.mp4",
@@ -306,7 +306,7 @@ projects = [
     id: 4,
     title: "Elite Retreat Rentals",
     slug: "elite-retreat-rentals",
-    src: Project3,
+    src: Project4,
     video: "/videos/rentals.mp4",
     description:
       "Elite Retreat Rentals was established in 2022 by a team of hospitality veterans with a vision to transform the vacation rental experience in Phoenix, Arizona. Their portfolio features three meticulously designed luxury properties, each offering a unique aesthetic and amenities while maintaining consistent high standards of comfort and service. As the Phoenix tourism market became increasingly competitive, Elite Retreat Rentals sought to break away from dependency on third-party booking platforms by creating a direct booking system that would showcase their properties' distinctive features and allow for a more personalized guest experience.",

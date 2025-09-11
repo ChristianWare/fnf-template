@@ -12,7 +12,6 @@ export default function AllProjects() {
           <div className={styles.mapDataContainer}>
             {projects.map((project, index) => (
               <div key={index} className={styles.card}>
-                {/* Background image */}
                 {project.src && (
                   <Image
                     src={project.src}
@@ -40,7 +39,7 @@ export default function AllProjects() {
                   >
                     View Project
                   </a> */}
-                  <Button href='/' btnType='grayOutlineii' text='About us' />
+                  <Button href='/' btnType='grayOutlineii' text='Live Site' />
                 </div>
               </div>
             ))}

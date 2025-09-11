@@ -184,7 +184,7 @@ export default function Values() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <SectionIntro title='About Our Services' />
+            <SectionIntro title='Values' />
             <h2 className={styles.heading}>
               Values that drive <br />
               everything we do
@@ -195,7 +195,7 @@ export default function Values() {
             </p>
 
             <div className={styles.btnContainer}>
-              <Button href='/' text='Book a groom' btnType='lime' />
+              <Button href='/' text='Contact us' btnType='black' />
             </div>
           </div>
 
