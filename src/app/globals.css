@@ -5,8 +5,8 @@
   --darkGray: rgb(139, 139, 139);
   --grayii: #706f6f;
   --tan: #f4f3ea;
-  --tan600: #D1CDAB;
-  --tan700: #AFA875;
+  --tan600: #d1cdab;
+  --tan700: #afa875;
   --darkTan: #e8eae0;
   --darkerTan: #e6e8dd;
   --white: #f4f3ea;
@@ -47,6 +47,13 @@ body {
 }
 
 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+a:link,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
