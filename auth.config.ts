@@ -1,36 +1,20 @@
-import Google from "next-auth/providers/google";
-import Credentials from "next-auth/providers/credentials";
+// auth.config.ts
 import type { NextAuthConfig } from "next-auth";
-import { LoginSchema } from "@/schemas/LoginSchema";
-import { getUserByEmail } from "@/lib/user";
-import bcryptjs from "bcryptjs";
 
-export default {
-  providers: [
-    Google({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-    Credentials({
-      async authorize(credentials) {
-        const validatedFields = LoginSchema.safeParse(credentials);
+// Keep ONLY light options (pure objects/functions) that don't import heavy deps.
+// No Prisma adapter, no providers, no bcrypt/zod, no DB helpers here.
 
-        if (validatedFields.success) {
-          const { email, password } = validatedFields.data;
+const authConfig = {
+  providers: [],
+  session: { strategy: "jwt" },
+  trustHost: true,
+  pages: { signIn: "/login" },
 
-          const user = await getUserByEmail(email);
-
-          if (!user || !user.password) return null;
-
-          const isCorrectedPassword = await bcryptjs.compare(
-            password,
-            user.password
-          );
-
-          if (isCorrectedPassword) return user;
-        }
-        return null;
-      },
-    }),
-  ],
+  // Keep callbacks "pure" (no DB calls). Only transform existing token/session.
+  callbacks: {
+    jwt: async ({ token }) => token,
+    session: async ({ session }) => session,
+  },
 } satisfies NextAuthConfig;
+
+export default authConfig;
