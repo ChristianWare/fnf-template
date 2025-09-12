@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Industries.module.css";
 import Image from "next/image";
@@ -19,22 +20,41 @@ export default function Industries() {
   const [isShifting, setIsShifting] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  const cardWidth = 500;
-  const gap = 32;
-  const step = 1;
+  const [cardW, setCardW] = useState<number>(500);
+  const [gapPx, setGapPx] = useState<number>(32);
 
-  const offsetX = -index * (cardWidth + gap);
+  useEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const firstCard = track.querySelector<HTMLDivElement>(".card");
+      if (firstCard) setCardW(firstCard.offsetWidth);
+      const style = window.getComputedStyle(track);
+      const cg = parseFloat((style as any).columnGap || style.gap || "0");
+      if (Number.isFinite(cg)) setGapPx(cg);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  const offsetX = -index * (cardW + gapPx);
 
   const next = () => {
     if (isShifting || !isAnimating) return;
     setIsShifting(true);
-    setIndex((i) => i + step);
+    setIndex((i) => i + 1);
   };
 
   const prev = () => {
     if (isShifting || !isAnimating) return;
     setIsShifting(true);
-    setIndex((i) => i - step);
+    setIndex((i) => i - 1);
   };
 
   const handleTransitionEnd = () => {
@@ -101,7 +121,7 @@ export default function Industries() {
           onTransitionEnd={handleTransitionEnd}
         >
           {tripled.map((item, i) => (
-            <div key={`${item.id}-${i}`} className={styles.card}>
+            <div key={`${item.id}-${i}`} className={`${styles.card} card`}>
               <Image
                 src={item.src}
                 alt={item.title}
