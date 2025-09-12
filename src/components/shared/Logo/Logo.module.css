@@ -1,14 +1,10 @@
 .logo {
   cursor: pointer;
-  font-family: var(--DotSansMedium);
   z-index: 999;
-  font-size: 1.6rem;
-  letter-spacing: -.5px;
-  color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
   z-index: 1;
 }
 
@@ -35,13 +31,15 @@
   width: 1.6rem;
   height: 1.6rem;
   position: relative;
-  top: -1px;
+  top: -1.3px;
 }
 
-.img {
-  object-fit: contain;
-  width: 30px;
-  height: 30px;
+.text {
+  font-family: var(--inter);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  color: var(--black);
 }
 
 .titleContainer {
@@ -50,13 +48,18 @@
   gap: 1rem;
 }
 
-@media screen and (max-width: 568px) {
-  .img {
-    width: 40px;
-    height: 40px;
+@media screen and (max-width: 968px) {
+  .logo {
+    gap: 1rem;
+  }
+  
+  .text {
+    font-size: 1.8rem;
   }
 
-  /* .text {
-    display: none;
-  } */
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0;
+  }
 }

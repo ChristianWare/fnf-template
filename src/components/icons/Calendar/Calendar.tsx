@@ -9,7 +9,7 @@ export default function Calendar(props: SVGProps<SVGSVGElement>) {
       height='1em'
       fill='none'
       stroke='currentColor'
-      strokeWidth={2}
+      strokeWidth={2.5}
       strokeLinecap='round'
       strokeLinejoin='round'
       className='lucide lucide-calendar-icon'
