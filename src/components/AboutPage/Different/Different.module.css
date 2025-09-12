@@ -73,6 +73,10 @@
   font-weight: 500;
 }
 
+.desc {
+  color: var(--lightBlack);
+}
+
 .bottomRight {
   display: flex;
   align-items: center;

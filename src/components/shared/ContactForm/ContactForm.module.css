@@ -211,7 +211,7 @@
   }
 }
 
-@media screen and (max-width: 568px) {
+/* @media screen and (max-width: 568px) {
   .form {
     display: flex;
     flex-direction: column;
@@ -247,4 +247,4 @@
     margin-top: 2rem;
     display: grid;
   }
-}
+} */

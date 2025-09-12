@@ -3,7 +3,7 @@ import styles from "./ContactPageContainer.module.css";
 import ContactForm from "@/components/shared/ContactForm/ContactForm";
 import Image from "next/image";
 import Img1 from "../../../../public/images/chris.png";
-import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
+// import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
 
 const data = [
   {
@@ -46,13 +46,15 @@ export default function ContactPageContainer() {
                 </div>
               ))}
             </div>
-            <span className={styles.subHeading}>
+            <span className={styles.subHeadingii}>
               We&#39;ll get back to you within 24 hours
             </span>
             <div className={styles.ownerbox}>
-              <div className={styles.ownerLeft}></div>
+              <div className={styles.imgContainer}>
+                <Image src={Img1} alt='owner' className={styles.img} />
+              </div>
               <div className={styles.ownerRight}>
-                <LinkedIn />
+                {/* <LinkedIn /> */}
                 <span className={styles.owner}>Chris Ware</span>
                 <p className={styles.title}>Founder & CEO</p>
               </div>
