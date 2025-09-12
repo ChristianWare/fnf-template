@@ -53,7 +53,7 @@
 
 .desc {
   color: var(--tan);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .listContainer {
@@ -119,7 +119,7 @@
 @media screen and (max-width: 568px) {
   .heading {
     width: 100%;
-    text-align: left;
+    /* text-align: left; */
   }
 
   .mapDataContainer {
@@ -127,5 +127,11 @@
   }
   .card:last-child {
     grid-column: span 1;
+  }
+
+  .title,
+  .desc {
+    text-align: center;
+    width: 100%;
   }
 }

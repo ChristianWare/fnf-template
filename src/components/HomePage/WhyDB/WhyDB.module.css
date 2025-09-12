@@ -117,4 +117,12 @@
   .right {
     gap: 5rem;
   }
+
+  .btnContainer {
+    margin-top: 2rem;
+  }
+
+  .mapDataBox {
+    gap: 5rem;
+  }
 }
