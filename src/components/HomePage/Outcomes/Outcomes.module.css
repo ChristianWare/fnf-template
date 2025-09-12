@@ -174,7 +174,7 @@
   }
 
   .right {
-    grid-gap: 5rem;
+    /* grid-gap: 5rem; */
     border-top: none;
   }
 

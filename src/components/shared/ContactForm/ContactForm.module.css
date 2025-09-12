@@ -250,4 +250,8 @@
     margin-top: 2rem;
     display: grid;
   }
+
+  .checkboxLabel {
+    font-size: 1.6rem;
+  }
 }
