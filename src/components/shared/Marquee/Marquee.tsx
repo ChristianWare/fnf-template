@@ -22,6 +22,7 @@ export default function Marquee() {
               fill
               className={styles.img}
               sizes='(max-width: 768px) 100vw, 300px'
+              priority
             />
           </div>
         ))}
