@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from "react";
 import Link from "next/link";
 import styles from "./Button.module.css";
@@ -6,45 +7,70 @@ import Image from "next/image";
 import ChrisImg from "../../../../public/images/chris.jpg";
 
 interface Props {
-  href: string;
+  href?: string; // make optional
   text?: string;
   btnType: string;
-  target?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
   children?: ReactNode;
   arrow?: boolean;
   image?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
+  type?: "button" | "submit" | "reset";
 }
 
 export default function Button({
-  href = "",
+  href,
   text,
   btnType,
-  target = "",
+  target,
   disabled,
   children,
   onClick,
   arrow,
   image,
+  type = "button",
 }: Props) {
   const content = text || children;
 
-  return (
-    <button className={styles.container} disabled={disabled} onClick={onClick}>
+  // LINK VARIANT
+  if (href) {
+    return (
       <Link
         href={href}
-        className={`${styles.btn} ${styles[btnType]}`}
         target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        onClick={onClick as any}
+        className={`${styles.btn} ${styles[btnType]}`}
       >
         {image && (
-          <div className={styles.imgContainer}>
+          <span className={styles.imgContainer} aria-hidden>
             <Image src={ChrisImg} alt='' fill className={styles.img} />
-          </div>
+          </span>
         )}
         {content}
         {arrow && <Arrow className={styles.arrow} />}
       </Link>
+    );
+  }
+
+  // BUTTON VARIANT
+  return (
+    <button
+      type={type}
+      className={`${styles.btn} ${styles[btnType]}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {image && (
+        <span className={styles.imgContainer} aria-hidden>
+          <Image src={ChrisImg} alt='' fill className={styles.img} />
+        </span>
+      )}
+      {content}
+      {arrow && <Arrow className={styles.arrow} />}
     </button>
   );
 }

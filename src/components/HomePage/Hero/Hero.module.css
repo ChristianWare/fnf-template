@@ -20,7 +20,7 @@
 
 .copy {
   text-align: center;
-  width: 35%;
+  width: 550px;
 }
 
 .btnContainer {
@@ -49,12 +49,12 @@
 .img {
   object-fit: cover;
 }
-
+/* 
 @media screen and (max-width: 1268px) {
   .copy {
     width: 50%;
   }
-}
+} */
 
 @media screen and (max-width: 1068px) {
   .copy {
