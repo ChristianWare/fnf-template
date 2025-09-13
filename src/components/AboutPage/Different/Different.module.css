@@ -4,12 +4,16 @@
   padding-bottom: 0rem;
 }
 
-.imgContainer,
-.imgContainerii {
+.imgContainerii,
+.imgContaineriii {
   position: relative;
   width: 100%;
   height: 350px;
   margin-left: auto;
+}
+
+.imgContaineriii {
+  display: none;
 }
 
 .img {
@@ -47,7 +51,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .cardTop {
@@ -98,8 +102,21 @@
     grid-gap: 5rem;
   }
 
+  .imgContaineriii {
+    display: block;
+  }
+
   .mapDataContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .imgContainerii {
+    display: none;
+  }
+
+  .imgContaineriii {
+    width: 100%;
+    height: 250px;
   }
 }
 
@@ -109,8 +126,7 @@
     margin-bottom: 3rem;
   }
 
-  .imgContainer,
-  .imgContainerii {
+  .imgContaineriii {
     width: 200px;
     height: 200px;
     margin-left: auto;
@@ -124,10 +140,5 @@
 
   .mapDataContainer {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 1rem;
-  }
-
-  .card {
-    gap: 5rem;
   }
 }

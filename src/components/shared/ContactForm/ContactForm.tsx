@@ -166,32 +166,27 @@ export default function ContactForm() {
             What can we help you with?
           </label>
 
-          <div className={styles.serviceButtons}>
+            <div className={styles.serviceCheckboxes}>
             {serviceOptions.map((service) => {
               const checked = selectedServices.includes(service);
 
               return (
-                <label
-                  key={service}
-                  className={`
-            ${styles.serviceOption}    
-            ${checked ? styles.selected : ""}
-          `}
-                >
-                  <input
-                    type='checkbox'
-                    value={service}
-                    {...register("services")}
-                    checked={checked}
-                    onChange={() => toggleService(service)}
-                    className={styles.hiddenCheckbox}
-                  />
-
-                  <span className={styles.checkboxLabel}>{service}</span>
+              <div key={service} className={styles.checkboxContainer}>
+                <input
+                type='checkbox'
+                id={service}
+                value={service}
+                checked={checked}
+                onChange={() => toggleService(service)}
+                className={styles.checkbox}
+                />
+                <label htmlFor={service} className={styles.checkboxLabel}>
+                {service}
                 </label>
+              </div>
               );
             })}
-          </div>
+            </div>
         </div>
       </div>
       <div className={styles.btnBtnContainer}>

@@ -3,12 +3,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
   background-color: var(--darkTan);
   border-radius: 10px;
   padding: 3rem;
   position: relative;
+  box-sizing: border-box;
 }
 
 .cornerContainer {
@@ -22,11 +23,12 @@
 
 .formHeading {
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .namesContainer {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 3rem;
   width: 100%;
@@ -34,14 +36,13 @@
 }
 
 .everythingElse {
-  height: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
   gap: 1rem;
-  height: 100%;
+  width: 100%;
 }
 
 .labelInputBox {
@@ -49,7 +50,6 @@
   flex-direction: column;
   gap: 0.3rem;
   margin-bottom: 1.5rem;
-  flex: 1;
   width: 100%;
 }
 
@@ -60,6 +60,7 @@
   font-weight: 600;
   opacity: 0.8;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .labelInputBox input,
@@ -71,13 +72,14 @@
   border-radius: 5px;
   color: var(--black);
   padding: 1rem;
-  width: 100%;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 .labelInputBox span {
   font-size: 1.4rem;
   color: var(--blue);
+  width: 100%;
 }
 
 .labelInputBox textarea {
@@ -93,20 +95,28 @@
 .error {
   color: red;
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 .btnBtnContainer {
-  margin-top: 5;
-  display: grid;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   width: 100%;
 }
 
 .servicesSection {
+  background-color: var(--tan);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
 .servicesLabel {
@@ -117,6 +127,7 @@
   opacity: 0.8;
   margin-bottom: 2rem;
   display: block;
+  width: 100%;
 }
 
 .serviceButtons {
@@ -124,6 +135,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 .serviceButton {
@@ -131,7 +143,6 @@
   border: 1px solid var(--gray);
   background-color: var(--white);
   color: var(--black);
-  /* border-radius: 30px; */
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -154,7 +165,7 @@
 .btnContainer {
   display: grid;
   width: 100%;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   grid-template-columns: repeat(1, 1fr);
   margin-left: auto;
   margin-right: auto;
@@ -172,26 +183,52 @@
   cursor: pointer;
 }
 
+.serviceCheckboxes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--darkGray);
+  background-color: var(--white);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.checkbox:checked {
+  background-color: var(--lime);
+  border-color: var(--blue);
+}
+
+
 .checkboxLabel {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  border: 1px solid var(--gray);
-  color: var(--blue);
+  color: var(--black);
   border-radius: 30px;
   font-size: 1.4rem;
   transition: all 0.2s ease;
   user-select: none;
 }
 
-.checkboxLabel:hover {
-  background-color: var(--lightBlack);
-  color: var(--white);
-}
-
 .serviceOption.selected .checkboxLabel {
   background-color: var(--lightBlack);
   color: var(--tan);
-  /* border-color: var(--black); */
 }
 
 @media screen and (max-width: 1100px) {
@@ -204,7 +241,6 @@
   .serviceButtons {
     gap: 0.75rem;
   }
-
   .serviceButton {
     padding: 0.7rem 1.2rem;
     font-size: 0.8rem;
@@ -219,38 +255,32 @@
     justify-content: space-between;
     align-items: stretch;
     padding: 3rem 2rem;
-    /* padding-top: 5rem; */
-    /* background-color: transparent; */
   }
-
   .labelInputBox input,
   .labelInputBox textarea {
     height: auto;
     resize: vertical;
     border-bottom: 1px solid var(--gray);
-    border-radius: 0px;
+    border-radius: 0;
   }
-
   .namesContainer,
   .everythingElse {
     flex: 1;
+    width: 100%;
   }
-
   .namesContainer {
     flex-direction: column;
     gap: 1.5rem;
   }
-
   .formHeading {
     font-size: 3rem;
     letter-spacing: -1px;
   }
-
   .btnBtnContainer {
     margin-top: 2rem;
     display: grid;
+    width: 100%;
   }
-
   .checkboxLabel {
     font-size: 1.6rem;
   }

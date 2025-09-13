@@ -42,6 +42,9 @@ export default function Different() {
             <Image src={IMg1} alt='workman' fill className={styles.img} />
           </div> */}
           <div className={styles.top}>
+            <div className={styles.imgContaineriii}>
+              <Image src={IMg2} alt='workwoman' fill className={styles.img} />
+            </div>
             <SectionIntroii title='what sets us apart' />
             <h2 className={styles.heading}>How we’re different</h2>
           </div>
