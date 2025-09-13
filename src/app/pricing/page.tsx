@@ -1,3 +1,4 @@
+import ContactPageContainer from "@/components/ContactPage/ContactPageContainer/ContactPageContainer";
 import Features from "@/components/HomePage/Features/Features";
 import PricingPageIntro from "@/components/PricingPage/PricingPageIntro/PricingPageIntro";
 import ServiceDetails from "@/components/PricingPage/ServiceDetails/ServiceDetails";
@@ -10,6 +11,7 @@ export default function PricingPage() {
       <ServiceDetails />
       <Features />
       <BlogSection />
+      <ContactPageContainer />
     </main>
   );
 }

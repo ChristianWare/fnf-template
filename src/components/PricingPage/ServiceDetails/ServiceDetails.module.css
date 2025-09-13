@@ -16,10 +16,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  /* align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 90px; */
 }
 
 .copy {
@@ -44,7 +40,7 @@
   gap: 2rem;
   position: relative;
   background-color: var(--tan);
-  border: 1px solid var(--darkGray);
+  border: 1px solid var(--gray);
 }
 
 .card:nth-child(2) {
@@ -281,7 +277,7 @@
 }
 
 .addonSectionBottomContainer {
-  border: 1px solid var(--darkGray);
+  border: 1px solid var(--gray);
   /* background-color: var(--darkerTan); */
   padding: 2rem;
   border-radius: 8px;
