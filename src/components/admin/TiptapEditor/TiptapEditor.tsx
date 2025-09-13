@@ -7,6 +7,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
+import styles from "./TiptapEditor.module.css";
 
 export type TiptapEditorHandle = {
   getHTML: () => string;
@@ -16,8 +17,8 @@ export type TiptapEditorHandle = {
 function Toolbar({ editor }: { editor: any }) {
   if (!editor) return null;
 
-  const btn = (active: boolean) =>
-    `px-2 py-1 rounded text-sm border ${active ? "bg-black text-white" : ""}`;
+  // const btn = (active: boolean) =>
+  //   `${styles.toolbarButton} ${active ? styles.toolbarButtonActive : ""}`;
 
   const addImage = () => {
     const url = window.prompt("Image URL");
@@ -31,98 +32,88 @@ function Toolbar({ editor }: { editor: any }) {
   };
 
   return (
-    <div className='flex flex-wrap gap-2 p-2 border-b'>
+    <div className={styles.toolbar}>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleBold().run()}
-        className={btn(editor.isActive("bold"))}
+        className={styles.toolbarButton}
       >
         B
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={btn(editor.isActive("italic"))}
+        className={styles.toolbarButton}
       >
         <i>I</i>
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleUnderline().run()}
-        className={btn(editor.isActive("underline"))}
+        className={styles.toolbarButton}
       >
         <u>U</u>
       </button>
-
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={btn(editor.isActive("heading", { level: 2 }))}
+        className={styles.toolbarButton}
       >
         H2
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={btn(editor.isActive("heading", { level: 3 }))}
+        className={styles.toolbarButton}
       >
         H3
       </button>
-
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={btn(editor.isActive("bulletList"))}
+        className={styles.toolbarButton}
       >
-        • List
+        List
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={btn(editor.isActive("orderedList"))}
+        className={styles.toolbarButton}
       >
         1. List
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={btn(editor.isActive("blockquote"))}
+        className={styles.toolbarButton}
       >
-        &ldquo; &rdquo;
+        “ ”
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={btn(editor.isActive("codeBlock"))}
-      >{`</>`}</button>
-
-      <button
-        type='button'
-        onClick={addLink}
-        className='px-2 py-1 rounded text-sm border'
+        className={styles.toolbarButton}
       >
+        {"</>"}
+      </button>
+      <button type='button' onClick={addLink} className={styles.toolbarButton}>
         Link
       </button>
-      <button
-        type='button'
-        onClick={addImage}
-        className='px-2 py-1 rounded text-sm border'
-      >
+      <button type='button' onClick={addImage} className={styles.toolbarButton}>
         Image
       </button>
-
-      <div className='ml-auto flex gap-2'>
+      <div className={styles.toolbarRight}>
         <button
           type='button'
           onClick={() => editor.chain().focus().undo().run()}
-          className='px-2 py-1 rounded text-sm border'
+          className={styles.toolbarButton}
         >
           Undo
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().redo().run()}
-          className='px-2 py-1 rounded text-sm border'
+          className={styles.toolbarButton}
         >
           Redo
         </button>
@@ -133,11 +124,9 @@ function Toolbar({ editor }: { editor: any }) {
 
 const TiptapEditor = forwardRef<TiptapEditorHandle, { initialHTML?: string }>(
   ({ initialHTML = "<p></p>" }, ref) => {
-    // Ensure we only render on the client
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
 
-    // 1) Disable SSR rendering to avoid hydration mismatches
     const editor = useEditor({
       extensions: [
         StarterKit,
@@ -145,16 +134,15 @@ const TiptapEditor = forwardRef<TiptapEditorHandle, { initialHTML?: string }>(
         Link.configure({ openOnClick: false }),
         Image,
       ],
-      content: "", // set later after mount
+      content: "",
       editorProps: {
         attributes: {
-          class: "prose max-w-none p-3 min-h-[320px] focus:outline-none",
+          class: styles.editorContent,
         },
       },
-      immediatelyRender: false, // 👈 key fix for Next/Turbo SSR
+      immediatelyRender: false,
     });
 
-    // 2) After mount, set the initial content
     useEffect(() => {
       if (mounted && editor) {
         editor.commands.setContent(initialHTML);
@@ -173,7 +161,7 @@ const TiptapEditor = forwardRef<TiptapEditorHandle, { initialHTML?: string }>(
     if (!mounted || !editor) return null;
 
     return (
-      <div className='border rounded-lg'>
+      <div className={styles.editorRoot}>
         <Toolbar editor={editor} />
         <EditorContent editor={editor} />
       </div>

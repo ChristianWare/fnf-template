@@ -3,7 +3,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import TiptapEditor, { TiptapEditorHandle } from "./TiptapEditor";
+import TiptapEditor, { TiptapEditorHandle } from "../TiptapEditor/TiptapEditor";
 
 type Props = {
   initialTitle: string;

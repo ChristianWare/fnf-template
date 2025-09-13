@@ -1,5 +1,5 @@
 import styles from "./NewPostPage.module.css";
-import AdminNewPostForm from "@/components/admin/AdminNewPostForm";
+import AdminNewPostForm from "@/components/admin/AdminNewPostForm/AdminNewPostForm";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import { createPostAction } from "@/lib/posts";
 

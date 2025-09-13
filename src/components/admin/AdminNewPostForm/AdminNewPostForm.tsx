@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useRef, useState } from "react";
-import TiptapEditor, { TiptapEditorHandle } from "./TiptapEditor";
-
+import TiptapEditor, { TiptapEditorHandle } from "../TiptapEditor/TiptapEditor";
+import styles from "./AdminNewPostForm.module.css";
 
 type Props = {
   action: (formData: FormData) => Promise<{ slug: string; published: boolean }>;
@@ -21,77 +20,72 @@ export default function AdminNewPostForm({ action }: Props) {
       const html = editorRef.current?.getHTML() ?? "";
       formData.set("content", html);
       const res = await action(formData);
-      // Navigate after create
       window.location.href = res.published
         ? `/blog/${res.slug}`
         : "/admin/blog";
-    } catch (e: any) {
-      setError(e?.message ?? "Failed to save post");
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Failed to save post";
+      setError(message);
     } finally {
       setPending(false);
     }
   }
 
   return (
-    <div className='mx-auto max-w-2xl p-6'>
-      <h1 className='text-2xl font-bold mb-4'>New Blog Post</h1>
+    <section className={styles.container}>
+      <h1 className={styles.heading}>Create Blog Post</h1>
 
-      {error && (
-        <div className='mb-4 rounded border border-red-300 bg-red-50 p-3 text-sm text-red-700'>
-          {error}
-        </div>
-      )}
+      {error && <div className={styles.alert}>{error}</div>}
 
-      <form action={onSubmit} className='space-y-4'>
-        <div>
-          <label className='block text-sm font-medium'>Title</label>
+      <form action={onSubmit} className={styles.form}>
+        <div className={styles.field}>
+          <label className={styles.label}>Title</label>
           <input
             name='title'
             type='text'
             required
-            className='mt-1 w-full rounded-md border px-3 py-2'
+            className={styles.input}
             placeholder='Post title'
           />
         </div>
 
-        <div>
-          <label className='block text-sm font-medium'>
-            Excerpt (optional)
-          </label>
+        <div className={styles.field}>
+          <label className={styles.label}>Excerpt (optional)</label>
           <textarea
             name='excerpt'
-            className='mt-1 w-full rounded-md border px-3 py-2'
+            className={styles.textarea}
             placeholder='Short summary…'
             rows={2}
           />
         </div>
 
-        <div>
-          <label className='block text-sm font-medium mb-1'>Content</label>
-          <TiptapEditor ref={editorRef} />
+        <div className={styles.field}>
+          <label className={styles.label}>Content</label>
+          <div className={styles.editor}>
+            <TiptapEditor ref={editorRef} />
+          </div>
         </div>
 
-        {/* Will be filled by onSubmit */}
         <input type='hidden' name='content' />
 
-        <label className='inline-flex items-center gap-2'>
+        <label className={styles.checkboxRow}>
           <input name='publish' type='checkbox' />
           <span>Publish immediately</span>
         </label>
 
-        <div className='flex items-center gap-3'>
+        <div className={styles.actions}>
           <button
             type='submit'
             disabled={pending}
-            className='rounded-md bg-black px-4 py-2 text-white disabled:opacity-60'
+            className={styles.buttonPrimary}
           >
             {pending ? "Saving…" : "Save"}
           </button>
-          <a href='/admin' className='text-sm underline underline-offset-4'>
+          <a href='/admin' className={styles.link}>
             Cancel
           </a>
         </div>
       </form>
-    </div>
+    </section>
   );
 }

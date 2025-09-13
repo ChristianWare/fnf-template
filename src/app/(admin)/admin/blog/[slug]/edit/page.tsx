@@ -4,7 +4,7 @@ import styles from "./EditPostPage.module.css";
 import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { auth } from "../../../../../../../auth";
-import AdminEditPostForm from "@/components/admin/AdminEditPostForm";
+import AdminEditPostForm from "@/components/admin/AdminEditPostForm/AdminEditPostForm";
 import { deletePostAction, updatePostAction } from "@/lib/posts";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 
