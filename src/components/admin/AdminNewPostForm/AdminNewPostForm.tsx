@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import TiptapEditor, { TiptapEditorHandle } from "../TiptapEditor/TiptapEditor";
 import styles from "./AdminNewPostForm.module.css";
+import Button from "@/components/shared/Button/Button";
 
 type Props = {
   action: (formData: FormData) => Promise<{ slug: string; published: boolean }>;
@@ -73,7 +74,7 @@ export default function AdminNewPostForm({ action }: Props) {
           <span>Publish immediately</span>
         </label>
 
-        <div className={styles.actions}>
+        {/* <div className={styles.actions}>
           <button
             type='submit'
             disabled={pending}
@@ -84,6 +85,15 @@ export default function AdminNewPostForm({ action }: Props) {
           <a href='/admin' className={styles.link}>
             Cancel
           </a>
+        </div> */}
+        <div className={styles.actions}>
+          <Button
+            btnType='lime'
+            type='submit'
+            disabled={pending}
+            text={pending ? "Saving…" : "Save"}
+          />
+          <Button href='/admin' btnType='blackOutline' text='Cancel' />
         </div>
       </form>
     </section>

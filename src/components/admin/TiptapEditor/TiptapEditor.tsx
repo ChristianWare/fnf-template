@@ -1,13 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import styles from "./TiptapEditor.module.css";
 import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
-import styles from "./TiptapEditor.module.css";
+import Listing from "@/components/icons/Listing/Listing";
+import ListOrdered from "@/components/icons/ListOrdered/ListOrdered";
+import ImageIcon from "@/components/icons/ImageIcon/ImageIcon";
+import LinkIcon from "@/components/icons/LinkIcon/LinkIcon";
+import UndoIcon from "@/components/icons/UndoIcon/UndoIcon";
+import RedoIcon from "@/components/icons/RedoIcon/RedoIcon";
 
 export type TiptapEditorHandle = {
   getHTML: () => string;
@@ -33,6 +39,22 @@ function Toolbar({ editor }: { editor: any }) {
 
   return (
     <div className={styles.toolbar}>
+      <div className={styles.toolbarRight}>
+        <button
+          type='button'
+          onClick={() => editor.chain().focus().undo().run()}
+          className={styles.toolbarButton}
+        >
+          <UndoIcon className={styles.listingIconii} />
+        </button>
+        <button
+          type='button'
+          onClick={() => editor.chain().focus().redo().run()}
+          className={styles.toolbarButton}
+        >
+          <RedoIcon className={styles.listingIconii} />
+        </button>
+      </div>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleBold().run()}
@@ -73,14 +95,15 @@ function Toolbar({ editor }: { editor: any }) {
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={styles.toolbarButton}
       >
-        List
+        {/* List */}
+        <Listing className={styles.listingIcon} />
       </button>
       <button
         type='button'
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={styles.toolbarButton}
       >
-        1. List
+        <ListOrdered className={styles.listingIconii} />
       </button>
       <button
         type='button'
@@ -97,27 +120,11 @@ function Toolbar({ editor }: { editor: any }) {
         {"</>"}
       </button>
       <button type='button' onClick={addLink} className={styles.toolbarButton}>
-        Link
+        <LinkIcon className={styles.listingIconii} />
       </button>
       <button type='button' onClick={addImage} className={styles.toolbarButton}>
-        Image
+        <ImageIcon className={styles.listingIconii} />
       </button>
-      <div className={styles.toolbarRight}>
-        <button
-          type='button'
-          onClick={() => editor.chain().focus().undo().run()}
-          className={styles.toolbarButton}
-        >
-          Undo
-        </button>
-        <button
-          type='button'
-          onClick={() => editor.chain().focus().redo().run()}
-          className={styles.toolbarButton}
-        >
-          Redo
-        </button>
-      </div>
     </div>
   );
 }
@@ -163,7 +170,9 @@ const TiptapEditor = forwardRef<TiptapEditorHandle, { initialHTML?: string }>(
     return (
       <div className={styles.editorRoot}>
         <Toolbar editor={editor} />
-        <EditorContent editor={editor} />
+        <div className={styles.editorFrame}>
+          <EditorContent editor={editor} className={styles.editorWrapper} />
+        </div>
       </div>
     );
   }
