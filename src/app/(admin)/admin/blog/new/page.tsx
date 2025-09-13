@@ -9,7 +9,7 @@ export default function NewPostPage() {
   return (
     <div className={styles.container}>
       <LayoutWrapper>
-        <AdminNewPostForm action={createPostAction} />;
+        <AdminNewPostForm action={createPostAction} />
       </LayoutWrapper>
     </div>
   );

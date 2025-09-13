@@ -73,19 +73,6 @@ export default function AdminNewPostForm({ action }: Props) {
           <input name='publish' type='checkbox' />
           <span>Publish immediately</span>
         </label>
-
-        {/* <div className={styles.actions}>
-          <button
-            type='submit'
-            disabled={pending}
-            className={styles.buttonPrimary}
-          >
-            {pending ? "Saving…" : "Save"}
-          </button>
-          <a href='/admin' className={styles.link}>
-            Cancel
-          </a>
-        </div> */}
         <div className={styles.actions}>
           <Button
             btnType='lime'
