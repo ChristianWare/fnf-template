@@ -69,6 +69,11 @@
   padding-right: 1rem;
 }
 
+.blackOutline {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .container:hover .arrow {
     transform: rotate(90deg) translateY(-5px);

@@ -34,7 +34,8 @@
 .heading {
   text-align: center;
   width: 65%;
-  font-size: 4rem;
+  font-size: 3rem;
+  letter-spacing: -1px;
 }
 
 .copy {

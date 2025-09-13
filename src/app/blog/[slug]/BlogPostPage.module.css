@@ -5,15 +5,3 @@
   background-size: calc(10 * 2px) calc(10 * 2px);
   padding: 10rem 0rem;
 }
-
-.heading {
-  margin-bottom: 2rem;
-}
-
-.btnContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  margin-top: 3rem;
-}

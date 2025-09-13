@@ -96,7 +96,6 @@ export default function HowItWorks() {
             <div className={styles.leftContent}>
               <SectionIntroii title='Our Process' />
               <h2 className={styles.heading}>Process for working with us</h2>
-
               <div className={styles.imgContainer}>
                 <AnimatePresence mode='wait'>
                   <motion.div
@@ -111,7 +110,7 @@ export default function HowItWorks() {
                       src={gallery[imageIndex]}
                       alt=''
                       fill
-                      priority={imageIndex === 0}
+                      priority
                       className={styles.img}
                       sizes='(min-width:1068px) 40vw, 100vw'
                     />
