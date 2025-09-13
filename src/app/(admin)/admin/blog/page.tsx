@@ -1,5 +1,4 @@
 import { db } from "@/lib/db";
-// import Link from "next/link";
 import styles from "./AdminBlogList.module.css";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Button from "@/components/shared/Button/Button";
@@ -22,36 +21,31 @@ export default async function AdminBlogList() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className='flex items-center justify-between mb-6'>
-          <h1 className='text-2xl font-bold'>Blog Posts</h1>
-          {/* <Link
-            href='/admin/blog/new'
-            className='rounded-md bg-black px-4 py-2 text-white'
-          >
-            New Post
-          </Link> */}
+          <h1 className={styles.heading}>Blog Posts</h1>
           <Button href='/admin/blog/new' btnType='black' text='New Post +' />
         </div>
-        <ul className='divide-y'>
+        <ul>
           {posts.map((p) => (
-            <li key={p.slug} className='py-3 flex items-center justify-between'>
+            <li key={p.slug}>
               <div>
-                <div className='font-medium'>{p.title}</div>
-                <div className='text-xs text-neutral-500'>
+                <div>{p.title}</div>
+                <div>
                   {p.published ? "Published" : "Draft"} •{" "}
                   {(p.publishedAt ?? p.createdAt).toLocaleDateString()}
                 </div>
               </div>
-              {/* <Link
-                href={`/blog/${p.slug}`}
-                className='text-sm underline underline-offset-4'
-              >
-                View
-              </Link> */}
-              <Button
-                href={`/blog/${p.slug}`}
-                btnType='blackOutline'
-                text='View'
-              />
+              <div className={styles.btnContainer}>
+                <Button
+                  href={`/blog/${p.slug}`}
+                  btnType='blackOutline'
+                  text='View'
+                />
+                <Button
+                  href={`/admin/blog/${p.slug}/edit`}
+                  btnType='lime'
+                  text='edit'
+                />
+              </div>
             </li>
           ))}
         </ul>
