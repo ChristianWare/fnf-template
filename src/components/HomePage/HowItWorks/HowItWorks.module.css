@@ -197,4 +197,12 @@
   .imgContainer {
     height: 30rem;
   }
+
+  .progressTrack {
+    width: 10px;
+  }
+
+  .right {
+    padding-left: 5rem;
+  }
 }

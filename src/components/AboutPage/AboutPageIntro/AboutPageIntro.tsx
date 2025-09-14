@@ -11,7 +11,13 @@ export default function AboutPageIntro() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.imgContainer}>
-            <Image src={Img1} alt='Specialize' fill className={styles.img} />
+            <Image
+              src={Img1}
+              alt='Specialize'
+              fill
+              className={styles.img}
+              priority
+            />
           </div>
           <SectionIntroii title='About us' />
           <h1 className={styles.heading}>

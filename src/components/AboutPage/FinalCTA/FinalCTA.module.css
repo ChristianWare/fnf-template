@@ -45,7 +45,6 @@
   font-size: 2rem;
 }
 
-
 @media screen and (max-width: 1268px) {
   .content {
     grid-template-columns: repeat(1, 1fr);
@@ -69,10 +68,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .parent {
-    margin: 1rem;
-  }
-
   .content {
     padding: 10rem 5rem;
   }

@@ -123,4 +123,14 @@
   .imgContainer {
     height: 30rem;
   }
+
+  .left {
+    gap: 5rem;
+  }
+
+  .card {
+    border-bottom: 1px solid var(--gray);
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 }

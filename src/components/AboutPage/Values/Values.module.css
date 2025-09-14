@@ -66,6 +66,12 @@
   z-index: 3;
   border: none;
   cursor: pointer;
+  color: var(--black);
+}
+
+.leftArrow:active,
+.rightArrow:active {
+  color: var(--black);
 }
 
 .leftArrow {
@@ -119,7 +125,7 @@
   position: absolute;
   inset: 0;
   background: var(--black);
-  opacity: .5;  
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -134,10 +140,10 @@
 }
 
 .titleText {
-  font-size: 2rem;          /* as requested */
+  font-size: 2rem; /* as requested */
   line-height: 1.1;
   font-weight: 700;
-  color: #fff;              /* reads clearly over the tan overlay */
+  color: #fff; /* reads clearly over the tan overlay */
   text-transform: none;
 }
 /* 
@@ -183,5 +189,15 @@
   .rightArrow {
     right: 25%;
     transform: translate(50%, -50%);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .leftArrow,
+  .rightArrow {
+    color: #1a1a18 !important;
+  }
+  .icon {
+    stroke: #1a1a18 !important;
   }
 }

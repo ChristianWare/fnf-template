@@ -13,7 +13,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.imgContainer}>
-              <Image src={Img1} alt='thinking' fill className={styles.img} />
+              <Image src={Img1} alt='thinking' fill className={styles.img} priority />
             </div>
             <SectionIntroii title='Web Development Agency' />
             <h1 className={styles.heading}>
