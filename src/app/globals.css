@@ -219,6 +219,11 @@ button {
     /* line-height: 1.2; */
   }
 
+  h2 {
+    letter-spacing: -1px;
+    /* line-height: 1.2; */
+  }
+
   input,
   textarea,
   select,
