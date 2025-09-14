@@ -5,29 +5,55 @@ import Img2 from "../../../../public/images/alice.jpg";
 import Img3 from "../../../../public/images/charlie.jpg";
 import Img4 from "../../../../public/images/jane.jpg";
 import Img5 from "../../../../public/images/person.jpg";
-import Starii from "@/components/icons/Starii/Starii";
+// import Starii from "@/components/icons/Starii/Starii";
 
 interface Props {
   color?: string;
+  size?: string;
+  orientation?: string;
 }
 
-export default function ImageCluster({ color = "" }: Props) {
+export default function ImageCluster({
+  color = "",
+  size = "",
+  orientation = "",
+}: Props) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles[orientation]}`}>
       <div className={styles.imageCluster}>
-        <Image src={Img1} alt='Adam' className={styles.image} />
-        <Image src={Img2} alt='Alice' className={styles.image} />
-        <Image src={Img3} alt='Charlie' className={styles.image} />
-        <Image src={Img4} alt='Jane' className={styles.image} />
-        <Image src={Img5} alt='Person' className={styles.image} />
-        <div className={styles.starContainer}>
+        <Image
+          src={Img1}
+          alt='Adam'
+          className={`${styles.image} ${styles[size]} `}
+        />
+        <Image
+          src={Img2}
+          alt='Alice'
+          className={`${styles.image} ${styles[size]}`}
+        />
+        <Image
+          src={Img3}
+          alt='Charlie'
+          className={`${styles.image} ${styles[size]}`}
+        />
+        <Image
+          src={Img4}
+          alt='Jane'
+          className={`${styles.image} ${styles[size]} `}
+        />
+        <Image
+          src={Img5}
+          alt='Person'
+          className={`${styles.image} ${styles[size]} `}
+        />
+        {/* <div className={styles.starContainer}>
           <Starii className={styles.icon} />
-        </div>
+        </div> */}
       </div>
       <div className={styles.bottom}>
-        <span className={`${styles.copy} ${styles[color]}`}>
+        <p className={`${styles.copy} ${styles[color]}`}>
           Trusted by 50+ clients (4.9/5)
-        </span>
+        </p>
       </div>
     </div>
   );

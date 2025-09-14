@@ -27,7 +27,7 @@ export default function AboutUs() {
             your business. From initial consultation to final delivery, our team
             is dedicated to ensuring your success.
           </h2>
-          <ImageCluster />
+          {/* <ImageCluster /> */}
           <div className={styles.bottom}>
             <div className={styles.mapDataContainer}>
               {AboutUsData.map((x) => (

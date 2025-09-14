@@ -4,6 +4,7 @@ import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
 
 export default function Hero() {
   return (
@@ -11,6 +12,9 @@ export default function Hero() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
+            <div className={styles.imgContainer}>
+              <Image src={Img1} alt='thinking' fill className={styles.img} />
+            </div>
             <SectionIntroii title='Web Development Agency' />
             <h1 className={styles.heading}>
               Custom booking websites <br /> that actually book
@@ -26,14 +30,15 @@ export default function Hero() {
                 btnType='lime'
                 text='Book your discovery call'
               />
-              <Button href='/about' btnType='grayOutline' text='About us' />
+              {/* <Button href='/about' btnType='grayOutline' text='About us' /> */}{" "}
+              <ImageCluster
+                size='small'
+                orientation='horizontal'
+                color='black'
+              />
             </div>
           </div>
-          <div className={styles.bottom}>
-            <div className={styles.imgContainer}>
-              <Image src={Img1} alt='thinking' fill className={styles.img} />
-            </div>
-          </div>
+          <div className={styles.bottom}></div>
         </div>
       </LayoutWrapper>
     </div>
