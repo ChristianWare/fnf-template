@@ -67,13 +67,6 @@
   }
 }
 
-/* @media screen and (max-width: 1068px) {
-  .imgContainer {
-    width: 300px;
-    height: 300px;
-  }
-} */
-
 @media screen and (max-width: 768px) {
   .copy {
     width: 80%;
@@ -83,6 +76,12 @@
     width: 275px;
     height: 275px;
   }
+
+    .btnContainer {
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 568px) {
@@ -91,8 +90,5 @@
     height: 200px;
   }
 
-  .btnContainer {
-    flex-direction: column;
-    margin-top: 2rem;
-  }
+
 }

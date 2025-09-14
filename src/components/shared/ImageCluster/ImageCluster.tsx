@@ -5,7 +5,7 @@ import Img2 from "../../../../public/images/alice.jpg";
 import Img3 from "../../../../public/images/charlie.jpg";
 import Img4 from "../../../../public/images/jane.jpg";
 import Img5 from "../../../../public/images/person.jpg";
-// import Starii from "@/components/icons/Starii/Starii";
+import Starii from "@/components/icons/Starii/Starii";
 
 interface Props {
   color?: string;
@@ -51,9 +51,18 @@ export default function ImageCluster({
         </div> */}
       </div>
       <div className={styles.bottom}>
-        <p className={`${styles.copy} ${styles[color]}`}>
-          Trusted by 50+ clients (4.9/5)
-        </p>
+        <div className={styles.b1}>
+          <Starii className={styles.icon} />
+          <Starii className={styles.icon} />
+          <Starii className={styles.icon} />
+          <Starii className={styles.icon} />
+          <Starii className={styles.icon} />
+        </div>
+        <div className={styles.b2}>
+          <p className={`${styles.copy} ${styles[color]}`}>
+            Trusted by 50+ clients (4.9/5)
+          </p>
+        </div>
       </div>
     </div>
   );
