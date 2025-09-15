@@ -2,6 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AllProjects.module.css";
 import { projects } from "@/lib/data";
 import Image from "next/image";
+import Link from "next/link";
 // import Button from "@/components/shared/Button/Button";
 
 export default function AllProjects() {
@@ -11,7 +12,7 @@ export default function AllProjects() {
         <div className={styles.container}>
           <div className={styles.mapDataContainer}>
             {projects.map((project, index) => (
-              <div key={index} className={styles.card}>
+              <Link href={`/work/${project.slug}`} key={index} className={styles.card}>
                 <div className={styles.imgContainer}>
                   <Image
                     src={project.src}
@@ -36,7 +37,7 @@ export default function AllProjects() {
                   </a> */}
                   {/* <Button href='/' btnType='grayOutlineii' text='Live Site' /> */}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
