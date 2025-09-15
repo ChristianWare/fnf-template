@@ -13,6 +13,16 @@
   gap: 2rem;
 }
 
+.imgContainer {
+  position: relative;
+  width: 175px;
+  height: 175px;
+}
+
+.img {
+  object-fit: cover;
+}
+
 .heading {
   text-align: center;
 }
@@ -29,7 +39,19 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .imgContainer {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media screen and (max-width: 568px) {
+  .imgContainer {
+    width: 100px;
+    height: 100px;
+  }
+
   .copy {
     width: 100%;
   }
