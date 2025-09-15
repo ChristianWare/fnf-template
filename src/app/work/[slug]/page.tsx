@@ -32,7 +32,7 @@ export default async function WorkDetailsPage({
 
   return (
     <div>
-      <WorkDetailsClient />
+      <WorkDetailsClient project={pjct} />
     </div>
   );
 }

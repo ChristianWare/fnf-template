@@ -80,7 +80,7 @@
   .btnContainer {
     flex-direction: column;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 

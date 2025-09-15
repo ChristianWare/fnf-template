@@ -182,6 +182,8 @@ export const projects = [
       { id: 3, title: "Increase in average order value", desc: "+42%" },
       { id: 4, title: "Growth in year‑over‑year sales", desc: "+92%" },
     ],
+    src2: Project1,
+    src3: Project2,
   },
   {
     id: 2,
@@ -241,6 +243,8 @@ export const projects = [
       { id: 3, title: "Increase in online revenue", desc: "+126%" },
       { id: 4, title: "Avg. time on product page", desc: "3 min 05 s" },
     ],
+    src2: Project1,
+    src3: Project2,
   },
   {
     id: 3,
@@ -300,6 +304,8 @@ export const projects = [
       { id: 3, title: "Increase in average order value", desc: "+89%" },
       { id: 4, title: "Subscription program retention", desc: "92%" },
     ],
+    src2: Project1,
+    src3: Project2,
   },
   {
     id: 4,
@@ -359,6 +365,8 @@ export const projects = [
       { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
       { id: 4, title: "Occupancy lift in slow periods", desc: "+41%" },
     ],
+    src2: Project1,
+    src3: Project2,
   },
 ] as const;
 
