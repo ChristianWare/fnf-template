@@ -16,7 +16,7 @@ export default function PricingPageIntro() {
             Choose the engagement that matches your team size, locations, and
             growth goals.
           </p>
-          <ImageCluster color='black' />
+          <ImageCluster color='black' size="small" />
         </div>
       </LayoutWrapper>
     </section>
