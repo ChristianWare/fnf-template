@@ -1,24 +1,33 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./OurTeam.module.css";
-import Image from "next/image";
-import ChrisImg from "../../../../public/images/chris.png";
+import Image, { StaticImageData } from "next/image";
+
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
-export default function OurTeam() {
+interface Props {
+  backgroundColor?: string;
+  textColor?: string;
+  text: string;
+  src: StaticImageData
+}
+
+export default function OurTeam({
+  backgroundColor = "",
+  textColor = "",
+  text,
+  src
+}: Props) {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${styles[backgroundColor]}`}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <SectionIntroii title='From Founder' />
-
-          <h2 className={styles.heading}>
-            &ldquo;I’m Chris, founder of Fonts & Footers. We focus on building
-            custom booking websites that cut no-shows, speed checkout to under a
-            minute, and turn busywork into predictable, prepaid revenue.&rdquo;
+          <SectionIntroii title='From Founder' color={textColor} />
+          <h2 className={`${styles.heading} ${styles[textColor]}`}>
+            &ldquo;{text}&rdquo;
           </h2>
           <div className={styles.imgContainer}>
-            <Image src={ChrisImg} alt='' className={styles.img} />
+            <Image src={src} alt='' className={styles.img} />
           </div>
           {/* <p className={styles.copy}>
               When you’re growing, you don’t need another pretty website. You

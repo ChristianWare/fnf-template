@@ -7,6 +7,7 @@ import Link from "next/link";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Button from "@/components/shared/Button/Button";
+import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
 
 type Project = (typeof projects)[number];
 
@@ -121,6 +122,18 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
             ))}
           </div>
         </section>
+        <br />
+        <br />
+        <br />
+        <OurTeam
+          text='I’m Chris, founder of Fonts & Footers. We focus on building
+            custom booking websites that cut no-shows, speed checkout to under a
+            minute, and turn busywork into predictable, prepaid revenue.'
+          src={project.src}
+          backgroundColor="black"
+          textColor="tan"
+          // src={project.founderImage}
+        />
       </LayoutWrapper>
     </section>
   );

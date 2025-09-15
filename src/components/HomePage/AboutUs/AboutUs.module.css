@@ -125,8 +125,15 @@
   .mapDataContainer {
     grid-template-columns: 1fr;
   }
+
+  .card {
+    background-color: var(--lighterBlack);
+    border: none;
+  }
+
   .card:last-child {
     grid-column: span 1;
+    border-right: none;
   }
 
   .title,

@@ -5,12 +5,21 @@
   /* padding: 20rem 0rem; */
 }
 
+.black {
+  background-color: var(--lightBlack);
+  border-radius: 20px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3rem;
+}
+
+.tan {
+  color: var(--tan);
 }
 
 .imgContainer {
@@ -62,6 +71,6 @@
   .heading {
     width: 100%;
     font-size: 2.4rem;
-    letter-spacing: -.01px;
+    letter-spacing: -0.01px;
   }
 }

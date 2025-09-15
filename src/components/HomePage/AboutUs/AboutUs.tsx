@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
+// import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
 import { AboutUsData } from "@/lib/data";
 
 export default function AboutUs() {

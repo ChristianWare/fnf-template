@@ -1,6 +1,7 @@
 :root {
   --black: #1a1a18;
   --lightBlack: rgba(42, 42, 39, 0.64);
+  --lighterBlack: #363633a3;
   --gray: #d3d3d2;
   --darkGray: rgb(139, 139, 139);
   --grayii: #706f6f;
@@ -215,7 +216,7 @@ button {
 
   h1 {
     font-size: 6.5vw;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     /* line-height: 1.2; */
   }
 
