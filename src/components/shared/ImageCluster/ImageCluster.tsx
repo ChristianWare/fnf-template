@@ -25,26 +25,31 @@ export default function ImageCluster({
           src={Img1}
           alt='Adam'
           className={`${styles.image} ${styles[size]} `}
+          priority
         />
         <Image
           src={Img2}
           alt='Alice'
           className={`${styles.image} ${styles[size]}`}
+          priority
         />
         <Image
           src={Img3}
           alt='Charlie'
           className={`${styles.image} ${styles[size]}`}
+          priority
         />
         <Image
           src={Img4}
           alt='Jane'
           className={`${styles.image} ${styles[size]} `}
+          priority
         />
         <Image
           src={Img5}
           alt='Person'
           className={`${styles.image} ${styles[size]} `}
+          priority
         />
         {/* <div className={styles.starContainer}>
           <Starii className={styles.icon} />
