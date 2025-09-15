@@ -23,6 +23,7 @@
 
 .copy {
   color: var(--tan);
+  opacity: 0.7;
   width: 450px;
   text-align: center;
   margin-left: auto;
@@ -31,20 +32,20 @@
 
 .imgContainer {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 175px;
+  height: 175px;
 }
 
 .img {
   object-fit: cover;
 }
-
+/* 
 @media screen and (max-width: 1068px) {
   .imgContainer {
     width: 300px;
     height: 300px;
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
   .copy {
@@ -58,6 +59,10 @@
 }
 
 @media screen and (max-width: 568px) {
+   .copy {
+    width: 80%;
+  }
+  
   .imgContainer {
     width: 200px;
     height: 200px;

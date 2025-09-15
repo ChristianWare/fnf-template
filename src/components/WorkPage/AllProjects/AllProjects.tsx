@@ -2,7 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AllProjects.module.css";
 import { projects } from "@/lib/data";
 import Image from "next/image";
-import Button from "@/components/shared/Button/Button";
+// import Button from "@/components/shared/Button/Button";
 
 export default function AllProjects() {
   return (
@@ -12,7 +12,7 @@ export default function AllProjects() {
           <div className={styles.mapDataContainer}>
             {projects.map((project, index) => (
               <div key={index} className={styles.card}>
-                {project.src && (
+                <div className={styles.imgContainer}>
                   <Image
                     src={project.src}
                     alt={project.title}
@@ -21,15 +21,10 @@ export default function AllProjects() {
                     sizes='(max-width: 1068px) 100vw, 50vw'
                     priority={index < 2}
                   />
-                )}
-
-                {/* Dark overlay */}
-                <div className={styles.imgOverlay} />
-
-                {/* Text layer */}
+                </div>
                 <div className={styles.textLayer}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.projectDescription}>{project.h1}</p>
+                  <h3 className={styles.title}>{project.title}</h3>
+                  <p className={styles.desc}>{project.h1}</p>
                   {/* <a
                     href={project.href}
                     className={styles.projectLink}
@@ -39,7 +34,7 @@ export default function AllProjects() {
                   >
                     View Project
                   </a> */}
-                  <Button href='/' btnType='grayOutlineii' text='Live Site' />
+                  {/* <Button href='/' btnType='grayOutlineii' text='Live Site' /> */}
                 </div>
               </div>
             ))}
