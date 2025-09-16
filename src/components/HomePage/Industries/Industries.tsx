@@ -9,6 +9,7 @@ import { projects } from "@/lib/data";
 import Arrow from "@/components/icons/Arrow/Arrow";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
+import Link from "next/link";
 
 export default function Industries() {
   const tripled = useMemo(() => [...projects, ...projects, ...projects], []);
@@ -121,7 +122,7 @@ export default function Industries() {
           onTransitionEnd={handleTransitionEnd}
         >
           {tripled.map((item, i) => (
-            <div key={`${item.id}-${i}`} className={`${styles.card} card`}>
+            <Link href={`/work/${item.slug}`} key={`${item.id}-${i}`} className={`${styles.card} card`}>
               <Image
                 src={item.src}
                 alt={item.title}
@@ -135,7 +136,7 @@ export default function Industries() {
                 <h3 className={styles.feature}>{item.title}</h3>
                 <p className={styles.desc}>{item.h1}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
