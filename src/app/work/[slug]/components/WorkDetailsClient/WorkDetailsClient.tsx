@@ -8,6 +8,8 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Button from "@/components/shared/Button/Button";
 import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
+import Chris from "../../../../../../public/images/chris.jpg";
+import MoreProjects from "@/components/WorkPage/MoreProjects/MoreProjects";
 
 type Project = (typeof projects)[number];
 
@@ -26,7 +28,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
   }
 
   return (
-    <section className={styles.container}>
+    <main className={styles.container}>
       <LayoutWrapper>
         <div className={styles.top}>
           <div className={styles.t1}>
@@ -130,11 +132,46 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
             custom booking websites that cut no-shows, speed checkout to under a
             minute, and turn busywork into predictable, prepaid revenue.'
           src={project.src}
-          backgroundColor="black"
-          textColor="tan"
-          // src={project.founderImage}
+          backgroundColor='black'
+          textColor='tan'
         />
+        <section className={styles.introSection}>
+          <div className={styles.finalBox}>
+            <div className={styles.fb1}>
+              <div className={styles.imgContaineriv}>
+                <Image
+                  src={Chris}
+                  alt={project.title}
+                  fill
+                  className={styles.imgiv}
+                />
+              </div>
+            </div>
+            <div className={styles.fb2}>
+              <div className={styles.fb2a}>
+                <SectionIntroii title='Ready to start?' color='tan' />
+                <div className={styles.fb2Subheading}>
+                  Let’s make something that matters.
+                </div>
+                <p className={styles.fb2copy}>
+                  Chris is here to guide you every step of the way.
+                </p>
+              </div>
+              <div className={styles.fb2b}>
+                <div className={styles.btnContainer}>
+                  <Button
+                    href='/contact'
+                    btnType='greenOutline'
+                    text='Book a call Today'
+                    arrow
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </LayoutWrapper>
-    </section>
+      <MoreProjects excludeSlug={project.slug} />
+    </main>
   );
 }

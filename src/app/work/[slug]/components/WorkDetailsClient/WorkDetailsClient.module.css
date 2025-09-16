@@ -129,6 +129,54 @@
   border-radius: 8px;
 }
 
+.finalBox {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 2rem;
+  width: 100%;
+  background-color: var(--lighterBlack);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.imgContaineriv {
+  position: relative;
+  width: 100%;
+  min-height: 210px;
+}
+
+.imgiv {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.fb2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.fb2a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.fb2Subheading {
+  font-size: 2rem;
+  color: var(--tan);
+}
+
+.fb2copy {
+  color: var(--tan);
+  font-size: 1.6rem;
+  opacity: 0.7;
+}
+
 @media screen and (max-width: 1068px) {
   .t1,
   .t2 {
@@ -147,7 +195,7 @@
 @media screen and (max-width: 768px) {
   .images {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 2rem
+    grid-gap: 2rem;
   }
 }
 
@@ -169,5 +217,20 @@
   .imgContainer {
     margin-top: 1rem;
     height: 250px;
+  }
+
+  .finalBox {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .fb2b {
+    width: 100%;
+  }
+
+  .btnContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
 }

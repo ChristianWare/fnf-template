@@ -6,8 +6,7 @@
 }
 
 .black {
-  background-color: var(--lightBlack);
-  border-radius: 20px;
+  background-color: transparent;
 }
 
 .content {

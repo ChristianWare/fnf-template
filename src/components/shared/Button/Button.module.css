@@ -80,9 +80,9 @@
 }
 
 .greenOutline {
-  border: 1px solid var(--black);
-  background-color: var(--lime);
-  color: var(--black);
+  border: 1px solid var(--lime);
+  background-color: transparent;
+  color: var(--lime) !important;
 }
 
 .tanOutline {
