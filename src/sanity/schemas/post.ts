@@ -19,15 +19,6 @@ export const post = {
       validation: (Rule: Rule) => Rule.required().error("Slug is required"),
     },
     {
-      name: "coverImage",
-      title: "Cover Image",
-      type: "image",
-      options: { hotspot: true },
-      fields: [{ name: "alt", title: "Alt text", type: "string" }],
-      validation: (Rule: Rule) =>
-        Rule.required().error("Cover image is required"),
-    },
-    {
       name: "publishedAt",
       title: "Published At",
       type: "datetime",
@@ -41,6 +32,30 @@ export const post = {
         Rule.max(200).warning("Shorter excerpt is usually better"),
     },
 
+    // ✅ Bring this back:
+    {
+      name: "body",
+      title: "Body",
+      type: "array",
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          fields: [{ name: "alt", title: "Alt text", type: "string" }],
+          options: { hotspot: true },
+        },
+      ],
+    },
+
+    {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      options: { hotspot: true },
+      fields: [{ name: "alt", title: "Alt text", type: "string" }],
+      // optional: make it required if you want
+      // validation: (Rule: Rule) => Rule.required().error("Cover image is required"),
+    },
     {
       name: "tags",
       title: "Tags",

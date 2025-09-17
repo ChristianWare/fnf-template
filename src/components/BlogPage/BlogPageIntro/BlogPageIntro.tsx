@@ -6,7 +6,7 @@ export default function BlogPageIntro() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <h1>Insights & News - comming soon!</h1>
+          <h1>Insights & News</h1>
         </div>
       </LayoutWrapper>
     </section>
