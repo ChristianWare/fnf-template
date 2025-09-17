@@ -51,9 +51,10 @@
   .logo {
     gap: 1rem;
   }
-  
+
   .text {
     font-size: 1.8rem;
+    letter-spacing: -0.5px;
   }
 
   .icon {
