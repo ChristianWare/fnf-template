@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
-import Nav from "@/components/shared/Nav/Nav";
+// import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
+// import Nav from "@/components/shared/Nav/Nav";
 // import { auth } from "../../auth";
 // import { SessionProvider } from "next-auth/react";
 // import styles from "./Layout.module.css";
@@ -69,9 +69,9 @@ export default async function RootLayout({
       <body
         className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
       >
-        <Nav />
+        {/* <Nav /> */}
         {children}
-        <FinalCTA />
+        {/* <FinalCTA /> */}
       </body>
     </html>
     // </SessionProvider>
