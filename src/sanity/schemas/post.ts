@@ -4,7 +4,6 @@ export const post = {
   name: "post",
   title: "Post",
   type: "document",
-
   fields: [
     {
       name: "title",
@@ -16,10 +15,17 @@ export const post = {
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: {
-        source: "title",
-      },
+      options: { source: "title" },
       validation: (Rule: Rule) => Rule.required().error("Slug is required"),
+    },
+    {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      options: { hotspot: true },
+      fields: [{ name: "alt", title: "Alt text", type: "string" }],
+      validation: (Rule: Rule) =>
+        Rule.required().error("Cover image is required"),
     },
     {
       name: "publishedAt",
@@ -34,17 +40,19 @@ export const post = {
       validation: (Rule: Rule) =>
         Rule.max(200).warning("Shorter excerpt is usually better"),
     },
+
     {
-      name: "body",
-      title: "Body",
+      name: "tags",
+      title: "Tags",
       type: "array",
-      of: [
-        { type: "block" },
-        {
-          type: "image",
-          fields: [{ type: "text", name: "alt", title: "Alt" }],
-        },
-      ],
+      of: [{ type: "reference", to: { type: "tag" } }],
+    },
+  ],
+  orderings: [
+    {
+      title: "Publish date, newest first",
+      name: "publishDateDesc",
+      by: [{ field: "publishedAt", direction: "desc" }],
     },
   ],
 };

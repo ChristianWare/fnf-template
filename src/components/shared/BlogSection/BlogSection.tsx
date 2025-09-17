@@ -1,27 +1,94 @@
+// /components/shared/BlogSection/BlogSection.tsx
 import styles from "./BlogSection.module.css";
-import BlogCardOne from "../BlogCardOne/BlogCardOne";
-import BlogCardTwo from "../BlogCardTwo/BlogCardTwo";
 import LayoutWrapper from "../LayoutWrapper";
 import SectionIntroii from "../SectionIntroii/SectionIntroii";
-import Img1 from "../../../../public/images/speed.jpg";
-import Img2 from "../../../../public/images/whydb.jpg";
-import Img3 from "../../../../public/images/ecomm.jpeg";
+import BlogCardOne from "../BlogCardOne/BlogCardOne";
+import BlogCardTwo from "../BlogCardTwo/BlogCardTwo";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 
-export default function BlogSection() {
+type Post = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  excerpt?: string;
+  coverImage?: {
+    _type: "image";
+    asset: { _ref: string; _type: "reference" };
+    alt?: string;
+  };
+};
+
+async function getPosts(): Promise<Post[]> {
+  const query = `
+    *[_type == "post"] | order(publishedAt desc) [0..2]{
+      _id,
+      title,
+      slug,
+      publishedAt,
+      excerpt,
+      coverImage{asset, alt, _type}
+    }
+  `;
+  return client.fetch(query);
+}
+
+export default async function BlogSection() {
+  const posts = await getPosts();
+  const primary = posts[0];
+  const secondary = posts.slice(1, 3);
+
   return (
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
-            <SectionIntroii title='Company insights (comming soon!)' />
+            <SectionIntroii title='Latest insights' />
           </div>
+
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
-              <BlogCardOne src={Img1} />
+              {primary && (
+                <BlogCardOne
+                  post={{
+                    title: primary.title,
+                    href: `/blog/${primary.slug.current}`,
+                    date: primary.publishedAt,
+                    excerpt: primary.excerpt ?? "",
+                    imageUrl: primary.coverImage
+                      ? urlFor(primary.coverImage)
+                          .width(1400)
+                          .height(900)
+                          .fit("crop")
+                          .url()
+                      : undefined,
+                    imageAlt: primary.coverImage?.alt ?? primary.title,
+                  }}
+                />
+              )}
             </div>
+
             <div className={styles.bottomRight}>
-              <BlogCardTwo src={Img2} />
-              <BlogCardTwo src={Img3} />
+              {secondary.map((p) => (
+                <BlogCardTwo
+                  key={p._id}
+                  post={{
+                    title: p.title,
+                    href: `/blog/${p.slug.current}`,
+                    date: p.publishedAt,
+                    excerpt: p.excerpt ?? "",
+                    imageUrl: p.coverImage
+                      ? urlFor(p.coverImage)
+                          .width(800)
+                          .height(600)
+                          .fit("crop")
+                          .url()
+                      : undefined,
+                    imageAlt: p.coverImage?.alt ?? p.title,
+                  }}
+                />
+              ))}
             </div>
           </div>
         </div>
