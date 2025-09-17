@@ -31,7 +31,7 @@ async function getPosts(): Promise<Post[]> {
       coverImage{asset, alt, _type}
     }
   `;
-  return client.fetch(query);
+  return client.fetch(query, {}, { next: { revalidate: 60 } });
 }
 
 export default async function BlogSection() {
