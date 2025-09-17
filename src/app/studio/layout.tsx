@@ -6,8 +6,12 @@ export default function StudioLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' style={{ fontSize: "16px" }}>
-      <body style={{ margin: 0 }}>{children}</body>
-    </html>
+    <>
+      <style>{`
+        html, body, :root { font-size: 16px !important; }
+        body { margin: 0 !important; }
+      `}</style>
+      <div style={{ minHeight: "100svh" }}>{children}</div>
+    </>
   );
 }

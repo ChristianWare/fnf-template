@@ -42,13 +42,7 @@ export const post = {
         { type: "block" },
         {
           type: "image",
-          fields: [
-            {
-              type: "image",
-              name: "alt",
-              title: "Alt",
-            },
-          ],
+          fields: [{ type: "text", name: "alt", title: "Alt" }],
         },
       ],
     },
