@@ -11,6 +11,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
+import MoreInsights from "@/components/BlogPage/MoreInsights/MoreInsights";
 
 type Post = {
   _id: string;
@@ -194,6 +195,7 @@ export default async function BlogPostPage({
           ) : null}
         </article>
       </LayoutWrapper>
+      <MoreInsights currentSlug={post!.slug.current} /> 
       <FinalCTAMain />
     </main>
   );
