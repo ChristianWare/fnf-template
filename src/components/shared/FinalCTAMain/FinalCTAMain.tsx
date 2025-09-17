@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./FinalCTA.module.css";
+import styles from "./FinalCTAMain.module.css";
 // import LayoutWrapper from "../LayoutWrapper";
 import Image from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
@@ -31,7 +31,7 @@ const data3 = [
   },
 ];
 
-export default function FinalCTA() {
+export default function FinalCTAMain() {
   return (
     <section className={styles.parent}>
       <div className={styles.container}>

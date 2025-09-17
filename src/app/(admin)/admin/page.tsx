@@ -5,6 +5,8 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import UserButton from "@/components/dashboard/UserButton/UserButton";
 // import Link from "next/link";
 import Button from "@/components/shared/Button/Button";
+import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 export default async function AdminPage() {
   const session = await auth();
@@ -14,6 +16,7 @@ export default async function AdminPage() {
 
   return (
     <main className={styles.container}>
+      <Nav />
       <LayoutWrapper>
         <div className={styles.content}>
           <h1 className={styles.heading}>Admin Dashboard</h1>
@@ -49,6 +52,7 @@ export default async function AdminPage() {
           </section>
         </div>
       </LayoutWrapper>
+      <FinalCTAMain />
     </main>
   );
 }

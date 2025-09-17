@@ -1,5 +1,7 @@
 import BlogPageIntro from "@/components/BlogPage/BlogPageIntro/BlogPageIntro";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+import Nav from "@/components/shared/Nav/Nav";
 import { db } from "@/lib/db";
 import Link from "next/link";
 
@@ -17,6 +19,7 @@ export default async function BlogPage() {
 
   return (
     <main>
+      <Nav />
       <BlogPageIntro />
       <BlogSection />
       <div className='mx-auto max-w-3xl p-6'>
@@ -46,6 +49,7 @@ export default async function BlogPage() {
           </ul>
         )}
       </div>
+      <FinalCTAMain />
     </main>
   );
 }

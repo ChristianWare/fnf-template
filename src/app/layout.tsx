@@ -4,8 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
 // import Nav from "@/components/shared/Nav/Nav";
-// import { auth } from "../../auth";
-// import { SessionProvider } from "next-auth/react";
+import { auth } from "../../auth";
+import { SessionProvider } from "next-auth/react";
 // import styles from "./Layout.module.css";
 
 const inter = Inter({
@@ -61,19 +61,19 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const session = await auth();
+  const session = await auth();
 
   return (
-    // <SessionProvider session={session}>
-    <html lang='en'>
-      <body
-        className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
-      >
-        {/* <Nav /> */}
-        {children}
-        {/* <FinalCTA /> */}
-      </body>
-    </html>
-    // </SessionProvider>
+    <SessionProvider session={session}>
+      <html lang='en'>
+        <body
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
+        >
+          {/* <Nav /> */}
+          {children}
+          {/* <FinalCTA /> */}
+        </body>
+      </html>
+    </SessionProvider>
   );
 }

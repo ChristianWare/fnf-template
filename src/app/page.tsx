@@ -10,6 +10,7 @@ import WhyDB from "@/components/HomePage/WhyDB/WhyDB";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,7 @@ export default function HomePage() {
       />
       <BlogSection />
       <ContactPageContainer />
+      <FinalCTAMain />
     </main>
   );
 }

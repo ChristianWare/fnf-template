@@ -27,8 +27,9 @@ export default function Hero() {
             </h1>
             <p className={styles.copy}>
               We design and build online booking websites for businesses based
-              in the service industry. Take deposits, prevent no-shows, and let
-              clients self-schedule 24/7.
+              in the service industry.
+               {/* Take deposits, prevent no-shows, and let
+              clients self-schedule 24/7. */}
             </p>
             <div className={styles.btnContainer}>
               <Button

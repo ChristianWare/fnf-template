@@ -7,10 +7,14 @@ import Values from "@/components/AboutPage/Values/Values";
 import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../../public/images/chris.png";
+import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+
 
 export default function AboutPage() {
   return (
     <main>
+      <Nav />
       <AboutPageIntro />
       <BrandStory />
       <FinalCTA />
@@ -24,6 +28,7 @@ export default function AboutPage() {
         src={ChrisImg}
       />{" "}
       <BlogSection />
+      <FinalCTAMain />
     </main>
   );
 }
