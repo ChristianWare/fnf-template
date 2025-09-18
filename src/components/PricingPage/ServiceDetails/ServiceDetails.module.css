@@ -164,9 +164,9 @@
 
 .serviceName {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 300;
   font-family: var(--inter);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
