@@ -94,7 +94,9 @@
 }
 
 .desc {
-  width: 80%;
+  /* width: 80%; */
+  font-size: 1.4rem;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1268px) {

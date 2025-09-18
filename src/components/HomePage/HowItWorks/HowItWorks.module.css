@@ -57,7 +57,7 @@
 
 .right {
   position: relative;
-  padding-left: 10rem;
+  padding-left: 7rem;
 }
 
 .progressTrack {
@@ -84,7 +84,7 @@
     transparent 100%
   );
   border-radius: 999px;
-  /* border: 1px solid var(--black); */
+  border: 1px solid var(--lighterBlack);
   will-change: height, opacity;
 }
 
@@ -99,7 +99,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .isPast::before {
@@ -123,11 +123,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 2px var(--tan), 0 0 0 4px var(--gray);
+  transition: all 0.3s ease-in;
+  box-shadow:
+    0 0 0 2px var(--tan),
+    0 0 0 4px var(--gray);
 }
 
 .isActive .stepIndex {
-  box-shadow: 0 0 0 2px var(--tan), 0 0 0 4px var(--lime);
+  box-shadow:
+    0 0 0 2px var(--tan),
+    0 0 0 4px var(--lime);
 }
 .isActive::before {
   transform: scale(1.1);
@@ -143,7 +148,8 @@
 }
 
 .desc {
-  opacity: 0.9;
+  opacity: 0.6;
+  font-size: 1.4rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

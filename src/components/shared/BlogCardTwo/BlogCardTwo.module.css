@@ -35,4 +35,5 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--grayii);
+  font-size: 1.4rem;
 }

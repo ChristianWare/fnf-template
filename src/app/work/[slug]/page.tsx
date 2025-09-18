@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { projects } from "@/lib/data";
 import WorkDetailsClient from "./components/WorkDetailsClient/WorkDetailsClient";
+import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 type Params = { slug: string };
 
@@ -32,7 +34,9 @@ export default async function WorkDetailsPage({
 
   return (
     <div>
+      <Nav />
       <WorkDetailsClient project={pjct} />
+      <FinalCTAMain />
     </div>
   );
 }

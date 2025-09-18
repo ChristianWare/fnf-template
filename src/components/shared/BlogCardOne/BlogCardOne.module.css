@@ -26,6 +26,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--grayii);
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 768px) {

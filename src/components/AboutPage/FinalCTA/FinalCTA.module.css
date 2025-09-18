@@ -40,9 +40,9 @@
 
 .copy {
   color: var(--tan);
-  width: 90%;
+  width: 80%;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 @media screen and (max-width: 1268px) {

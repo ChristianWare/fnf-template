@@ -54,7 +54,7 @@
 
 .desc {
   color: var(--lightBlack);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .projectLink {
@@ -70,7 +70,10 @@
   color: var(--tan);
   font-size: 1.4rem;
   text-decoration: none;
-  transition: transform 160ms ease, opacity 160ms ease, background 160ms ease;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease,
+    background 160ms ease;
 }
 .projectLink:hover {
   transform: translateY(-1px);

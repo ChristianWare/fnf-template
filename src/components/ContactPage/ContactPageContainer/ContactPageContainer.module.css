@@ -33,7 +33,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .dataItem {
@@ -55,6 +55,11 @@
 
 .subHeadingii {
   margin-top: 2rem;
+}
+
+.itemDesc {
+  font-size: 1.4rem;
+  opacity: 0.7;
 }
 
 .ownerbox {
