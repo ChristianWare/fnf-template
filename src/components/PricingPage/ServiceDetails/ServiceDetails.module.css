@@ -1,13 +1,10 @@
 .container {
-  /* padding-top: 5rem; */
   background-color: var(--tan);
-  padding-bottom: 10rem;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 3rem;
 }
 
 .left {
@@ -26,34 +23,26 @@
 
 .right {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
 }
 
 .card {
   border-radius: 15px;
-  padding: 3rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
+  height: 100%;
+  gap: 5rem;
   position: relative;
   background-color: var(--tan);
   border: 1px solid var(--gray);
 }
 
 .card:nth-child(2) {
-  background-color: var(--darkTan);
-}
-
-.card:nth-child(3) {
-  background-color: var(--darkTan);
-}
-
-.card:nth-child(4) {
   background-color: var(--black);
-  color: var(--tan);
 }
 
 .index {
@@ -66,11 +55,10 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 3rem;
-  margin-bottom: 5rem;
   background-color: var(--darkerTan);
   padding: 2rem;
-  border: 1px solid var(--gray);
   border-radius: 15px;
+  width: 100%;
 }
 
 .cardTopLeft {
@@ -90,24 +78,24 @@
   width: 100%;
 }
 
-.card:nth-child(4) .serviceNameHeading,
-.card:nth-child(4) .price,
-.card:nth-child(4) .descii,
-.card:nth-child(4) .headline,
-.card:nth-child(4) .serviceName,
-.card:nth-child(4) .icon,
-.card:nth-child(4) .descriptionMobile,
-.card:nth-child(4) .title {
+.card:nth-child(2) .serviceNameHeading,
+.card:nth-child(2) .price,
+.card:nth-child(2) .descii,
+.card:nth-child(2) .headline,
+.card:nth-child(2) .serviceName,
+.card:nth-child(2) .icon,
+.card:nth-child(2) .descriptionMobile,
+.card:nth-child(2) .title {
   color: var(--tan);
 }
 
-.card:nth-child(4) .addonSectionTableHeadings {
+.card:nth-child(2) .addonSectionTableHeadings {
   border-bottom: 1px solid var(--tan);
 }
 
-.card:nth-child(4) .cardTop {
-  background-color: var(--lightBlack);
-  border: 1px solid var(--tan);
+.card:nth-child(2) .cardTop {
+  background-color: var(--lighterBlack);
+  /* border: 1px solid var(--tan); */
 }
 
 .price {
@@ -169,7 +157,7 @@
 .serviceCardTopA {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   border-bottom: 1px solid var(--blackii);
   padding-bottom: 2rem;
   width: 100%;
@@ -286,7 +274,7 @@
   grid-gap: 3rem;
 }
 
-.card:nth-child(4) .addonSectionBottomContainer {
+.card:nth-child(2) .addonSectionBottomContainer {
   border: 1px solid var(--tan);
   /* background-color: var(--darkestTan); */
 }
@@ -295,8 +283,8 @@
   color: var(--black);
 }
 
-.card:nth-child(4) .titleii,
-.card:nth-child(4) .info {
+.card:nth-child(2) .titleii,
+.card:nth-child(2) .info {
   color: var(--tan);
 }
 
@@ -348,10 +336,11 @@
     margin-top: 2rem;
   }
 }
+
 @media screen and (max-width: 1268px) {
-  .content,
   .right {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
   }
 
   .copy {
@@ -371,10 +360,6 @@
 }
 
 @media screen and (max-width: 1068px) {
-  /* .right {
-    grid-template-columns: repeat(2, 1fr);
-  } */
-
   .card {
     gap: 3rem;
   }
@@ -404,6 +389,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .right {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .index,
   .serviceNameHeading,
   /* .headline, */

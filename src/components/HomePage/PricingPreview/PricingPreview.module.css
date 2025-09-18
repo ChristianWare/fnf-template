@@ -1,0 +1,53 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.copy {
+  text-align: center;
+  width: 50%;
+  color: var(--grayii);
+}
+
+@media screen and (max-width: 1268px) {
+  .copy {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .copy {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .copy {
+    width: 95%;
+  }
+
+  .btnContainer {
+    display: grid;
+    width: 100%;
+  }
+}

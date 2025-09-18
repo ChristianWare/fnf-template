@@ -373,12 +373,12 @@ export const projects = [
 export const pricingData = [
   {
     id: 1,
-    service: "Solo Starter Booking",
+    service: "Solo",
     headline: "One-person calendar, zero double-bookings",
-    desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with card-on-file payments. Go live in two weeks.",
+    desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with card-on-file payments.",
     descii:
       "Built for independent pros who want to stop back-and-forth scheduling and double-bookings. A branded calendar with deposits, automated reminders, and easy rescheduling reduces no-shows and protects your income. Move from DMs to a reliable, professional booking experience—without the overhead of staff or multiple locations.",
-    price: "$2,900",
+    price: "$375/mo",
     servicesInclude: [
       {
         id: 1.1,
@@ -419,12 +419,12 @@ export const pricingData = [
   },
   {
     id: 2,
-    service: "Team Booking Platform",
+    service: "Team",
     headline: "Up to 15 stylists, trainers, or practitioners—one dashboard",
-    desc: "Built for salons, fitness studios, and clinics where clients choose a staff member and pay a deposit. Launch timeline: four weeks.",
+    desc: "Built for salons, fitness studios, and clinics where clients choose a staff member and pay a deposit.",
     descii:
       "For growing teams—up to 15 stylists, trainers, or practitioners—who need a shared booking hub. Staff get color-coded schedules while admins control deposits and permissions; clients choose their provider at checkout and the front desk manages bookings without touching financial data. Upsells at checkout and Google/365 sync lift revenue and keep availability accurate.",
-    price: "$5,500",
+    price: "$450/mo",
     servicesInclude: [
       {
         id: 2.1,
@@ -472,12 +472,12 @@ export const pricingData = [
   },
   {
     id: 3,
-    service: "Rental Fleet & Inventory Booking",
+    service: "Rental/Fleet",
     headline: "Real-time stock, deposits, and damage-hold authorisations",
-    desc: "For car-hire companies, equipment rental shops, or kayak fleets that rent assets by time or day. Launch timeline: five weeks.",
+    desc: "For car-hire companies, equipment rental shops, or kayak fleets that rent assets by time or day.",
     descii:
       "Built for car hire, equipment shops, and adventure outfitters renting physical assets. Real-time inventory with maintenance/blackout controls prevents overbooking, while Stripe damage-hold pre-authorizations and QR check-in/out streamline handovers and protect revenue. Automated late-return fees and scalable options grow with your fleet.",
-    price: "$6,900",
+    price: "$525/mo",
     servicesInclude: [
       {
         id: 4.1,
@@ -526,12 +526,12 @@ export const pricingData = [
   },
   {
     id: 4,
-    service: "Multi-Location Booking",
+    service: "Multi-Location",
     headline: "One backend, many branches or villas",
-    desc: "Ideal for spa chains, franchise gyms, or vacation-rental portfolios with 2-10 locations. Launch timeline: six weeks.",
+    desc: "Ideal for spa chains, franchise gyms, or vacation-rental portfolios with 2-10 locations.",
     descii:
       "Centralize multiple branches or properties under one backend. Guests pick a location first, while each branch keeps its own pricing, tax, and currency, and HQ tracks utilization and revenue in a single dashboard. Dynamic pricing rules help maximize occupancy as you scale.",
-    price: "$7,900",
+    price: "$650/mo",
     servicesInclude: [
       {
         id: 3.1,
@@ -572,7 +572,7 @@ export const pricingData = [
   },
   {
     id: 5,
-    service: "Custom Enterprise Booking",
+    service: "Custom",
     headline: "Bespoke architecture for unique booking models",
     desc: "For enterprise chains or complex use-cases—think 50+ locations, hybrid rentals, or regulated medical workflows—where off-the-shelf logic won’t cut it. Timeline and cost are scoped after a technical discovery sprint.",
     descii:
@@ -788,8 +788,7 @@ export const AboutUsData = [
       },
       {
         id: 2.4,
-        listItem:
-          "Analytics, SEO schema, and reporting.",
+        listItem: "Analytics, SEO schema, and reporting.",
       },
     ],
   },

@@ -1,75 +1,72 @@
+"use client";
+
 import styles from "./ServiceDetails.module.css";
 import { pricingData } from "@/lib/data";
-import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Check from "@/components/icons/Check/Check";
-import LayoutWrapper from "@/components/shared/LayoutWrapper";
+import Button from "@/components/shared/Button/Button";
+import { usePathname } from "next/navigation";
 
 export default function ServiceDetails() {
+  const pathname = usePathname();
+  const isPricingPage = pathname === "/pricing";
+
+  const data = isPricingPage ? pricingData : pricingData.slice(0, 3);
+
   return (
     <section className={styles.container}>
-      <LayoutWrapper>
-        <div className={styles.content}>
-          <div className={styles.left}>
-            {/* <SectionIntro title='Pricing Plans' />
-            <h2 className={styles.heading}>Packages</h2>
-            <p className={styles.copy}>
-              Transparent pricing for any stage of your business. We offer
-              flexible packages tailored to your needs. No hidden fees. No long
-              term contracts.
-            </p> */}
-          </div>
-          <div className={styles.right}>
-            {pricingData.map((x) => (
-              <div
-                className={styles.card}
-                key={x.id}
-                id={x.service.toLowerCase().replace(/\s+/g, "-")}
-              >
-                <div className={styles.cardTop}>
-                  <div className={styles.cardTopLeft}>
-                    <h3 className={styles.serviceNameHeading}>{x.service}</h3>
-                    <h3 className={styles.price}>{x.price}</h3>
-                  </div>
-                  <div className={styles.cardTopRight}>
-                    <h4 className={styles.descii}>{x.descii}</h4>
-                    <p className={styles.headline}>{x.desc}</p>
-                  </div>
+      <div className={styles.content}>
+        <div className={styles.right}>
+          {data.map((x) => (
+            <div
+              className={styles.card}
+              key={x.id}
+              id={x.service.toLowerCase().replace(/\s+/g, "-")}
+            >
+              <div className={styles.cardTop}>
+                <div className={styles.cardTopLeft}>
+                  <h3 className={styles.serviceNameHeading}>{x.service}</h3>
+                  <h3 className={styles.price}>{x.price}</h3>
                 </div>
-                <div className={styles.servicesCard}>
-                  <div className={styles.servicesCardTop}>
-                    <div className={styles.serviceCardTopA}>
-                      {x.servicesInclude.map((y) => (
-                        <div key={y.serviceName} className={styles.box}>
-                          <h4 className={styles.serviceName}>
-                            <Check className={styles.icon} />
-                            {y.serviceName}
-                          </h4>
-                          <p
+                <div className={styles.cardTopRight}>
+                  {/* <h4 className={styles.descii}>{x.descii}</h4> */}
+                  <p className={styles.headline}>{x.desc}</p>
+                </div>
+              </div>
+              <div className={styles.servicesCard}>
+                <div className={styles.servicesCardTop}>
+                  <div className={styles.serviceCardTopA}>
+                    {x.servicesInclude.map((y) => (
+                      <div key={y.serviceName} className={styles.box}>
+                        <h4 className={styles.serviceName}>
+                          <Check className={styles.icon} />
+                          {y.serviceName}
+                        </h4>
+                        {/* <p
                             className={styles.descriptionMobile}
                             key={y.description}
                           >
                             {y.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className={styles.serviceCardTopB}>
-                      <div className={styles.serviceCardDots}>
-                        <span className={styles.dot}></span>
-                        <span className={styles.dot}></span>
-                        <span className={styles.dot}></span>
-                        <span className={styles.dot}></span>
+                          </p> */}
                       </div>
-                    </div>
-                  </div>
-                  <div className={styles.servicesCardBottom}>
-                    {x.servicesInclude.map((z) => (
-                      <p className={styles.description} key={z.description}>
-                        {z.description}
-                      </p>
                     ))}
                   </div>
-                  <div className={styles.addonSection}>
+                  <div className={styles.serviceCardTopB}>
+                    <div className={styles.serviceCardDots}>
+                      <span className={styles.dot}></span>
+                      <span className={styles.dot}></span>
+                      <span className={styles.dot}></span>
+                      <span className={styles.dot}></span>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.servicesCardBottom}>
+                  {x.servicesInclude.map((z) => (
+                    <p className={styles.description} key={z.description}>
+                      {z.description}
+                    </p>
+                  ))}
+                </div>
+                {/* <div className={styles.addonSection}>
                     <div className={styles.addonSectionTop}>
                       <SectionIntro
                         title='Expansion blocks and price add-ons'
@@ -114,13 +111,19 @@ export default function ServiceDetails() {
                         ))}
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
               </div>
-            ))}
-          </div>
+              <div className={styles.btnContainer}>
+                <Button
+                  href='/pricing'
+                  btnType='grayOutline'
+                  text='Get Started'
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      </LayoutWrapper>
+      </div>
     </section>
   );
 }

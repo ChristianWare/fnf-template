@@ -44,9 +44,16 @@
   background-color: transparent;
   color: var(--black);
 }
+
 .grayOutline {
   background-color: var(--white);
+  border: 1px solid var(--grayii);
+}
+
+.grayOutline:hover {
   border: 1px solid var(--gray);
+  background-color: var(--gray);
+  color: var(--black);
 }
 
 .grayOutlineii {

@@ -11,6 +11,7 @@ import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 
 export default function HomePage() {
   return (
@@ -29,6 +30,7 @@ export default function HomePage() {
             minute, and turn busywork into predictable, prepaid revenue.'
         src={ChrisImg}
       />
+      <PricingPreview />
       <BlogSection />
       <ContactPageContainer />
       <FinalCTAMain />
