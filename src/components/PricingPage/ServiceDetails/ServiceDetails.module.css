@@ -37,8 +37,8 @@
   height: 100%;
   gap: 5rem;
   position: relative;
-  background-color: var(--tan);
-  border: 1px solid var(--gray);
+  background-color: var(--darkTan);
+  /* border: 1px solid var(--gray); */
 }
 
 .card:nth-child(2) {
@@ -55,7 +55,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 3rem;
-  background-color: var(--darkerTan);
+  background-color: var(--tan);
   padding: 2rem;
   border-radius: 15px;
   width: 100%;

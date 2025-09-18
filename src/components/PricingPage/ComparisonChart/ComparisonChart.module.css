@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--tan);
+  background-color: var(--darkerTan);
   padding: 10rem 0rem;
 }
 
@@ -52,6 +52,11 @@
 
 .headerRow .headerCell:nth-child(3) {
   background-color: var(--black);
+}
+
+/* Ensure .planNameii is targeted correctly; for example, if you want the third .headerCell: */
+.headerRow .headerCell:nth-child(3) .planHeadTop .planNameii {
+  color: var(--tan) !important;
 }
 
 .cornerCell {
@@ -123,10 +128,15 @@
   gap: 1rem;
 }
 
-.planName {
+.planName, .planNameii {
   font-size: 2rem;
   font-family: var(--PPNeueMontrealMediumThick);
   color: var(--black);
+}
+
+.planNameii {
+  font-size: 1.6rem;
+  letter-spacing: normal;
 }
 
 .featured {

@@ -79,6 +79,7 @@
 
 .desc {
   color: var(--lightBlack);
+  font-size: 1.4rem;
 }
 
 .bottomRight {

@@ -46,7 +46,8 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.4px;
   font-family: var(--DotSansMedium);
   text-transform: none;
   transition: all 0.2s ease-in;
@@ -55,7 +56,7 @@
 .arrow {
   transform: rotate(45deg);
   font-size: 3rem;
-  color: var(--black);
+  color: var(--darkGray);
   transition: all 0.2s ease-in;
 }
 

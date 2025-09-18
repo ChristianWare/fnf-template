@@ -375,7 +375,7 @@ export const pricingData = [
     id: 1,
     service: "Solo",
     headline: "One-person calendar, zero double-bookings",
-    desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with card-on-file payments.",
+    desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with payments.",
     descii:
       "Built for independent pros who want to stop back-and-forth scheduling and double-bookings. A branded calendar with deposits, automated reminders, and easy rescheduling reduces no-shows and protects your income. Move from DMs to a reliable, professional booking experience—without the overhead of staff or multiple locations.",
     price: "$375/mo",

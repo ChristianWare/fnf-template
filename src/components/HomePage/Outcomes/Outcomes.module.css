@@ -70,6 +70,7 @@
 
 .copy {
   color: var(--tan);
+  width: 90%;
 }
 
 .rightBottom {
@@ -105,6 +106,7 @@
 .desc {
   color: var(--gray);
   opacity: 0.6;
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 1268px) {
@@ -128,6 +130,8 @@
 
   .copy {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .left {

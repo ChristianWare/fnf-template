@@ -138,7 +138,7 @@ export default function ComparisonChart() {
                     className={`${styles.cell} ${styles.headerCell} ${styles.planHead} ${isFeatured ? styles.featured : ""} ${i === plansToRender.length - 1 ? styles.lastHeaderCell : ""}`}
                   >
                     <div className={styles.planHeadTop}>
-                      <h3 className={styles.planName}>{p.price}</h3>
+                      <h3 className={styles.planNameii}>{p.price}</h3>
                     </div>
                   </div>
                 );

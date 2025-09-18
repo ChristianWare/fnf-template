@@ -11,6 +11,8 @@ export default function ServiceDetails() {
   const isPricingPage = pathname === "/pricing";
 
   const data = isPricingPage ? pricingData : pricingData.slice(0, 3);
+  const btnText = isPricingPage ? "Subscribe" : "Learn More";
+  const btnhref = isPricingPage ? "/subscribe" : "/pricing";
 
   return (
     <section className={styles.container}>
@@ -114,11 +116,7 @@ export default function ServiceDetails() {
                   </div> */}
               </div>
               <div className={styles.btnContainer}>
-                <Button
-                  href='/pricing'
-                  btnType='grayOutline'
-                  text='Get Started'
-                />
+                <Button href={btnhref} btnType='grayOutline' text={btnText} />
               </div>
             </div>
           ))}
