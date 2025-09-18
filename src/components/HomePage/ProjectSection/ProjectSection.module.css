@@ -91,6 +91,8 @@
 
 .modalDesc {
   color: var(--black);
+  font-size: 1.4rem;
+  opacity: 0.7;
   width: 80%;
 }
 

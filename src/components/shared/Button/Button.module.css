@@ -47,7 +47,7 @@
 
 .grayOutline {
   background-color: var(--white);
-  border: 1px solid var(--grayii);
+  border: 1px solid var(--grayiii);
 }
 
 .grayOutline:hover {
