@@ -28,13 +28,15 @@
 .mapDataContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--darkGray);
-  border-radius: 10px;
+  grid-gap: 3rem;
+  /* border: 1px solid var(--darkGray); */
 }
 
 .card {
+  border-radius: 10px;
   padding: 3rem;
-  border-right: 1px solid var(--darkGray);
+  background-color: var(--lighterBlack);
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,11 +51,15 @@
 .title {
   color: var(--tan);
   font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
 }
 
 .desc {
   color: var(--tan);
   opacity: 0.6;
+  text-align: center;
+  width: 100%;
 }
 
 .listContainer {
@@ -67,14 +73,14 @@
 }
 
 .listItem {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
   color: var(--tan);
   padding: 2rem 0rem;
-  border-bottom: 1px solid var(--darkGray);
+  border-bottom: 1px solid var(--grayii);
   width: 100%;
 }
 
@@ -95,17 +101,14 @@
 @media screen and (max-width: 1068px) {
   .mapDataContainer {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
     border: none;
   }
 
   .card {
-    border: 1px solid var(--darkGray);
     border-radius: 10px;
   }
 
   .card:last-child {
-    border-right: 1px solid var(--darkGray);
     grid-column: span 2;
   }
 }
@@ -119,11 +122,11 @@
 @media screen and (max-width: 568px) {
   .heading {
     width: 100%;
-    /* text-align: left; */
   }
 
   .mapDataContainer {
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
   }
 
   .card {
