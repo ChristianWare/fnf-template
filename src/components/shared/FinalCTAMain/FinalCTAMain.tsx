@@ -10,7 +10,7 @@ import Logo from "../Logo/Logo";
 import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
 import Instagram from "@/components/icons/Instagram/Instagram";
 import Facebook from "@/components/icons/Facebook/Facebook";
-import { footerData, footerData2 } from "@/lib/data";
+import { footerData } from "@/lib/data";
 import Link from "next/link";
 
 const data3 = [
@@ -67,9 +67,13 @@ export default function FinalCTAMain() {
                     <div className={styles.title}>{x.title}</div>
                     <ul className={styles.optionList}>
                       {x.options.map((y) => (
-                        <li key={y.id} className={styles.option}>
-                          {y.option}
-                        </li>
+                        <Link
+                          key={y.id}
+                          href={y.href}
+                          className={styles.optionLink}
+                        >
+                          <li className={styles.option}>{y.option}</li>
+                        </Link>
                       ))}
                     </ul>
                   </div>
@@ -81,11 +85,14 @@ export default function FinalCTAMain() {
                 <small className={styles.small}>© 2025 Fonts & Footers</small>
               </div>
               <div className={styles.footerBottomRight}>
-                {footerData2.map((x) => (
+                {/* {footerData2.map((x) => (
                   <small key={x.id} className={styles.small}>
                     {x.title}
                   </small>
-                ))}
+                ))} */}
+                <small className={styles.small}>
+                  This site was designed and developed by Fonts & Footers
+                </small>
               </div>
             </div>
             <div className={styles.footerSocials}>

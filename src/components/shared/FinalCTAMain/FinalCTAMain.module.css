@@ -118,7 +118,6 @@
 
 .small {
   color: var(--lightBlack);
-  white-space: nowrap;
 }
 
 .footerBottomRight {
@@ -213,7 +212,8 @@
     justify-content: center;
   }
 
-  .copy {
+  .copy,
+  .small {
     text-align: center;
   }
 

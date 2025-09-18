@@ -114,14 +114,7 @@ export default function Features() {
           <div className={styles.sectionHeadingContainer}>
             <SectionIntroii title='Features' />
           </div>
-          <h2 className={styles.heading}>
-            What we provide <br />
-            in all of our projects
-          </h2>
-          <span className={styles.copy}>
-            {/* Everything you need to fill calendars and cut no-shows */}
-            Every plan comes with....
-          </span>
+          <h2 className={styles.heading}>Core features in every plan</h2>
         </div>
 
         <div className={styles.parent}>

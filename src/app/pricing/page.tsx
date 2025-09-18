@@ -20,8 +20,8 @@ export default function PricingPage() {
           </div>
         </LayoutWrapper>
       </section>
-      <ComparisonChart />
       <Features />
+      <ComparisonChart />
       <BlogSection />
       <ContactPageContainer />
       <FinalCTAMain />

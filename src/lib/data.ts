@@ -34,72 +34,85 @@ export const process = [
 export const footerData = [
   {
     id: 1,
-    title: "Services",
+    title: "Quick Links",
     options: [
       {
         id: 1.1,
-        option: "Web Design",
+        option: "Home",
+        href: "/",
       },
-      {
-        id: 1.2,
-        option: "Web Development",
-      },
+      // {
+      //   id: 1.2,
+      //   option: "About",
+      // },
       {
         id: 1.3,
-        option: "Branding",
+        option: "Work",
+        href: "/work",
       },
       {
         id: 1.4,
-        option: "SEO Optimization",
+        option: "Pricing",
+        href: "/pricing",
       },
       {
         id: 1.5,
-        option: "Maintenance & Support",
+        option: "Blog",
+        href: "/blog",
       },
+      // {
+      //   id: 1.6,
+      //   option: "Contact",
+      // },
     ],
   },
   {
     id: 2,
-    title: "About",
+    title: "Legal",
     options: [
       {
         id: 2.1,
-        option: "Our Team",
+        option: "Terms and Conditions",
+        href: "/terms",
       },
       {
         id: 2.2,
-        option: "Portfolio",
+        option: "Privacy Policy",
+        href: "/privacy",
       },
       {
         id: 2.3,
-        option: "Testimonials",
+        option: "Accessibility",
+        href: "/accessibility",
       },
-      {
-        id: 2.4,
-        option: "Careers",
-      },
+      // {
+      //   id: 2.4,
+      //   option: "Careers",
+      // },
     ],
   },
   {
     id: 3,
-    title: "Contact",
+    title: "Company",
     options: [
       {
         id: 3.1,
-        option: "hello@fontsandfooters.com",
+        option: "Contact Us",
+        href: "/contact",
       },
       {
         id: 3.2,
-        option: "Request a Quote",
+        option: "About",
+        href: "/about",
       },
-      {
-        id: 3.3,
-        option: "Support",
-      },
-      {
-        id: 3.4,
-        option: "FAQs",
-      },
+      // {
+      //   id: 3.3,
+      //   option: "Support",
+      // },
+      // {
+      //   id: 3.4,
+      //   option: "FAQs",
+      // },
     ],
   },
 ];

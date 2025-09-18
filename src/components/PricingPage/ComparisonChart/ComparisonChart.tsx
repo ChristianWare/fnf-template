@@ -86,6 +86,7 @@ export default function ComparisonChart() {
     <div className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
+          <h2 className={styles.heading}>Compare Plans</h2>
           <div className={styles.mobileTabs}>
             {plans.map((p, i) => (
               <button
