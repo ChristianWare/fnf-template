@@ -126,24 +126,25 @@ const ptComponents: PortableTextComponents = {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPost(params.slug);
+  const { slug } = await params; // 👈 await the promised params
+  const post = await getPost(slug);
 
   if (!post?._id) {
     notFound();
   }
 
-  const prettyDate = new Date(post!.publishedAt).toLocaleDateString("en-US", {
+  const prettyDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
     month: "long",
     day: "2-digit",
     year: "numeric",
   });
 
-  const coverSrc = post?.coverImage
+  const coverSrc = post.coverImage
     ? urlFor(post.coverImage).width(2000).height(1200).fit("crop").url()
     : undefined;
-
+    
   return (
     <main className={styles.container}>
       <Nav />
@@ -195,7 +196,7 @@ export default async function BlogPostPage({
           ) : null}
         </article>
       </LayoutWrapper>
-      <MoreInsights currentSlug={post!.slug.current} /> 
+      <MoreInsights currentSlug={post!.slug.current} />
       <FinalCTAMain />
     </main>
   );

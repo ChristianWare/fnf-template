@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { verifyEmail } from "../../../../actions/auth/email-verification";
+import { verifyEmail } from "../../../../actions/auth/email-verification"; 
 import Alert from "@/components/shared/Alert/Alert";
 import Button from "@/components/shared/Button/Button";
 
