@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FalseButton from "../FalseButton/FalseButton";
+import Button from "../Button/Button";
 
 interface Inputs {
   firstName: string;
@@ -241,10 +242,15 @@ export default function ContactForm() {
       </div>
 
       {/* Real submit for keyboard/AT; FalseButton handles visuals */}
-      <button type='submit' style={{ display: "none" }} aria-hidden />
+      {/* <button type='submit' style={{ display: "none" }} aria-hidden /> */}
 
       <div className={styles.btnBtnContainer}>
-        <FalseButton text={loading ? "Sending..." : "Submit"} btnType='lime' />
+        <Button
+          type='submit'
+          btnType='lime'
+          disabled={loading}
+          text={loading ? "Sending..." : "Submit"}
+        />
       </div>
     </form>
   );
