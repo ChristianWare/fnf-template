@@ -48,19 +48,24 @@
   display: contents;
 }
 
-.headerRow .headerCell {
+
+
+.headerRow .headerCell,
+.headerRowii .headerCell {
   position: sticky;
   top: 0;
   z-index: 3;
   background: var(--tan);
 }
 
-.headerRow .headerCell:nth-child(3) {
+.headerRow .headerCell:nth-child(3),
+.headerRowii .headerCell:nth-child(3) {
   background-color: var(--black);
 }
 
 /* Ensure .planNameii is targeted correctly; for example, if you want the third .headerCell: */
-.headerRow .headerCell:nth-child(3) .planHeadTop .planNameii {
+.headerRow .headerCell:nth-child(3) .planHeadTop .planNameii,
+.headerRowii .headerCell:nth-child(3) .planHeadTop .planNameii {
   color: var(--tan) !important;
 }
 
@@ -133,7 +138,8 @@
   gap: 1rem;
 }
 
-.planName, .planNameii {
+.planName,
+.planNameii {
   font-size: 2rem;
   font-family: var(--PPNeueMontrealMediumThick);
   color: var(--black);

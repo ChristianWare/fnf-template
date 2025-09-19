@@ -124,7 +124,7 @@ export default function ComparisonChart() {
                 );
               })}
             </div>
-            <div className={`${styles.row} ${styles.headerRow}`}>
+            <div className={`${styles.row} ${styles.headerRowii}`}>
               <div
                 className={`${styles.cell} ${styles.headerCell} ${styles.featureColHead} ${styles.cornerCell}`}
               >
