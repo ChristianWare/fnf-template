@@ -33,14 +33,7 @@ export default function AboutUs() {
               {AboutUsData.map((x) => (
                 <div key={x.id} className={styles.card}>
                   <h3 className={styles.title}>{x.title}</h3>
-                  <p className={styles.desc}>{x.desc}</p>
-                  <ul className={styles.listContainer}>
-                    {x.list.map((y) => (
-                      <li key={y.id} className={styles.listItem}>
-                        <span className={styles.dot}>•</span> {y.listItem}
-                      </li>
-                    ))}
-                  </ul>
+                  
                 </div>
               ))}
             </div>

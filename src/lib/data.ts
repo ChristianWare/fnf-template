@@ -761,75 +761,32 @@ export const questions = [
 export const AboutUsData = [
   {
     id: 1,
-    title: "Starting",
+    title: "Booking System",
     desc: "Within a set budget, we launch fast and learn quickly.",
-    list: [
-      {
-        id: 1.1,
-        listItem: "Spin up a booking demo",
-      },
-      {
-        id: 1.2,
-        listItem: "Build a minimum viable booking site",
-      },
-      {
-        id: 1.3,
-        listItem: "Experiment with deposits, add-ons, and pricing",
-      },
-      {
-        id: 1.4,
-        listItem: "Iterate toward service–market fit",
-      },
-    ],
   },
   {
     id: 2,
-    title: "Growth",
+    title: "Appointment Alerts",
     desc: "Scale what works so you can focus on your craft",
-    list: [
-      {
-        id: 2.1,
-        listItem: "Upgraded site architecture",
-      },
-      {
-        id: 2.2,
-        listItem: "Memberships, packages, gift cards, waitlists",
-      },
-      {
-        id: 2.3,
-        listItem: "Reminders, policy capture, and calendar sync",
-      },
-      {
-        id: 2.4,
-        listItem: "Analytics, SEO schema, and reporting.",
-      },
-    ],
   },
   {
     id: 3,
-    title: "Enterprise",
+    title: "No-show Protection",
     desc: "Multi-location/team operations",
-    list: [
-      {
-        id: 3.1,
-        listItem: "Direct-booking transformation",
-      },
-      {
-        id: 3.2,
-        listItem: "Centralized roles/permissions",
-      },
-      {
-        id: 3.3,
-        listItem: "Advanced reporting ",
-      },
-      {
-        id: 3.4,
-        listItem: "Booking Lab",
-      },
-      {
-        id: 3.5,
-        listItem: "Compliance-friendly setups",
-      },
-    ],
+  },
+  {
+    id: 4,
+    title: "Staff Scheduling & Management",
+    desc: "Assign staff or manager roles to your team members and let them manage their own schedules, leaves, etc. ",
+  },
+  {
+    id: 5,
+    title: "Reports and Analytics",
+    desc: "Gain insights into your business performance with comprehensive reporting tools.",
+  },
+  {
+    id: 6,
+    title: "Payments",
+    desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
   },
 ] as const;
