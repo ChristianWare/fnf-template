@@ -1,3 +1,4 @@
+import ContactPageContainer from "@/components/ContactPage/ContactPageContainer/ContactPageContainer";
 import Faq from "@/components/Faq/Faq";
 import FAQPageIntro from "@/components/FAQPage/FAQPageIntro/FAQPageIntro";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
@@ -9,6 +10,7 @@ export default function FAQPage() {
       <Nav />
       <FAQPageIntro />
       <Faq />
+      <ContactPageContainer />
       <FinalCTAMain />
     </main>
   );
