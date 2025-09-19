@@ -62,6 +62,7 @@
   position: relative;
   width: 150px;
   height: 150px;
+  opacity: 0.5;
 }
 
 .img {
@@ -107,11 +108,11 @@
     width: 100%;
     text-align: left;
   }
-/* 
+  
   .span {
     margin-left: auto;
     margin-right: auto;
-  } */
+  }
 
   .mapDataContainer {
     display: flex;
@@ -132,12 +133,14 @@
   }
 
   .imgContainer {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .btnContainer {
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
   }
 }
