@@ -3,11 +3,28 @@
   padding: 1rem;
   background-image: radial-gradient(#efeded 2px, transparent 2px);
   background-size: calc(10 * 2px) calc(10 * 2px);
-    padding-top: 10rem;
-
+  padding-top: 10rem;
 }
 
 .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.copy {
+  width: 90%;
+  color: var(--grayii2);
+}
+
+.right {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,24 +32,30 @@
   gap: 2rem;
 }
 
-.heading {
-  text-align: center;
-}
-
-.copy {
-  text-align: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .imgContainer {
   position: relative;
-width: 175px;
-  height: 175px;
+  width: 300px;
+  height: 300px;
 }
 
 @media screen and (max-width: 1268px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    width: 80%;
+  }
+
   .copy {
     width: 60%;
   }
@@ -52,10 +75,11 @@ width: 175px;
 }
 
 @media screen and (max-width: 568px) {
+  .heading,
   .copy {
     width: 100%;
   }
-  
+
   .imgContainer {
     width: 175px;
     height: 175px;

@@ -12,26 +12,26 @@ import Lightning from "@/components/icons/Lightning/Lightning";
 const data = [
   {
     id: 1,
-    title: "Respect time",
-    desc: "We value your time and ours—efficiency is built into every step.",
+    title: "Win back hours",
+    desc: "Automated reminders, reschedules, and no-show rules keep your calendar full without the back-and-forth.",
     icon: <Clock className={styles.icon} />,
   },
   {
     id: 2,
-    title: "Output > effort",
-    desc: "Results matter more than hours logged. We focus on what moves the needle.",
+    title: "Book more, charge smarter",
+    desc: "Deposits, packages, memberships—and Buy Now, Pay Later—to boost conversion and average order value.",
     icon: <Lightning className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Clarity converts",
-    desc: "Clear communication and design drive action and trust.",
+    title: "Clarity that converts",
+    desc: "Crystal-clear menus, policies, and one-screen checkout reduce friction and build trust.",
     icon: <Listing className={styles.icon} />,
   },
   {
     id: 4,
-    title: "Small by design",
-    desc: "Lean teams mean faster pivots, less overhead, and more attention to you.",
+    title: "Premium, on-brand",
+    desc: "A fast, mobile-first site that looks as good as your work—so every visit feels top-shelf.",
     icon: <Design className={styles.icon} />,
   },
 ];
@@ -43,20 +43,27 @@ export default function BrandStory() {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.leftTop}>
-              <SectionIntroii title='Brand story' />
+              <SectionIntroii title='Built for busy service pros' />
               <h2 className={styles.heading}>
-                Fonts = the face of your brand. <br /> Footers = the foundation
-                under it.{" "}
+                More high-value bookings. <br /> Less admin.
               </h2>
               <p className={styles.copy}>
-                Together, we ship booking websites that feel premium, run fast,
-                and quietly handle availability, policies, payments, and
-                reminders—so you can focus on the work only you can do.
+                Launch a conversion-first booking site that quietly handles
+                availability, deposits, reminders, and Buy Now, Pay Later—so you
+                can focus on your craft, not your calendar. Want the
+                play-by-play? Learn how BNPL helps close bigger services without
+                slowing cash flow.
               </p>
               <div className={styles.btnContainer}>
-                <Button href='/' btnType='grayOutline' text='Contact us' />
+                {/* <Button href='/demo' text='Get demo' /> */}
+                <Button
+                  href='/start'
+                  btnType='grayOutline'
+                  text='Schedule a discovery call'
+                />
               </div>
             </div>
+
             <div className={styles.leftBottom}>
               <div className={styles.mapDataBox}>
                 {data.map((item) => (
@@ -71,9 +78,16 @@ export default function BrandStory() {
               </div>
             </div>
           </div>
+
           <div className={styles.right}>
             <div className={styles.imgContainer}>
-              <Image src={Img1} fill alt='' title='' className={styles.img} />
+              <Image
+                src={Img1}
+                fill
+                alt='Client reviewing a full calendar of confirmed bookings'
+                title='High-value bookings without the busywork'
+                className={styles.img}
+              />
             </div>
           </div>
         </div>
