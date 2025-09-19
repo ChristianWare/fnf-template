@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import styles from "./ContactForm.module.css";
@@ -23,7 +24,7 @@ const serviceOptions = [
   "Multi-Location Booking",
   "Rental Fleet & Inventory",
   "Custom enterprise solution",
-];
+] as const;
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,18 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      siteUrl: "",
+      projectDescription: "",
+      services: [],
+    },
+    mode: "onBlur",
+  });
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
@@ -45,34 +57,42 @@ export default function ContactForm() {
   };
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    setLoading(true);
-    // Include selected services
-    const formData = {
-      ...data,
-      services: selectedServices,
-    };
+    try {
+      setLoading(true);
 
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(formData),
-    }).then((res) => res.json());
+      const formData: Inputs = {
+        ...data,
+        services: selectedServices,
+      };
 
-    if (response.messageId) {
-      toast.success("Thanks! I'll be in touch soon 😎");
-    } else {
-      toast.error("Opps! Please try again");
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const json = await res.json();
+
+      if (res.ok && json?.messageId) {
+        toast.success("Thanks! We'll be in touch soon.");
+        reset();
+        setSelectedServices([]);
+      } else {
+        toast.error("Oops! Please try again.");
+      }
+    } catch (e) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
-
-    reset();
-    setSelectedServices([]);
-    setLoading(false);
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      {/* <div className={styles.cornerContainer}>
-        <Corner />
-      </div> */}
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit(onSubmit)}
+      aria-busy={loading}
+    >
       <div className={styles.namesContainer}>
         <div className={styles.labelInputBox}>
           <label htmlFor='firstName'>
@@ -81,12 +101,17 @@ export default function ContactForm() {
           <input
             id='firstName'
             type='text'
+            placeholder='Jane'
+            maxLength={120}
             {...register("firstName", { required: true })}
+            aria-invalid={!!errors.firstName || undefined}
+            disabled={loading}
           />
           {errors.firstName && (
             <span className={styles.error}>*** First Name is required</span>
           )}
         </div>
+
         <div className={styles.labelInputBox}>
           <label htmlFor='lastName'>
             Last Name <span className={styles.required}>*</span>
@@ -94,21 +119,28 @@ export default function ContactForm() {
           <input
             id='lastName'
             type='text'
+            placeholder='Doe'
+            maxLength={120}
             {...register("lastName", { required: true })}
+            aria-invalid={!!errors.lastName || undefined}
+            disabled={loading}
           />
           {errors.lastName && (
             <span className={styles.error}>*** Last Name is required</span>
           )}
         </div>
       </div>
+
       <div className={styles.everythingElse}>
         <div className={styles.labelInputBox}>
           <label htmlFor='email'>
             Email <span className={styles.required}>*</span>
           </label>
           <input
-            id='senderEmail'
+            id='email'
             type='email'
+            placeholder='So we can respond. We won&#39;t send you spam.'
+            maxLength={320}
             {...register("email", {
               required: true,
               pattern: {
@@ -116,11 +148,13 @@ export default function ContactForm() {
                 message: "Entered value does not match email format",
               },
             })}
-            placeholder='So we can respond. We won&#39;t send you spam.'
-            maxLength={500}
+            aria-invalid={!!errors.email || undefined}
+            disabled={loading}
           />
           {errors.email && (
-            <span className={styles.error}>*** Email is required</span>
+            <span className={styles.error}>
+              *** {errors.email.message || "Email is required"}
+            </span>
           )}
         </div>
 
@@ -129,20 +163,33 @@ export default function ContactForm() {
           <input
             id='company'
             type='text'
-            {...register("company")}
             placeholder='Your company name (if applicable)'
-            maxLength={500}
+            maxLength={200}
+            {...register("company")}
+            disabled={loading}
           />
         </div>
+
         <div className={styles.labelInputBox}>
           <label htmlFor='siteUrl'>Current booking URL</label>
           <input
             id='siteUrl'
             type='url'
-            {...register("siteUrl")}
             placeholder='https://example.com/book'
             maxLength={500}
+            {...register("siteUrl", {
+              pattern: {
+                // basic URL pattern; keeps it lenient
+                value: /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$/i,
+                message: "Please enter a valid URL",
+              },
+            })}
+            aria-invalid={!!errors.siteUrl || undefined}
+            disabled={loading}
           />
+          {errors.siteUrl?.message && (
+            <span className={styles.error}>*** {errors.siteUrl.message}</span>
+          )}
         </div>
 
         <div className={styles.labelInputBox}>
@@ -151,9 +198,11 @@ export default function ContactForm() {
           </label>
           <textarea
             id='projectDescription'
+            placeholder='Tell us about your booking challenges or goals.'
             maxLength={5000}
             {...register("projectDescription", { required: true })}
-            placeholder='Tell us about your booking challenges or goals.'
+            aria-invalid={!!errors.projectDescription || undefined}
+            disabled={loading}
           />
           {errors.projectDescription && (
             <span className={styles.error}>
@@ -161,34 +210,39 @@ export default function ContactForm() {
             </span>
           )}
         </div>
+
         <div className={styles.servicesSection}>
           <label className={styles.servicesLabel}>
             What can we help you with?
           </label>
 
-            <div className={styles.serviceCheckboxes}>
+          <div className={styles.serviceCheckboxes}>
             {serviceOptions.map((service) => {
               const checked = selectedServices.includes(service);
-
               return (
-              <div key={service} className={styles.checkboxContainer}>
-                <input
-                type='checkbox'
-                id={service}
-                value={service}
-                checked={checked}
-                onChange={() => toggleService(service)}
-                className={styles.checkbox}
-                />
-                <label htmlFor={service} className={styles.checkboxLabel}>
-                {service}
-                </label>
-              </div>
+                <div key={service} className={styles.checkboxContainer}>
+                  <input
+                    type='checkbox'
+                    id={service}
+                    value={service}
+                    checked={checked}
+                    onChange={() => toggleService(service)}
+                    className={styles.checkbox}
+                    disabled={loading}
+                  />
+                  <label htmlFor={service} className={styles.checkboxLabel}>
+                    {service}
+                  </label>
+                </div>
               );
             })}
-            </div>
+          </div>
         </div>
       </div>
+
+      {/* Real submit for keyboard/AT; FalseButton handles visuals */}
+      <button type='submit' style={{ display: "none" }} aria-hidden />
+
       <div className={styles.btnBtnContainer}>
         <FalseButton text={loading ? "Sending..." : "Submit"} btnType='lime' />
       </div>
