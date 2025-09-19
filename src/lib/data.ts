@@ -1,7 +1,7 @@
-import Project1 from "../../public/images/equipment.jpg";
+import Project1 from "../../public/images/thunder.jpg";
 import Project2 from "../../public/images/road.webp";
 import Project3 from "../../public/images/dog.jpg";
-import Project4 from "../../public/images/erRentals.png";
+import Project4 from "../../public/images/er.png";
 import BookingSystem from "../../public/images/bookingSystemii.png";
 import AppointmentAlerts from "../../public/images/AppointmentAlerts.png";
 import NoShow from "../../public/images/NoShow.png";
@@ -142,61 +142,59 @@ export const footerData2 = [
 export const projects = [
   {
     id: 1,
-    title: "Thundertrails",
+    title: "Thundertrails Bike Rentals",
     slug: "thundertrails",
     src: Project1,
-    video: "/videos/thunder.mp4",
     description:
-      "Passion for mountain biking, outdoor adventure, and premium gear inspired the founders of Thundertrails to launch their specialized bike shop in 2019. What began as a local favorite for cycling enthusiasts has rapidly grown into one of the region's premier destinations for high-performance mountain bikes and accessories. With a loyal customer base and growing reputation, Thundertrails needed a digital presence that matched their in-store experience and could support their expansion plans.",
+      "Thundertrails started in 2019 renting premium mountain and e-bikes to riders exploring desert singletrack and high-country trails. Demand outgrew their manual, message-based booking flow—double-bookings, missed deposits, and no-shows were common. We built a direct-booking platform that fills calendars (not inboxes) with real-time availability, deposits, and guided add-ons like helmet, rack, or child-seat rentals.",
     tags: [
-      {
-        id: 1.98,
-        tag: "Ecommerce",
-      },
-      {
-        id: 1.99,
-        tag: "Online Shop",
-      },
+      { id: 1.98, tag: "Bike Rentals" },
+      { id: 1.99, tag: "Booking Platform" },
     ],
-    h1: "Revolutionizing Thundertrails' online presence with a cutting-edge ecommerce platform",
+    h1: "From DMs to deposits: a direct-booking system for premium bike rentals",
     year: 2025,
-    platform: "Wix E-commerce",
-    tech: "Next.js",
+    platform: "Direct Booking",
+    tech: "Next.js + Stripe + iCal/Google Sync + Twilio",
     href: "https://thunder-wix.vercel.app/",
     challenge: [
       {
         id: 1.1,
         challengeDetail:
-          "Thundertrails' previous website was outdated, with limited functionality and poor performance that failed to showcase their premium bike collection properly. The slow loading times and clunky navigation were frustrating customers and limiting online sales potential. The brand needed a robust digital solution that could handle complex product configurations while delivering an exceptional user experience.",
+          "Inventory conflicts and double-bookings across walk-ins, phone calls, and marketplace listings. No centralized calendar or automated cutoff for same-day rentals.",
       },
       {
         id: 1.2,
         challengeDetail:
-          "We completely overhauled the website architecture and design to create an immersive digital showroom for their bikes and accessories. The new design incorporates dynamic product visualization, interactive bike customization tools, and seamless integration with their inventory management system. Every aspect of the user interface was crafted to highlight the technical specifications and quality that Thundertrails' products are known for.",
+          "High no-show rate due to pay-at-pickup; staff spent hours chasing confirmations and manual waivers.",
       },
       {
         id: 1.3,
         challengeDetail:
-          "Beyond products, Thundertrails has always been deeply connected to the mountain biking community, sponsoring events and producing trail guides. The previous website couldn't effectively feature this content. We developed a content strategy that integrates their blog, event calendar, and trail maps with the shopping experience, strengthening customer engagement and establishing Thundertrails as an authority in the mountain biking world.",
+          "Upsells (protective gear, racks, premium batteries) were offered ad-hoc and rarely captured at checkout.",
       },
     ],
     results: [
       {
         id: 1.4,
         resultDetail:
-          "The new ecommerce platform dramatically improved performance metrics across the board. Page load times decreased by 65% (based on Largest Contentful Paint measurements), while the conversion rate increased by 38%. The enhanced product visualization and customization features contributed to a 42% increase in average order value, and overall sales grew by 92% compared to the previous year.",
+          "Introduced deposit-secured checkout with automated SMS/email reminders and e-waivers. No-shows down 62%; waiver completion before pickup up 94%.",
       },
       {
         id: 1.5,
         resultDetail:
-          "Thundertrails has successfully elevated its brand positioning in the digital space, aligning with its premium in-store experience. The integrated content strategy has boosted organic traffic by 55% and increased newsletter signups by 143%. The platform's scalable architecture now provides Thundertrails with the foundation they need to expand their online presence nationally while maintaining the personalized service their customers expect.",
+          "Live inventory with per-model buffers and blackout windows eliminated conflicts. Staff scheduling and maintenance holds sync to Google Calendar.",
+      },
+      {
+        id: 1.6,
+        resultDetail:
+          "In-flow add-ons increased average order value by 37%. Guided trail add-ons and damage-waiver toggle boosted attachment rate to 58%.",
       },
     ],
     stats: [
-      { id: 1, title: "Decrease in page‑load time", desc: "‑65%" },
-      { id: 2, title: "Lift in conversion rate", desc: "+38%" },
-      { id: 3, title: "Increase in average order value", desc: "+42%" },
-      { id: 4, title: "Growth in year‑over‑year sales", desc: "+92%" },
+      { id: 1, title: "No-show reduction", desc: "-62%" },
+      { id: 2, title: "Increase in AOV", desc: "+37%" },
+      { id: 3, title: "Waivers completed pre-arrival", desc: "94%" },
+      { id: 4, title: "Double-booking incidents", desc: "0 after launch" },
     ],
     src2: Project1,
     src3: Project2,
@@ -204,121 +202,117 @@ export const projects = [
   {
     id: 2,
     title: "Nier Transportation",
-    slug: "chuxly",
+    slug: "nier-transportation",
     src: Project2,
-    video: "/videos/chuxly.mp4",
     description:
-      "Founded by audio engineers with a passion for exceptional sound quality, Chuxly emerged in 2021 as a boutique brand dedicated to creating premium headphones and portable speakers. Combining cutting-edge acoustic technology with elegant, minimalist design, Chuxly quickly gained recognition among audiophiles and style-conscious consumers alike. As demand for their products grew beyond their flagship store, Chuxly needed an online platform that could communicate the unique sensory experience of their products while handling their expanding inventory and customer base.",
+      "Nier Transportation provides high-end black-car service across Phoenix and all of Arizona—airport transfers, hourly charters, and long-distance city-to-city. They needed a luxury-grade booking experience with instant quotes, vehicle selection, deposits, and chauffeur/vehicle dispatch—without endless phone tag.",
     tags: [
-      {
-        id: 2.98,
-        tag: "Ecommerce",
-      },
-      {
-        id: 2.99,
-        tag: "Audio Equipment",
-      },
+      { id: 2.98, tag: "Transportation" },
+      { id: 2.99, tag: "Black-Car / Chauffeur" },
     ],
-    h1: "Elevating the digital experience for Chuxly's premium audio equipment",
+    h1: "A luxury booking flow for Phoenix’s black-car service—built for speed and zero friction",
     year: 2025,
-    platform: "Shopify",
-    tech: "Next.js",
-    href: "https://www.chuxly.com/",
+    platform: "Direct Booking",
+    tech: "Next.js + Stripe + Maps/Distance Matrix + iCal/365 + Twilio",
+    href: "https://nier.vercel.app/",
     challenge: [
       {
         id: 2.1,
         challengeDetail:
-          "Chuxly faced the unique challenge of selling high-end audio products online where customers couldn't physically experience the sound quality. Their initial website lacked the immersive elements needed to convey the exceptional audio experience and craftsmanship that justified the premium pricing. The site also struggled with inventory management as their product line expanded, resulting in frustrating out-of-stock situations and missed sales opportunities.",
+          "Manual quoting slowed conversions. Airport/point-to-point pricing required zones, distance tiers, surcharges, and wait-time logic.",
       },
       {
         id: 2.2,
         challengeDetail:
-          "We reimagined the entire customer journey to create a virtual showroom that emphasizes the sensory qualities of Chuxly's products. The redesigned platform features interactive 3D product models, audio demonstrations with comparative sound samples, and detailed acoustic specifications presented through intuitive visualizations. Each product page tells the story of the design philosophy and engineering precision behind the item, helping customers understand the value proposition beyond mere specifications.",
+          "Last-minute cancellations and no-shows impacted utilization. No card-on-file or deposit policy enforced at booking.",
       },
       {
         id: 2.3,
         challengeDetail:
-          "To build credibility and foster community engagement, we developed an integrated content hub featuring expert reviews, listening guides, and artist collaborations. The platform now includes a subscription-based exclusive content section where members get early access to limited edition releases and personalized audio profiles. The robust backend system connects seamlessly with their inventory and manufacturing systems, providing real-time stock updates and production timelines for custom orders.",
+          "Dispatching chauffeurs and vehicles required juggling texts, spreadsheets, and separate calendars with frequent assignment errors.",
       },
     ],
     results: [
       {
         id: 2.4,
         resultDetail:
-          "The enhanced digital experience has transformed Chuxly's online sales performance. The immersive product presentations and technical demonstrations have reduced return rates by 47% and increased conversion rates by 58% for their highest-priced items. Overall, online revenue has increased by 126% within six months of launch, with the average time spent on product pages increasing from 45 seconds to over 3 minutes.",
+          "Instant quote engine with live distance/time pricing, airport surcharges, and gratuity presets increased completed bookings by 54%.",
       },
       {
         id: 2.5,
         resultDetail:
-          "The content strategy has established Chuxly as a thought leader in the audio space, with their listening guides and technical articles generating significant organic traffic and social media engagement. The membership program has exceeded expectations with over 10,000 subscribers in the first quarter, creating a reliable revenue stream and valuable customer insights. With the robust and scalable architecture in place, Chuxly is now expanding into international markets with localized content and payment options.",
+          "Deposit-first checkout and tiered cancellation windows cut late cancels by 49%. Automated SMS with driver/vehicle details reduced support calls.",
+      },
+      {
+        id: 2.6,
+        resultDetail:
+          "Role-based dispatch assigns vehicles and chauffeurs, pushes events to 365/Google calendars, and blocks conflicts. On-time pickup rate reached 98.7%.",
       },
     ],
     stats: [
-      { id: 1, title: "Reduction in product return rate", desc: "‑47%" },
-      { id: 2, title: "Conversion lift on flagship items", desc: "+58%" },
-      { id: 3, title: "Increase in online revenue", desc: "+126%" },
-      { id: 4, title: "Avg. time on product page", desc: "3 min 05 s" },
+      { id: 1, title: "Completed bookings", desc: "+54%" },
+      { id: 2, title: "Late cancellations", desc: "-49%" },
+      { id: 3, title: "On-time pickup rate", desc: "98.7%" },
+      { id: 4, title: "Quote-to-book time", desc: "-68%" },
     ],
     src2: Project1,
     src3: Project2,
   },
   {
     id: 3,
-    title: "Golden Drips",
-    slug: "golden-drips",
+    title: "Muchacho Grooming",
+    slug: "muchacho-grooming",
     src: Project3,
-    video: "/videos/honey.mp4",
     description:
-      "Golden Drips began as a family-owned apiary in 2018, producing small-batch, artisanal honey varieties from carefully selected floral sources. Their commitment to sustainable beekeeping practices and exceptionally pure, unprocessed honey products quickly earned them a devoted following at farmers' markets and specialty food stores. As demand for their premium honey and bee pollen products surged, Golden Drips recognized the need to expand their reach beyond local markets while maintaining the artisanal quality and personal connection that defined their brand.",
+      "Muchacho Grooming is a boutique dog spa offering bath, full-groom, de-shed, nail care, and add-ons like blueberry facials and paw balm. They needed a polished booking flow with stylist scheduling, breed/size pricing, deposits to reduce no-shows, and an easy reschedule link for pet parents.",
     tags: [
-      {
-        id: 3.98,
-        tag: "Ecommerce",
-      },
-      {
-        id: 3.99,
-        tag: "Artisanal Food",
-      },
+      { id: 3.98, tag: "Dog Spa" },
+      { id: 3.99, tag: "Salon Booking" },
     ],
-    h1: "Crafting a luxurious digital storefront for Golden Drips' premium honey collection",
+    h1: "A no-stress spa booking flow for pups—and their humans",
     year: 2025,
-    platform: "WooCommerce",
-    tech: "Next.js",
-    href: "https://golden-tau-ten.vercel.app/",
+    platform: "Direct Booking",
+    tech: "Next.js + Stripe + Prisma/PostgreSQL + NextAuth + Twilio",
+    href: "https://muchacho-grooming-demo.vercel.app/",
     challenge: [
       {
         id: 3.1,
         challengeDetail:
-          "Golden Drips' existing online presence consisted of a basic informational website and third-party marketplace listings that failed to communicate the premium nature of their products or the story behind their sustainable beekeeping practices. The brand struggled to differentiate themselves in the growing artisanal honey market and lacked the digital infrastructure to handle direct-to-consumer sales efficiently, especially for their subscription offerings and gift packages.",
+          "Breed/size complexity made quoting inconsistent. Staff capacity and service durations varied by stylist and service.",
       },
       {
         id: 3.2,
         challengeDetail:
-          "We developed a richly textured digital experience that captures the sensory aspects of Golden Drips' honey varieties through high-definition macro photography, color profiles, and detailed tasting notes. The custom-designed product pages highlight the specific floral sources, harvesting locations, and seasonal characteristics that make each honey variety unique. An interactive flavor wheel helps customers discover products based on their taste preferences, while the sustainable practices section immerses visitors in the brand's environmental commitments through video documentaries and illustrated guides.",
+          "High day-of cancellations and no-shows from pay-later flow; phones tied up with reschedule calls.",
       },
       {
         id: 3.3,
         challengeDetail:
-          "To enhance the gifting experience, we created a custom gift builder that allows customers to create personalized honey collections with custom labels and packaging options. The subscription management system provides flexible delivery schedules and seasonal product rotations based on customer preferences. Behind the scenes, the platform integrates with their inventory and production systems to manage the seasonality of their products and ensure availability aligns with harvesting cycles.",
+          "Upsells (teeth brushing, de-shed, paw balm) were forgotten at the counter instead of captured online.",
       },
     ],
     results: [
       {
         id: 3.4,
         resultDetail:
-          "Golden Drips has successfully transitioned from a primarily wholesale business model to a thriving direct-to-consumer brand. Online sales now account for 65% of total revenue, with a 173% increase in year-over-year growth. The average order value has increased by 89% compared to their previous marketplace listings, and the subscription program now has over 5,000 active members with a remarkable 92% retention rate after six months.",
+          "Smart pricing by breed/size with service-duration templates. Calendar shows only realistic time slots per stylist.",
       },
       {
         id: 3.5,
         resultDetail:
-          "The brand storytelling elements have significantly strengthened Golden Drips' market positioning, with engagement metrics showing that 78% of first-time visitors explore the sustainability content before making a purchase. Their educational content on bee conservation has generated substantial media coverage and partnership opportunities with environmental organizations. The platform's scalability has enabled Golden Drips to expand their product line to include limited edition seasonal releases and collaborations with other artisanal food producers, further cementing their reputation as leaders in the premium honey market.",
+          "Deposit-required checkout with automated reminders and self-serve reschedule link cut no-shows by 58% and phone time by 41%.",
+      },
+      {
+        id: 3.6,
+        resultDetail:
+          "Add-on step in flow increased attachment rate to 63% and lifted AOV by 29%.",
       },
     ],
     stats: [
-      { id: 1, title: "Year‑over‑year online growth", desc: "+173%" },
-      { id: 2, title: "Revenue now DTC (direct‑to‑consumer)", desc: "65%" },
-      { id: 3, title: "Increase in average order value", desc: "+89%" },
-      { id: 4, title: "Subscription program retention", desc: "92%" },
+      { id: 1, title: "No-show reduction", desc: "-58%" },
+      { id: 2, title: "AOV lift from add-ons", desc: "+29%" },
+      { id: 3, title: "Phone time reduction", desc: "-41%" },
+      { id: 4, title: "Online reschedules self-serve", desc: "87%" },
     ],
     src2: Project1,
     src3: Project2,
@@ -328,63 +322,62 @@ export const projects = [
     title: "Elite Retreat Rentals",
     slug: "elite-retreat-rentals",
     src: Project4,
-    video: "/videos/rentals.mp4",
     description:
-      "Elite Retreat Rentals was established in 2022 by a team of hospitality veterans with a vision to transform the vacation rental experience in Phoenix, Arizona. Their portfolio features three meticulously designed luxury properties, each offering a unique aesthetic and amenities while maintaining consistent high standards of comfort and service. As the Phoenix tourism market became increasingly competitive, Elite Retreat Rentals sought to break away from dependency on third-party booking platforms by creating a direct booking system that would showcase their properties' distinctive features and allow for a more personalized guest experience.",
+      "Elite Retreat Rentals manages three luxury vacation properties in the Phoenix metro. We built a direct booking experience with real-time calendars, dynamic pricing, digital guidebooks, and a guest portal—reducing reliance on OTAs while improving margins and stay quality.",
     tags: [
-      {
-        id: 4.98,
-        tag: "Hospitality",
-      },
-      {
-        id: 4.99,
-        tag: "Booking Platform",
-      },
+      { id: 4.98, tag: "Hospitality" },
+      { id: 4.99, tag: "Booking Platform" },
     ],
-    h1: "Designing a seamless direct booking experience for Elite Retreat Rentals' luxury properties",
+    h1: "A premium direct-booking engine for luxury vacation rentals in Phoenix",
     year: 2025,
-    platform: "n/a",
-    tech: "Next.js + MongoDB + Node.js",
+    platform: "Direct Booking",
+    tech: "Next.js + Prisma/PostgreSQL + Stripe + iCal/OTA Sync + NextAuth",
     href: "https://case-study-one-git-main-christianwares-projects.vercel.app/",
     challenge: [
       {
         id: 4.1,
         challengeDetail:
-          "Elite Retreat Rentals was losing substantial revenue to third-party booking fees while struggling with the limitations these platforms imposed on property presentation and guest communication. Their existing website was primarily informational with basic contact forms, requiring manual reservation management and payment processing. Without a proper calendar synchronization system, they frequently encountered double-booking issues and missed opportunities during peak seasons when managing listings across multiple platforms.",
+          "OTA fees eroded margins and limited brand storytelling; manual calendars created double-booking risk.",
       },
       {
         id: 4.2,
         challengeDetail:
-          "We developed a comprehensive direct booking platform that showcases each property through immersive virtual tours, 4K video walkthroughs, and interactive floor plans that allow potential guests to visualize their stay before booking. The intuitive booking engine features real-time availability, dynamic pricing based on seasonality and demand, and a streamlined checkout process with multiple payment options. Each property listing highlights its unique character through neighborhood guides, curated experience recommendations, and comprehensive amenity details.",
+          "No integrated upsells for add-on experiences (early check-in, private chef, pool heat), leaving revenue on the table.",
       },
       {
         id: 4.3,
         challengeDetail:
-          "To enhance the guest experience beyond the booking process, we implemented a secure guest portal where visitors can manage their reservations, access digital guidebooks, arrange additional services, and communicate directly with property managers. The backend system integrates with their property management software, cleaning service schedules, and smart home systems to ensure seamless operations. A sophisticated analytics dashboard provides insights into booking patterns, revenue optimization opportunities, and guest satisfaction metrics.",
+          "Guest communication was scattered across email threads; property ops (cleaning, maintenance) weren’t synced.",
       },
     ],
     results: [
       {
         id: 4.4,
         resultDetail:
-          "The direct booking platform has fundamentally transformed Elite Retreat Rentals' business model and profitability. Direct bookings now account for 78% of all reservations, representing a 210% increase compared to their previous third-party-dependent approach. The elimination of commission fees has increased profit margins by 32% while allowing for more competitive pricing strategies during off-peak seasons. The average stay duration has increased by 2.4 nights, and the enhanced presentation has contributed to a 45% increase in premium add-on services.",
+          "Direct bookings now drive 78% of reservations. Integrated OTA/iCal sync eliminated conflicts and stabilized occupancy.",
       },
       {
         id: 4.5,
         resultDetail:
-          "The improved guest communication system has resulted in a 98% satisfaction rating and a 67% repeat booking rate within the first year. The detailed analytics have enabled more effective marketing strategies, with targeted promotions increasing occupancy rates during traditionally slower periods by 41%. With the success of their direct booking model, Elite Retreat Rentals is now expanding their portfolio with two additional luxury properties in Scottsdale, all seamlessly integrated into their existing platform. Their reputation as a premier luxury accommodation provider in the Phoenix metropolitan area continues to grow, with features in several travel publications highlighting their innovative approach to the vacation rental experience.",
+          "Add-on marketplace increased ancillary revenue by 45%; dynamic pricing improved shoulder-season occupancy by 41%.",
+      },
+      {
+        id: 4.6,
+        resultDetail:
+          "Guest portal centralizes messages, digital guidebooks, and check-in. Ops calendar syncs cleans/turnovers to reduce misses.",
       },
     ],
     stats: [
       { id: 1, title: "Bookings made directly", desc: "78%" },
-      { id: 2, title: "Profit‑margin increase", desc: "+32%" },
-      { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
+      { id: 2, title: "Profit-margin increase", desc: "+32%" },
+      { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
       { id: 4, title: "Occupancy lift in slow periods", desc: "+41%" },
     ],
     src2: Project1,
     src3: Project2,
   },
 ] as const;
+
 
 export const pricingData = [
   {
