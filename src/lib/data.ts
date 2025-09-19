@@ -2,6 +2,9 @@ import Project1 from "../../public/images/equipment.jpg";
 import Project2 from "../../public/images/road.webp";
 import Project3 from "../../public/images/dog.jpg";
 import Project4 from "../../public/images/erRentals.png";
+import BookingSystem from "../../public/images/bookingSystemii.png";
+import AppointmentAlerts from "../../public/images/AppointmentAlerts.png";
+import NoShow from "../../public/images/NoShow.png";
 
 export const process = [
   {
@@ -763,30 +766,33 @@ export const AboutUsData = [
     id: 1,
     title: "Booking System",
     desc: "Within a set budget, we launch fast and learn quickly.",
+    src: BookingSystem,
   },
   {
     id: 2,
     title: "Appointment Alerts",
     desc: "Scale what works so you can focus on your craft",
+    src: AppointmentAlerts,
   },
   {
     id: 3,
     title: "No-show Protection",
     desc: "Multi-location/team operations",
+    src: NoShow,
   },
-  {
-    id: 4,
-    title: "Staff Scheduling & Management",
-    desc: "Assign staff or manager roles to your team members and let them manage their own schedules, leaves, etc. ",
-  },
-  {
-    id: 5,
-    title: "Reports and Analytics",
-    desc: "Gain insights into your business performance with comprehensive reporting tools.",
-  },
-  {
-    id: 6,
-    title: "Payments",
-    desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
-  },
+  // {
+  //   id: 4,
+  //   title: "Staff Scheduling & Management",
+  //   desc: "Assign staff or manager roles to your team members and let them manage their own schedules, leaves, etc. ",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Reports and Analytics",
+  //   desc: "Gain insights into your business performance with comprehensive reporting tools.",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Payments",
+  //   desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
+  // },
 ] as const;

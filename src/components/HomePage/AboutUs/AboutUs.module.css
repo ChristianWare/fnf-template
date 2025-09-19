@@ -21,8 +21,14 @@
   margin-bottom: 3rem;
 }
 
-.bottom {
+.span {
+  color: var(--tan);
   margin-top: 5rem;
+  text-align: center;
+}
+
+.bottom {
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -40,57 +46,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 2rem;
-}
-
-.card:last-child {
-  border-right: none;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .title {
-  color: var(--grayiii);
+  color: var(--tan);
   font-size: 2rem;
   text-align: center;
   width: 100%;
 }
 
-.desc {
-  color: var(--tan);
-  opacity: 0.6;
-  text-align: center;
-  width: 100%;
+.imgContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
 }
 
-.listContainer {
-  margin-top: 2rem;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.listItem {
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  color: var(--tan);
-  padding: 2rem 0rem;
-  border-bottom: 1px solid var(--grayii);
-  width: 100%;
-}
-
-.listItem:last-child {
-  border-bottom: none;
-}
-
-.dot {
-  color: var(--lime);
+.img {
+  object-fit: contain;
 }
 
 @media screen and (max-width: 1268px) {
@@ -127,15 +102,23 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  
+
   .heading {
     width: 100%;
     text-align: left;
   }
+/* 
+  .span {
+    margin-left: auto;
+    margin-right: auto;
+  } */
 
   .mapDataContainer {
-    grid-template-columns: 1fr;
-    grid-gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
   }
 
   .card {
@@ -143,14 +126,18 @@
     border: none;
   }
 
-  .card:last-child {
-    grid-column: span 1;
-    border-right: none;
+  .title {
+    text-align: center;
+    width: 100%;
   }
 
-  .title,
-  .desc {
-    text-align: center;
+  .imgContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .btnContainer {
+    display: grid;
     width: 100%;
   }
 }

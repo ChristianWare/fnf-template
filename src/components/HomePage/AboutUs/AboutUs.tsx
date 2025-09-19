@@ -3,6 +3,8 @@ import styles from "./AboutUs.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 // import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
 import { AboutUsData } from "@/lib/data";
+import Image from "next/image";
+import Button from "@/components/shared/Button/Button";
 
 export default function AboutUs() {
   return (
@@ -28,15 +30,25 @@ export default function AboutUs() {
             is dedicated to ensuring your success. */}
           </h2>
           {/* <ImageCluster /> */}
+          <span className={styles.span}>Common Features:</span>
           <div className={styles.bottom}>
             <div className={styles.mapDataContainer}>
               {AboutUsData.map((x) => (
                 <div key={x.id} className={styles.card}>
                   <h3 className={styles.title}>{x.title}</h3>
-                  
+                  <div className={styles.imgContainer}>
+                    <Image src={x.src} alt='img' fill className={styles.img} />
+                  </div>
                 </div>
               ))}
             </div>
+          </div>
+          <div className={styles.btnContainer}>
+            <Button
+              href='/pricing'
+              btnType='lime'
+              text='Explore all features'
+            />
           </div>
         </div>
       </LayoutWrapper>
