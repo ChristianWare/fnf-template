@@ -1,5 +1,6 @@
 import ContactPageContainer from "@/components/ContactPage/ContactPageContainer/ContactPageContainer";
 import ContactPageIntro from "@/components/ContactPage/ContactPageIntro/ContactPageIntro";
+import Faq from "@/components/Faq/Faq";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Nav from "@/components/shared/Nav/Nav";
 
@@ -9,6 +10,7 @@ export default function ContactPage() {
       <Nav />
       <ContactPageIntro />
       <ContactPageContainer />
+      <Faq />
       <FinalCTAMain />
     </main>
   );

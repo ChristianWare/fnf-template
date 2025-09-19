@@ -1,4 +1,5 @@
 import ContactPageContainer from "@/components/ContactPage/ContactPageContainer/ContactPageContainer";
+import Faq from "@/components/Faq/Faq";
 import Features from "@/components/HomePage/Features/Features";
 import ComparisonChart from "@/components/PricingPage/ComparisonChart/ComparisonChart";
 import PricingPageIntro from "@/components/PricingPage/PricingPageIntro/PricingPageIntro";
@@ -22,6 +23,7 @@ export default function PricingPage() {
       </section>
       <Features />
       <ComparisonChart />
+      <Faq />
       <BlogSection />
       <ContactPageContainer />
       <FinalCTAMain />

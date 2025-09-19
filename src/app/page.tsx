@@ -12,6 +12,7 @@ import ChrisImg from "../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
+import Faq from "@/components/Faq/Faq";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,7 @@ export default function HomePage() {
         src={ChrisImg}
       />
       <PricingPreview />
+      <Faq />
       <BlogSection />
       <ContactPageContainer />
       <FinalCTAMain />

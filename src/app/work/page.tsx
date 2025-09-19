@@ -1,3 +1,4 @@
+import Faq from "@/components/Faq/Faq";
 import Features from "@/components/HomePage/Features/Features";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
@@ -12,6 +13,7 @@ export default function WorkPage() {
       <WorkPageIntro />
       <AllProjects />
       <Features />
+      <Faq />
       <BlogSection />
       <FinalCTAMain />
     </main>

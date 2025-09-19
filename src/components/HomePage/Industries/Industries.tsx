@@ -85,7 +85,7 @@ export default function Industries() {
           <div className={styles.top}>
             <div className={styles.topLeft}>
               <SectionIntroii title='Selected Works' />
-              <h2 className={styles.heading}>Case studies across industries</h2>
+              <h2 className={styles.heading}>Featured work</h2>
               <div className={styles.btnContainer}>
                 <Button href='/work' btnType='lime' text='All case studies' />
               </div>
@@ -122,7 +122,11 @@ export default function Industries() {
           onTransitionEnd={handleTransitionEnd}
         >
           {tripled.map((item, i) => (
-            <Link href={`/work/${item.slug}`} key={`${item.id}-${i}`} className={`${styles.card} card`}>
+            <Link
+              href={`/work/${item.slug}`}
+              key={`${item.id}-${i}`}
+              className={`${styles.card} card`}
+            >
               <Image
                 src={item.src}
                 alt={item.title}

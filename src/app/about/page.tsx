@@ -8,6 +8,7 @@ import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+import Faq from "@/components/Faq/Faq";
 
 
 export default function AboutPage() {
@@ -24,7 +25,8 @@ export default function AboutPage() {
             custom booking websites that cut no-shows, speed checkout to under a
             minute, and turn busywork into predictable, prepaid revenue.'
         src={ChrisImg}
-      />{" "}
+      />
+      <Faq />
       <BlogSection />
       <FinalCTAMain />
     </main>
