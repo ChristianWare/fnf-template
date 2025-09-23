@@ -6,6 +6,8 @@ import { auth } from "../../auth";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
 import SmoothScroll from "@/components/shared/SmoothScroll/SmoothScroll";
+import PlausibleProvider from "next-plausible";
+
 
 const inter = Inter({
   variable: "--inter",
@@ -65,6 +67,13 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <html lang='en'>
+        <head>
+          <PlausibleProvider
+            domain='fontsandfooters.com'
+            trackLocalhost={false}
+            enabled={true}
+          />
+        </head>
         <body
           className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable}`}
         >
