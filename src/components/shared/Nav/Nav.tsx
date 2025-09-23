@@ -28,7 +28,7 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
   useEffect(() => {
     const body = document.body;
     body.style.overflow =
-      window.innerWidth <= 968 && isOpen ? "hidden" : "auto";
+      window.innerWidth <= 1068 && isOpen ? "hidden" : "auto";
     const handleResize = () => setIsOpen(false);
     window.addEventListener("resize", handleResize);
     return () => {
@@ -75,9 +75,7 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
 
   return (
     <header
-      className={`${styles.header} ${
-        showNav || isOpen ? styles.show : styles.hide
-      } ${isOpen ? styles.open : ""}`}
+      className={`${styles.header} ${showNav || isOpen ? styles.show : styles.hide} ${isOpen ? styles.open : ""}`}
       ref={navRef}
     >
       <nav className={styles.navbar}>
@@ -109,6 +107,8 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
             />
           </div>
         </div>
+
+        {isOpen && <div className={styles.overlay} onClick={closeMenu} />}
 
         <div className={styles.btnContainer}>
           <Button
