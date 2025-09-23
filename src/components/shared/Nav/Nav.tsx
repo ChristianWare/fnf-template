@@ -5,6 +5,9 @@ import styles from "./Nav.module.css";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import { useEffect, useState, MouseEvent, useRef } from "react";
+import Image from "next/image";
+import Img1 from "../../../../public/images/whydb.jpg";
+import SectionIntroii from "../SectionIntroii/SectionIntroii";
 
 const navItems = [
   { text: "Home", href: "/" },
@@ -98,6 +101,15 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
               {item.text}
             </Link>
           ))}
+
+          <div className={styles.menuImage}>
+            <Image src={Img1} alt='Menu image' fill className={styles.img} />
+            <div className={styles.menuImageOverlay}>
+              {/* <span className={styles.menuImageText}>Fonts & Footers</span> */}
+              <SectionIntroii title='Fonts & Footers' color='tan' />
+            </div>
+          </div>
+
           <div className={styles.btnContainerii}>
             <Button
               href='/contact'
