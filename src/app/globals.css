@@ -25,11 +25,11 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  scroll-behavior: smooth;
-  scroll-margin-top: 10px;
+  /* scroll-behavior: smooth; */
+  /* scroll-margin-top: 10px; */
+  /* overscroll-behavior: none; */
   -webkit-tap-highlight-color: transparent;
   font-family: var(--DotSansMedium);
-  overscroll-behavior: none;
 }
 
 html {

@@ -115,11 +115,12 @@
   }
 
   .mapDataContainer {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 2rem; */
+    grid-gap: 2rem;
   }
 
   .card {
@@ -133,7 +134,7 @@
   }
 
   .imgContainer {
-    width: 100px;
+    width: 100%;
     height: 100px;
   }
 
