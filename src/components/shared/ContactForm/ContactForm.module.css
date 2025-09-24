@@ -88,8 +88,9 @@
 }
 
 .labelInputBox ::placeholder {
-  color: var(--blue);
+  color: var(--black);
   opacity: 0.5;
+  font-size: 1.4rem;
 }
 
 .error {

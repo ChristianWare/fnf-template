@@ -54,23 +54,39 @@ export default function ContactPageIntro() {
               <Image src={Img1} alt='Contact' fill className={styles.img} />
               <div className={styles.calendlyContainer}>
                 <div className={styles.cardTop}>
-                  <SectionIntroii title='Plan a meeting' />
+                  <SectionIntroii title='Plan a discovery call' />
                   <div className={styles.subheading}>
-                    Our HQ is based in Brussels — close to decision-makers,
-                    climate goals, and good coffee.
+                    We’re a new, remote-first studio based in Phoenix. Pick a
+                    time that works, or reach us at{" "}
+                    <a href='mailto:hello@fontsandfooters.com'>
+                      hello@fontsandfooters.com
+                    </a>
+                    .
                   </div>
                 </div>
+
                 <div className={styles.ccBottom}>
                   <div className={styles.ccBottomLeft}>
-                    Avenue Louise 231 <br />
-                    1050 Brussels, Belgium
+                    <strong>Office hours</strong>
+                    <br />
+                    Mon–Fri, 9am–5pm (Arizona)
+                    <br />
+                    Typical response: within 1 business day
                   </div>
-                  <div className={styles.ccBottomRight}>
-                    Show on map
+
+                  <a
+                    href='https://calendly.com/fontsandfooters/discovery'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className={styles.ccBottomRight}
+                    aria-label='Book a discovery call on Calendly'
+                    title='Book a discovery call on Calendly'
+                  >
+                    Book on Calendly
                     <div className={styles.arrowContainer}>
                       <Arrow className={styles.icon} />
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -82,9 +98,14 @@ export default function ContactPageIntro() {
                 {/* Let&lsquo;s stay in touch */}
                 Every meaningful project starts with a conversation.
               </h1>
-            <div className={styles.imgContaineriii}>
-              <Image src={Img3} alt='thinking' fill className={styles.imgiii} />
-            </div>
+              <div className={styles.imgContaineriii}>
+                <Image
+                  src={Img3}
+                  alt='thinking'
+                  fill
+                  className={styles.imgiii}
+                />
+              </div>
               <div className={styles.mapDataContainer}>
                 {data.map((item) => (
                   <div key={item.id} className={styles.card}>

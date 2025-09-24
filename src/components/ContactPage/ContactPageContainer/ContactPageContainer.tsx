@@ -4,21 +4,33 @@ import ContactForm from "@/components/shared/ContactForm/ContactForm";
 import Image from "next/image";
 import Img1 from "../../../../public/images/chris.png";
 // import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
-
 const data = [
   {
     id: 1,
-    desc: "We'd love to schedule a call to introduce our capabilities",
+    desc: "Discovery (15 min): Tell us your services, goals, and current booking pain points.",
   },
   {
     id: 2,
-    desc: "We can sign an NDA as needed",
+    desc: "Fit check & ballpark: We review your site/links and share a quick price range the same day.",
   },
   {
     id: 3,
-    desc: "Our technical team will provide a project proposal within 48 hours",
+    desc: "Proposal (24–48 hrs): Scope, timeline, and pricing—plus deposit/BNPL options—sent for e-signature.",
+  },
+  {
+    id: 4,
+    desc: "Kickoff: Pay deposit, share access (domain, Stripe, Google/365 calendar), and brand assets.",
+  },
+  {
+    id: 5,
+    desc: "Build sprint (10–14 days): Staging link, weekly check-ins, and quick approvals to keep momentum.",
+  },
+  {
+    id: 6,
+    desc: "Launch + handoff: Domain connect, 30-min training, playbooks, and continuous post-launch support.",
   },
 ];
+
 
 export default function ContactPageContainer() {
   return (

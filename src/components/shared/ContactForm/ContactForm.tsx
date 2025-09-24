@@ -172,19 +172,19 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.labelInputBox}>
-          <label htmlFor='siteUrl'>Current booking URL</label>
+          <label htmlFor='siteUrl'>Current website:</label>
           <input
             id='siteUrl'
             type='url'
-            placeholder='https://example.com/book'
+            placeholder='www.example.com'
             maxLength={500}
-            {...register("siteUrl", {
-              pattern: {
-                // basic URL pattern; keeps it lenient
-                value: /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$/i,
-                message: "Please enter a valid URL",
-              },
-            })}
+            // {...register("siteUrl", {
+            //   pattern: {
+            //     // basic URL pattern; keeps it lenient
+            //     value: /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$/i,
+            //     message: "Please enter a valid URL",
+            //   },
+            // })}
             aria-invalid={!!errors.siteUrl || undefined}
             disabled={loading}
           />
