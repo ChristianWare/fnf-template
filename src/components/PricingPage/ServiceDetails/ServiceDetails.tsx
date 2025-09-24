@@ -32,6 +32,13 @@ export default function ServiceDetails() {
                 <div className={styles.cardTopRight}>
                   {/* <h4 className={styles.descii}>{x.descii}</h4> */}
                   <p className={styles.headline}>{x.desc}</p>
+                  <div className={styles.btnContainer}>
+                    <Button
+                      href={btnhref}
+                      btnType='grayOutline'
+                      text={btnText}
+                    />
+                  </div>
                 </div>
               </div>
               <div className={styles.servicesCard}>
@@ -114,9 +121,6 @@ export default function ServiceDetails() {
                       </div>
                     </div>
                   </div> */}
-              </div>
-              <div className={styles.btnContainer}>
-                <Button href={btnhref} btnType='grayOutline' text={btnText} />
               </div>
             </div>
           ))}
