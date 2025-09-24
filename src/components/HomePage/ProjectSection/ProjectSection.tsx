@@ -6,7 +6,7 @@ import Nier from "../../../../public/images/lab.jpg";
 import Dog from "../../../../public/images/direct.jpg";
 import ErRentals from "../../../../public/images/transform.jpg";
 import Custom from "../../../../public/images/custom.jpg";
-import DefaultImg from "../../../../public/images/direct.jpg";
+// import DefaultImg from "../../../../public/images/direct.jpg";
 import ParallaxImage from "@/components/shared/ParallaxImage/ParallaxImage";
 import Arrow from "@/components/icons/Arrow/Arrow";
 import { StaticImageData } from "next/image";
@@ -25,39 +25,41 @@ type Item = {
 const data: Item[] = [
   {
     id: 1,
-    title: "Booking Lab as a Service",
+    title: "Direct-Booking Website",
     description:
-      "Have an idea or tricky flow? We prototype quickly, validate with users, and turn concepts into a working one-screen booking experience you can test.",
-    src: Nier,
-  },
-  {
-    id: 2,
-    title: "Direct-Booking Transformation",
-    description:
-      "Modernize how clients schedule, pay, and return. We rebuild your booking UX, enforce clear policies, and connect the stack that fits your ops.",
+      "A conversion-first site with Stripe deposits, smart reminders, and a clean calendar—built to cut no-shows and move clients from DMs to paid appointments.",
     src: Dog,
   },
   {
-    id: 3,
-    title: "Fast-Track Launch",
+    id: 2,
+    title: "Booking Makeover",
     description:
-      "Need to go live soon? We compress discovery → design → build into a focused sprint without sacrificing clarity, performance, or brand.",
+      "We rebuild your existing flow—clarify policies, tighten UX, and connect the right tools—so scheduling, paying, and rebooking feel effortless.",
     src: ErRentals,
   },
   {
-    id: 4,
-    title: "Custom Platform Development",
+    id: 3,
+    title: "Booking Lab (Prototype & Test)",
     description:
-      "From unique rules to multi-location dashboards, we engineer tailored features and integrations so your system fits the way you actually work.",
+      "Tricky idea or new flow? We ship a one-screen working prototype to validate with real users before you invest in a full build.",
+    src: Nier,
+  },
+  {
+    id: 4,
+    title: "Custom Platform & Integrations",
+    description:
+      "Unique rules, multi-location dashboards, or fleet/staff logic—tailored features and integrations that fit how your business actually runs.",
     src: Custom,
   },
 ];
 
+
 export default function ProjectSection() {
   const [isTouch, setIsTouch] = useState(false);
-  const [activeImage, setActiveImage] = useState<StaticImageData>(DefaultImg);
-  const [activeTitle, setActiveTitle] = useState("Fonts & Footers");
-  const [activeId, setActiveId] = useState<number | null>(null);
+  const [activeImage, setActiveImage] = useState<StaticImageData>(data[0].src);
+  const [activeTitle, setActiveTitle] = useState(data[0].title);
+  const [activeId, setActiveId] = useState<number | null>(data[0].id);
+
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
@@ -75,11 +77,11 @@ export default function ProjectSection() {
     setActiveId(itemId);
   };
 
-  const reset = () => {
-    setActiveImage(DefaultImg);
-    setActiveTitle("Fonts & Footers");
-    setActiveId(null);
-  };
+  // const reset = () => {
+  //   setActiveImage(DefaultImg);
+  //   setActiveTitle("Fonts & Footers");
+  //   setActiveId(null);
+  // };
 
   const openModal = (item: Item) => {
     setSelectedItem(item);
@@ -97,7 +99,8 @@ export default function ProjectSection() {
         <div className={styles.top}>
           <SectionIntroii title='Solutions' />
           <h2 className={styles.heading}>
-            Our solutions to <br /> custom booking websites
+            {/* Our solutions to <br /> custom booking websites */}
+            Four ways we turn clicks <br /> into booked appointments
           </h2>
         </div>
 
@@ -110,9 +113,9 @@ export default function ProjectSection() {
                 onMouseEnter={() => {
                   if (!isTouch) activate(item.id, item.src, item.title);
                 }}
-                onMouseLeave={() => {
-                  if (!isTouch) reset();
-                }}
+                // onMouseLeave={() => {
+                //   if (!isTouch) reset();
+                // }}
                 onClick={() => openModal(item)}
                 role='button'
                 tabIndex={0}
