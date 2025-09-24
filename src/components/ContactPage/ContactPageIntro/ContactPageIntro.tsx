@@ -8,8 +8,9 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Email from "@/components/icons/Email/Email";
 import Instagram from "@/components/icons/Instagram/Instagram";
-import Phone from "@/components/icons/Phone/Phone";
+// import Phone from "@/components/icons/Phone/Phone";
 import Arrow from "@/components/icons/Arrow/Arrow";
+import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
 
 const data = [
   {
@@ -21,14 +22,14 @@ const data = [
   {
     id: 2,
     title: "General Inquiries",
-    desc: "hello@evermind.eco",
-    icon: <Clock className={styles.icon} />,
+    desc: "hello@fontsandfooters.eco",
+    icon: <Email className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Press & Media",
-    desc: "press@evermind.eco",
-    icon: <Email className={styles.icon} />,
+    title: "LinkedIn",
+    desc: "linkedin.com/fontsandfooters",
+    icon: <LinkedIn className={styles.icon} />,
   },
   {
     id: 4,
@@ -38,10 +39,16 @@ const data = [
   },
   {
     id: 5,
-    title: "Customer service",
-    desc: "+32 470 108 222",
-    icon: <Phone className={styles.icon} />,
+    title: "Calendly",
+    desc: "calendly.com/fontsandfooter",
+    icon: <Clock className={styles.icon} />,
   },
+  // {
+  //   id: 6,
+  //   title: "Customer service",
+  //   desc: "+32 470 108 222",
+  //   icon: <Phone className={styles.icon} />,
+  // },
 ];
 
 export default function ContactPageIntro() {
