@@ -5,7 +5,6 @@ import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
 import Image from "next/image";
 import Img1 from "../../../../public/images/pricingii.png";
 
-
 export default function PricingPageIntro() {
   return (
     <section className={styles.container}>
@@ -26,7 +25,7 @@ export default function PricingPageIntro() {
           </h1>
           <p className={styles.copy}>
             Choose the engagement that matches your team size, locations, and
-            growth goals.
+            growth goals. No contracts, cancel whenever you want.
           </p>
           <ImageCluster color='black' size='small' />
         </div>

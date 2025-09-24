@@ -17,7 +17,7 @@ export default function PricingPreview() {
             <p className={styles.copy}>
               Explore our range of pricing options designed to fit any budget,
               offering exceptional value and flexibility to meet your unique
-              needs
+              needs. No contracts, cancel whenever you want.
             </p>
           </div>
           <div className={styles.bottom}>

@@ -126,7 +126,8 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
 
           <div className={styles.btnContainerii}>
             <Button
-              href='/contact'
+              href='https://calendly.com/chris-ware-dev/discovery-call'
+              target='_blank'
               text='Book your discovery call'
               btnType='black'
               onClick={closeMenu}
@@ -138,7 +139,8 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
 
         <div className={styles.btnContainer}>
           <Button
-            href='/contact'
+            href='https://calendly.com/chris-ware-dev/discovery-call'
+            target='_blank'
             text='Book your discovery call'
             btnType='black'
           />

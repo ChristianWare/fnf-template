@@ -6,6 +6,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./ComparisonChart.module.css";
 import { pricingData } from "@/lib/data";
 import Check from "@/components/icons/Check/Check";
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 type Plan = (typeof pricingData)[number];
 type PlanName = Plan["service"];
@@ -86,6 +87,9 @@ export default function ComparisonChart() {
     <div className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
+          <div className={styles.copy}>
+            <SectionIntroii title='No contracts, cancel whenever you want.' />
+          </div>
           <h2 className={styles.heading}>Compare Plans</h2>
           <div className={styles.mobileTabs}>
             {plans.map((p, i) => (

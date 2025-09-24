@@ -8,6 +8,13 @@
   margin-bottom: 5rem;
 }
 
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .content {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -47,8 +54,6 @@
 .row {
   display: contents;
 }
-
-
 
 .headerRow .headerCell,
 .headerRowii .headerCell {
