@@ -43,19 +43,29 @@ export default function BrandStory() {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.leftTop}>
-              <SectionIntroii title='Built for busy service pros' />
+              <SectionIntroii title='About Fonts & Footers' />
               <h2 className={styles.heading}>
-                More high-value bookings. <br /> Less admin.
+                A new studio with a <br /> fresh take on booking websites.
               </h2>
+
               <p className={styles.copy}>
-                Launch a conversion-first booking site that quietly handles
-                availability, deposits, reminders, and Buy Now, Pay Later—so you
-                can focus on your craft, not your calendar. Want the
-                play-by-play? Learn how BNPL helps close bigger services without
-                slowing cash flow.
+                Fonts &amp; Footers is a new company focused on one thing:
+                turning visitors into paid, confirmed bookings for service-based
+                businesses. Being new means we’re not carrying legacy templates
+                or bloated stacks—we build lean, modern, conversion-first sites
+                with Stripe-first payments and sensible ops baked in.
               </p>
+
+              <p className={styles.copy}>
+                Our perspective is fresh: product thinking over pretty pages,
+                clarity over cleverness, and speed without sacrificing
+                standards. That shows up in flows that actually reduce no-shows,
+                deposits and BNPL (buy now pay later) that unlock bigger
+                services without slowing cash flow, and policy UX (user
+                experience) that prevents “DM me” chaos before it starts.
+              </p>
+
               <div className={styles.btnContainer}>
-                {/* <Button href='/demo' text='Get demo' /> */}
                 <Button
                   href='/start'
                   btnType='grayOutline'

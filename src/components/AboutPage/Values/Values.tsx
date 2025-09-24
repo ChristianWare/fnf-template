@@ -12,11 +12,11 @@ import Arrow from "@/components/icons/Arrow/Arrow";
 import Img1 from "../../../../public/images/customer.jpg";
 import Img2 from "../../../../public/images/innovate.jpg";
 import Img3 from "../../../../public/images/glasses.jpg";
-import Img4 from "../../../../public/images/ecomm.jpeg";
-import Img5 from "../../../../public/images/whydb.jpg";
-import Img6 from "../../../../public/images/equipment.jpg";
-import Img7 from "../../../../public/images/erRentals.png";
-import Img8 from "../../../../public/images/vacation.jpg";
+import Img4 from "../../../../public/images/quality.jpg";
+import Img5 from "../../../../public/images/integrity.jpg";
+import Img6 from "../../../../public/images/teamwork.jpg";
+import Img7 from "../../../../public/images/responsibility.jpg";
+import Img8 from "../../../../public/images/empathy.jpg";
 
 type ValueItem = {
   id: number;
