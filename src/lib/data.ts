@@ -146,6 +146,7 @@ export const projects = [
     title: "Thundertrails Bike Rentals",
     slug: "thundertrails",
     src: Project1,
+    video: "/videos/thunder.mp4",
     description:
       "Thundertrails started in 2019 renting premium mountain and e-bikes to riders exploring desert singletrack and high-country trails. Demand outgrew their manual, message-based booking flow—double-bookings, missed deposits, and no-shows were common. We built a direct-booking platform that fills calendars (not inboxes) with real-time availability, deposits, and guided add-ons like helmet, rack, or child-seat rentals.",
     tags: [
@@ -205,6 +206,7 @@ export const projects = [
     title: "Nier Transportation",
     slug: "nier-transportation",
     src: Project2,
+    video: "/videos/chuxly.mp4",
     description:
       "Nier Transportation provides high-end black-car service across Phoenix and all of Arizona—airport transfers, hourly charters, and long-distance city-to-city. They needed a luxury-grade booking experience with instant quotes, vehicle selection, deposits, and chauffeur/vehicle dispatch—without endless phone tag.",
     tags: [
@@ -264,6 +266,7 @@ export const projects = [
     title: "Muchacho Grooming",
     slug: "muchacho-grooming",
     src: Project3,
+    video: "/videos/honey.mp4",
     description:
       "Muchacho Grooming is a boutique dog spa offering bath, full-groom, de-shed, nail care, and add-ons like blueberry facials and paw balm. They needed a polished booking flow with stylist scheduling, breed/size pricing, deposits to reduce no-shows, and an easy reschedule link for pet parents.",
     tags: [
@@ -323,6 +326,7 @@ export const projects = [
     title: "Elite Retreat Rentals",
     slug: "elite-retreat-rentals",
     src: Project4,
+    video: "/videos/rentals.mp4",
     description:
       "Elite Retreat Rentals manages three luxury vacation properties in the Phoenix metro. We built a direct booking experience with real-time calendars, dynamic pricing, digital guidebooks, and a guest portal—reducing reliance on OTAs while improving margins and stay quality.",
     tags: [
@@ -378,7 +382,6 @@ export const projects = [
     src3: Project2,
   },
 ] as const;
-
 
 export const pricingData = [
   {
@@ -633,7 +636,13 @@ export const pricingData = [
 
 // lib/data.ts (excerpt) — Route-aware FAQs
 
-export type SectionKey = "home" | "pricing" | "about" | "work" | "blog" | "contact";
+export type SectionKey =
+  | "home"
+  | "pricing"
+  | "about"
+  | "work"
+  | "blog"
+  | "contact";
 
 export type QuestionItem = {
   id: number;
@@ -927,7 +936,6 @@ export const questions: readonly QuestionItem[] = [
   },
 ] as const;
 
-
 export const AboutUsData = [
   {
     id: 1,
@@ -963,5 +971,3 @@ export const AboutUsData = [
   //   desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
   // },
 ] as const;
-
-

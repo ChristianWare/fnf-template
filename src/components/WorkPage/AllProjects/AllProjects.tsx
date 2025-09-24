@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AllProjects.module.css";
 import { projects } from "@/lib/data";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 // import Button from "@/components/shared/Button/Button";
 
@@ -12,16 +12,29 @@ export default function AllProjects() {
         <div className={styles.container}>
           <div className={styles.mapDataContainer}>
             {projects.map((project, index) => (
-              <Link href={`/work/${project.slug}`} key={index} className={styles.card}>
+              <Link
+                href={`/work/${project.slug}`}
+                key={index}
+                className={styles.card}
+              >
                 <div className={styles.imgContainer}>
-                  <Image
+                  {/* <Image
                     src={project.src}
                     alt={project.title}
                     fill
                     className={styles.img}
                     sizes='(max-width: 1068px) 100vw, 50vw'
                     priority={index < 2}
-                  />
+                  /> */}
+                  <video
+                    preload='auto'
+                    autoPlay
+                    muted
+                    loop
+                    className={styles.img}
+                  >
+                    <source src={project.video} />
+                  </video>
                 </div>
                 <div className={styles.textLayer}>
                   <h3 className={styles.title}>{project.title}</h3>
