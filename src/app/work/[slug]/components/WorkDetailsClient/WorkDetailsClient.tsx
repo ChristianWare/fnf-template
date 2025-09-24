@@ -37,12 +37,15 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
           </div>
           <div className={styles.t2}>
             <div className={styles.imgContainer}>
-              <Image
+              {/* <Image
                 src={project.src}
                 alt={project.title}
                 fill
                 className={styles.img}
-              />
+              /> */}
+              <video preload='auto' autoPlay muted loop className={styles.img}>
+                <source src={project.video} />
+              </video>
             </div>
             <div className={styles.detailsBox}>
               <div className={styles.db1}>
