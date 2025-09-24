@@ -52,6 +52,15 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
     let lastScrollY = window.scrollY;
     let ticking = false;
 
+    const setProgress = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const p =
+        max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+      if (navRef.current)
+        navRef.current.style.setProperty("--progress", `${p}%`);
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (!isOpen && currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -60,6 +69,7 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
         setShowNav(true);
       }
       lastScrollY = currentScrollY;
+      setProgress();
     };
 
     const optimizedHandleScroll = () => {
@@ -72,8 +82,13 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
       }
     };
 
+    setProgress();
     window.addEventListener("scroll", optimizedHandleScroll);
-    return () => window.removeEventListener("scroll", optimizedHandleScroll);
+    window.addEventListener("resize", optimizedHandleScroll);
+    return () => {
+      window.removeEventListener("scroll", optimizedHandleScroll);
+      window.removeEventListener("resize", optimizedHandleScroll);
+    };
   }, [isOpen]);
 
   return (
@@ -105,7 +120,6 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
           <div className={styles.menuImage}>
             <Image src={Img1} alt='Menu image' fill className={styles.img} />
             <div className={styles.menuImageOverlay}>
-              {/* <span className={styles.menuImageText}>Fonts & Footers</span> */}
               <SectionIntroii title='Fonts & Footers' color='tan' />
             </div>
           </div>
