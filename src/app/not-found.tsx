@@ -1,26 +1,48 @@
 // app/not-found.tsx
-import Link from "next/link";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
+import styles from "./404.module.css";
+import Image from "next/image";
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import Button from "@/components/shared/Button/Button";
+import Img1 from "../../public/images/404.png";
+import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 export default function NotFound() {
   return (
-    <main className='min-h-screen grid place-items-center p-8 text-center'>
-      <div>
-        <h1 className='text-4xl font-bold'>404 — Page not found</h1>
-        <p className='mt-2 text-muted-foreground'>
-          The page you’re looking for doesn’t exist or was moved.
-        </p>
-        <div className='mt-6'>
-          <Link
-            href='/'
-            className='inline-block rounded px-4 py-2 border hover:bg-black hover:text-white transition'
-          >
-            Go home
-          </Link>
-        </div>
+    <main>
+      <Nav />
+      <div className={styles.container}>
+        <LayoutWrapper>
+          <div className={styles.content}>
+            <div className={styles.top}>
+              <div className={styles.imgContainer}>
+                <Image
+                  src={Img1}
+                  alt='thinking'
+                  fill
+                  className={styles.img}
+                  priority
+                />
+              </div>
+              <SectionIntroii title='404 - Not Found' />
+              <h1 className={styles.heading}>
+                The page you’re looking for <br /> doesn’t exist or was moved.
+              </h1>
+              <p className={styles.copy}>
+                Let’s create something amazing together. Reach out today to
+                discuss your project and see how we can help bring your vision
+                to life.
+              </p>
+              <div className={styles.btnContainer}>
+                <Button href='/' btnType='lime' text='Go back home' />
+              </div>
+            </div>
+            <div className={styles.bottom}></div>
+          </div>
+        </LayoutWrapper>
       </div>
+      <FinalCTAMain />
     </main>
   );
 }
-
-// (optional) give it a nice <title>
-// export const metadata = { title: "404 — Page not found" };
