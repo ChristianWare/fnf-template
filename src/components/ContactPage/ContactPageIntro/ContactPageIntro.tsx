@@ -34,7 +34,7 @@ const data = [
   {
     id: 4,
     title: "Instagram",
-    desc: "@evermind.eco",
+    desc: "instagram.com/fontsandfooters",
     icon: <Instagram className={styles.icon} />,
   },
   {

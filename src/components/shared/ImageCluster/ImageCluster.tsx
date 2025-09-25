@@ -65,7 +65,7 @@ export default function ImageCluster({
         </div>
         <div className={styles.b2}>
           <p className={`${styles.copy} ${styles[color]}`}>
-            Trusted by 50+ clients (4.9/5)
+            Trusted by multiple clients (4.9/5)
           </p>
         </div>
       </div>
