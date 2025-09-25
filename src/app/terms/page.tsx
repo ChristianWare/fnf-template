@@ -1,10 +1,9 @@
-import Img from "../../../public/images/herovi.jpg";
+import Img from "../../../public/images/whydb.jpg";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "../leagal.module.css";
 import Image from "next/image";
 import Nav from "@/components/shared/Nav/Nav";
-import Footer from "@/components/shared/Footer/Footer";
-import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,23 +12,23 @@ export const metadata: Metadata = {
 
 const TermsPage = () => {
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.container}>
         <div className={styles.imgOverlay}></div>
         <Image
           src={Img}
-          alt='Nier Transportation'
+          alt='Fonts & Footers'
           fill
           className={styles.img2}
           sizes='100vw'
           priority
           quality={100}
         />
-        <Nav navItemColor='var(--tan)' signUpBtnType='nav' />
+        <Nav />
         <LayoutWrapper>
-          <div className={styles.content}>
+          <div className={styles.mainContent}>
             <h1 className={styles.heading} lang='en'>
-              Terms and Conditions
+              Terms & <br /> Conditions
             </h1>
           </div>
         </LayoutWrapper>
@@ -37,108 +36,110 @@ const TermsPage = () => {
       <LayoutWrapper>
         <div className={styles.content}>
           <p>
-            <strong>Effective Date: 09/14/2023</strong>
+            <strong>Effective Date: 09/25/2025</strong>
           </p>
           <br />
           <h2>1. Acceptance of Terms</h2>
           <p>
-            Welcome to Nier Transportation&#39;s website. By accessing or using
-            this website, you agree to comply with and be bound by these Terms
-            of Use (&quot;Terms&quot;). If you do not agree to these Terms,
-            please do not use this website.
+            Welcome to Fonts &amp; Footers’ website. By accessing or using this
+            website and any related services or materials, you agree to comply
+            with and be bound by these Terms of Use (&quot;Terms&quot;). If you
+            do not agree to these Terms, please do not use this website.
           </p>
           <br />
           <h2>2. Changes to Terms</h2>
           <p>
-            Nier Transportation reserves the right to modify, amend, or update
-            these Terms at any time without prior notice. Any changes will be
-            effective immediately upon posting. Your continued use of the
-            website following the posting of changes constitutes your acceptance
-            of those changes.
+            Fonts &amp; Footers may modify, amend, or update these Terms at any
+            time without prior notice. Any changes are effective immediately
+            upon posting. Your continued use of the website following the
+            posting of changes constitutes your acceptance of those changes.
           </p>
           <br />
           <h2>3. Use of the Website</h2>
           <p>
             You must be at least 18 years old to use this website. You agree to
-            use this website for lawful purposes only and in a manner consistent
+            use the site for lawful purposes only and in a manner consistent
             with all applicable laws and regulations. You may not use this
             website in any way that could damage, disable, overburden, or impair
-            Nier Transportation&#39;s services or interfere with other
-            users&#39; enjoyment of the website.
+            Fonts &amp; Footers’ services or interfere with other users’
+            enjoyment of the website.
           </p>
           <br />
           <h2>4. Intellectual Property</h2>
           <p>
-            All content, trademarks, logos, and intellectual property on this
-            website are the property of Nier Transportation and are protected by
-            copyright and other intellectual property laws. You may not use,
-            reproduce, or distribute any content from this website without prior
-            written permission from Nier Transportation.
+            All content, trademarks, logos, design assets, code samples, and
+            other intellectual property on this website are the property of
+            Fonts &amp; Footers and are protected by copyright and other
+            intellectual property laws. You may not use, reproduce, adapt, or
+            distribute any content from this website without prior written
+            permission from Fonts &amp; Footers.
           </p>
           <br />
           <h2>5. Privacy</h2>
           <p>
             Your use of this website is also governed by our Privacy Policy,
-            which can be found at [Link to Privacy Policy]. By using this
-            website, you consent to the collection and use of your information
-            as described in the Privacy Policy.
+            which can be found at <a href='/legal/privacy'>/legal/privacy</a>.
+            By using this website, you consent to the collection and use of your
+            information as described in the Privacy Policy.
           </p>
           <br />
           <h2>6. Disclaimer of Warranties</h2>
           <p>
             This website is provided &quot;as is&quot; without warranties of any
-            kind, either express or implied. Nier Transportation disclaims all
+            kind, whether express or implied. Fonts &amp; Footers disclaims all
             warranties, including but not limited to the accuracy, completeness,
-            reliability, or availability of this website.
+            reliability, or availability of this website and its content.
           </p>
           <br />
           <h2>7. Limitation of Liability</h2>
           <p>
-            Nier Transportation will not be liable for any direct, indirect,
+            Fonts &amp; Footers will not be liable for any direct, indirect,
             incidental, special, consequential, or punitive damages arising out
-            of your access to or use of this website.
+            of or related to your access to or use of this website, even if
+            advised of the possibility of such damages.
           </p>
           <br />
           <h2>8. Governing Law</h2>
           <p>
             These Terms are governed by and construed in accordance with the
-            laws of Arizoan and California. Any disputes arising from or in
-            connection with these Terms will be subject to the exclusive
-            jurisdiction of the courts located in Arizoan and California.
+            laws of the State of Arizona, USA, without regard to its conflict of
+            law principles. Any disputes arising from or in connection with
+            these Terms will be subject to the exclusive jurisdiction of the
+            state and federal courts located in Maricopa County, Arizona.
           </p>
           <br />
           <h2>9. Contact Information</h2>
           <p>
             If you have any questions or concerns regarding these Terms, please
-            contact us at:
+            contact us:
             <br />
             <br />
             <strong>
-              Address:
+              Mailing Address (correspondence only):
               <br />
-              10105 E Vía Linda Suite A- 105 <br />
-              Scottsdale, AZ 85258
+              Scottsdale, AZ, USA
             </strong>
             <br />
             <br />
             <strong>
-              Phone: <br />
-              480-300-6003
+              Email
+              <br />
+              hello@fontsandfooters.com
             </strong>
             <br />
             <br />
             <strong>
-              Email <br />
-              reservations@niertransportation.com
+              Contact Form
+              <br />
+              fontsandfooters.com/contact
             </strong>
           </p>
         </div>
       </LayoutWrapper>
-      <FinalCTA />
-      <Footer />
+      <FinalCTAMain />
     </main>
   );
 };
 export default TermsPage;
 
-// Nier Transportation
+// Fonts & Footers

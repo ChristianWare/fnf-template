@@ -1,10 +1,9 @@
-import Img from "../../../public/images/herovi.jpg";
+import Img from "../../../public/images/whydb.jpg";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "../leagal.module.css";
 import Image from "next/image";
 import Nav from "@/components/shared/Nav/Nav";
-import Footer from "@/components/shared/Footer/Footer";
-import FinalCTA from "@/components/shared/FinalCTA/FinalCTA";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 
 const AccessibilityPage = () => {
   return (
-    <main>
+    <main className={styles.main}>
       <section className={styles.container}>
         <div className={styles.imgOverlay}></div>
         <Image
@@ -25,9 +24,9 @@ const AccessibilityPage = () => {
           priority
           quality={100}
         />
-        <Nav navItemColor='var(--tan)' signUpBtnType='nav' />
+        <Nav />
         <LayoutWrapper>
-          <div className={styles.content}>
+          <div className={styles.mainContent}>
             <h1 className={styles.heading} lang='en'>
               Accessibility <br /> Policy
             </h1>
@@ -37,103 +36,103 @@ const AccessibilityPage = () => {
       <LayoutWrapper>
         <div className={styles.content}>
           <p>
-            <strong>Effective Date: 09/14/2023</strong>
+            <strong>Effective Date: 09/25/2025</strong>
           </p>
           <br />
           <h2>1. Introduction</h2>
           <p>
-            Welcome to Nier Transportation&#39;s Accessibility Policy. We are
-            committed to making our website accessible to all individuals,
-            including those with disabilities. This policy outlines our efforts
-            to ensure that our website is accessible and usable to the widest
-            possible audience.
+            Welcome to Fonts &amp; Footers’ Accessibility Policy. We design and
+            build booking-focused websites and we’re committed to making our own
+            website accessible to all people, including those with disabilities.
+            This policy outlines our ongoing efforts to provide an inclusive,
+            usable experience for the widest possible audience.
           </p>
           <br />
           <h2>2. Web Content Accessibility Guidelines (WCAG)</h2>
           <p>
-            We strive to comply with the Web Content Accessibility Guidelines
-            (WCAG) 2.1 Level AA, a globally recognized standard for web
-            accessibility. Our efforts include:
+            We strive to align with the Web Content Accessibility Guidelines
+            (WCAG) 2.2 Level AA. Our efforts include:
             <br />
             <br />
-            - Providing alternative text descriptions for non-text content, such
-            as images and multimedia.
+            - Providing meaningful alternative text for non-text content (e.g.,
+            images and media).
             <br />
-            <br />- Ensuring that our website is navigable using keyboard-only
-            or screen-reader technology.
+            <br />- Ensuring the site is operable by keyboard and compatible
+            with modern screen readers.
             <br />
-            <br />- Using adaptable and responsive design principles to
-            accommodate various devices and screen sizes.
+            <br />- Maintaining responsive, adaptable layouts that work across
+            devices and screen sizes.
             <br />
-            <br />- Offering clear and consistent navigation and structure
-            throughout the website.
+            <br />- Preserving clear, consistent navigation, headings, and
+            landmark structure.
+            <br />
+            <br />- Preserving sufficient color contrast and visible focus
+            states on interactive elements.
           </p>
           <br />
           <h2>3. Assistive Technologies</h2>
           <p>
-            We aim to be compatible with a variety of assistive technologies,
-            such as screen readers and voice recognition software. Users who
-            rely on these tools should be able to access and interact with our
-            website with ease.
+            We aim to support a range of assistive technologies, including
+            screen readers, voice recognition software, and browser zoom and
+            contrast settings. Users who rely on these tools should be able to
+            access our content and complete typical tasks with ease.
           </p>
           <br />
           <h2>4. Feedback and Contact Information</h2>
           <p>
-            We value feedback from our website users, and we encourage you to
-            report any accessibility issues you encounter. If you have
-            questions, concerns, or would like to provide feedback on the
-            accessibility of our website, please contact us at:
+            Accessibility is a shared effort. If you encounter an issue or have
+            suggestions to improve accessibility on our site, please reach out:
             <br />
             <br />
             <strong>
-              Address:
+              Mailing Address (correspondence only):
               <br />
-              10105 E Vía Linda Suite A- 105 <br />
-              Scottsdale, AZ 85258
+              Scottsdale, AZ, USA
             </strong>
             <br />
             <br />
             <strong>
-              Phone: <br />
-              480-300-6003
+              Email
+              <br />
+              hello@fontsandfooters.com
             </strong>
             <br />
             <br />
             <strong>
-              Email <br />
-              reservations@niertransportation.com
+              Contact Form
+              <br />
+              fontsandfooters.com/contact
             </strong>
           </p>
           <br />
           <h2>5. Ongoing Accessibility Efforts</h2>
           <p>
-            Ensuring accessibility is an ongoing process. We are committed to
-            regularly reviewing and improving our website to maintain and
-            enhance accessibility standards. As technologies evolve and
-            accessibility guidelines are updated, we will strive to stay in
-            compliance.
+            Accessibility is an ongoing process. We periodically audit our site,
+            address issues as we discover them, and incorporate accessibility
+            checks into our design and development workflow. As standards and
+            assistive technologies evolve, we’ll continue to refine our
+            approach.
           </p>
           <br />
-          <h2>6. Third-Party Content and Links</h2>
+          <h2>6. Third-Party Content and Integrations</h2>
           <p>
-            While we strive to make our own content accessible, some parts of
-            our website may contain third-party content or links to external
-            websites that are beyond our control. We cannot guarantee the
-            accessibility of such content or the practices of external websites.
+            Some portions of our site may include third-party content, plug-ins,
+            or links beyond our control. While we select partners with
+            accessibility in mind, we cannot guarantee the accessibility of
+            external websites or embedded services.
           </p>
           <br />
-          <h2>7. Contact Us</h2>
+          <h2>7. Requesting Alternative Formats</h2>
           <p>
-            If you have any questions or concerns regarding this Accessibility
-            Policy or would like to request accessible versions of specific
-            content, please contact us at the provided contact information
-            above.
+            If you need information from our website in an alternative format or
+            need a reasonable accommodation, please contact us using the
+            information above. We’ll make every reasonable effort to meet your
+            needs promptly.
           </p>
           <br />
         </div>
       </LayoutWrapper>
-      <FinalCTA />
-      <Footer />
+      <FinalCTAMain />
     </main>
   );
 };
