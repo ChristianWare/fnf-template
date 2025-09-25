@@ -195,7 +195,7 @@ export default function Values() {
             </p>
 
             <div className={styles.btnContainer}>
-              <Button href='/' text='Contact us' btnType='black' />
+              <Button href='/contact' text='Contact us' btnType='black' />
             </div>
           </div>
 

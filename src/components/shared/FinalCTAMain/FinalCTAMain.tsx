@@ -47,8 +47,13 @@ export default function FinalCTAMain() {
             </h2>
 
             <div className={styles.btnContainer}>
-              <Button href='/' btnType='lime' text='Book your discovery call' />
-              <Button href='/' btnType='grayOutline' text='About us' />
+              <Button
+                href='https://calendly.com/chris-ware-dev/discovery-call'
+                target='_blank'
+                btnType='lime'
+                text='Book your discovery call'
+              />
+              <Button href='/contact' btnType='grayOutline' text='Contact us' />
             </div>
           </div>
           <footer className={styles.footerContainer}>

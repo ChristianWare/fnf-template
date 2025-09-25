@@ -3,7 +3,6 @@ import styles from "./Different.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Image from "next/image";
-// import IMg1 from "../../../../public/images/happyii.png";
 import IMg2 from "../../../../public/images/happyiii.png";
 
 const data = [

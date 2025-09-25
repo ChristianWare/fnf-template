@@ -18,7 +18,7 @@ type Post = {
 async function getMorePosts(currentSlug: string): Promise<Post[]> {
   const query = `
     *[_type == "post" && slug.current != $slug]
-      | order(publishedAt desc)[0..1]{
+      | order(publishedAt desc)[0..2]{
         _id,
         title,
         slug,

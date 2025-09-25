@@ -79,6 +79,7 @@
 
 .ptP {
   line-height: 2.4rem;
+  font-family: var(--inter);
   color: var(--black);
 }
 .ptUl,
@@ -93,6 +94,7 @@
 }
 
 .ptStrong {
+  font-family: var(--inter);
   font-weight: 700;
 }
 

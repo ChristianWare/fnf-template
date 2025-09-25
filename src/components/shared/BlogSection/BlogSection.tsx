@@ -6,6 +6,7 @@ import BlogCardOne from "../BlogCardOne/BlogCardOne";
 import BlogCardTwo from "../BlogCardTwo/BlogCardTwo";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import Button from "../Button/Button";
 
 type Post = {
   _id: string;
@@ -22,7 +23,8 @@ type Post = {
 
 async function getPosts(): Promise<Post[]> {
   const query = `
-    *[_type == "post"] | order(publishedAt desc) [0..2]{
+    *[_type == "post"] | order(publishedAt desc) 
+    {
       _id,
       title,
       slug,
@@ -45,6 +47,9 @@ export default async function BlogSection() {
         <div className={styles.content}>
           <div className={styles.top}>
             <SectionIntroii title='Latest insights' />
+            <div className={styles.btnContainer}>
+              <Button href='/blog' btnType='black' text='All blog posts' />
+            </div>
           </div>
 
           <div className={styles.bottom}>

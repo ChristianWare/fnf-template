@@ -67,7 +67,8 @@ export default function BrandStory() {
 
               <div className={styles.btnContainer}>
                 <Button
-                  href='/start'
+                  href='https://calendly.com/chris-ware-dev/discovery-call'
+                  target='_blank'
                   btnType='grayOutline'
                   text='Schedule a discovery call'
                 />
