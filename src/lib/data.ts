@@ -140,6 +140,7 @@ export const footerData2 = [
   },
 ] as const;
 
+// data.ts
 export const projects = [
   {
     id: 1,
@@ -198,6 +199,8 @@ export const projects = [
       { id: 3, title: "Waivers completed pre-arrival", desc: "94%" },
       { id: 4, title: "Double-booking incidents", desc: "0 after launch" },
     ],
+    testimonial:
+      "We went from juggling DMs to a clean calendar with deposits and zero double-bookings. Our team spends weekends riding again—not reconciling spreadsheets.",
     src2: Project1,
     src3: Project2,
   },
@@ -258,6 +261,8 @@ export const projects = [
       { id: 3, title: "On-time pickup rate", desc: "98.7%" },
       { id: 4, title: "Quote-to-book time", desc: "-68%" },
     ],
+    testimonial:
+      "Clients book in under a minute with a polished quote and deposit. Dispatch is effortless and our on-time rate speaks for itself.",
     src2: Project1,
     src3: Project2,
   },
@@ -318,6 +323,8 @@ export const projects = [
       { id: 3, title: "Phone time reduction", desc: "-41%" },
       { id: 4, title: "Online reschedules self-serve", desc: "87%" },
     ],
+    testimonial:
+      "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
     src2: Project1,
     src3: Project2,
   },
@@ -378,10 +385,13 @@ export const projects = [
       { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
       { id: 4, title: "Occupancy lift in slow periods", desc: "+41%" },
     ],
+    testimonial:
+      "We reclaimed margins from OTA fees and finally control the guest journey. The guest portal and add-ons pay for themselves every month.",
     src2: Project1,
     src3: Project2,
   },
 ] as const;
+
 
 export const pricingData = [
   {

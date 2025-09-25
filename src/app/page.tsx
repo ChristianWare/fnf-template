@@ -30,6 +30,7 @@ export default function HomePage() {
             custom booking websites that cut no-shows, speed checkout to under a
             minute, and turn busywork into predictable, prepaid revenue.'
         src={ChrisImg}
+        signatureBox
       />
       <PricingPreview />
       <Faq />

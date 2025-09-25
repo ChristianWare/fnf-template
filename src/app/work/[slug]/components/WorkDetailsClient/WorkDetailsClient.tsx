@@ -1,3 +1,4 @@
+// WorkDetailsClient.tsx
 "use client";
 
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
@@ -37,12 +38,6 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
           </div>
           <div className={styles.t2}>
             <div className={styles.imgContainer}>
-              {/* <Image
-                src={project.src}
-                alt={project.title}
-                fill
-                className={styles.img}
-              /> */}
               <video preload='auto' autoPlay muted loop className={styles.img}>
                 <source src={project.video} />
               </video>
@@ -131,9 +126,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
         <br />
         <br />
         <OurTeam
-          text='I’m Chris, founder of Fonts & Footers. We focus on building
-            custom booking websites that cut no-shows, speed checkout to under a
-            minute, and turn busywork into predictable, prepaid revenue.'
+          text={project.testimonial}
           src={project.src}
           backgroundColor='black'
           textColor='tan'

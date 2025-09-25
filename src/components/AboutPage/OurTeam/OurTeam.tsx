@@ -9,14 +9,16 @@ interface Props {
   backgroundColor?: string;
   textColor?: string;
   text: string;
-  src: StaticImageData
+  src: StaticImageData;
+  signatureBox?: boolean;
 }
 
 export default function OurTeam({
   backgroundColor = "",
   textColor = "",
   text,
-  src
+  src,
+  signatureBox,
 }: Props) {
   return (
     <section className={`${styles.container} ${styles[backgroundColor]}`}>
@@ -38,9 +40,11 @@ export default function OurTeam({
               rate, prepaid %, rebooking, membership mix, and LTV/CAC—so you
               keep the relationship and the margin.
             </p>1 */}
-          <div className={styles.signatureBox}>
-            <SectionIntro title='Chris - Founder of Fonts & Footers' />
-          </div>
+          {signatureBox && (
+            <div className={styles.signatureBox}>
+              <SectionIntro title='Chris - Founder of Fonts & Footers' />
+            </div>
+          )}
         </div>
       </LayoutWrapper>
     </section>
