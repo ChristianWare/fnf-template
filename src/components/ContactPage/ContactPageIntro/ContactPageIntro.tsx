@@ -65,7 +65,10 @@ export default function ContactPageIntro() {
                   <div className={styles.subheading}>
                     We’re a new, remote-first studio based in Phoenix. Pick a
                     time that works, or reach us at{" "}
-                    <a href='mailto:hello@fontsandfooters.com'>
+                    <a
+                      href='mailto:hello@fontsandfooters.com'
+                      style={{ color: "blue", textDecoration: "underline" }}
+                    >
                       hello@fontsandfooters.com
                     </a>
                     .
@@ -82,7 +85,7 @@ export default function ContactPageIntro() {
                   </div>
 
                   <a
-                    href='https://calendly.com/fontsandfooters/discovery'
+                    href='https://calendly.com/chris-ware-dev/discovery-call'
                     target='_blank'
                     rel='noopener noreferrer'
                     className={styles.ccBottomRight}

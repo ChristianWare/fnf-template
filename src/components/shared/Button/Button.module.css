@@ -29,7 +29,7 @@
 .lime:hover {
   background-color: var(--black);
   color: var(--lime);
-  border: 1px solid var(--black);
+  border: 1px solid var(--lime);
 }
 
 .black,

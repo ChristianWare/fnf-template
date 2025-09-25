@@ -86,9 +86,9 @@ export default function WhyDB() {
               </p>
               <div className={styles.btnContainer}>
                 <Button
-                  href='/pricing'
+                  href='/about'
                   btnType='grayOutline'
-                  text='Check Pricing'
+                  text='About us'
                 />
               </div>
             </div>
