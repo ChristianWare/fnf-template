@@ -9,7 +9,7 @@ import ChrisImg from "../../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
-
+import Different from "@/components/AboutPage/Different/Different";
 
 export default function AboutPage() {
   return (
@@ -19,6 +19,7 @@ export default function AboutPage() {
       <BrandStory />
       <FinalCTA />
       <Values />
+      <Different />
       <HowItWorks />
       <OurTeam
         text='I’m Chris, founder of Fonts & Footers. We focus on building

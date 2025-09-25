@@ -1,4 +1,4 @@
-import Different from "@/components/AboutPage/Different/Different";
+// import Different from "@/components/AboutPage/Different/Different";
 import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
 import ContactPageContainer from "@/components/ContactPage/ContactPageContainer/ContactPageContainer";
 import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
@@ -24,7 +24,7 @@ export default function HomePage() {
       <ProjectSection />
       <Industries />
       <Outcomes />
-      <Different />
+      {/* <Different /> */}
       <OurTeam
         text='I’m Chris, founder of Fonts & Footers. We focus on building
             custom booking websites that cut no-shows, speed checkout to under a
