@@ -92,7 +92,7 @@ export default function LoginForm() {
           id='email'
           register={register}
           errors={errors}
-          placeholder='email'
+          // placeholder='email'
           label='email'
           disabled={isPending}
           type='email'
@@ -102,7 +102,7 @@ export default function LoginForm() {
           id='password'
           register={register}
           errors={errors}
-          placeholder='password'
+          // placeholder='password'
           type='password'
           label='password'
           disabled={isPending}

@@ -5,7 +5,7 @@
 }
 
 .label {
-  color: var(--tan);
+  color: var(--lightBlack);
   font-family: var(--PPNeueMontrealMediumThick);
   text-transform: capitalize;
 }
@@ -15,7 +15,7 @@
 }
 
 .input {
-  padding: 1rem;
+  padding: 0.7rem;
   padding-left: 1.5rem;
   border: 1px solid var(--gray);
   border-radius: 50px;

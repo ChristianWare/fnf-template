@@ -102,7 +102,7 @@ export default function ContactForm() {
           <input
             id='firstName'
             type='text'
-            placeholder='Jane'
+            // placeholder='Jane'
             maxLength={120}
             {...register("firstName", { required: true })}
             aria-invalid={!!errors.firstName || undefined}
@@ -120,7 +120,7 @@ export default function ContactForm() {
           <input
             id='lastName'
             type='text'
-            placeholder='Doe'
+            // placeholder='Doe'
             maxLength={120}
             {...register("lastName", { required: true })}
             aria-invalid={!!errors.lastName || undefined}

@@ -94,7 +94,7 @@
 }
 
 .error {
-  color: red;
+  color: red !important;
   margin-top: 0.5rem;
   width: 100%;
 }

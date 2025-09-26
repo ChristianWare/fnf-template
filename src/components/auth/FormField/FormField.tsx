@@ -15,7 +15,7 @@ interface FormFieldProps<T extends FieldValues> {
   id: string;
   type?: string;
   disabled?: boolean;
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   register: UseFormRegister<T>;
   errors: FieldErrors;

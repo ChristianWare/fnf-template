@@ -77,7 +77,7 @@ export default function RegisterForm() {
           id='name'
           register={register}
           errors={errors}
-          placeholder='name'
+          // placeholder='name'
           label='name'
           disabled={isPending}
           autoComplete='off'
@@ -87,7 +87,7 @@ export default function RegisterForm() {
           id='email'
           register={register}
           errors={errors}
-          placeholder='email'
+          // placeholder='email'
           label='email'
           disabled={isPending}
           type='email'
@@ -98,7 +98,7 @@ export default function RegisterForm() {
           id='password'
           register={register}
           errors={errors}
-          placeholder='password'
+          placeholder='•••••••••'
           type='password'
           label='password'
           disabled={isPending}
