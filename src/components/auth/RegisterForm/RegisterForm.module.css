@@ -44,12 +44,12 @@
 }
 
 .footerText {
-  color: var(--tan);
-  text-align: center;
+  color: var(--black);
+  /* text-align: center; */
 }
 
 .link {
-  color: #2563eb;
+  color: #2563eb !important;
   text-decoration: none;
   transition: color 0.15s ease-in-out;
   margin-left: 0.5rem;

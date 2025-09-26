@@ -13,6 +13,7 @@ import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 import Faq from "@/components/Faq/Faq";
+import Features from "@/components/HomePage/Features/Features";
 
 export default function HomePage() {
   return (
@@ -33,6 +34,7 @@ export default function HomePage() {
         signatureBox
       />
       <PricingPreview />
+      <Features />
       <Faq />
       <BlogSection />
       <ContactPageContainer />

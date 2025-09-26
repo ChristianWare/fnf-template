@@ -48,11 +48,11 @@ export const footerData = [
       //   id: 1.2,
       //   option: "About",
       // },
-      {
-        id: 1.3,
-        option: "Work",
-        href: "/work",
-      },
+      // {
+      //   id: 1.3,
+      //   option: "Work",
+      //   href: "/work",
+      // },
       {
         id: 1.4,
         option: "Pricing",
@@ -63,10 +63,21 @@ export const footerData = [
         option: "Blog",
         href: "/blog",
       },
-      // {
-      //   id: 1.6,
-      //   option: "Contact",
-      // },
+      {
+        id: 1.6,
+        option: "Login",
+        href: "/login",
+      },
+      {
+        id: 1.7,
+        option: "Register",
+        href: "/register",
+      },
+      {
+        id: 1.8,
+        option: "My Account",
+        href: "/dashboard",
+      },
     ],
   },
   {
@@ -112,6 +123,11 @@ export const footerData = [
         id: 3.3,
         option: "FAQ's",
         href: "/faqs",
+      },
+      {
+        id: 3.4,
+        option: "Blog",
+        href: "/blog",
       },
       // {
       //   id: 3.4,
@@ -391,7 +407,6 @@ export const projects = [
     src3: Project2,
   },
 ] as const;
-
 
 export const pricingData = [
   {
