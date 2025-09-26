@@ -2,7 +2,6 @@
 
 import styles from "./PasswordResetFormClient.module.css";
 import Alert from "@/components/shared/Alert/Alert";
-import FalseButton from "@/components/shared/FalseButton/FalseButton";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -12,6 +11,8 @@ import {
   PasswordResetSchemaType,
 } from "@/schemas/PasswordResetSchema";
 import { passwordReset } from "../../../../actions/auth/password-reset";
+import Button from "@/components/shared/Button/Button";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
 
 type Props = {
   token?: string;
@@ -49,44 +50,55 @@ export default function PasswordResetFormClient({ token }: Props) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <p>Enter your new password:</p>
+    <section className={styles.container}>
+      <LayoutWrapper>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <h1 className={styles.heading}>Reset password</h1>
+          <p className={styles.copy}>Enter your new password:</p>
+          <FormField
+            id='password'
+            register={register}
+            errors={errors}
+            placeholder='password'
+            label='password'
+            disabled={isPending}
+            type='password'
+            eye
+          />
 
-        <FormField
-          id='password'
-          register={register}
-          errors={errors}
-          placeholder='password'
-          label='password'
-          disabled={isPending}
-          type='password'
-          eye
-        />
+          <FormField
+            id='confirmPassword'
+            register={register}
+            errors={errors}
+            placeholder='Confirm password'
+            label='Confirm password'
+            disabled={isPending}
+            type='password'
+            eye
+          />
 
-        <FormField
-          id='confirmPassword'
-          register={register}
-          errors={errors}
-          placeholder='Confirm password'
-          label='Confirm password'
-          disabled={isPending}
-          type='password'
-          eye
-        />
+          {error && <Alert message={error} error />}
+          {success && <Alert message={success} success />}
 
-        {error && <Alert message={error} error />}
-        {success && <Alert message={success} success />}
-
-        <div className={styles.btnContainer}>
+          {/* <div className={styles.btnContainer}>
           <FalseButton
             text={isPending ? "Submitting..." : "Save new password"}
             type='submit'
             btnType='blue'
             disabled={isPending}
           />
-        </div>
-      </form>
-    </div>
+        </div> */}
+          <div className={styles.btnContainer}>
+            <Button
+              type='submit'
+              btnType='black'
+              disabled={isPending}
+              text={isPending ? "Submitting..." : "Save new password"}
+            />
+            <Button btnType='blackOutline' href='/login' text='Home' />
+          </div>
+        </form>
+      </LayoutWrapper>
+    </section>
   );
 }

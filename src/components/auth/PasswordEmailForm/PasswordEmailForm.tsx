@@ -2,7 +2,6 @@
 
 import styles from "./PasswordEmailForm.module.css";
 import Alert from "@/components/shared/Alert/Alert";
-import FalseButton from "@/components/shared/FalseButton/FalseButton";
 import {
   PasswordEmailSchema,
   PasswordEmailSchemaType,
@@ -12,6 +11,8 @@ import { useState, useTransition } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import FormField from "../FormField/FormField";
 import { passwordEmail } from "../../../../actions/auth/password-email";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
+import Button from "@/components/shared/Button/Button";
 
 export default function PasswordEmailForm() {
   const {
@@ -33,7 +34,7 @@ export default function PasswordEmailForm() {
         if (res?.error) {
           setError(res.error);
         }
-        
+
         if (res?.success) {
           setSuccess(res.success);
         }
@@ -42,30 +43,36 @@ export default function PasswordEmailForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <p>Forgot password?</p>
-        <FormField
-          id='email'
-          register={register}
-          errors={errors}
-          placeholder='email'
-          label='email'
-          disabled={isPending}
-        />
-
-        {error && <Alert message={error} error />}
-        {success && <Alert message={success} success />}
-
-        <div className={styles.btnContainer}>
-          <FalseButton
-            text={isPending ? "Submitting..." : "Send reset email"}
-            type='submit'
-            btnType='blue'
+    <section className={styles.container}>
+      <LayoutWrapper>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <h1 className={styles.heading}>Forgot password?</h1>
+          <p className={styles.copy}>
+            A code will be sent to your email to reset your password.
+          </p>
+          <FormField
+            id='email'
+            register={register}
+            errors={errors}
+            placeholder='email'
+            label='email'
             disabled={isPending}
           />
-        </div>
-      </form>
-    </div>
+
+          {error && <Alert message={error} error />}
+          {success && <Alert message={success} success />}
+
+          <div className={styles.btnContainer}>
+            <Button
+              type='submit'
+              btnType='black'
+              disabled={isPending}
+              text={isPending ? "Submitting..." : "Send reset email"}
+            />
+            <Button btnType='blackOutline' href='/login' text='Back to login' />
+          </div>
+        </form>
+      </LayoutWrapper>
+    </section>
   );
 }

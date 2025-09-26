@@ -1,9 +1,22 @@
 import PasswordEmailForm from "@/components/auth/PasswordEmailForm/PasswordEmailForm";
+import Nav from "@/components/shared/Nav/Nav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+import { redirect } from "next/navigation";
+import { auth } from "../../../../auth";
 
-export default function PasswordEmailPage() {
+export default async function PasswordEmailPage() {
+  const session = await auth();
+
+  // If already signed in, send them somewhere useful (e.g., dashboard)
+  if (session?.user) {
+    redirect("/dashboard");
+  }
+
   return (
-    <div>
+    <main>
+      <Nav />
       <PasswordEmailForm />
-    </div>
+      <FinalCTAMain />
+    </main>
   );
 }
