@@ -11,30 +11,23 @@ import {
 } from "@/schemas/PasswordEmailSchema";
 
 export const passwordEmail = async (values: PasswordEmailSchemaType) => {
-  const validatedFields = PasswordEmailSchema.safeParse(values);
+  const validated = PasswordEmailSchema.safeParse(values);
+  if (!validated.success) return { error: "Invalid email!" };
 
-  if (!validatedFields.success) {
-    return { error: "Invalid email!" };
-  }
-
-  const { email } = validatedFields.data;
+  const { email } = validated.data;
 
   const user = await getUserByEmail(email);
+  if (!user || !user.email) return { error: "User not found!" };
 
-  if (!user || !user.email) {
-    return { error: "User not found!" };
-  }
+  const token = await generatePasswordResetToken(email);
+  const result = await sendPasswordResetEmail(token.email, token.token);
 
-  const passwordResetToken = await generatePasswordResetToken(email);
-
-  const { error } = await sendPasswordResetEmail(
-    passwordResetToken.email,
-    passwordResetToken.token
-  );
-
-  if (error) {
+  if (result.error) {
     return {
-      error: "Something went wrong while sending the password reset email!",
+      error:
+        typeof result.error === "string"
+          ? result.error
+          : "Something went wrong while sending the password reset email!",
     };
   }
 

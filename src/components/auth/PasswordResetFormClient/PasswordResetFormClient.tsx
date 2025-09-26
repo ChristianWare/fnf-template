@@ -76,18 +76,20 @@ export default function PasswordResetFormClient({ token }: Props) {
             type='password'
             eye
           />
-
-          {error && <Alert message={error} error />}
-          {success && <Alert message={success} success />}
-
-          {/* <div className={styles.btnContainer}>
-          <FalseButton
-            text={isPending ? "Submitting..." : "Save new password"}
-            type='submit'
-            btnType='blue'
-            disabled={isPending}
-          />
-        </div> */}
+          {error && (
+            <>
+              <br />
+              <Alert message={error} error />
+              <br />
+            </>
+          )}
+          {success && (
+            <>
+              <br />
+              <Alert message={success} success />
+              <br />
+            </>
+          )}
           <div className={styles.btnContainer}>
             <Button
               type='submit'
@@ -95,7 +97,7 @@ export default function PasswordResetFormClient({ token }: Props) {
               disabled={isPending}
               text={isPending ? "Submitting..." : "Save new password"}
             />
-            <Button btnType='blackOutline' href='/login' text='Home' />
+            <Button btnType='blackOutline' href='/login' text='Back to login' />
           </div>
         </form>
       </LayoutWrapper>

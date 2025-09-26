@@ -59,8 +59,21 @@ export default function PasswordEmailForm() {
             disabled={isPending}
           />
 
-          {error && <Alert message={error} error />}
-          {success && <Alert message={success} success />}
+          {error && (
+            <>
+              <br />
+              <Alert message={error} error />
+              <br />
+            </>
+          )}
+
+          {success && (
+            <>
+              <br />
+              <Alert message={success} success />
+              <br />
+            </>
+          )}
 
           <div className={styles.btnContainer}>
             <Button

@@ -7,7 +7,6 @@ import { auth } from "../../../../auth";
 export default async function PasswordEmailPage() {
   const session = await auth();
 
-  // If already signed in, send them somewhere useful (e.g., dashboard)
   if (session?.user) {
     redirect("/dashboard");
   }

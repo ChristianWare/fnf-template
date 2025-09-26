@@ -11,18 +11,12 @@ import bcrypt from "bcryptjs";
 
 export const signUp = async (values: RegisterSchemaType) => {
   const validateFields = RegisterSchema.safeParse(values);
-
-  if (!validateFields.success) {
-    return { error: "Invalid fields!" };
-  }
+  if (!validateFields.success) return { error: "Invalid fields!" };
 
   const { name, email, password } = validateFields.data;
 
-  const user = await getUserByEmail(email);
-
-  if (user) {
-    return { error: "Email already in use!" };
-  }
+  const existing = await getUserByEmail(email);
+  if (existing) return { error: "Email already in use!" };
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -35,15 +29,17 @@ export const signUp = async (values: RegisterSchemaType) => {
   });
 
   const emailVerificationToken = await generateEmailVerificationToken(email);
-  const { error } = await sendEmailVerificationToken(
+  const result = await sendEmailVerificationToken(
     emailVerificationToken.email,
     emailVerificationToken.token
   );
 
-  if (error) {
+  if (result.error) {
     return {
       error:
-        "Something went wrong while sending the verification email! Try to login to resend the verification email!",
+        typeof result.error === "string"
+          ? result.error
+          : "Something went wrong while sending the verification email! Try to login to resend the verification email!",
     };
   }
 
