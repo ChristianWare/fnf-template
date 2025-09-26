@@ -1,0 +1,27 @@
+.container {
+  background-color: var(--tan);
+  padding: 1rem;
+  background-image: radial-gradient(#efeded 2px, transparent 2px);
+  background-size: calc(10 * 2px) calc(10 * 2px);
+  padding: 10rem 0rem;
+}
+
+.content {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnContainer {
+  margin-top: 4rem;
+  display: grid;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 568px) {
+  .btnContainer {
+    width: 100%;
+  }
+}

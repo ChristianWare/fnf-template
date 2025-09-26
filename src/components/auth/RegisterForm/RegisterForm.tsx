@@ -33,11 +33,46 @@ export default function RegisterForm() {
       });
     });
   };
+
   return (
     <div className={styles.container}>
       <GoogleButton title='up' />
       <p className={styles.or}>or</p>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+
+      {/* Turn off browser autofill at the form level */}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+        autoComplete='off'
+      >
+        {/* Small hidden “honeypot” inputs help keep Chrome from force-filling */}
+        <input
+          type='text'
+          name='fake-username'
+          autoComplete='username'
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            opacity: 0,
+            height: 0,
+            width: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <input
+          type='password'
+          name='fake-password'
+          autoComplete='new-password'
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            opacity: 0,
+            height: 0,
+            width: 0,
+            pointerEvents: "none",
+          }}
+        />
+
         <FormField
           id='name'
           register={register}
@@ -45,7 +80,9 @@ export default function RegisterForm() {
           placeholder='name'
           label='name'
           disabled={isPending}
+          autoComplete='off'
         />
+
         <FormField
           id='email'
           register={register}
@@ -53,7 +90,10 @@ export default function RegisterForm() {
           placeholder='email'
           label='email'
           disabled={isPending}
+          type='email'
+          autoComplete='off'
         />
+
         <FormField
           id='password'
           register={register}
@@ -63,19 +103,24 @@ export default function RegisterForm() {
           label='password'
           disabled={isPending}
           eye
+          autoComplete='new-password'
         />
+
         <FormField
           id='confirmPassword'
           register={register}
           errors={errors}
-          placeholder='Conform Password'
+          placeholder='Confirm Password'
           type='password'
           label='Confirm Password'
           disabled={isPending}
           eye
+          autoComplete='new-password'
         />
+
         {error && <Alert message={error} error />}
         {success && <Alert message={success} success />}
+
         <div className={styles.btnContainer}>
           <FalseButton
             text={isPending ? "Submitting..." : "Register"}
@@ -85,6 +130,7 @@ export default function RegisterForm() {
           />
         </div>
       </form>
+
       <footer className={styles.cardFooter}>
         <p className={styles.footerText}>
           Already have an account?{" "}

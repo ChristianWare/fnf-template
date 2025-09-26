@@ -41,11 +41,9 @@ export default function LoginForm() {
           router.replace("/login");
           setError(res.error);
         }
-
         if (!res?.error) {
           router.push(LOGIN_REDIRECT);
         }
-
         if (res?.success) {
           setSuccess(res.success);
           router.push(LOGIN_REDIRECT);
@@ -58,7 +56,38 @@ export default function LoginForm() {
     <div className={styles.container}>
       <GoogleButton title='in' />
       <p className={styles.or}>or</p>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+        autoComplete='off'
+      >
+        <input
+          type='text'
+          name='fake-username'
+          autoComplete='username'
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            opacity: 0,
+            height: 0,
+            width: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <input
+          type='password'
+          name='fake-password'
+          autoComplete='new-password'
+          tabIndex={-1}
+          style={{
+            position: "absolute",
+            opacity: 0,
+            height: 0,
+            width: 0,
+            pointerEvents: "none",
+          }}
+        />
+
         <FormField
           id='email'
           register={register}
@@ -66,6 +95,8 @@ export default function LoginForm() {
           placeholder='email'
           label='email'
           disabled={isPending}
+          type='email'
+          autoComplete='off'
         />
         <FormField
           id='password'
@@ -76,6 +107,7 @@ export default function LoginForm() {
           label='password'
           disabled={isPending}
           eye
+          autoComplete='new-password'
         />
         {error && <Alert message={error} error />}
         {urlError && <Alert message={urlError} error />}

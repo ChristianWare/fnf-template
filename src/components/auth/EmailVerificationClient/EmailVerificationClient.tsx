@@ -1,9 +1,11 @@
 "use client";
 
+import styles from "./EmailVerificationClient.module.css";
 import { useEffect, useState } from "react";
-import { verifyEmail } from "../../../../actions/auth/email-verification"; 
+import { verifyEmail } from "../../../../actions/auth/email-verification";
 import Alert from "@/components/shared/Alert/Alert";
 import Button from "@/components/shared/Button/Button";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
 
 type Props = { token?: string };
 
@@ -46,11 +48,19 @@ export default function EmailVerificationClient({ token }: Props) {
   }, [token]);
 
   return (
-    <div>
-      {pending && <div>Verifying email...</div>}
-      {success && <Alert message={success} success />}
-      {error && <Alert message={error} error />}
-      {success && <Button text='Login' btnType='blue' href='/login' />}
-    </div>
+    <section className={styles.container}>
+      <LayoutWrapper>
+        <div className={styles.content}>
+          {pending && <div>Verifying email...</div>}
+          {success && <Alert message={success} success />}
+          {error && <Alert message={error} error />}
+          {success && (
+            <div className={styles.btnContainer}>
+              <Button text='Login' btnType='black' href='/login' />
+            </div>
+          )}
+        </div>
+      </LayoutWrapper>
+    </section>
   );
 }

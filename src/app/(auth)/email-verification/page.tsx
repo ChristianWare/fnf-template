@@ -1,5 +1,7 @@
 // app/(auth)/email-verification/page.tsx
 import EmailVerificationClient from "@/components/auth/EmailVerificationClient/EmailVerificationClient";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
+import Nav from "@/components/shared/Nav/Nav";
 
 export default async function EmailVerificationPage({
   searchParams,
@@ -10,10 +12,10 @@ export default async function EmailVerificationPage({
   const token = typeof sp.token === "string" ? sp.token : undefined;
 
   return (
-    <div>
+    <main>
+      <Nav />
       <EmailVerificationClient token={token} />
-    </div>
+      <FinalCTAMain />
+    </main>
   );
 }
-
-
