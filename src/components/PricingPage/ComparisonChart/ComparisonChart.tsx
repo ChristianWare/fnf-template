@@ -84,7 +84,7 @@ export default function ComparisonChart() {
   const plansToRender = isMobile ? [plans[selected]] : plans;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="compare">
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.copy}>

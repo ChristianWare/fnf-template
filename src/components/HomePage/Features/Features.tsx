@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Features.module.css";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Integration from "@/components/icons/Integration/Integration";
@@ -13,6 +15,8 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/work.png";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
+import { usePathname } from "next/navigation";
+import Button from "@/components/shared/Button/Button";
 
 const ecommerceFeatures = [
   {
@@ -104,6 +108,8 @@ const ecommerceFeatures = [
 ];
 
 export default function Features() {
+  const pathname = usePathname();
+
   return (
     <section className={styles.container} id='features'>
       <LayoutWrapper>
@@ -115,6 +121,15 @@ export default function Features() {
             <SectionIntroii title='Features' />
           </div>
           <h2 className={styles.heading}>Core features in every plan</h2>
+          {pathname === "/" && (
+            <div className={styles.btnContainer}>
+              <Button
+                href='/pricing/#compare'
+                btnType='black'
+                text='See full feature list'
+              />
+            </div>
+          )}
         </div>
 
         <div className={styles.parent}>
@@ -131,7 +146,6 @@ export default function Features() {
             ))}
           </div>
         </div>
-        {/* <ReviewSection /> */}
       </LayoutWrapper>
     </section>
   );

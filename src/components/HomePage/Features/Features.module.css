@@ -92,6 +92,13 @@
   transition: 0.2s all ease-in;
 }
 
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 @media screen and (max-width: 1068px) {
   .top {
     display: flex;
