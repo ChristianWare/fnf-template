@@ -6,6 +6,9 @@ import { verifyEmail } from "../../../../actions/auth/email-verification";
 import Alert from "@/components/shared/Alert/Alert";
 import Button from "@/components/shared/Button/Button";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
+import Image from "next/image";
+import Yay from "../../../../public/images/yay.png";
+import Angry from "../../../../public/images/angry.png";
 
 type Props = { token?: string };
 
@@ -52,12 +55,30 @@ export default function EmailVerificationClient({ token }: Props) {
       <LayoutWrapper>
         <div className={styles.content}>
           {pending && <div>Verifying email...</div>}
-          {success && <Alert message={success} success />}
-          {error && <Alert message={error} error />}
+          {/* {success && <Alert message={success} success />} */}
+          {error && (
+            <>
+              <div className={styles.imgContainer}>
+                <Image
+                  src={Angry}
+                  alt='angry face'
+                  fill
+                  className={styles.img}
+                />
+              </div>
+              <Alert message={error} error />
+            </>
+          )}
           {success && (
-            <div className={styles.btnContainer}>
-              <Button text='Login' btnType='black' href='/login' />
-            </div>
+            <>
+              <div className={styles.imgContainer}>
+                <Image src={Yay} alt='happy face' fill className={styles.img} />
+              </div>
+              <Alert message={success} success />
+              <div className={styles.btnContainer}>
+                <Button text='Login' btnType='black' href='/login' />
+              </div>
+            </>
           )}
         </div>
       </LayoutWrapper>
