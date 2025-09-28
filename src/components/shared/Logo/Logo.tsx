@@ -26,7 +26,7 @@ const Logo = ({
       {/* <Image src={Img1} alt='' title='' className={styles.img} /> */}
       {/* <Calendar className={styles.icon} />
       <span className={styles.text}>Fonts & Footers</span> */}
-      <SectionIntroii title='Fonts & Footers' />
+      <SectionIntroii title='Fonts & Footers' color="tan" />
     </Link>
   );
 };

@@ -990,9 +990,10 @@ export const AboutUsData = [
   //   title: "Reports and Analytics",
   //   desc: "Gain insights into your business performance with comprehensive reporting tools.",
   // },
-  // {
-  //   id: 6,
-  //   title: "Payments",
-  //   desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
-  // },
+  {
+    id: 6,
+    title: "Payments",
+    desc: "Accept deposits or full payments at booking via Stripe or PayPal.",
+    src: NoShow,
+  },
 ] as const;

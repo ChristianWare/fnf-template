@@ -142,7 +142,7 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
             href='https://calendly.com/chris-ware-dev/discovery-call'
             target='_blank'
             text='Book your discovery call'
-            btnType='black'
+            btnType='lime'
           />
         </div>
 

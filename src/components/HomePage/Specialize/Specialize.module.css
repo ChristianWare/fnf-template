@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  width: 100%;
   /* padding: 10rem 0rem; */
 }
 
@@ -7,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10rem;
+  width: 100%;
 }
 
 .left {
@@ -31,19 +33,20 @@
 .imgContainerii {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
-  margin-top: 5rem;
-}
-
-.imgContainerii {
-  display: none;
+  /* margin-top: 5rem; */
 }
 
 .imageStack {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.imgSingle {
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .imgLayer {
@@ -60,7 +63,7 @@
 
 .right {
   height: 100%;
-  width: 50%;
+  /* width: 50%; */
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -79,6 +82,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--cardGap);
+  width: 100%;
 }
 
 .card {
@@ -89,11 +93,13 @@
   top: var(--stickyTop);
   border-radius: 15px;
   border: 1px solid var(--gray);
-  background-color: var(--darkTan);
+  background-color: var(--tan);
   min-height: var(--cardMinH);
   margin-bottom: var(--cardStep);
   transform-origin: center top;
-  transition: opacity var(--fadeDur) ease, transform var(--fadeDur) ease,
+  transition:
+    opacity var(--fadeDur) ease,
+    transform var(--fadeDur) ease,
     box-shadow var(--fadeDur) ease;
   transform-origin: center top;
 }
@@ -106,17 +112,18 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  color: var(--grayii);
 }
 
 .cardLeft {
-  border-bottom: 1px solid var(--black);
-  padding: 2rem;
-  padding-bottom: 0rem;
+  border-bottom: 1px solid var(--gray);
+  padding: 3rem;
+  /* padding-bottom: 0rem; */
 }
 
 .id {
-  font-size: 2.4rem;
-  line-height: 1.1;
+  font-size: 2rem;
+  line-height: 1;
   font-family: var(--inter);
   font-weight: 700;
 }
@@ -133,16 +140,16 @@
   padding-top: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .desc {
   text-transform: none;
-  width: 80%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--black);
+  /* width: 80%; */
+  /* text-align: center; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  color: var(--darkGray);
 }
 
 .isInactive {
@@ -163,9 +170,9 @@
     display: none;
   } */
 
-  .right {
+  /* .right {
     width: 60%;
-  }
+  } */
 
   /* .card {
     grid-template-columns: 1fr 1fr;

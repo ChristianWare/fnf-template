@@ -1,30 +1,46 @@
 .container {
-  background-color: var(--black);
+  background-color: var(--darkerTan);
+
   padding: 10rem 0rem;
 }
 
 .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+}
+
+.left,
+.right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.left {
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--stickyTop);
 }
 
 .heading {
   font-family: var(--DotSansMedium);
-  color: var(--tan);
-  text-align: center;
   font-size: 2.5rem;
   letter-spacing: -1px;
-  width: 60%;
-  margin-bottom: 3rem;
+  width: 95%;
 }
 
 .span {
-  color: var(--tan);
+  /* color: var(--lime); */
   margin-top: 5rem;
   text-align: center;
+  display: block;
+  /* width: 100%; */
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .bottom {
@@ -34,15 +50,15 @@
 
 .mapDataContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
   /* border: 1px solid var(--darkGray); */
 }
 
 .card {
   border-radius: 10px;
   padding: 3rem;
-  background-color: var(--lighterBlack);
+  background-color: var(--tan);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,6 +72,7 @@
   font-size: 2rem;
   text-align: center;
   width: 100%;
+  font-family: var(--DotSansMedium);
 }
 
 .imgContainer {
@@ -69,30 +86,27 @@
   object-fit: contain;
 }
 
-@media screen and (max-width: 1268px) {
+/* @media screen and (max-width: 1268px) {
   .heading {
     width: 80%;
   }
-}
+} */
 
 @media screen and (max-width: 1068px) {
-  .mapDataContainer {
-    grid-template-columns: repeat(2, 1fr);
-    border: none;
+  .content {
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .card {
-    border-radius: 10px;
+  .left {
+    /* position: -webkit-sticky; */
+    position: static;
+    align-items: center;
+    justify-content: center;
+    top: var(--stickyTop);
   }
 
-  .card:last-child {
-    grid-column: span 2;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .heading {
-    width: 90%;
+    text-align: center;
   }
 }
 
@@ -104,23 +118,9 @@
     justify-content: flex-start;
   }
 
-  .heading {
-    width: 100%;
-    text-align: left;
-  }
-  
-  .span {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .mapDataContainer {
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 2rem; */
     grid-gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card {

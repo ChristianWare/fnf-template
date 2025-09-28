@@ -6,13 +6,13 @@ import styles from "./Specialize.module.css";
 // import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Image, { StaticImageData } from "next/image";
 
-import Img1 from "../../../../public/images/specialize.png";
-import Img2 from "../../../../public/images/everything.png";
-import Img3 from "../../../../public/images/fast.png";
-import Img4 from "../../../../public/images/goal.png";
-import Img5 from "../../../../public/images/contactusiv.png";
-import Img6 from "../../../../public/images/person.png";
-import Img7 from "../../../../public/images/work.png";
+import Img1 from "../../../../public/images/ecomm.jpeg";
+import Img2 from "../../../../public/images/salon.jpg";
+import Img3 from "../../../../public/images/equipment.jpg";
+import Img4 from "../../../../public/images/medspa.jpg";
+import Img5 from "../../../../public/images/vacation.jpg";
+import Img6 from "../../../../public/images/transport.jpg";
+import Img7 from "../../../../public/images/membership.jpg";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Starii from "@/components/icons/Starii/Starii";
 
@@ -156,7 +156,7 @@ export default function Specialize() {
         </div>
 
         <div className={styles.right}>
-          <span className={styles.subHeading}>Industries we work with:</span>
+          {/* <span className={styles.subHeading}>Industries we work with:</span> */}
           <div className={styles.mapDataBox}>
             {specialties.map((x, idx) => {
               const isActive = idx === activeIndex;
@@ -195,8 +195,12 @@ export default function Specialize() {
                   <Starii className={styles.blackDot} />
                   <div className={styles.cardLeft}>
                     <span className={styles.id}>
-                      {x.id.toString().padStart(2, "0")}.
+                      {/* {x.id.toString().padStart(2, "0")}.  */}
+                      {x.feature}
                     </span>
+                  </div>
+                  <div className={styles.cardRight}>
+                    {/* <h4 className={styles.feature}></h4> */}
                     <div className={styles.imgContainerii}>
                       <Image
                         src={x.src}
@@ -207,9 +211,6 @@ export default function Specialize() {
                         className={styles.imgSingle}
                       />
                     </div>
-                  </div>
-                  <div className={styles.cardRight}>
-                    <h4 className={styles.feature}>{x.feature}</h4>
                     <p className={styles.desc}>{x.desc}</p>
                   </div>
                 </div>
