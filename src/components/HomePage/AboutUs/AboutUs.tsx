@@ -19,9 +19,9 @@ export default function AboutUs() {
             wellness studios, trainers, chauffeurs, pet groomers, clinics, and
             tutors replace DM juggling with reliable, paid-in-advance
             appointments. */}
-              Fonts & Footers is a specialist studio focused on one thing:
-              turning visitors into booked appointments. Here are some industries we work
-              with:
+              Fonts & Footers is a specialized web development agency focused on
+              one thing: turning visitors into booked appointments. Here are
+              some industries we work with:
               {/* We replace clunky DMs
               and marketplace fees with one-tap reservations, deposits on file,
               and real-time calendar sync — designed to launch quickly and

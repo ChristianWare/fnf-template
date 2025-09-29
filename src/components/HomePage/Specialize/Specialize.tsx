@@ -6,12 +6,12 @@ import styles from "./Specialize.module.css";
 // import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Image, { StaticImageData } from "next/image";
 
-import Img1 from "../../../../public/images/ecomm.jpeg";
-import Img2 from "../../../../public/images/salon.jpg";
-import Img3 from "../../../../public/images/equipment.jpg";
-import Img4 from "../../../../public/images/medspa.jpg";
-import Img5 from "../../../../public/images/vacation.jpg";
-import Img6 from "../../../../public/images/transport.jpg";
+import Img1 from "../../../../public/images/salon.jpg";
+import Img2 from "../../../../public/images/transport.jpg";
+import Img3 from "../../../../public/images/vacation.jpg";
+import Img4 from "../../../../public/images/equipment.jpg";
+import Img5 from "../../../../public/images/medspa.jpg";
+import Img6 from "../../../../public/images/multi.jpg";
 import Img7 from "../../../../public/images/membership.jpg";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Starii from "@/components/icons/Starii/Starii";
@@ -75,7 +75,7 @@ export default function Specialize() {
   const ticking = useRef(false);
 
   const measure = useCallback(() => {
-    const mid = window.innerHeight * 0.5;
+    const mid = window.innerHeight * 0.7;
 
     let bestIdx = 0;
     let bestDist = Infinity;
