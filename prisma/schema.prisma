@@ -18,11 +18,62 @@ model User {
     image         String?
     accounts      Account[]
 
+    // Stripe
+    stripeCustomerId String? @unique
+
+    // Relations
+    subscriptions Subscription[]
+    Post          Post[]
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
     role UserRole @default(USER)
-    Post Post[]
+}
+
+enum PlanTier {
+    SOLO
+    TEAM
+    RENTAL_FLEET
+    MULTI_LOCATION
+    CUSTOM
+}
+
+enum SubStatus {
+    active
+    trialing
+    past_due
+    canceled
+    unpaid
+}
+
+model Subscription {
+    id     String @id @default(cuid())
+    userId String
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    // Stripe identifiers
+    stripeSubscriptionId String @unique
+    stripePriceId        String
+
+    // Business fields
+    planTier   PlanTier
+    status     SubStatus
+    unitAmount Int // cents (denormalized from the Stripe Price used)
+    currency   String    @default("USD")
+
+    currentPeriodEnd  DateTime?
+    cancelAtPeriodEnd Boolean   @default(false)
+    setupFeePaidAt    DateTime? // set when $500 upfront is collected
+
+    // Optional free-form details (e.g., fleet size, location count) if you want:
+    meta Json?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([userId, status])
+    @@index([status, currentPeriodEnd])
 }
 
 model Account {
