@@ -150,3 +150,90 @@ export async function getUserDetails(userId: string) {
   });
   return user;
 }
+
+export const getSubscriptionMetrics = unstable_cache(
+  async () => {
+    const relevant = ["active", "trialing", "past_due"] as const;
+
+    const [activeCount, trialingCount, pastDueCount, mrrSum] =
+      await Promise.all([
+        db.subscription.count({ where: { status: "active" } }),
+        db.subscription.count({ where: { status: "trialing" } }),
+        db.subscription.count({ where: { status: "past_due" } }),
+        db.subscription.aggregate({
+          _sum: { unitAmount: true },
+          where: { status: { in: relevant as any } },
+        }),
+      ]);
+
+    return {
+      activeCount,
+      trialingCount,
+      pastDueCount,
+      mrrCents: mrrSum._sum.unitAmount ?? 0,
+    };
+  },
+  ["admin:subs:metrics"],
+  { tags: ["admin:subs"], revalidate: 300 }
+);
+
+// List with filters + pagination
+export async function listSubscriptions({
+  page,
+  pageSize,
+  plan,
+  status,
+  q,
+}: {
+  page: number;
+  pageSize: number;
+  plan: string; // PlanTier or ""
+  status: string; // SubStatus or ""
+  q: string; // search text
+}) {
+  const where: any = {};
+
+  if (plan) where.planTier = plan;
+  if (status) where.status = status as any;
+
+  // Search by user name or email
+  if (q) {
+    where.user = {
+      OR: [
+        { name: { contains: q, mode: "insensitive" } },
+        { email: { contains: q, mode: "insensitive" } },
+      ],
+    };
+  }
+
+  const [total, subs] = await Promise.all([
+    db.subscription.count({ where }),
+    db.subscription.findMany({
+      where,
+      orderBy: { createdAt: "desc" },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+      include: {
+        user: {
+          select: { id: true, name: true, email: true, stripeCustomerId: true },
+        },
+      },
+    }),
+  ]);
+
+  const rows = subs.map((s) => ({
+    id: s.id,
+    userId: s.user.id,
+    userName: s.user.name,
+    userEmail: s.user.email,
+    planTier: s.planTier,
+    status: s.status,
+    unitAmount: s.unitAmount,
+    currentPeriodEnd: s.currentPeriodEnd ? new Date(s.currentPeriodEnd) : null,
+    cancelAtPeriodEnd: s.cancelAtPeriodEnd,
+    stripeCustomerId: s.user.stripeCustomerId!,
+    stripeSubscriptionId: s.stripeSubscriptionId,
+  }));
+
+  return { total, rows };
+}
