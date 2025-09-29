@@ -11,15 +11,16 @@ export const runtime = "nodejs";
 export default async function UserDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>; // ← expect a Promise
 }) {
   const session = await auth();
   if (!session || session.user.role !== "ADMIN") redirect("/login");
 
-  const user = await getUserDetails(params.id);
+  const { id } = await params; // ← await it
+  const user = await getUserDetails(id);
   if (!user) return notFound();
 
-  const sub = user.subscriptions[0];
+  const sub = user.subscriptions?.[0];
 
   return (
     <main className={styles.container}>

@@ -17,12 +17,14 @@ type Search = {
 export default async function SubscriptionsPage({
   searchParams,
 }: {
-  searchParams: Search;
+  searchParams: Promise<Search>; // ← expect a Promise here
 }) {
-  const page = Math.max(parseInt(searchParams.page ?? "1", 10) || 1, 1);
-  const plan = searchParams.plan ?? "";
-  const status = searchParams.status ?? "";
-  const q = (searchParams.q ?? "").trim();
+  const sp = await searchParams; // ← await it
+
+  const page = Math.max(parseInt(sp.page ?? "1", 10) || 1, 1);
+  const plan = sp.plan ?? "";
+  const status = sp.status ?? "";
+  const q = (sp.q ?? "").trim();
 
   return (
     <div className={styles.container}>
