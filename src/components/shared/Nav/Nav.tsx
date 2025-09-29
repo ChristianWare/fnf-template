@@ -5,25 +5,18 @@ import styles from "./Nav.module.css";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import { useEffect, useState, MouseEvent, useRef } from "react";
+import { createPortal } from "react-dom"; // ← add this
 import Image from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
 import SectionIntroii from "../SectionIntroii/SectionIntroii";
 
-const navItems = [
-  { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Work", href: "/work" },
-  { text: "Pricing", href: "/pricing" },
-  { text: "Blog", href: "/blog" },
-  { text: "Contact", href: "/contact" },
-];
-
-interface Props {
+export default function Nav({
+  color = "",
+  hamburgerColor = "",
+}: {
   color?: string;
   hamburgerColor?: string;
-}
-
-export default function Nav({ color = "", hamburgerColor = "" }: Props) {
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const navRef = useRef<HTMLElement | null>(null);
@@ -106,7 +99,14 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
             isOpen ? `${styles.navItems} ${styles.active}` : styles.navItems
           }
         >
-          {navItems.map((item) => (
+          {[
+            { text: "Home", href: "/" },
+            { text: "About", href: "/about" },
+            { text: "Work", href: "/work" },
+            { text: "Pricing", href: "/pricing" },
+            { text: "Blog", href: "/blog" },
+            { text: "Contact", href: "/contact" },
+          ].map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -135,7 +135,12 @@ export default function Nav({ color = "", hamburgerColor = "" }: Props) {
           </div>
         </div>
 
-        {isOpen && <div className={styles.overlay} onClick={closeMenu} />}
+        {/* PORTALED OVERLAY */}
+        {isOpen &&
+          createPortal(
+            <div className={styles.overlay} onClick={closeMenu} />,
+            document.body
+          )}
 
         <div className={styles.btnContainer}>
           <Button

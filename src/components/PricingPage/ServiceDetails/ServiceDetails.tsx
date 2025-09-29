@@ -6,124 +6,105 @@ import Check from "@/components/icons/Check/Check";
 import Button from "@/components/shared/Button/Button";
 import { usePathname } from "next/navigation";
 
+type Plan = "SOLO" | "TEAM" | "RENTAL_FLEET" | "MULTI_LOCATION" | "CUSTOM";
+
+function serviceToPlan(service: string): Plan {
+  switch (service) {
+    case "Solo":
+      return "SOLO";
+    case "Team":
+      return "TEAM";
+    case "Rental/Fleet":
+      return "RENTAL_FLEET";
+    case "Multi-Location":
+      return "MULTI_LOCATION";
+    case "Custom":
+      return "CUSTOM";
+    default:
+      return "SOLO";
+  }
+}
+
+function toAnchorId(label: string) {
+  // lower-case, replace any non a–z/0–9 with hyphens, collapse repeats, trim
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export default function ServiceDetails() {
   const pathname = usePathname();
   const isPricingPage = pathname === "/pricing";
 
   const data = isPricingPage ? pricingData : pricingData.slice(0, 3);
-  const btnText = isPricingPage ? "Subscribe" : "Learn More";
-  const btnhref = isPricingPage ? "/subscribe" : "/pricing";
 
   return (
     <section className={styles.container}>
       <div className={styles.content}>
         <div className={styles.right}>
-          {data.map((x) => (
-            <div
-              className={styles.card}
-              key={x.id}
-              id={x.service.toLowerCase().replace(/\s+/g, "-")}
-            >
-              <div className={styles.cardTop}>
-                <div className={styles.cardTopLeft}>
-                  <h3 className={styles.serviceNameHeading}>{x.service}</h3>
-                  <p className={styles.headline}>{x.desc}</p>
-                </div>
-                <h3 className={styles.price}>{x.price}</h3>
-                <div className={styles.cardTopRight}>
-                  {/* <h4 className={styles.descii}>{x.descii}</h4> */}
-                  <div className={styles.btnContainer}>
-                    <Button
-                      href={btnhref}
-                      btnType='grayOutline'
-                      text={btnText}
-                    />
+          {data.map((x) => {
+            const anchorId = toAnchorId(x.service);
+            const plan = serviceToPlan(x.service);
+            // Where the button goes:
+            const href = isPricingPage
+              ? `/account/upgrade?plan=${plan}` // Subscribe path
+              : `/pricing#${anchorId}`; // Learn more path
+
+            const btnText = isPricingPage ? "Subscribe" : "Learn More";
+
+            return (
+              <div className={styles.card} key={x.id} id={anchorId}>
+                <div className={styles.cardTop}>
+                  <div className={styles.cardTopLeft}>
+                    <h3 className={styles.serviceNameHeading}>{x.service}</h3>
+                    <p className={styles.headline}>{x.desc}</p>
                   </div>
-                </div>
-              </div>
-              <div className={styles.servicesCard}>
-                <div className={styles.servicesCardTop}>
-                  <div className={styles.serviceCardTopA}>
-                    {x.servicesInclude.map((y) => (
-                      <div key={y.serviceName} className={styles.box}>
-                        <h4 className={styles.serviceName}>
-                          <Check className={styles.icon} />
-                          {y.serviceName}
-                        </h4>
-                        {/* <p
-                            className={styles.descriptionMobile}
-                            key={y.description}
-                          >
-                            {y.description}
-                          </p> */}
-                      </div>
-                    ))}
-                  </div>
-                  <div className={styles.serviceCardTopB}>
-                    <div className={styles.serviceCardDots}>
-                      <span className={styles.dot}></span>
-                      <span className={styles.dot}></span>
-                      <span className={styles.dot}></span>
-                      <span className={styles.dot}></span>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.servicesCardBottom}>
-                  {x.servicesInclude.map((z) => (
-                    <p className={styles.description} key={z.description}>
-                      {z.description}
-                    </p>
-                  ))}
-                </div>
-                {/* <div className={styles.addonSection}>
-                    <div className={styles.addonSectionTop}>
-                      <SectionIntro
-                        title='Expansion blocks and price add-ons'
-                        color='black'
-                        borderColor='borderColorBlack'
+                  <h3 className={styles.price}>{x.price}</h3>
+                  <div className={styles.cardTopRight}>
+                    <div className={styles.btnContainer}>
+                      <Button
+                        href={href}
+                        btnType='grayOutline'
+                        text={btnText}
                       />
                     </div>
-                    <div className={styles.addonSectionBottom}>
-                      <div className={styles.addonSectionTableHeadings}>
-                        <h4 className={styles.title}>Expansion Block</h4>
-                        <h4 className={styles.title}>When it Triggers</h4>
-                        <h4 className={styles.title}>Add-on fee (USD)</h4>
-                      </div>
-                      <div className={styles.mapData}>
-                        {x.addonSectionData.map((x) => (
-                          <div
-                            key={x.id}
-                            className={styles.addonSectionBottomContainer}
-                          >
-                            {" "}
-                            <div>
-                              <h4 className={styles.titleMobile}>
-                                Expansion Block:
-                              </h4>
-                              <h5 className={styles.titleii}>
-                                {x.expansionblock}
-                              </h5>
-                            </div>
-                            <div>
-                              <h4 className={styles.titleMobile}>
-                                When it Triggers:
-                              </h4>
-                              <p className={styles.info}>{x.details}</p>
-                            </div>
-                            <div>
-                              <h4 className={styles.titleMobile}>
-                                Add-on fee (USD):
-                              </h4>
-                              <p className={styles.info}>{x.price}</p>
-                            </div>
-                          </div>
-                        ))}
+                  </div>
+                </div>
+
+                <div className={styles.servicesCard}>
+                  <div className={styles.servicesCardTop}>
+                    <div className={styles.serviceCardTopA}>
+                      {x.servicesInclude.map((y) => (
+                        <div key={y.serviceName} className={styles.box}>
+                          <h4 className={styles.serviceName}>
+                            <Check className={styles.icon} />
+                            {y.serviceName}
+                          </h4>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.serviceCardTopB}>
+                      <div className={styles.serviceCardDots}>
+                        <span className={styles.dot} />
+                        <span className={styles.dot} />
+                        <span className={styles.dot} />
+                        <span className={styles.dot} />
                       </div>
                     </div>
-                  </div> */}
+                  </div>
+
+                  <div className={styles.servicesCardBottom}>
+                    {x.servicesInclude.map((z) => (
+                      <p className={styles.description} key={z.description}>
+                        {z.description}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,0 +1,128 @@
+/* .container {
+  padding: 10rem 0rem;
+}
+
+.note {
+  color: var(--muted, #666);
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 5rem;
+}
+
+.plan {
+  font-family: var(--DotSansMedium);
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+}
+
+.price {
+  font-family: var(--Merriweather);
+  color: var(--grayii);
+}
+
+.btn {
+  margin-top: 3rem;
+} */
+
+.container {
+  padding: 10rem 0rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.backLink {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--blue, #2563eb);
+}
+
+.card {
+  background: var(--darkerTan);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.planHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.planName {
+  font-weight: 700;
+  font-size: 18px;
+}
+.planDesc {
+  color: var(--muted, #666);
+  margin-top: 4px;
+}
+.price {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.features {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+.featureItem {
+  display: flex;
+  gap: 10px;
+}
+.check {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+}
+.featureName {
+  font-weight: 600;
+}
+.featureDesc {
+  color: var(--muted, #666);
+  font-size: 13px;
+}
+
+.notice {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.primaryBtn {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--darkerTan);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.secureNote {
+  color: var(--muted, #666);
+  font-size: 12px;
+}

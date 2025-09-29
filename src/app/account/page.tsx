@@ -79,7 +79,7 @@ export default async function AccountPage() {
               </button>
             </form>
           ) : (
-            <Link href='/#pricing' className={styles.primaryLink}>
+            <Link href='/pricing' className={styles.primaryLink}>
               View plans
             </Link>
           )}
