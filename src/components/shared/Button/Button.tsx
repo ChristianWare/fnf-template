@@ -7,7 +7,7 @@ import Image from "next/image";
 import ChrisImg from "../../../../public/images/chris.jpg";
 
 interface Props {
-  href?: string; // make optional
+  href?: string;
   text?: string;
   btnType: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
