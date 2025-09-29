@@ -7,7 +7,7 @@ import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 export default async function RegisterPage() {
   const session = await auth();
-  if (session) redirect("/dashboard");
+  if (session) redirect("/account");
   return (
     <main>
       <Nav />

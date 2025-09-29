@@ -11,12 +11,11 @@ export default withAuth((req) => {
 
   if (pathname.startsWith("/api/auth")) return NextResponse.next();
 
-  const isDashboard =
-    pathname === "/dashboard" || pathname.startsWith("/dashboard/");
+  const isAccount = pathname === "/account" || pathname.startsWith("/account/");
   const isAdminArea = pathname === "/admin" || pathname.startsWith("/admin/");
   const isSettings =
     pathname === "/settings" || pathname.startsWith("/settings/");
-  const authedOnly = isDashboard || isSettings || isAdminArea;
+  const authedOnly = isAccount || isSettings || isAdminArea;
 
   const authPages = ["/login", "/register", "/password-email"];
 
@@ -24,7 +23,7 @@ export default withAuth((req) => {
   const role = (req.auth as any)?.user?.role ?? (req.auth as any)?.role;
 
   if (isLoggedIn && authPages.includes(pathname)) {
-    return NextResponse.redirect(new URL("/dashboard", nextUrl));
+    return NextResponse.redirect(new URL("/account", nextUrl));
   }
 
   if (!isLoggedIn && authedOnly) {

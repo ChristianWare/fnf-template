@@ -76,7 +76,7 @@ export const footerData = [
       {
         id: 1.8,
         option: "My Account",
-        href: "/dashboard",
+        href: "/account",
       },
     ],
   },

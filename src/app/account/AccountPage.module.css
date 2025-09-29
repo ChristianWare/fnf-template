@@ -1,0 +1,136 @@
+.parent {
+  background-color: var(--tan);
+  padding: 1rem;
+  background-image: radial-gradient(#efeded 2px, transparent 2px);
+  background-size: calc(10 * 2px) calc(10 * 2px);
+  padding: 10rem 0rem;
+}
+
+/* app/account/AccountPage.module.css */
+
+.container {
+  display: grid;
+  gap: 16px;
+  padding: 0; 
+  margin-bottom: 5rem;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--DotSansMedium);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Card shell (mirrors admin cards) */
+.card {
+  background: var(--darkerTan);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted, #666);
+  margin-bottom: 12px;
+}
+
+/* Two-column details grid, collapses on mobile */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Label/value rows inside grid */
+.detail {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+@media (max-width: 560px) {
+  .detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted, #666);
+}
+
+.value {
+  font-weight: 600;
+}
+
+/* Muted copy and external links */
+.muted {
+  color: var(--muted, #888);
+}
+
+.ext {
+  color: var(--blue, #2563eb);
+  text-decoration: none;
+  font-weight: 600;
+}
+.ext:hover {
+  text-decoration: underline;
+}
+
+/* Action row */
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Primary button + link variants (match admin buttons) */
+.primaryBtn {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--darkerTan);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.primaryLink {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--blue, #2563eb);
+}
+
+/* Optional helper if you add a subtle info banner */
+.info {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px dashed rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--muted, #666);
+}

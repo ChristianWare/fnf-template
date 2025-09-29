@@ -8,7 +8,7 @@ export default async function PasswordEmailPage() {
   const session = await auth();
 
   if (session?.user) {
-    redirect("/dashboard");
+    redirect("/account");
   }
 
   return (
