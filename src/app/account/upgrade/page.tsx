@@ -4,6 +4,8 @@ import { auth } from "../../../../auth";
 import styles from "./Upgrade.module.css";
 import { pricingData } from "@/lib/data";
 import Link from "next/link";
+import Features from "@/components/HomePage/Features/Features";
+import Button from "@/components/shared/Button/Button";
 
 export const runtime = "nodejs";
 
@@ -55,20 +57,19 @@ export default async function UpgradePage({
 
   return (
     <main className={styles.container}>
-      <header className={styles.header}>
-        <h1 className={styles.heading}>{data!.service} — Subscribe</h1>
+      <div className={styles.top}>
+        <div className={styles.topLeft}>
+          <h1 className={styles.heading}>{data!.service} — Subscribe</h1>
+          <p className={styles.planDesc}>{data!.desc}</p>
+        </div>
         <Link href='/pricing' className={styles.backLink}>
           ← Change plan
         </Link>
-      </header>
+      </div>
 
       <section className={styles.card}>
-        <div className={styles.planHeader}>
-          <div>
-            <div className={styles.planName}>{data!.service}</div>
-            <p className={styles.planDesc}>{data!.desc}</p>
-          </div>
-          <div className={styles.price}>{data!.price}</div>
+        <div className={styles.cardTop}>
+          <h2 className={styles.price}>{data!.price}</h2>
         </div>
 
         <div className={styles.features}>
@@ -95,12 +96,17 @@ export default async function UpgradePage({
           className={styles.actions}
         >
           <input type='hidden' name='plan' value={planParam} />
-          <button type='submit' className={styles.primaryBtn}>
-            Pay $500 setup & continue
-          </button>
+          <div className={styles.btnContainer}>
+            <Button
+              type='submit'
+              btnType='lime'
+              text='Pay $500 setup & continue'
+            />
+          </div>
           <p className={styles.secureNote}>Secure checkout via Stripe</p>
         </form>
       </section>
+      <Features />
     </main>
   );
 }

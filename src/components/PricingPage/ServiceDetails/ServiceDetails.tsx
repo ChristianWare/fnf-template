@@ -2,7 +2,6 @@
 
 import styles from "./ServiceDetails.module.css";
 import { pricingData } from "@/lib/data";
-import Check from "@/components/icons/Check/Check";
 import Button from "@/components/shared/Button/Button";
 import { usePathname } from "next/navigation";
 
@@ -78,19 +77,25 @@ export default function ServiceDetails() {
                       {x.servicesInclude.map((y) => (
                         <div key={y.serviceName} className={styles.box}>
                           <h4 className={styles.serviceName}>
-                            <Check className={styles.icon} />
+                            <span className={styles.check}>✓</span>
                             {y.serviceName}
                           </h4>
                         </div>
                       ))}
                     </div>
-                    <div className={styles.serviceCardTopB}>
+                    {/* <div className={styles.serviceCardTopB}>
                       <div className={styles.serviceCardDots}>
                         <span className={styles.dot} />
                         <span className={styles.dot} />
                         <span className={styles.dot} />
                         <span className={styles.dot} />
                       </div>
+                    </div> */}
+                    <div className={styles.notice}>
+                      <strong>Billing:</strong> You’ll pay a one-time{" "}
+                      <strong>$500 setup fee</strong> when you sign up. Your
+                      monthly plan will start on the
+                      <strong>1st of the following month</strong>.
                     </div>
                   </div>
 
