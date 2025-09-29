@@ -27,11 +27,11 @@ export default function ServiceDetails() {
               <div className={styles.cardTop}>
                 <div className={styles.cardTopLeft}>
                   <h3 className={styles.serviceNameHeading}>{x.service}</h3>
-                  <h3 className={styles.price}>{x.price}</h3>
+                  <p className={styles.headline}>{x.desc}</p>
                 </div>
+                <h3 className={styles.price}>{x.price}</h3>
                 <div className={styles.cardTopRight}>
                   {/* <h4 className={styles.descii}>{x.descii}</h4> */}
-                  <p className={styles.headline}>{x.desc}</p>
                   <div className={styles.btnContainer}>
                     <Button
                       href={btnhref}
