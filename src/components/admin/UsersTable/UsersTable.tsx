@@ -1,15 +1,19 @@
-// app/admin/components/UsersTable.tsx
 import Link from "next/link";
 import styles from "./UsersTable.module.css";
-import { getUsersWithSubs } from "../data";
+import { getRecentUsersWithSubs } from "../data";
 import { format } from "date-fns";
 
 export async function UsersTable() {
-  const rows = await getUsersWithSubs();
+  const rows = await getRecentUsersWithSubs(5); // ← only latest 5
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Users & Plans</h2>
+      <div className={styles.headerRow}>
+        <h2 className={styles.heading}>Users & Plans</h2>
+        <Link href='/admin/users' className={styles.viewAll}>
+          View all →
+        </Link>
+      </div>
 
       <div className={styles.tableWrap}>
         <table className={styles.table}>
@@ -25,24 +29,33 @@ export async function UsersTable() {
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.id}>
-                <td>
-                  <div className={styles.userCell}>
-                    <div className={styles.name}>{r.name ?? "—"}</div>
-                    <div className={styles.email}>{r.email}</div>
-                  </div>
+              <tr key={r.id} className={styles.row}>
+                <td data-label='User'>
+                  {/* Make the whole user cell a link to details */}
+                  <Link
+                    href={`/admin/users/${r.id}`}
+                    className={styles.userLink}
+                    title='Open user details'
+                  >
+                    <div className={styles.userCell}>
+                      <div className={styles.name}>{r.name ?? "—"}</div>
+                      <div className={styles.email}>{r.email}</div>
+                    </div>
+                  </Link>
                 </td>
-                <td>{r.planTier ?? "—"}</td>
-                <td>
+                <td data-label='Plan'>{r.planTier ?? "—"}</td>
+                <td data-label='Status'>
                   <StatusBadge status={r.status ?? "—"} />
                 </td>
-                <td>{r.unitAmount != null ? currency(r.unitAmount) : "—"}</td>
-                <td>
+                <td data-label='Amount'>
+                  {r.unitAmount != null ? currency(r.unitAmount) : "—"}
+                </td>
+                <td data-label='Next bill'>
                   {r.currentPeriodEnd
                     ? format(new Date(r.currentPeriodEnd), "MMM d, yyyy")
                     : "—"}
                 </td>
-                <td className={styles.actions}>
+                <td data-label='Manage' className={styles.actions}>
                   {r.stripeCustomerId ? (
                     <Link
                       href={`https://dashboard.stripe.com/customers/${r.stripeCustomerId}`}
@@ -52,7 +65,7 @@ export async function UsersTable() {
                       Stripe Customer
                     </Link>
                   ) : (
-                    <span className={styles.muted}>No Stripe ID</span>
+                    <span className={styles.mutedText}>No Stripe ID</span>
                   )}
                   {r.stripeSubscriptionId ? (
                     <Link
@@ -90,5 +103,19 @@ function StatusBadge({ status }: { status: string }) {
         : status === "canceled" || status === "unpaid"
           ? "bad"
           : "muted";
-  return <span className={`${styles.badge} ${styles[tone]}`}>{status}</span>;
+  return (
+    <span
+      className={`${styles.badge} ${
+        tone === "ok"
+          ? styles.ok
+          : tone === "warn"
+            ? styles.warn
+            : tone === "bad"
+              ? styles.bad
+              : styles.badgeMuted
+      }`}
+    >
+      {status}
+    </span>
+  );
 }

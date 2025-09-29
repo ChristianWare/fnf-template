@@ -92,3 +92,61 @@ export const getUsersWithSubs = unstable_cache(
   ["admin:users"],
   { tags: ["admin:users"], revalidate: 300 }
 );
+
+export const getRecentUsersWithSubs = unstable_cache(
+  async (take = 5) => {
+    const users = await db.user.findMany({
+      take,
+      orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        stripeCustomerId: true,
+        subscriptions: {
+          orderBy: { createdAt: "desc" },
+          take: 1,
+          select: {
+            stripeSubscriptionId: true,
+            planTier: true,
+            status: true,
+            unitAmount: true,
+            currentPeriodEnd: true,
+          },
+        },
+      },
+    });
+
+    return users.map((u) => {
+      const sub = u.subscriptions[0];
+      return {
+        id: u.id,
+        name: u.name,
+        email: u.email,
+        stripeCustomerId: u.stripeCustomerId,
+        stripeSubscriptionId: sub?.stripeSubscriptionId ?? null,
+        planTier: sub?.planTier ?? null,
+        status: sub?.status ?? null,
+        unitAmount: sub?.unitAmount ?? null,
+        currentPeriodEnd: sub?.currentPeriodEnd ?? null,
+      };
+    });
+  },
+  ["admin:users:recent"],
+  { tags: ["admin:users"], revalidate: 300 }
+);
+
+export async function getUserDetails(userId: string) {
+  const user = await db.user.findUnique({
+    where: { id: userId },
+    include: {
+      subscriptions: {
+        orderBy: { createdAt: "desc" },
+        take: 5, // recent history if they’ve had multiple
+      },
+      accounts: true, // NextAuth providers (optional but handy)
+      Post: { orderBy: { createdAt: "desc" }, take: 3 }, // if you want to show recent posts
+    },
+  });
+  return user;
+}
