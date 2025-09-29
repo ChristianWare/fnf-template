@@ -7,7 +7,7 @@ import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import { KPIGrid } from "@/components/admin/KPIGrid/KPIGrid";
-import { UsersTable } from "@/components/admin/UsersTable/UsersTable"; 
+import { UsersTable } from "@/components/admin/UsersTable/UsersTable";
 import RefreshButton from "@/components/admin/RefreshButton/RefreshButton";
 
 export const runtime = "nodejs"; // Prisma/Stripe safe
@@ -27,15 +27,11 @@ export default async function AdminPage() {
             <h1 className={styles.heading}>Admin Dashboard</h1>
             <RefreshButton />
           </div>
-
           <Suspense fallback={<div>Loading metrics…</div>}>
             <KPIGrid />
           </Suspense>
-
           <section className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.subheading}>Users & Plans</h2>
-            </div>
+            <div className={styles.sectionHeader}></div>
             <Suspense fallback={<div>Loading users…</div>}>
               <UsersTable />
             </Suspense>

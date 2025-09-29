@@ -1,9 +1,21 @@
+.container {
+  padding: 5rem 0rem;
+}
+
+.heading {
+  font-family: var(--DotSansMedium);
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+}
+
 .tableWrap {
   overflow: auto;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   background: var(--darkerTan);
+  margin-top: 2rem;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;

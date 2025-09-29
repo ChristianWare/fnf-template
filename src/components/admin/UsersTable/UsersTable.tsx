@@ -8,63 +8,67 @@ export async function UsersTable() {
   const rows = await getUsersWithSubs();
 
   return (
-    <div className={styles.tableWrap}>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Plan</th>
-            <th>Status</th>
-            <th>Amount</th>
-            <th>Next bill</th>
-            <th>Manage</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.id}>
-              <td>
-                <div className={styles.userCell}>
-                  <div className={styles.name}>{r.name ?? "—"}</div>
-                  <div className={styles.email}>{r.email}</div>
-                </div>
-              </td>
-              <td>{r.planTier ?? "—"}</td>
-              <td>
-                <StatusBadge status={r.status ?? "—"} />
-              </td>
-              <td>{r.unitAmount != null ? currency(r.unitAmount) : "—"}</td>
-              <td>
-                {r.currentPeriodEnd
-                  ? format(new Date(r.currentPeriodEnd), "MMM d, yyyy")
-                  : "—"}
-              </td>
-              <td className={styles.actions}>
-                {r.stripeCustomerId ? (
-                  <Link
-                    href={`https://dashboard.stripe.com/customers/${r.stripeCustomerId}`}
-                    target='_blank'
-                    className={styles.actionLink}
-                  >
-                    Stripe Customer
-                  </Link>
-                ) : (
-                  <span className={styles.muted}>No Stripe ID</span>
-                )}
-                {r.stripeSubscriptionId ? (
-                  <Link
-                    href={`https://dashboard.stripe.com/subscriptions/${r.stripeSubscriptionId}`}
-                    target='_blank'
-                    className={styles.actionLink}
-                  >
-                    Subscription
-                  </Link>
-                ) : null}
-              </td>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Users & Plans</h2>
+
+      <div className={styles.tableWrap}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Plan</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Next bill</th>
+              <th>Manage</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.id}>
+                <td>
+                  <div className={styles.userCell}>
+                    <div className={styles.name}>{r.name ?? "—"}</div>
+                    <div className={styles.email}>{r.email}</div>
+                  </div>
+                </td>
+                <td>{r.planTier ?? "—"}</td>
+                <td>
+                  <StatusBadge status={r.status ?? "—"} />
+                </td>
+                <td>{r.unitAmount != null ? currency(r.unitAmount) : "—"}</td>
+                <td>
+                  {r.currentPeriodEnd
+                    ? format(new Date(r.currentPeriodEnd), "MMM d, yyyy")
+                    : "—"}
+                </td>
+                <td className={styles.actions}>
+                  {r.stripeCustomerId ? (
+                    <Link
+                      href={`https://dashboard.stripe.com/customers/${r.stripeCustomerId}`}
+                      target='_blank'
+                      className={styles.actionLink}
+                    >
+                      Stripe Customer
+                    </Link>
+                  ) : (
+                    <span className={styles.muted}>No Stripe ID</span>
+                  )}
+                  {r.stripeSubscriptionId ? (
+                    <Link
+                      href={`https://dashboard.stripe.com/subscriptions/${r.stripeSubscriptionId}`}
+                      target='_blank'
+                      className={styles.actionLink}
+                    >
+                      Subscription
+                    </Link>
+                  ) : null}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

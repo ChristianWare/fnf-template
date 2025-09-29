@@ -6,6 +6,12 @@
   padding: 10rem 0rem;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3rem;
+}
+
 .heading {
   margin-bottom: 2rem;
 }
