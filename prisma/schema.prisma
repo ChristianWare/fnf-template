@@ -137,6 +137,20 @@ model Post {
     @@index([published, publishedAt])
 }
 
+model WebhookEvent {
+  id             String   @id @default(cuid())
+  stripeEventId  String   @unique
+  type           String
+  status         String   // "received" | "processed" | "error"
+  payload        Json
+  errorMessage   String?
+  createdAt      DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([type])
+  @@index([status])
+}
+
 enum UserRole {
     ADMIN
     USER

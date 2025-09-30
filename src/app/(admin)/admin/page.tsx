@@ -10,6 +10,8 @@ import RefreshButton from "@/components/admin/RefreshButton/RefreshButton";
 
 export const runtime = "nodejs";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const session = await auth();
   if (!session || session.user.role !== "ADMIN") {
@@ -28,6 +30,9 @@ export default async function AdminPage() {
               className={styles.linkBtn}
             >
               Billing & Subscriptions →
+            </Link>
+            <Link href='/admin/billing/webhooks' className={styles.linkBtn}>
+              Webhook Events →
             </Link>
             <RefreshButton />
           </div>

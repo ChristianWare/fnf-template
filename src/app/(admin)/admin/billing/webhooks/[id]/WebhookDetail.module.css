@@ -1,0 +1,35 @@
+/* app/admin/billing/webhooks/[id]/WebhookDetail.module.css */
+.container {
+  padding: 5rem 0;
+}
+.title {
+  font-family: var(--DotSansMedium);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--muted, #666);
+  letter-spacing: 0.04em;
+}
+.val {
+  font-weight: 700;
+}
+.pre {
+  background: var(--darkerTan);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  border-radius: 10px;
+  overflow: auto;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

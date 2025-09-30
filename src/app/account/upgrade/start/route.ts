@@ -72,11 +72,12 @@ export async function POST(req: Request) {
       mode: "subscription",
       customer: customerId,
       line_items: [
-        { price: setupPrice, quantity: 1 }, // $500 one-time (charged now)
-        { price: planPrice, quantity: 1 }, // monthly, trial until anchor
+        { price: setupPrice, quantity: 1 },
+        { price: planPrice, quantity: 1 },
       ],
+      metadata: { userId: user.id },
       subscription_data: {
-        trial_end: trialEnd, // Stripe requires this to be >= 48h in the future
+        trial_end: trialEnd, 
         metadata: {
           userId: user.id,
           planTier: plan,
