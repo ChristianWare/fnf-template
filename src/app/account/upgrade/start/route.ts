@@ -1,11 +1,11 @@
-// app/account/upgrade/route.ts
+// app/account/upgrade/start/route.ts
 
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "../../../../../auth";
 import { db } from "@/lib/db";
 import { planToPriceId, setupFeePriceId, Plan } from "@/lib/billing/prices";
-import { firstCompliantAnchorPhoenixUnix } from "@/lib/dates"; 
+import { firstCompliantAnchorPhoenixUnix } from "@/lib/dates";
 
 export const runtime = "nodejs";
 
@@ -83,8 +83,8 @@ export async function POST(req: Request) {
         },
       },
       allow_promotion_codes: true,
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/account?success=1`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/account?canceled=1`,
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/account/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/account/upgrade?plan=${plan}`,
     });
 
     // Important: force GET on redirect to Stripe (CloudFront rejects POST)

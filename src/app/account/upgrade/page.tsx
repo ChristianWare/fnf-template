@@ -56,55 +56,57 @@ export default async function UpgradePage({
   }
 
   return (
-    <main className={styles.container}>
-      <div className={styles.top}>
-        <div className={styles.topLeft}>
-          <h1 className={styles.heading}>{data!.service} — Subscribe</h1>
-          <p className={styles.planDesc}>{data!.desc}</p>
-        </div>
-        <Link href='/pricing' className={styles.backLink}>
-          ← Change plan
-        </Link>
-      </div>
-
-      <section className={styles.card}>
-        <div className={styles.cardTop}>
-          <h2 className={styles.price}>{data!.price}</h2>
-        </div>
-
-        <div className={styles.features}>
-          {data!.servicesInclude.map((f) => (
-            <div key={f.serviceName} className={styles.featureItem}>
-              <span className={styles.check}>✓</span>
-              <div>
-                <div className={styles.featureName}>{f.serviceName}</div>
-                <div className={styles.featureDesc}>{f.description}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.notice}>
-          <strong>Billing:</strong> You’ll pay a one-time{" "}
-          <strong>$500 setup fee</strong> today. Your monthly plan (
-          {data!.price}) will start on the <strong>1st of next month</strong>.
-        </div>
-
-        <form
-          method='POST'
-          action='/account/upgrade/start'
-          className={styles.actions}
-        >
-          <input type='hidden' name='plan' value={planParam} />
-          <div className={styles.btnContainer}>
-            <Button
-              type='submit'
-              btnType='lime'
-              text='Pay $500 setup & continue'
-            />
+    <main>
+      <section className={styles.container}>
+        <div className={styles.top}>
+          <div className={styles.topLeft}>
+            <h1 className={styles.heading}>{data!.service} — Subscribe</h1>
+            <p className={styles.planDesc}>{data!.desc}</p>
           </div>
-          <p className={styles.secureNote}>Secure checkout via Stripe</p>
-        </form>
+          <Link href='/pricing' className={styles.backLink}>
+            ← Change plan
+          </Link>
+        </div>
+
+        <section className={styles.card}>
+          <div className={styles.cardTop}>
+            <h2 className={styles.price}>{data!.price}</h2>
+          </div>
+
+          <div className={styles.features}>
+            {data!.servicesInclude.map((f) => (
+              <div key={f.serviceName} className={styles.featureItem}>
+                <span className={styles.check}>✓</span>
+                <div>
+                  <div className={styles.featureName}>{f.serviceName}</div>
+                  <div className={styles.featureDesc}>{f.description}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.notice}>
+            <strong>Billing:</strong> You’ll pay a one-time{" "}
+            <strong>$500 setup fee</strong> today. Your monthly plan (
+            {data!.price}) will start on the <strong>1st of next month</strong>.
+          </div>
+
+          <form
+            method='POST'
+            action='/account/upgrade/start'
+            className={styles.actions}
+          >
+            <input type='hidden' name='plan' value={planParam} />
+            <div className={styles.btnContainer}>
+              <Button
+                type='submit'
+                btnType='lime'
+                text='Pay $500 setup & continue'
+              />
+            </div>
+            <p className={styles.secureNote}>Secure checkout via Stripe</p>
+          </form>
+        </section>
       </section>
       <Features />
     </main>
