@@ -58,7 +58,7 @@ export default function ComparisonChart() {
   }
 
   function included(planName: PlanName, feature: string) {
-    if (planName === "Custom") return true;
+    // Removed check for "Custom" since it's not a valid PlanName
     const startPlan = cumulativeFeatureStart[feature];
     if (startPlan) {
       const startIdx = planIndexByName.get(startPlan) ?? 0;
