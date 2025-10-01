@@ -1,19 +1,40 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // auth.config.ts
 import type { NextAuthConfig } from "next-auth";
 
-// Keep ONLY light options (pure objects/functions) that don't import heavy deps.
-// No Prisma adapter, no providers, no bcrypt/zod, no DB helpers here.
-
 const authConfig = {
-  providers: [],
+  providers: [], // required by the type
   session: { strategy: "jwt" },
   trustHost: true,
   pages: { signIn: "/login" },
 
-  // Keep callbacks "pure" (no DB calls). Only transform existing token/session.
   callbacks: {
-    jwt: async ({ token }) => token,
-    session: async ({ session }) => session,
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = (user as any).id;
+        token.role = (user as any).role ?? "USER";
+        token.emailVerified = (user as any).emailVerified ?? null;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        (session.user as any) = {
+          ...session.user,
+          id: token.id as string,
+          role: (token.role as string) ?? "USER",
+          emailVerified: token.emailVerified ?? null,
+        };
+      }
+      return session;
+    },
+    // optional signIn gate for unverified credentials users:
+    // async signIn({ user, account }) {
+    //   if (account?.provider === "credentials") {
+    //     if (!(user as any)?.emailVerified) return "/email-verification?notice=verify";
+    //   }
+    //   return true;
+    // },
   },
 } satisfies NextAuthConfig;
 
