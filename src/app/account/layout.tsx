@@ -1,13 +1,15 @@
 // app/account/layout.tsx
+import styles from "./AccountLayout.module.css";
 import { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { auth } from "../../../auth";
 import Nav from "@/components/shared/Nav/Nav";
-import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
-import styles from "./AccountPage.module.css";
+import AccountNav from "@/components/account/AccountNav/AccountNav";
+import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 
 export const runtime = "nodejs";
+export const metadata = { title: "Account — Fonts & Footers" };
 
 export default async function AccountLayout({
   children,
@@ -16,13 +18,19 @@ export default async function AccountLayout({
 }) {
   const session = await auth();
   if (!session) redirect("/login");
+
   return (
-    <main className={styles.parent}>
+    <main className={styles.container}>
       <Nav />
       <LayoutWrapper>
-        {children}
+        <div className={styles.shell}>
+          <aside className={styles.sidebar}>
+            <AccountNav />
+          </aside>
+          <div className={styles.content}>{children}</div>
+        </div>
       </LayoutWrapper>
-        <FinalCTAMain />
+      <FinalCTAMain />
     </main>
   );
 }

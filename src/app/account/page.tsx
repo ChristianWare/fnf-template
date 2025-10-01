@@ -7,6 +7,9 @@ import Link from "next/link";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
 import Stripe from "stripe";
+import BillingZone from "@/components/account/BillingZone/BillingZone";
+import ChargesTable from "@/components/account/ChargesTable/ChargesTable";
+import { AccountKPIGrid } from "@/components/account/AccountKPIGrid/AccountKPIGrid";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -14,6 +17,76 @@ export const dynamic = "force-dynamic";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2025-08-27.basil",
 });
+
+function readSubField<T = unknown>(
+  obj: unknown,
+  snake: string,
+  camel: string
+): T | undefined {
+  const o = obj as any;
+  return (o?.[snake] ?? o?.[camel]) as T | undefined;
+}
+
+function mapStripeSub(s: Stripe.Subscription) {
+  const price = (s as any)?.items?.data?.[0]?.price ?? null;
+  const nextUnix =
+    readSubField<number>(s, "trial_end", "trialEnd") ??
+    readSubField<number>(s, "current_period_end", "currentPeriodEnd") ??
+    null;
+
+  return {
+    stripeSubscriptionId: s.id,
+    stripePriceId: price?.id ?? "",
+    planTier: ((s.metadata?.planTier as string | undefined) ??
+      (price?.nickname as string | undefined) ??
+      null) as string | null,
+    status: s.status as string,
+    unitAmount: (readSubField<number>(price, "unit_amount", "unitAmount") ??
+      null) as number | null,
+    nextBillDate: nextUnix ? new Date(nextUnix * 1000) : null,
+    cancelAtPeriodEnd: (readSubField<boolean>(
+      s,
+      "cancel_at_period_end",
+      "cancelAtPeriodEnd"
+    ) ?? false) as boolean,
+    currency: ((price?.currency as string | undefined) ?? "usd").toUpperCase(),
+  };
+}
+
+function readablePlan(p?: string | null) {
+  switch (p) {
+    case "SOLO":
+      return "Solo";
+    case "TEAM":
+      return "Team";
+    case "RENTAL_FLEET":
+      return "Rental/Fleet";
+    case "MULTI_LOCATION":
+      return "Multi-Location";
+    case "CUSTOM":
+      return "Custom";
+    default:
+      return "—";
+  }
+}
+
+function currency(cents?: number | null, code = "USD") {
+  if (cents == null) return "—";
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: code,
+    maximumFractionDigits: 0,
+  }).format(cents / 100);
+}
+
+function Detail({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div className={styles.detail}>
+      <div className={styles.label}>{label}</div>
+      <div className={styles.value}>{value}</div>
+    </div>
+  );
+}
 
 export default async function AccountPage() {
   const session = await auth();
@@ -24,119 +97,151 @@ export default async function AccountPage() {
     : session.user?.email
       ? { email: session.user.email }
       : null;
-
   if (!where) redirect("/login");
 
   const user = await db.user.findUnique({
     where,
     include: {
-      subscriptions: { orderBy: { createdAt: "desc" }, take: 1 },
+      subscriptions: {
+        where: { status: { in: ["active", "trialing"] } },
+        orderBy: { updatedAt: "desc" },
+        take: 1,
+      },
     },
   });
 
   if (!user) redirect("/login");
 
-  const sub = user.subscriptions?.[0] ?? null;
+  let sub = user.subscriptions?.[0] ?? null;
 
-  let fallback: {
-    planTier?: string | null;
-    status?: string | null;
-    unitAmount?: number | null;
-    nextBillDate?: Date | null;
-    cancelAtPeriodEnd?: boolean | null;
+  let live: {
+    planTier: string | null;
+    status: string | null;
+    unitAmount: number | null;
+    nextBillDate: Date | null;
+    cancelAtPeriodEnd: boolean;
+    currency: string;
+    stripeSubscriptionId: string;
+    stripePriceId: string;
   } | null = null;
 
-  if (!sub && user.stripeCustomerId) {
-    const list = await stripe.subscriptions.list({
-      customer: user.stripeCustomerId,
-      status: "all",
-      limit: 1,
-      expand: ["data.items.data.price"],
-    });
-    const s = list.data[0];
-    if (s) {
-      const price = s.items.data[0]?.price || null;
-      const nextTs =
-        ((s as any).trial_end as number | null | undefined) ??
-        ((s as any).current_period_end as number | null | undefined) ??
-        null;
+  if (user.stripeCustomerId) {
+    const needsLive = !sub || sub.planTier == null || sub.unitAmount == null;
 
-      fallback = {
-        planTier:
-          (s.metadata?.planTier as string | undefined) ??
-          (price?.nickname as string | undefined) ??
-          null,
-        status: (s.status as string) ?? null,
-        unitAmount: price?.unit_amount ?? null,
-        nextBillDate: nextTs ? new Date(nextTs * 1000) : null,
-        cancelAtPeriodEnd:
-          ((s as any).cancel_at_period_end as boolean | undefined) ?? null,
-      };
+    if (needsLive) {
+      const list = await stripe.subscriptions.list({
+        customer: user.stripeCustomerId,
+        status: "all",
+        limit: 1,
+        expand: ["data.items.data.price"],
+      });
+      const s = list.data[0] as Stripe.Subscription | undefined;
+      if (s) {
+        const mapped = mapStripeSub(s);
+        live = {
+          planTier: mapped.planTier,
+          status: mapped.status,
+          unitAmount: mapped.unitAmount,
+          nextBillDate: mapped.nextBillDate,
+          cancelAtPeriodEnd: mapped.cancelAtPeriodEnd,
+          currency: mapped.currency,
+          stripeSubscriptionId: mapped.stripeSubscriptionId,
+          stripePriceId: mapped.stripePriceId,
+        };
+
+        if (!sub) {
+          await db.subscription.upsert({
+            where: { stripeSubscriptionId: mapped.stripeSubscriptionId },
+            create: {
+              stripeSubscriptionId: mapped.stripeSubscriptionId,
+              stripePriceId: mapped.stripePriceId,
+              userId: user.id,
+              planTier: (mapped.planTier as any) ?? "CUSTOM",
+              status: mapped.status as any,
+              unitAmount: mapped.unitAmount ?? 0,
+              currency: mapped.currency ?? "USD",
+              currentPeriodEnd: mapped.nextBillDate,
+              cancelAtPeriodEnd: mapped.cancelAtPeriodEnd,
+              setupFeePaidAt: null,
+              meta: {},
+            },
+            update: {
+              stripePriceId: mapped.stripePriceId,
+              planTier: (mapped.planTier as any) ?? "CUSTOM",
+              status: mapped.status as any,
+              unitAmount: mapped.unitAmount ?? 0,
+              currency: mapped.currency ?? "USD",
+              currentPeriodEnd: mapped.nextBillDate,
+              cancelAtPeriodEnd: mapped.cancelAtPeriodEnd,
+            },
+          });
+
+          const refreshed = await db.subscription.findFirst({
+            where: {
+              userId: user.id,
+              stripeSubscriptionId: mapped.stripeSubscriptionId,
+            },
+            orderBy: { updatedAt: "desc" },
+          });
+          if (refreshed) {
+            sub = refreshed;
+          }
+        } else {
+          const shouldPatch =
+            sub.planTier !== mapped.planTier ||
+            sub.unitAmount !== (mapped.unitAmount ?? undefined) ||
+            sub.currency.toUpperCase() !== (mapped.currency ?? "USD") ||
+            !!sub.cancelAtPeriodEnd !== !!mapped.cancelAtPeriodEnd;
+
+          if (shouldPatch) {
+            await db.subscription.update({
+              where: { id: sub.id },
+              data: {
+                planTier: (mapped.planTier as any) ?? sub.planTier,
+                unitAmount: mapped.unitAmount ?? sub.unitAmount,
+                currency: mapped.currency ?? sub.currency,
+                status: mapped.status as any,
+                currentPeriodEnd: mapped.nextBillDate,
+                cancelAtPeriodEnd: mapped.cancelAtPeriodEnd,
+                stripePriceId: mapped.stripePriceId || sub.stripePriceId,
+              },
+            });
+
+            const refreshed = await db.subscription.findUnique({
+              where: { id: sub.id },
+            });
+            sub = refreshed ?? sub;
+          }
+        }
+      }
     }
   }
 
+  const planLabel = readablePlan(
+    (sub?.planTier as string | undefined) ?? live?.planTier ?? null
+  );
+  const statusLabel =
+    (sub?.status as string | undefined) ?? live?.status ?? "—";
+  const amountCents =
+    (sub?.unitAmount as number | undefined) ??
+    (live?.unitAmount as number | undefined) ??
+    null;
+  const curr = (sub?.currency ?? live?.currency ?? "USD") as string;
+  const nextBill =
+    sub?.currentPeriodEnd ??
+    (live?.nextBillDate ? new Date(live.nextBillDate) : null);
+  const renews =
+    (sub?.cancelAtPeriodEnd ?? live?.cancelAtPeriodEnd ?? false)
+      ? "Will cancel at period end"
+      : "Auto-renew on next bill date";
+
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Your Account</h1>
-      </header>
-
-      <section className={styles.card}>
-        <h2 className={styles.sectionTitle}>Plan</h2>
-
-        {sub || fallback ? (
-          <div className={styles.grid}>
-            <Detail
-              label='Plan'
-              value={readablePlan(sub?.planTier ?? fallback?.planTier ?? null)}
-            />
-            <Detail
-              label='Status'
-              value={(sub?.status ?? fallback?.status ?? "—") as string}
-            />
-            <Detail
-              label='Amount'
-              value={currency(sub?.unitAmount ?? fallback?.unitAmount ?? null)}
-            />
-            <Detail
-              label='Next bill'
-              value={
-                sub?.currentPeriodEnd
-                  ? format(new Date(sub.currentPeriodEnd), "MMM d, yyyy")
-                  : fallback?.nextBillDate
-                    ? format(fallback.nextBillDate, "MMM d, yyyy")
-                    : "—"
-              }
-            />
-            <Detail
-              label='Renews'
-              value={
-                (sub?.cancelAtPeriodEnd ?? fallback?.cancelAtPeriodEnd)
-                  ? "Will cancel at period end"
-                  : "Auto-renew on next bill date"
-              }
-            />
-          </div>
-        ) : (
-          <p className={styles.muted}>
-            You don’t have a subscription yet. Choose a plan to get started.
-          </p>
-        )}
-
-        <div className={styles.actions}>
-          {sub || fallback ? (
-            <form method='POST' action='/account/billing/portal'>
-              <button className={styles.primaryBtn} type='submit'>
-                Manage subscription
-              </button>
-            </form>
-          ) : (
-            <Link href='/pricing' className={styles.primaryLink}>
-              View plans
-            </Link>
-          )}
-        </div>
-      </section>
+      <div className={styles.top}>
+        <h1 className={styles.heading}>Hello, {user?.name ?? "User"}!</h1>
+        <p className={styles.copy}>Welcome back to your account dashboard.</p>
+        <AccountKPIGrid />
+      </div>
 
       <section className={styles.card}>
         <h2 className={styles.sectionTitle}>Profile</h2>
@@ -161,41 +266,43 @@ export default async function AccountPage() {
           />
         </div>
       </section>
-    </div>
-  );
-}
 
-function readablePlan(p?: string | null) {
-  switch (p) {
-    case "SOLO":
-      return "Solo";
-    case "TEAM":
-      return "Team";
-    case "RENTAL_FLEET":
-      return "Rental/Fleet";
-    case "MULTI_LOCATION":
-      return "Multi-Location";
-    case "CUSTOM":
-      return "Custom";
-    default:
-      return "—";
-  }
-}
+      <section className={styles.card}>
+        {sub || live ? (
+          <div className={styles.grid}>
+            <Detail label='Plan:' value={planLabel} />
+            <Detail label='Status:' value={statusLabel} />
+            <Detail label='Amount:' value={currency(amountCents, curr)} />
+            <Detail
+              label='Next bill:'
+              value={nextBill ? format(new Date(nextBill), "MMM d, yyyy") : "—"}
+            />
+            <Detail label='Renews' value={renews} />
+          </div>
+        ) : (
+          <p className={styles.muted}>
+            You don’t have a subscription yet. Choose a plan to get started.
+          </p>
+        )}
 
-function currency(cents?: number | null) {
-  if (cents == null) return "—";
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(cents / 100);
-}
-
-function Detail({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div className={styles.detail}>
-      <div className={styles.label}>{label}</div>
-      <div className={styles.value}>{value}</div>
+        <div className={styles.actions}>
+          {sub || live ? (
+            <form method='POST' action='/account/billing/portal'>
+              <ChargesTable />
+              <BillingZone
+                currentPlan={
+                  (sub?.planTier as any) ?? (live?.planTier as any) ?? null
+                }
+                hasActiveSub={!!(sub || live)}
+              />
+            </form>
+          ) : (
+            <Link href='/pricing' className={styles.primaryLink}>
+              View plans
+            </Link>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+/* app/account/settings/SettingsPage.module.css */
+.container {
+  display: grid;
+  gap: 24px;
+}
+.header {
+  display: grid;
+  gap: 6px;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+.sub {
+  color: #6b7280;
+  margin: 0;
+}

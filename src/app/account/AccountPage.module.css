@@ -1,70 +1,68 @@
-.parent {
-  background-color: var(--tan);
-  padding: 1rem;
-  background-image: radial-gradient(#efeded 2px, transparent 2px);
-  background-size: calc(10 * 2px) calc(10 * 2px);
-  padding: 10rem 0rem;
-}
-
-/* app/account/AccountPage.module.css */
-
 .container {
   display: grid;
   gap: 16px;
-  padding: 0; 
+  padding: 0;
   margin-bottom: 5rem;
 }
 
-.header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+.top {
+  background-color: var(--black);
+  background-image: radial-gradient(var(--lightBlack) 2px, transparent 2px);
+  background-size: calc(10 * 2px) calc(10 * 2px);
+  padding: 2rem;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
 }
 
-.title {
+.heading {
+  color: var(--tan);
+  font-size: 3rem;
   font-family: var(--DotSansMedium);
-  font-size: clamp(22px, 2.2vw, 32px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -1px;
+
 }
 
-/* Card shell (mirrors admin cards) */
+.copy {
+  color: var(--tan);
+  margin-bottom: 3rem;
+}
+
 .card {
-  background: var(--darkerTan);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: var(--tan);
+  border: 1px solid var(--gray);
   border-radius: 12px;
-  padding: 16px;
+  padding: 2rem;
 }
 
 .sectionTitle {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted, #666);
-  margin-bottom: 12px;
+  font-family: var(--DotSansMedium);
+  font-size: 3rem;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
 }
 
-/* Two-column details grid, collapses on mobile */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
+
 @media (max-width: 720px) {
   .grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Label/value rows inside grid */
 .detail {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 8px;
   align-items: start;
 }
+
 @media (max-width: 560px) {
   .detail {
     grid-template-columns: 1fr;
@@ -72,17 +70,18 @@
 }
 
 .label {
-  font-size: 12px;
+  font-family: var(--inter);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted, #666);
 }
 
 .value {
-  font-weight: 600;
+  font-family: var(--inter);
+  font-weight: 300;
 }
 
-/* Muted copy and external links */
 .muted {
   color: var(--muted, #888);
 }
@@ -96,15 +95,13 @@
   text-decoration: underline;
 }
 
-/* Action row */
 .actions {
   margin-top: 12px;
-  display: flex;
+  display: grid;
   gap: 10px;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-/* Primary button + link variants (match admin buttons) */
 .primaryBtn {
   appearance: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -125,7 +122,6 @@
   color: var(--blue, #2563eb);
 }
 
-/* Optional helper if you add a subtle info banner */
 .info {
   background: rgba(0, 0, 0, 0.03);
   border: 1px dashed rgba(0, 0, 0, 0.08);

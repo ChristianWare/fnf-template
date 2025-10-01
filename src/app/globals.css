@@ -2,6 +2,7 @@
   --black: #1a1a18;
   --lightBlack: rgba(42, 42, 39, 0.64);
   --lighterBlack: #363633a3;
+  --adminGray: #6b7280;
   --gray: #d3d3d2;
   --darkGray: rgb(139, 139, 139);
   --grayii: #706f6f;
@@ -80,7 +81,7 @@ span {
 h1 {
   font-size: 5rem;
   font-family: var(--Merriweather);
-  letter-spacing: -2.5px;
+  letter-spacing: -2px;
 }
 
 h2 {

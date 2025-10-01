@@ -1,0 +1,61 @@
+/* components/account/SettingsForms/SettingsForms.module.css */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+.heading {
+  font-weight: 800;
+  margin: 0;
+}
+.label {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+.input {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+}
+.primaryBtn {
+  background: #111827;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.warnBtn {
+  background: #b91c1c;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.secondaryBtn {
+  background: #eef2ff;
+  color: #1e40af;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.help {
+  color: #6b7280;
+  margin: 0;
+}
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // app/admin/users/[id]/page.tsx
 import { notFound, redirect } from "next/navigation";
 import { auth } from "../../../../../../auth";
@@ -5,18 +6,19 @@ import { getUserDetails } from "@/components/admin/data";
 import Link from "next/link";
 import { format } from "date-fns";
 import styles from "./UserDetail.module.css";
+import DangerZone from "@/components/admin/DangerZone/DangerZone";
 
 export const runtime = "nodejs";
 
 export default async function UserDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>; // ← expect a Promise
+  params: Promise<{ id: string }>;
 }) {
   const session = await auth();
   if (!session || session.user.role !== "ADMIN") redirect("/login");
 
-  const { id } = await params; // ← await it
+  const { id } = await params;
   const user = await getUserDetails(id);
   if (!user) return notFound();
 
@@ -104,18 +106,11 @@ export default async function UserDetailPage({
         )}
       </section>
 
-      {user.accounts?.length ? (
-        <section className={styles.card}>
-          <h2 className={styles.sectionTitle}>Auth Providers</h2>
-          <ul className={styles.list}>
-            {user.accounts.map((a) => (
-              <li key={a.id}>
-                <code>{a.provider}</code> — <span>{a.type}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      <DangerZone
+        userId={user.id}
+        currentPlan={sub?.planTier as any}
+        hasActiveSub={!!sub}
+      />
     </main>
   );
 }
