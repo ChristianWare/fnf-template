@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // app/api/stripe/webhook/route.ts
 import { NextResponse } from "next/server";
@@ -5,6 +6,7 @@ import Stripe from "stripe";
 import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2025-08-27.basil",
@@ -12,6 +14,92 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 function toDateOrNull(ts?: number | null) {
   return ts ? new Date(ts * 1000) : null;
+}
+
+function coerceStatus(s: string): any {
+  // Your enum might not include all Stripe statuses; coerce if needed.
+  const allowed = new Set([
+    "active",
+    "trialing",
+    "past_due",
+    "canceled",
+    "unpaid",
+    "incomplete",
+    "incomplete_expired",
+    "paused",
+  ]);
+  return allowed.has(s) ? (s as any) : ("active" as any);
+}
+
+async function upsertFromSubscriptionObject(
+  sub: Stripe.Subscription,
+  explicitUserId?: string
+) {
+  const customerId = sub.customer as string;
+
+  let user = await db.user.findUnique({
+    where: { stripeCustomerId: customerId },
+  });
+  if (!user && explicitUserId) {
+    user = await db.user.findUnique({ where: { id: explicitUserId } });
+    if (user && !user.stripeCustomerId) {
+      await db.user.update({
+        where: { id: user.id },
+        data: { stripeCustomerId: customerId },
+      });
+    }
+  }
+  if (!user) return;
+
+  const item = sub.items.data[0];
+  const price = item?.price || null;
+
+  const unitAmount = price?.unit_amount ?? null;
+  const currency = (price?.currency ?? "usd").toUpperCase();
+  const planTier =
+    (sub.metadata?.planTier as string | undefined) ??
+    (price?.nickname as string | undefined) ??
+    null;
+
+  const trialEnd = (sub as any).trial_end as number | undefined;
+  const cpe = (sub as any).current_period_end as number | undefined;
+  const nextAt = trialEnd ?? cpe ?? null;
+
+  await db.subscription.upsert({
+    where: { stripeSubscriptionId: sub.id },
+    create: {
+      stripeSubscriptionId: sub.id,
+      stripePriceId: price?.id ?? "",
+      userId: user.id,
+      planTier: (planTier as any) ?? "SOLO",
+      status: coerceStatus(sub.status),
+      unitAmount: unitAmount ?? 0,
+      currency,
+      currentPeriodEnd: toDateOrNull(nextAt),
+      // if you added trialEnd and priceNickname columns, set them:
+      // @ts-ignore
+      trialEnd: toDateOrNull(trialEnd ?? null),
+      // @ts-ignore
+      priceNickname: price?.nickname ?? null,
+      cancelAtPeriodEnd: sub.cancel_at_period_end ?? false,
+      setupFeePaidAt: null,
+      meta: {},
+    },
+    update: {
+      stripePriceId: price?.id ?? "",
+      planTier: (planTier as any) ?? undefined,
+      status: coerceStatus(sub.status),
+      unitAmount: unitAmount ?? undefined,
+      currency,
+      currentPeriodEnd: toDateOrNull(nextAt),
+      // @ts-ignore
+      trialEnd: toDateOrNull(trialEnd ?? null),
+      // @ts-ignore
+      priceNickname: price?.nickname ?? null,
+      cancelAtPeriodEnd: sub.cancel_at_period_end ?? false,
+      updatedAt: new Date(),
+    },
+  });
 }
 
 export async function POST(req: Request) {
@@ -22,7 +110,6 @@ export async function POST(req: Request) {
   if (!secret)
     return new NextResponse("Missing webhook secret", { status: 500 });
 
-  // IMPORTANT: read raw body string for signature verification
   const raw = await req.text();
 
   let event: Stripe.Event;
@@ -39,7 +126,7 @@ export async function POST(req: Request) {
         const session = event.data.object as Stripe.Checkout.Session;
         const customerId = session.customer as string | null;
 
-        // Find the user by metadata.userId (top-level) or by email if present
+        // Link the customer to the user
         let userId =
           (session.metadata?.userId as string | undefined) ?? undefined;
         if (!userId && session.customer_details?.email) {
@@ -48,12 +135,20 @@ export async function POST(req: Request) {
           });
           if (u) userId = u.id;
         }
-
         if (customerId && userId) {
           await db.user.update({
             where: { id: userId },
             data: { stripeCustomerId: customerId },
           });
+        }
+
+        // Optional immediate upsert to avoid waiting for subscription.created arrival
+        const subId = session.subscription as string | null;
+        if (subId) {
+          const sub = await stripe.subscriptions.retrieve(subId, {
+            expand: ["items.data.price"],
+          });
+          await upsertFromSubscriptionObject(sub, userId);
         }
         break;
       }
@@ -62,91 +157,21 @@ export async function POST(req: Request) {
       case "customer.subscription.updated":
       case "customer.subscription.deleted": {
         const sub = event.data.object as Stripe.Subscription;
-
-        // Map to your User
-        const customerId = sub.customer as string;
-        let user = await db.user.findUnique({
-          where: { stripeCustomerId: customerId },
+        // Ensure price expanded so unit_amount/nickname are present
+        const full = await stripe.subscriptions.retrieve(sub.id, {
+          expand: ["items.data.price"],
         });
-
-        // Fallback: use metadata.userId from the subscription
-        if (!user) {
-          const metaUserId = sub.metadata?.userId as string | undefined;
-          if (metaUserId) {
-            user = await db.user.findUnique({ where: { id: metaUserId } });
-            if (user && !user.stripeCustomerId) {
-              await db.user.update({
-                where: { id: user.id },
-                data: { stripeCustomerId: customerId },
-              });
-            }
-          }
-        }
-
-        if (!user) {
-          console.warn(
-            "No user found for subscription",
-            sub.id,
-            "customer",
-            customerId
-          );
-          return NextResponse.json({ ok: true });
-        }
-
-        const price = sub.items.data[0]?.price || null;
-        const unitAmount = price?.unit_amount ?? null;
-        const currency = (price?.currency ?? "usd").toUpperCase();
-        const planTier =
-          (sub.metadata?.planTier as string | undefined) ??
-          (price?.nickname as string | undefined) ??
-          null;
-
-        // Next bill: prefer trial_end (anchor) else current_period_end
-        const trialEnd = (sub as any).trial_end as number | undefined;
-        const cpe = (sub as any).current_period_end as number | undefined;
-        const nextAt = trialEnd ?? cpe ?? null;
-
-        // Your schema likely stores lowercase Stripe statuses: "active", "trialing", etc.
-        const status = sub.status; // keep Stripe’s lowercase status
-
-        // Upsert your Subscription row, keyed by stripeSubscriptionId
-        await db.subscription.upsert({
-          where: { stripeSubscriptionId: sub.id },
-          create: {
-            stripeSubscriptionId: sub.id,
-            stripePriceId: price?.id ?? "",
-            userId: user.id,
-            planTier: (planTier as any) ?? "SOLO",
-            status: status as any,
-            unitAmount: unitAmount ?? 0,
-            currency,
-            currentPeriodEnd: toDateOrNull(nextAt),
-            cancelAtPeriodEnd: sub.cancel_at_period_end ?? false,
-            setupFeePaidAt: null,
-            meta: {},
-          },
-          update: {
-            stripePriceId: price?.id ?? "",
-            planTier: (planTier as any) ?? undefined,
-            status: status as any,
-            unitAmount: unitAmount ?? undefined,
-            currency,
-            currentPeriodEnd: toDateOrNull(nextAt),
-            cancelAtPeriodEnd: sub.cancel_at_period_end ?? false,
-            updatedAt: new Date(),
-          },
-        });
-
+        await upsertFromSubscriptionObject(
+          full,
+          sub.metadata?.userId as string | undefined
+        );
         break;
       }
 
       case "invoice.paid": {
         const base = event.data.object as Stripe.Invoice;
+        if (!base.id) break;
 
-        // Re-fetch with price expansion so TS knows `price` exists
-        if (!base.id) {
-          throw new Error("Invoice id is undefined");
-        }
         const inv = await stripe.invoices.retrieve(base.id, {
           expand: ["lines.data.price"],
         });
@@ -160,7 +185,7 @@ export async function POST(req: Request) {
           });
           if (user) {
             const hasSetup = inv.lines.data.some(
-              (l) => (l as any).price?.id === setupPriceId
+              (l: any) => l.price?.id === setupPriceId
             );
             if (hasSetup) {
               await db.subscription.updateMany({
@@ -174,7 +199,6 @@ export async function POST(req: Request) {
       }
 
       default:
-        // ignore other events for now
         break;
     }
 
