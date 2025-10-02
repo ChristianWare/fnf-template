@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // app/account/page.tsx
+import styles from "./AccountPage.module.css";
 import { auth } from "../../../auth";
 import { redirect } from "next/navigation";
-import styles from "./AccountPage.module.css";
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
 import Stripe from "stripe";
-import BillingZone from "@/components/account/BillingZone/BillingZone";
+// import BillingZone from "@/components/account/BillingZone/BillingZone";
 import ChargesTable from "@/components/account/ChargesTable/ChargesTable";
 import { AccountKPIGrid } from "@/components/account/AccountKPIGrid/AccountKPIGrid";
+import UserButton from "@/components/dashboard/UserButton/UserButton";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -272,7 +273,7 @@ export default async function AccountPage() {
           <div className={styles.grid}>
             <Detail label='Plan:' value={planLabel} />
             <Detail label='Status:' value={statusLabel} />
-            <Detail label='Amount:' value={currency(amountCents, curr)} />
+            <Detail label='Cost:' value={`${currency(amountCents, curr)}/month`} />
             <Detail
               label='Next bill:'
               value={nextBill ? format(new Date(nextBill), "MMM d, yyyy") : "—"}
@@ -284,24 +285,22 @@ export default async function AccountPage() {
             You don’t have a subscription yet. Choose a plan to get started.
           </p>
         )}
+      </section>
+      <section className={styles.card}>
+        {sub || live ? (
+          <>
+            {/* Only first 5 + link to full history */}
+            <ChargesTable limit={5} showViewAllLink />
+          </>
+        ) : (
+          <Link href='/pricing' className={styles.primaryLink}>
+            View plans
+          </Link>
+        )}
+      </section>
 
-        <div className={styles.actions}>
-          {sub || live ? (
-            <form method='POST' action='/account/billing/portal'>
-              <ChargesTable />
-              <BillingZone
-                currentPlan={
-                  (sub?.planTier as any) ?? (live?.planTier as any) ?? null
-                }
-                hasActiveSub={!!(sub || live)}
-              />
-            </form>
-          ) : (
-            <Link href='/pricing' className={styles.primaryLink}>
-              View plans
-            </Link>
-          )}
-        </div>
+      <section className={styles.card}>
+        <UserButton />
       </section>
     </div>
   );

@@ -1,13 +1,14 @@
-// components/account/ChargesTable/ChargesTable.tsx
+// app/account/billing/history/page.tsx
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Stripe from "stripe";
-import { auth } from "../../../../auth";
+import { auth } from "../../../../../auth";
 import { db } from "@/lib/db";
-import styles from "./ChargesTable.module.css";
+import styles from "@/components/account/ChargesTable/ChargesTable.module.css";
 import { format } from "date-fns";
 import Link from "next/link";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2025-08-27.basil",
@@ -22,32 +23,24 @@ function currency(cents?: number | null, code = "USD") {
   }).format(cents / 100);
 }
 
-/**
- * Best-effort receipt link:
- * 1) charge.receipt_url (payment receipt)
- * 2) invoice.hosted_invoice_url (invoice page)
- * 3) invoice.invoice_pdf (PDF fallback)
- */
+/** Prefer charge.receipt_url, then hosted invoice, then PDF */
 function getReceiptLink(inv: Stripe.Invoice): string | null {
   const c = (inv as any).charge as Stripe.Charge | string | null | undefined;
   const chargeObj =
     typeof c === "object" && c && "id" in c ? (c as Stripe.Charge) : null;
 
-  const receiptUrl =
+  return (
     chargeObj?.receipt_url ??
     (inv.hosted_invoice_url as string | null | undefined) ??
     (inv.invoice_pdf as string | null | undefined) ??
-    null;
-
-  return receiptUrl ?? null;
+    null
+  );
 }
 
-export default async function ChargesTable({
-  limit = 5,
-  showViewAllLink = false,
+export default async function BillingHistoryPage({
+  searchParams,
 }: {
-  limit?: number;
-  showViewAllLink?: boolean;
+  searchParams?: { starting_after?: string; ending_before?: string };
 }) {
   const session = await auth();
   if (!session) return null;
@@ -57,7 +50,6 @@ export default async function ChargesTable({
     : session.user?.email
       ? { email: session.user.email }
       : null;
-
   if (!where) return null;
 
   const user = await db.user.findUnique({
@@ -67,23 +59,27 @@ export default async function ChargesTable({
   if (!user?.stripeCustomerId) {
     return (
       <section className={styles.card}>
-        <h2 className={styles.title}>Billing history</h2>
+        <h1 className={styles.title}>Billing history</h1>
         <p className={styles.muted}>No Stripe customer found.</p>
       </section>
     );
   }
 
-  const listLimit = Math.min(Math.max(limit, 1), 100);
-
-  const invoices = await stripe.invoices.list({
+  const params: Stripe.InvoiceListParams = {
     customer: user.stripeCustomerId,
-    limit: listLimit,
+    limit: 20,
     expand: [
       "data.charge",
-      "data.payment_intent.latest_charge", // if 'charge' isn't directly populated
-      "data.lines.data.price", // even if typings don’t declare it, Stripe will expand it
+      "data.payment_intent.latest_charge",
+      "data.lines.data.price", // expanded even if TS types don’t show .price
     ],
-  });
+  };
+  if (searchParams?.starting_after)
+    params.starting_after = searchParams.starting_after;
+  if (searchParams?.ending_before)
+    params.ending_before = searchParams.ending_before;
+
+  const invoices = await stripe.invoices.list(params);
 
   const rows = invoices.data.map((inv) => {
     const created = new Date((inv.created ?? 0) * 1000);
@@ -91,10 +87,8 @@ export default async function ChargesTable({
     const amountPaid = inv.amount_paid ?? 0;
     const currencyCode = (inv.currency ?? "usd").toUpperCase();
 
-    // Prefer a human label:
-    // 1) line.price.nickname (via any to avoid TS complaints on older typings)
-    // 2) line.description
-    const line0 = inv.lines?.data?.[0];
+    // Description: prefer line.price.nickname (via any), fall back to line.description
+    const line0 = inv.lines?.data?.[0] as Stripe.InvoiceLineItem | undefined;
     const nicknameFromPrice = (
       line0 ? (line0 as any)?.price?.nickname : undefined
     ) as string | undefined;
@@ -103,7 +97,7 @@ export default async function ChargesTable({
       (line0?.description as string | undefined) ??
       "Subscription";
 
-    // If charge wasn’t expanded, also attempt PI.latest_charge
+    // Try charge.receipt_url; if not, try PI.latest_charge.receipt_url
     let receiptUrl = getReceiptLink(inv);
     if (!receiptUrl) {
       const pi: any = (inv as any).payment_intent;
@@ -122,11 +116,16 @@ export default async function ChargesTable({
     };
   });
 
+  // Keep newest first
   rows.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+  // const firstId = rows[0]?.id;
+  const lastId = rows[rows.length - 1]?.id;
 
   return (
     <section className={styles.card}>
-      <h2 className={styles.title}>Billing history</h2>
+      <h1 className={styles.title}>Billing history</h1>
+
       {rows.length === 0 ? (
         <p className={styles.muted}>No invoices yet.</p>
       ) : (
@@ -169,13 +168,33 @@ export default async function ChargesTable({
             </table>
           </div>
 
-          {showViewAllLink && (
-            <div style={{ marginTop: "40px" }}>
-              <Link href='/account/billing/history' className={styles.link}>
-                View all billing history →
+          <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
+            {/* Newer page */}
+            {/* {(searchParams?.ending_before || firstId) && firstId ? (
+              <Link
+                className={styles.link}
+                href={{
+                  pathname: "/account/billing/history",
+                  query: { ending_before: firstId },
+                }}
+              >
+                Newer
               </Link>
-            </div>
-          )}
+            ) : null} */}
+
+            {/* Older page */}
+            {invoices.has_more && lastId ? (
+              <Link
+                className={styles.link}
+                href={{
+                  pathname: "/account/billing/history",
+                  query: { starting_after: lastId },
+                }}
+              >
+                Older
+              </Link>
+            ) : null}
+          </div>
         </>
       )}
     </section>

@@ -1,10 +1,12 @@
 // components/account/BillingZone/BillingZone.tsx
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./BillingZone.module.css";
+import Modal from "@/components/shared/Modal/Modal";
 
 type Plan = "SOLO" | "TEAM" | "RENTAL_FLEET" | "MULTI_LOCATION" | "CUSTOM";
+type ModalType = "change_plan" | "cancel" | null;
 
 export default function BillingZone({
   currentPlan,
@@ -14,7 +16,53 @@ export default function BillingZone({
   hasActiveSub: boolean;
 }) {
   const [plan, setPlan] = useState<Plan>(currentPlan ?? "SOLO");
+  const [modalType, setModalType] = useState<ModalType>(null);
+  const [pending, setPending] = useState(false);
+
+  const changeFormRef = useRef<HTMLFormElement>(null);
+  const cancelFormRef = useRef<HTMLFormElement>(null);
+
   const actionUrl = `/account/actions`;
+
+  function readablePlan(p: Plan) {
+    switch (p) {
+      case "SOLO":
+        return "Solo";
+      case "TEAM":
+        return "Team";
+      case "RENTAL_FLEET":
+        return "Rental/Fleet";
+      case "MULTI_LOCATION":
+        return "Multi-Location";
+      case "CUSTOM":
+        return "Custom";
+    }
+  }
+
+  function openChangeModal(e: React.FormEvent) {
+    e.preventDefault();
+    setModalType("change_plan");
+  }
+
+  function openCancelModal(e: React.FormEvent) {
+    e.preventDefault();
+    setModalType("cancel");
+  }
+
+  function onCancel() {
+    if (pending) return;
+    setModalType(null);
+  }
+
+  function onConfirm() {
+    if (pending || !modalType) return;
+    setPending(true);
+    if (modalType === "change_plan") {
+      changeFormRef.current?.submit();
+    } else if (modalType === "cancel") {
+      cancelFormRef.current?.submit();
+    }
+  }
 
   return (
     <section className={styles.card}>
@@ -25,17 +73,13 @@ export default function BillingZone({
       </p>
 
       <div className={styles.grid}>
+        {/* Change plan */}
         <form
+          ref={changeFormRef}
           method='POST'
           action={actionUrl}
           className={styles.block}
-          onSubmit={(e) => {
-            if (
-              !window.confirm("Switch your plan in Stripe and the database?")
-            ) {
-              e.preventDefault();
-            }
-          }}
+          onSubmit={openChangeModal}
         >
           <input type='hidden' name='action' value='change_plan' />
           <label className={styles.label}>Change Plan</label>
@@ -44,6 +88,7 @@ export default function BillingZone({
             className={styles.select}
             value={plan}
             onChange={(e) => setPlan(e.target.value as Plan)}
+            disabled={pending}
           >
             <option value='SOLO'>Solo</option>
             <option value='TEAM'>Team</option>
@@ -51,37 +96,83 @@ export default function BillingZone({
             <option value='MULTI_LOCATION'>Multi-Location</option>
             <option value='CUSTOM'>Custom</option>
           </select>
-          <button className={styles.btn} type='submit'>
-            Update Plan
+          <button className={styles.btn} type='submit' disabled={pending}>
+            {pending && modalType === "change_plan"
+              ? "Updating…"
+              : "Update Plan"}
           </button>
-          {/* <p className={styles.help}>
-            Updates the active Stripe subscription’s price item and your DB row
-            (no proration).
-          </p> */}
         </form>
 
+        {/* Cancel at period end */}
         {hasActiveSub ? (
           <form
+            ref={cancelFormRef}
             method='POST'
             action={actionUrl}
             className={styles.block}
-            onSubmit={(e) => {
-              if (!window.confirm("Cancel at period end in Stripe?")) {
-                e.preventDefault();
-              }
-            }}
+            onSubmit={openCancelModal}
           >
             <input type='hidden' name='action' value='cancel_at_period_end' />
-            <button className={styles.warnBtn} type='submit'>
-              Cancel at period end
+            <button className={styles.warnBtn} type='submit' disabled={pending}>
+              {pending && modalType === "cancel"
+                ? "Cancelling…"
+                : "Cancel at period end"}
             </button>
-            {/* <p className={styles.help}>
-              Sets <code>cancel_at_period_end=true</code> in Stripe and updates
-              your DB flag.
-            </p> */}
           </form>
         ) : null}
       </div>
+
+      {/* Shared confirmation modal */}
+      <Modal isOpen={modalType !== null} onClose={onCancel}>
+        <div style={{ display: "grid", gap: 12 }}>
+          <h3 style={{ margin: 0 }}>
+            {modalType === "change_plan"
+              ? "Confirm plan change"
+              : "Confirm cancellation"}
+          </h3>
+
+          {modalType === "change_plan" ? (
+            <p style={{ margin: 0 }}>
+              Switch your subscription to <strong>{readablePlan(plan)}</strong>?
+              This updates the active Stripe subscription and your account
+              immediately.
+            </p>
+          ) : (
+            <p style={{ margin: 0 }}>
+              Set <code>cancel_at_period_end</code> for your subscription?
+              You’ll continue to have access until the current period ends.
+            </p>
+          )}
+
+          <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+            <button
+              type='button'
+              onClick={onCancel}
+              className={styles.btn}
+              disabled={pending}
+              style={{
+                background: "transparent",
+                border: "1px solid var(--gray)",
+                color: "inherit",
+              }}
+            >
+              Never mind
+            </button>
+            <button
+              type='button'
+              onClick={onConfirm}
+              className={modalType === "cancel" ? styles.warnBtn : styles.btn}
+              disabled={pending}
+            >
+              {pending
+                ? "Submitting…"
+                : modalType === "cancel"
+                  ? "Confirm cancel"
+                  : "Confirm change"}
+            </button>
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 }
