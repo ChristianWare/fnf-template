@@ -5,7 +5,8 @@ import { useRef, useState } from "react";
 import styles from "./BillingZone.module.css";
 import Modal from "@/components/shared/Modal/Modal";
 
-type Plan = "SOLO" | "TEAM" | "RENTAL_FLEET" | "MULTI_LOCATION" | "CUSTOM";
+type Plan = "SOLO" | "TEAM" | "RENTAL_FLEET" | "MULTI_LOCATION";
+// | "CUSTOM"
 type ModalType = "change_plan" | "cancel" | null;
 
 export default function BillingZone({
@@ -34,8 +35,8 @@ export default function BillingZone({
         return "Rental/Fleet";
       case "MULTI_LOCATION":
         return "Multi-Location";
-      case "CUSTOM":
-        return "Custom";
+      // case "CUSTOM":
+      //   return "Custom";
     }
   }
 
@@ -95,7 +96,7 @@ export default function BillingZone({
             <option value='TEAM'>Team</option>
             <option value='RENTAL_FLEET'>Rental/Fleet</option>
             <option value='MULTI_LOCATION'>Multi-Location</option>
-            <option value='CUSTOM'>Custom</option>
+            {/* <option value='CUSTOM'>Custom</option> */}
           </select>
           <button className={styles.btn} type='submit' disabled={pending}>
             {pending && modalType === "change_plan"
