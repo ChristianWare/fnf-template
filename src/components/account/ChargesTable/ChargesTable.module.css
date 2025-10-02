@@ -13,14 +13,13 @@
   font-size: 3rem;
   font-family: var(--DotSansMedium);
   letter-spacing: -1px;
-
   margin: 0 0 12px;
   color: var(--text, #111827);
 }
 
 .muted {
   color: var(--muted, #6b7280);
-  font-size: 0.95rem;
+  /* font-size: 0.95rem; */
   margin: 6px 0 0;
 }
 
@@ -47,15 +46,14 @@
 
 .table {
   width: 100%;
-  min-width: 720px; /* allow horizontal scroll on small screens */
   border-collapse: separate;
   border-spacing: 0;
 }
 
+/* Header (desktop-first) */
 .table thead th {
   text-align: left;
   padding: 12px 16px;
-  /* background: var(--headerBg, #f8fafc); */
   color: var(--text-strong, #0f172a);
   font-weight: 700;
   border-bottom: 1px solid var(--border, #e5e7eb);
@@ -85,13 +83,6 @@
   color: var(--status, #374151);
 }
 
-/* If you later add status-specific classes, these are ready to go: */
-/* .status.paid { color: #065f46; }      */
-/* .status.open { color: #1f2937; }      */
-/* .status.draft { color: #6b7280; }     */
-/* .status.uncollectible { color: #92400e; } */
-/* .status.void { color: #7c3aed; }      */
-
 /* Links */
 .link {
   color: var(--link, #2563eb);
@@ -107,9 +98,95 @@
   border-radius: 4px;
 }
 
+/* === Tablet tuning (<= 1024px) === */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.25rem;
+  }
+  .table thead th,
+  .table tbody td {
+    padding: 12px;
+  }
+}
+
+/* === Mobile layout (<= 768px): turn rows into stacked cards === */
+@media (max-width: 768px) {
+  /* Remove horizontal scroll needs */
+  .tableWrap {
+    border-radius: 12px;
+    overflow: hidden; /* keep card edges clean */
+  }
+
+  /* Hide thead; we’ll show labels via data-label */
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Each row becomes a card */
+  .table tr {
+    background: var(--darkerTan);
+    border-bottom: 1px solid var(--gray);
+    padding: 12px 12px 6px;
+  }
+
+  /* Cells stack with their label shown via ::before */
+  .table tbody td {
+    border: 0;
+    background: transparent !important;
+    padding: 8px 0;
+    display: grid;
+    grid-template-columns: 140px 1fr; /* label/value */
+    gap: 8px;
+    align-items: baseline;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    color: var(--muted, #6b7280);
+    /* font-size: 0.9rem; */
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none; /* readable labels */
+  }
+
+  /* First cell gets a bit more top spacing */
+  .table tbody td:first-child {
+    padding-top: 4px;
+  }
+
+  /* Tighter text sizes */
+  .status {
+    font-weight: 700;
+  }
+}
+
+/* === Small phones (<= 400px): narrower label column === */
+@media (max-width: 400px) {
+  .table tbody td {
+    grid-template-columns: 120px 1fr;
+  }
+}
+
 /* Motion-reduced polish */
 @media (prefers-reduced-motion: reduce) {
   .table tbody tr:hover td {
     transition: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table tr {
+    border-radius: 12px;
+    margin: 8px 8px 0;
+    border: 1px solid var(--gray);
   }
 }

@@ -27,6 +27,15 @@
   background-color: var(--tan);
 }
 
+.linkText {
+  font-family: var(--inter);
+}
+
+.active {
+  font-weight: 700;
+  background: #eef2ff;
+}
+
 .link:hover {
   background: #f6f7f9;
 }
@@ -34,10 +43,4 @@
 .icon {
   font-size: 2rem;
   color: var(--black);
-}
-
-.active {
-  background: #eef2ff;
-  color: #1e40af;
-  font-weight: 700;
 }

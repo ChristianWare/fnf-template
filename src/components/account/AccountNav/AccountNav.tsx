@@ -6,38 +6,39 @@ import { usePathname } from "next/navigation";
 import styles from "./AccountNav.module.css";
 import House from "@/components/icons/House/House";
 import Cog from "@/components/icons/Cog/Cog";
-// If you add a dedicated Receipt icon later, swap it in for Billing items.
+import Analytics from "@/components/icons/Analytics/Analytics";
+import Payment from "@/components/icons/Payment/Payment";
 
 export default function AccountNav() {
   const pathname = usePathname();
 
- const items = [
-   {
-     href: "/account",
-     label: "Overview",
-     icon: <House className={styles.icon} />,
-     isActive: (p: string) => p === "/account",
-   },
-   {
-     href: "/account/plan",
-     label: "My Plan",
-     icon: <Cog className={styles.icon} />,
-     isActive: (p: string) => p.startsWith("/account/plan"),
-   },
-   {
-     href: "/account/billing/history",
-     label: "Billing History",
-     icon: <Cog className={styles.icon} />,
-     isActive: (p: string) => p.startsWith("/account/billing/history"),
-   },
-   {
-     href: "/account/settings",
-     label: "Account Settings",
-     icon: <Cog className={styles.icon} />,
-     isActive: (p: string) =>
-       p === "/account/settings" || p.startsWith("/account/settings/"),
-   },
- ];
+  const items = [
+    {
+      href: "/account",
+      label: "Overview",
+      icon: <House className={styles.icon} />,
+      isActive: (p: string) => p === "/account",
+    },
+    {
+      href: "/account/plan",
+      label: "My Plan",
+      icon: <Analytics className={styles.icon} />,
+      isActive: (p: string) => p.startsWith("/account/plan"),
+    },
+    {
+      href: "/account/billing/history",
+      label: "Billing History",
+      icon: <Payment className={styles.icon} />,
+      isActive: (p: string) => p.startsWith("/account/billing/history"),
+    },
+    {
+      href: "/account/settings",
+      label: "Account Settings",
+      icon: <Cog className={styles.icon} />,
+      isActive: (p: string) =>
+        p === "/account/settings" || p.startsWith("/account/settings/"),
+    },
+  ];
 
   return (
     <nav className={styles.nav}>
@@ -51,7 +52,11 @@ export default function AccountNav() {
                 className={`${styles.link} ${active ? styles.active : ""}`}
               >
                 {it.icon}
-                <span className={styles.linkText}>{it.label}</span>
+                <span
+                  className={`${styles.linkText} ${active ? styles.active : ""}`}
+                >
+                  {it.label}
+                </span>
               </Link>
             </li>
           );

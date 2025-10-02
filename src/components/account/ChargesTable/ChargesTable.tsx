@@ -145,11 +145,15 @@ export default async function ChargesTable({
               <tbody>
                 {rows.map((r) => (
                   <tr key={r.id}>
-                    <td>{format(r.date, "MMM d, yyyy")}</td>
-                    <td>{r.description}</td>
-                    <td className={styles.status}>{r.status}</td>
-                    <td>{currency(r.amountPaid, r.currency)}</td>
-                    <td>
+                    <td data-label='Date'>{format(r.date, "MMM d, yyyy")}</td>
+                    <td data-label='Description'>{r.description}</td>
+                    <td data-label='Status' className={styles.status}>
+                      {r.status}
+                    </td>
+                    <td data-label='Amount'>
+                      {currency(r.amountPaid, r.currency)}
+                    </td>
+                    <td data-label='Receipt'>
                       {r.receiptUrl ? (
                         <a
                           href={r.receiptUrl}
