@@ -15,6 +15,7 @@
     box-shadow 0.25s ease-in-out;
   will-change: transform, opacity;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--grayii);
 }
 
 .header.hide {
@@ -59,6 +60,7 @@
   line-height: 1;
   color: var(--tan) !important;
   z-index: 999;
+  white-space: nowrap;
 }
 
 .black {
@@ -155,7 +157,7 @@
   letter-spacing: -0.02em;
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1100px) {
   /* .header {
     top: 0;
     left: 0;

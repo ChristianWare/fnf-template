@@ -112,10 +112,10 @@ export default function BillingZone({
       {hasActiveSub ? (
         <section className={styles.cardDanger}>
           <div className={styles.cardLeft}>
-            <div className={styles.subHeading}>Delete your account</div>
+            <div className={styles.subHeading}>Cancel your subscription</div>
             <p className={styles.note}>
-              Once you delete your account, there is no going back. All data
-              will be lost. Please be certain.
+              Once you cancel your subscription, you will lose access at the end
+              of the billing period. Please be certain.
             </p>
           </div>
           <div className={styles.cardRight}>
