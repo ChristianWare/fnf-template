@@ -275,11 +275,16 @@ export default async function AccountPage() {
       </section>
 
       <section className={styles.card}>
+        {" "}
+        <h2 className={styles.sectionTitle}>Plan Details</h2>
         {sub || live ? (
           <div className={styles.grid}>
             <Detail label='Plan:' value={planLabel} />
             <Detail label='Status:' value={statusLabel} />
-            <Detail label='Cost:' value={`${currency(amountCents, curr)}/month`} />
+            <Detail
+              label='Cost:'
+              value={`${currency(amountCents, curr)}/month`}
+            />
             <Detail
               label='Next bill:'
               value={nextBill ? format(new Date(nextBill), "MMM d, yyyy") : "—"}

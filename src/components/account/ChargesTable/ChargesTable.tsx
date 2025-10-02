@@ -125,63 +125,65 @@ export default async function ChargesTable({
   rows.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
-    <section className={styles.card}>
-      <h2 className={styles.title}>Billing history</h2>
-      {rows.length === 0 ? (
-        <p className={styles.muted}>No invoices yet.</p>
-      ) : (
-        <>
-          <div className={styles.tableWrap}>
-            <table className={styles.table} role='table'>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                  <th>Amount</th>
-                  <th>Receipt</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r) => (
-                  <tr key={r.id}>
-                    <td data-label='Date'>{format(r.date, "MMM d, yyyy")}</td>
-                    <td data-label='Description'>{r.description}</td>
-                    <td data-label='Status' className={styles.status}>
-                      {r.status}
-                    </td>
-                    <td data-label='Amount'>
-                      {currency(r.amountPaid, r.currency)}
-                    </td>
-                    <td data-label='Receipt'>
-                      {r.receiptUrl ? (
-                        <a
-                          href={r.receiptUrl}
-                          target='_blank'
-                          rel='noreferrer'
-                          className={styles.link}
-                        >
-                          View receipt ↗
-                        </a>
-                      ) : (
-                        "—"
-                      )}
-                    </td>
+    <section>
+        <h2 className={styles.title}>Billing history</h2>
+      <div className={styles.card}>
+        {rows.length === 0 ? (
+          <p className={styles.muted}>No invoices yet.</p>
+        ) : (
+          <>
+            <div className={styles.tableWrap}>
+              <table className={styles.table} role='table'>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>Receipt</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {showViewAllLink && (
-            <div style={{ marginTop: "40px" }}>
-              <Link href='/account/billing/history' className={styles.link}>
-                View all billing history →
-              </Link>
+                </thead>
+                <tbody>
+                  {rows.map((r) => (
+                    <tr key={r.id}>
+                      <td data-label='Date'>{format(r.date, "MMM d, yyyy")}</td>
+                      <td data-label='Description'>{r.description}</td>
+                      <td data-label='Status' className={styles.status}>
+                        {r.status}
+                      </td>
+                      <td data-label='Amount'>
+                        {currency(r.amountPaid, r.currency)}
+                      </td>
+                      <td data-label='Receipt'>
+                        {r.receiptUrl ? (
+                          <a
+                            href={r.receiptUrl}
+                            target='_blank'
+                            rel='noreferrer'
+                            className={styles.link}
+                          >
+                            View receipt ↗
+                          </a>
+                        ) : (
+                          "—"
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          )}
-        </>
-      )}
+
+            {showViewAllLink && (
+              <div style={{ marginTop: "40px" }}>
+                <Link href='/account/billing/history' className={styles.link}>
+                  View all billing history →
+                </Link>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </section>
   );
 }
