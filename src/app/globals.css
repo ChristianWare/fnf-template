@@ -285,3 +285,8 @@ button {
   z-index: 1;
   animation: none !important;
 }
+
+.modalHeading {
+  font-size: 2.5rem;
+  font-family: var(--DotSansMedium);
+}

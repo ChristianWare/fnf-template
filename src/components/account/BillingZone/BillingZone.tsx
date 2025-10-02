@@ -65,14 +65,15 @@ export default function BillingZone({
   }
 
   return (
-    <section className={styles.card}>
+    <div>
       <h2 className={styles.title}>Manage your subscription</h2>
       <p className={styles.note}>
         Update your plan or cancel renewal at period end. These actions
         immediately affect your Stripe subscription.
       </p>
-
-      <div className={styles.grid}>
+      <br />
+      <br />
+      <section className={styles.card}>
         {/* Change plan */}
         <form
           ref={changeFormRef}
@@ -82,7 +83,7 @@ export default function BillingZone({
           onSubmit={openChangeModal}
         >
           <input type='hidden' name='action' value='change_plan' />
-          <label className={styles.label}>Change Plan</label>
+          <label className={styles.label}>Select Plan:</label>
           <select
             name='plan'
             className={styles.select}
@@ -102,37 +103,54 @@ export default function BillingZone({
               : "Update Plan"}
           </button>
         </form>
+      </section>
+      <br />
+      <br />
+      <h2 className={styles.title}>Danger Zone</h2>
+      <br />
 
-        {/* Cancel at period end */}
-        {hasActiveSub ? (
-          <form
-            ref={cancelFormRef}
-            method='POST'
-            action={actionUrl}
-            className={styles.block}
-            onSubmit={openCancelModal}
-          >
-            <input type='hidden' name='action' value='cancel_at_period_end' />
-            <button className={styles.warnBtn} type='submit' disabled={pending}>
-              {pending && modalType === "cancel"
-                ? "Cancelling…"
-                : "Cancel at period end"}
-            </button>
-          </form>
-        ) : null}
-      </div>
+      {hasActiveSub ? (
+        <section className={styles.cardDanger}>
+          <div className={styles.cardLeft}>
+            <div className={styles.subHeading}>Delete your account</div>
+            <p className={styles.note}>
+              Once you delete your account, there is no going back. All data
+              will be lost. Please be certain.
+            </p>
+          </div>
+          <div className={styles.cardRight}>
+            <form
+              ref={cancelFormRef}
+              method='POST'
+              action={actionUrl}
+              // className={styles.block}
+              onSubmit={openCancelModal}
+            >
+              <input type='hidden' name='action' value='cancel_at_period_end' />
+              <button
+                className={styles.warnBtn}
+                type='submit'
+                disabled={pending}
+              >
+                {pending && modalType === "cancel"
+                  ? "Cancelling…"
+                  : "Cancel at period end"}
+              </button>
+            </form>
+          </div>
+        </section>
+      ) : null}
 
-      {/* Shared confirmation modal */}
       <Modal isOpen={modalType !== null} onClose={onCancel}>
         <div style={{ display: "grid", gap: 12 }}>
-          <h3 style={{ margin: 0 }}>
+          <h3 className='modalHeading'>
             {modalType === "change_plan"
               ? "Confirm plan change"
               : "Confirm cancellation"}
           </h3>
 
           {modalType === "change_plan" ? (
-            <p style={{ margin: 0 }}>
+            <p style={{ marginTop: "10px", width: "90%" }}>
               Switch your subscription to <strong>{readablePlan(plan)}</strong>?
               This updates the active Stripe subscription and your account
               immediately.
@@ -173,6 +191,6 @@ export default function BillingZone({
           </div>
         </div>
       </Modal>
-    </section>
+    </div>
   );
 }

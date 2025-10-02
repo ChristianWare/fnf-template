@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import BillingZone from "@/components/account/BillingZone/BillingZone";
 import styles from "./PlanPage.module.css";
+// import ComparisonChart from "@/components/PricingPage/ComparisonChart/ComparisonChart";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,20 +32,23 @@ export default async function PlanPage() {
   const sub = user.subscriptions?.[0] ?? null;
 
   return (
-    <div className={styles.container}>
-      {/* <section className={styles.card}>
+    <>
+      <div className={styles.container}>
+        {/* <section className={styles.card}>
         <h1 className={styles.sectionTitle}>Plan & Billing</h1>
         <p className={styles.muted}>
-          Update your plan or schedule a cancellation at period end.
+        Update your plan or schedule a cancellation at period end.
         </p>
-      </section> */}
+        </section> */}
 
-      <section>
         <BillingZone
           currentPlan={(sub?.planTier as any) ?? null}
           hasActiveSub={!!sub}
         />
-      </section>
-    </div>
+        {/* <section className={styles.card}>
+          <ComparisonChart />
+        </section> */}
+      </div>
+    </>
   );
 }
