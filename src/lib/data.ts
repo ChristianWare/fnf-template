@@ -159,7 +159,7 @@ export const footerData2 = [
 export const projects = [
   {
     id: 1,
-    title: "Thundertrails Bike Rentals",
+    title: "Thundertrails Clips",
     slug: "thundertrails",
     src: Project1,
     video: "/videos/thunder.mp4",
@@ -224,7 +224,7 @@ export const projects = [
     title: "Nier Transportation",
     slug: "nier-transportation",
     src: Project2,
-    video: "/videos/chuxly.mp4",
+    video: "/videos/nier.mp4",
     description:
       "Nier Transportation provides high-end black-car service across Phoenix and all of Arizona—airport transfers, hourly charters, and long-distance city-to-city. They needed a luxury-grade booking experience with instant quotes, vehicle selection, deposits, and chauffeur/vehicle dispatch—without endless phone tag.",
     tags: [
@@ -286,7 +286,7 @@ export const projects = [
     title: "Muchacho Grooming",
     slug: "muchacho-grooming",
     src: Project3,
-    video: "/videos/honey.mp4",
+    video: "/videos/dog.mp4",
     description:
       "Muchacho Grooming is a boutique dog spa offering bath, full-groom, de-shed, nail care, and add-ons like blueberry facials and paw balm. They needed a polished booking flow with stylist scheduling, breed/size pricing, deposits to reduce no-shows, and an easy reschedule link for pet parents.",
     tags: [
