@@ -70,7 +70,7 @@ export default function BillingZone({
       <h2 className={styles.title}>Manage your subscription</h2>
       <p className={styles.note}>
         Update your plan or cancel renewal at period end. These actions
-        immediately affect your Stripe subscription.
+        immediately affect your subscription.
       </p>
       <br />
       <br />

@@ -127,7 +127,13 @@ export default async function AccountPage() {
   } | null = null;
 
   if (user.stripeCustomerId) {
-    const needsLive = !sub || sub.planTier == null || sub.unitAmount == null;
+    // const needsLive = !sub || sub.planTier == null || sub.unitAmount == null;
+
+    const needsLive =
+      !sub ||
+      sub.planTier == null ||
+      sub.unitAmount == null ||
+      sub.currentPeriodEnd == null;
 
     if (needsLive) {
       const list = await stripe.subscriptions.list({

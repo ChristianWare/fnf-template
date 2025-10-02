@@ -63,6 +63,13 @@
   white-space: nowrap;
 }
 
+.navItemActive {
+  color: var(--lime) !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
 .black {
   color: var(--black);
 }

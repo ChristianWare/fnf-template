@@ -9,6 +9,7 @@ import { createPortal } from "react-dom"; // ← add this
 import Image from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
 import SectionIntroii from "../SectionIntroii/SectionIntroii";
+import { usePathname } from "next/navigation";
 
 export default function Nav({
   color = "",
@@ -20,6 +21,7 @@ export default function Nav({
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const navRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const body = document.body;
@@ -84,6 +86,20 @@ export default function Nav({
     };
   }, [isOpen]);
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+   const items = [
+     { text: "About", href: "/about" },
+     { text: "Work", href: "/work" },
+     { text: "Pricing", href: "/pricing" },
+     { text: "Blog", href: "/blog" },
+     { text: "Contact", href: "/contact" },
+     { text: "My Account", href: "/account" },
+   ];
+
   return (
     <header
       className={`${styles.header} ${showNav || isOpen ? styles.show : styles.hide} ${isOpen ? styles.open : ""}`}
@@ -99,24 +115,22 @@ export default function Nav({
             isOpen ? `${styles.navItems} ${styles.active}` : styles.navItems
           }
         >
-          {[
-            // { text: "Home", href: "/" },
-            { text: "About", href: "/about" },
-            { text: "Work", href: "/work" },
-            { text: "Pricing", href: "/pricing" },
-            { text: "Blog", href: "/blog" },
-            { text: "Contact", href: "/contact" },
-            { text: "My Account", href: "/account" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`${styles.navItem} ${styles[color]}`}
-              onClick={closeMenu}
-            >
-              {item.text}
-            </Link>
-          ))}
+          {items.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`${styles.navItem} ${styles[color]} ${
+                  active ? styles.navItemActive : ""
+                }`}
+                onClick={closeMenu}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.text}
+              </Link>
+            );
+          })}
 
           <div className={styles.menuImage}>
             <Image src={Img1} alt='Menu image' fill className={styles.img} />
