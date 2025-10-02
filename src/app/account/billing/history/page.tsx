@@ -3,7 +3,7 @@
 import Stripe from "stripe";
 import { auth } from "../../../../../auth";
 import { db } from "@/lib/db";
-import styles from "@/components/account/ChargesTable/ChargesTable.module.css";
+import styles from "./BillingHistoryPage.module.css";
 import { format } from "date-fns";
 import Link from "next/link";
 
@@ -123,66 +123,64 @@ export default async function BillingHistoryPage({
   const lastId = rows[rows.length - 1]?.id;
 
   return (
-    <section className={styles.card}>
+    <section className={styles.caontainer}>
       <h1 className={styles.title}>Billing history</h1>
-
-      {rows.length === 0 ? (
-        <p className={styles.muted}>No invoices yet.</p>
-      ) : (
-        <>
-          <div className={styles.tableWrap}>
-            <table className={styles.table} role='table'>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                  <th>Amount</th>
-                  <th>Receipt</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r) => (
-                  <tr key={r.id}>
-                    <td>{format(r.date, "MMM d, yyyy")}</td>
-                    <td>{r.description}</td>
-                    <td className={styles.status}>{r.status}</td>
-                    <td>{currency(r.amountPaid, r.currency)}</td>
-                    <td>
-                      {r.receiptUrl ? (
-                        <a
-                          href={r.receiptUrl}
-                          target='_blank'
-                          rel='noreferrer'
-                          className={styles.link}
-                        >
-                          View receipt ↗
-                        </a>
-                      ) : (
-                        "—"
-                      )}
-                    </td>
+      <div className={styles.card}>
+        {rows.length === 0 ? (
+          <p className={styles.muted}>No invoices yet.</p>
+        ) : (
+          <>
+            <div className={styles.tableWrap}>
+              <table className={styles.table} role='table'>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>Receipt</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {rows.map((r) => (
+                    <tr key={r.id}>
+                      <td>{format(r.date, "MMM d, yyyy")}</td>
+                      <td>{r.description}</td>
+                      <td className={styles.status}>{r.status}</td>
+                      <td>{currency(r.amountPaid, r.currency)}</td>
+                      <td>
+                        {r.receiptUrl ? (
+                          <a
+                            href={r.receiptUrl}
+                            target='_blank'
+                            rel='noreferrer'
+                            className={styles.link}
+                          >
+                            View receipt ↗
+                          </a>
+                        ) : (
+                          "—"
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-          <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
-            {/* Newer page */}
-            {/* {(searchParams?.ending_before || firstId) && firstId ? (
-              <Link
-                className={styles.link}
-                href={{
-                  pathname: "/account/billing/history",
-                  query: { ending_before: firstId },
-                }}
-              >
-                Newer
-              </Link>
-            ) : null} */}
-
-            {/* Older page */}
+            {/* <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
+              {(searchParams?.ending_before || firstId) && firstId ? (
+                <Link
+                  className={styles.link}
+                  href={{
+                    pathname: "/account/billing/history",
+                    query: { ending_before: firstId },
+                  }}
+                >
+                  Newer
+                </Link>
+              ) : null}
+            </div> */}
             {invoices.has_more && lastId ? (
               <Link
                 className={styles.link}
@@ -194,9 +192,9 @@ export default async function BillingHistoryPage({
                 Older
               </Link>
             ) : null}
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </section>
   );
 }

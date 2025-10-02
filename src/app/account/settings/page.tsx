@@ -17,7 +17,8 @@ export default async function SettingsPage() {
         <h1 className={styles.title}>Settings</h1>
         <p className={styles.sub}>Manage your profile and security.</p>
       </header>
-
+<br />
+<br />
       <SettingsForms />
     </div>
   );

@@ -1,23 +1,24 @@
 /* components/account/SettingsForms/SettingsForms.module.css */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 .card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: var(--darkTan);
+  border: 1px solid var(--gray);
   border-radius: 16px;
-  padding: 16px;
+  padding: 2rem;
   display: grid;
-  gap: 10px;
+  gap: 1rem;
 }
 .heading {
-  font-weight: 800;
-  margin: 0;
+  font-size: 3rem;
+      font-family: var(--DotSansMedium);
+    letter-spacing: -1px;
 }
+
 .label {
-  font-size: 0.9rem;
   color: #6b7280;
 }
 .input {

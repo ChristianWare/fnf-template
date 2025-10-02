@@ -74,7 +74,6 @@ export default function SettingsForms() {
 
   return (
     <section className={styles.grid}>
-      {/* Display Name */}
       <form
         ref={nameFormRef}
         method='POST'
