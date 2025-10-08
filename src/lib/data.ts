@@ -283,12 +283,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Muchacho Grooming",
-    slug: "muchacho-grooming",
+    title: "Great Groomers of California",
+    slug: "great-groomers-of-california",
     src: Project3,
-    video: "/videos/dog.mp4",
+    video: "/videos/ggc.mp4",
     description:
-      "Muchacho Grooming is a boutique dog spa offering bath, full-groom, de-shed, nail care, and add-ons like blueberry facials and paw balm. They needed a polished booking flow with stylist scheduling, breed/size pricing, deposits to reduce no-shows, and an easy reschedule link for pet parents.",
+      "Great Groomers of California is a boutique dog-grooming salon in San Diego. They needed a stress-free booking flow that handled breed/size complexity, stylist selection, and add-ons—while reducing no-shows and phone time. We built a direct-booking experience with smart pricing, deposit-secured checkout, automated reminders, and an add-on step that lifts average order value.",
     tags: [
       { id: 3.98, tag: "Dog Spa" },
       { id: 3.99, tag: "Salon Booking" },
