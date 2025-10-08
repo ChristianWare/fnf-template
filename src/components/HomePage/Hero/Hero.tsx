@@ -37,7 +37,6 @@ export default function Hero() {
                 btnType='lime'
                 text='Book your discovery call'
               />
-              {/* <Button href='/about' btnType='grayOutline' text='About us' /> */}{" "}
               <ImageCluster
                 size='small'
                 orientation='horizontal'
