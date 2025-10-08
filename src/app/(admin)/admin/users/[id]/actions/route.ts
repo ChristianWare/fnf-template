@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // app/(admin)/admin/users/[id]/actions/route.ts
 import { auth } from "../../../../../../../auth";
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import Stripe from "stripe";
 import { revalidateTag } from "next/cache";
@@ -48,7 +48,6 @@ function mapStripeToDbFields(sub: Stripe.Subscription) {
     readSubField<boolean>(s, "cancel_at_period_end", "cancelAtPeriodEnd") ??
     false;
 
-  // items/price may also differ in casing in some generated clients
   const item0 = s?.items?.data?.[0] ?? null;
   const price = item0?.price ?? null;
 
@@ -72,15 +71,15 @@ function mapStripeToDbFields(sub: Stripe.Subscription) {
 }
 
 export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
+  req: NextRequest,
+  ctx: RouteContext<"/admin/users/[id]/actions">
 ) {
+  const { id: userId } = await ctx.params;
+
   const session = await auth();
   if (!session || session.user.role !== "ADMIN") {
     return new NextResponse("Unauthorized", { status: 401 });
   }
-
-  const userId = params.id;
 
   const user = await db.user.findUnique({
     where: { id: userId },

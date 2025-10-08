@@ -37,11 +37,19 @@ function getReceiptLink(inv: Stripe.Invoice): string | null {
   );
 }
 
+type HistorySearch = {
+  starting_after?: string;
+  ending_before?: string;
+};
+
 export default async function BillingHistoryPage({
   searchParams,
 }: {
-  searchParams?: { starting_after?: string; ending_before?: string };
+  // Next 15: searchParams is a Promise
+  searchParams?: Promise<HistorySearch>;
 }) {
+  const sp = (await searchParams) ?? {};
+
   const session = await auth();
   if (!session) return null;
 
@@ -71,13 +79,11 @@ export default async function BillingHistoryPage({
     expand: [
       "data.charge",
       "data.payment_intent.latest_charge",
-      "data.lines.data.price", // expanded even if TS types don’t show .price
+      "data.lines.data.price",
     ],
   };
-  if (searchParams?.starting_after)
-    params.starting_after = searchParams.starting_after;
-  if (searchParams?.ending_before)
-    params.ending_before = searchParams.ending_before;
+  if (sp.starting_after) params.starting_after = sp.starting_after;
+  if (sp.ending_before) params.ending_before = sp.ending_before;
 
   const invoices = await stripe.invoices.list(params);
 
@@ -87,7 +93,6 @@ export default async function BillingHistoryPage({
     const amountPaid = inv.amount_paid ?? 0;
     const currencyCode = (inv.currency ?? "usd").toUpperCase();
 
-    // Description: prefer line.price.nickname (via any), fall back to line.description
     const line0 = inv.lines?.data?.[0] as Stripe.InvoiceLineItem | undefined;
     const nicknameFromPrice = (
       line0 ? (line0 as any)?.price?.nickname : undefined
@@ -97,7 +102,6 @@ export default async function BillingHistoryPage({
       (line0?.description as string | undefined) ??
       "Subscription";
 
-    // Try charge.receipt_url; if not, try PI.latest_charge.receipt_url
     let receiptUrl = getReceiptLink(inv);
     if (!receiptUrl) {
       const pi: any = (inv as any).payment_intent;
@@ -116,14 +120,11 @@ export default async function BillingHistoryPage({
     };
   });
 
-  // Keep newest first
   rows.sort((a, b) => b.date.getTime() - a.date.getTime());
-
-  // const firstId = rows[0]?.id;
   const lastId = rows[rows.length - 1]?.id;
 
   return (
-    <section className={styles.caontainer}>
+    <section className={styles.container}>
       <h1 className={styles.title}>Billing history</h1>
       <div className={styles.card}>
         {rows.length === 0 ? (
@@ -168,19 +169,6 @@ export default async function BillingHistoryPage({
               </table>
             </div>
 
-            {/* <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
-              {(searchParams?.ending_before || firstId) && firstId ? (
-                <Link
-                  className={styles.link}
-                  href={{
-                    pathname: "/account/billing/history",
-                    query: { ending_before: firstId },
-                  }}
-                >
-                  Newer
-                </Link>
-              ) : null}
-            </div> */}
             {invoices.has_more && lastId ? (
               <Link
                 className={styles.link}

@@ -1,4 +1,4 @@
-import styles from "../PaymentSettingsPage.module.css";
+import styles from "./PaymentSettingsPage.module.css";
 
 export const runtime = "nodejs";
 export default function PaymentSettingsPage() {
