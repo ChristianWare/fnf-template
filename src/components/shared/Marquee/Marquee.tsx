@@ -7,7 +7,6 @@ import Img4 from "../../../../public/images/medspa.jpg";
 import Img5 from "../../../../public/images/vacation.jpg";
 import Img6 from "../../../../public/images/transport.jpg";
 import Img7 from "../../../../public/images/membership.jpg";
-import SectionIntroii from "../SectionIntroii/SectionIntroii";
 import { StaticImageData } from "next/image";
 
 // DATA
@@ -24,9 +23,9 @@ const industries: { title: string; src: StaticImageData }[] = [
 export default function Marquee() {
   return (
     <div className={styles.slider}>
-      <span className={styles.title}>
+      {/* <span className={styles.title}>
         <SectionIntroii title='Industries we work with' />
-      </span>
+      </span> */}
 
       <div className={styles.track}>
         {[...industries, ...industries].map(({ src, title }, index) => (
