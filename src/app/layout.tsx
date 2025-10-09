@@ -58,7 +58,7 @@ const SuisseIntlMono = localFont({
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
-    template: "%s - Fonts & Footers | Custom Booking Websites",
+    template: "%s - Fonts & Footers",
   },
   description:
     "Fonts & Footers builds lightning-fast, mobile-first booking platforms that cut no-shows, and automate deposits for salons, spas, rentals, and service brands.",

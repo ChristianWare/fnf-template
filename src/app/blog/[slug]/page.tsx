@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import MoreInsights from "@/components/BlogPage/MoreInsights/MoreInsights";
+import type { Metadata } from "next";
 
 type Post = {
   _id: string;
@@ -21,12 +22,17 @@ type Post = {
   excerpt?: string;
   coverImage?: {
     _type: "image";
-    asset: { _ref: string; _type: "reference" };
+    asset: { _ref?: string; _type: "reference"; _id?: string };
     alt?: string;
   };
   tags?: { _id: string; name: string; slug?: { current: string } }[];
   body?: any[];
 };
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://example.com";
+
+export const revalidate = 60;
 
 async function getPost(slug: string): Promise<Post | null> {
   const query = `
@@ -37,27 +43,77 @@ async function getPost(slug: string): Promise<Post | null> {
       publishedAt,
       excerpt,
       coverImage{asset, alt},
-      tags[]->{
-        _id, name, slug
-      },
-      // Pull in full image objects inside body so we can render them
+      tags[]->{ _id, name, slug },
       body[]{
         ...,
-        _type == "image" => {
-          ...,
-          asset->
-        }
+        _type == "image" => { ..., asset-> }
       }
     }
   `;
-
   const post = await client.fetch<Post | null>(
     query,
     { slug },
-    { next: { revalidate: 60 } } // <-- revalidate every 60s
+    { next: { revalidate } }
   );
-
   return post;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
+
+  // Sensible fallbacks if not found (lets the 404 page still have metadata)
+  if (!post?._id) {
+    return {
+      title: "Post not found | Fonts & Footers",
+      robots: { index: false },
+    };
+  }
+
+  const title = `${post.title}`;
+  const description =
+    post.excerpt ||
+    "Read this article from Fonts & Footers on direct-booking websites and growth for service businesses.";
+  const ogImage = post.coverImage
+    ? urlFor(post.coverImage).width(1200).height(630).fit("crop").url()
+    : `${SITE_URL}/og-image.png`;
+  const canonical = `${SITE_URL}/blog/${post.slug.current}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: canonical,
+      images: ogImage
+        ? [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: post.coverImage?.alt || post.title,
+            },
+          ]
+        : undefined,
+      publishedTime: post.publishedAt,
+      tags: post.tags?.map((t) => t.name),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
+  };
 }
 
 const ptComponents: PortableTextComponents = {
@@ -65,7 +121,6 @@ const ptComponents: PortableTextComponents = {
     image: ({ value }) => {
       if (!value?.asset?._ref && !value?.asset?._id) return null;
       const alt = value?.alt || "Blog image";
-      // Adjust sizing/cropping as you like
       const src = urlFor(value).width(1600).fit("max").url();
 
       return (
@@ -128,7 +183,7 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params; // 👈 await the promised params
+  const { slug } = await params;
   const post = await getPost(slug);
 
   if (!post?._id) {
@@ -144,7 +199,7 @@ export default async function BlogPostPage({
   const coverSrc = post.coverImage
     ? urlFor(post.coverImage).width(2000).height(1200).fit("crop").url()
     : undefined;
-    
+
   return (
     <main className={styles.container}>
       <Nav />
@@ -183,7 +238,6 @@ export default async function BlogPostPage({
         </div>
         <article className={styles.article}>
           <SectionIntroii title='Written by Chris Ware, CEO' />
-
           <header className={styles.header}>
             {post?.excerpt ? (
               <p className={styles.introText}>{post.excerpt}</p>
