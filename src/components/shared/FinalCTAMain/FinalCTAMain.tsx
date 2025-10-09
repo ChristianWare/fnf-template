@@ -1,17 +1,14 @@
 "use client";
 
 import styles from "./FinalCTAMain.module.css";
-// import LayoutWrapper from "../LayoutWrapper";
 import Image from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
 import Button from "../Button/Button";
-import SectionIntroii from "../SectionIntroii/SectionIntroii";
 import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
 import Instagram from "@/components/icons/Instagram/Instagram";
 import Facebook from "@/components/icons/Facebook/Facebook";
 import { footerData } from "@/lib/data";
 import Link from "next/link";
-// import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
 import Logo from "../Logo/Logo";
 
 const data3 = [
@@ -61,7 +58,7 @@ export default function FinalCTAMain() {
           <footer className={styles.footerContainer}>
             <div className={styles.footerTop}>
               <div className={styles.footerLeft}>
-                <SectionIntroii title='Fonts & Footers' />
+                {/* <SectionIntroii title='Fonts & Footers' /> */}
                 <p className={`${styles.copy} subheading`}>
                   We design and build online booking websites for businesses
                   based in the service industry. Take deposits, prevent
