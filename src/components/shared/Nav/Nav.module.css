@@ -269,6 +269,10 @@
 }
 
 @media screen and (max-width: 568px) {
+ .navbar {
+  padding: 1rem 2rem;
+ }
+ 
   .btnContainerii {
     display: grid;
     width: 100%;
