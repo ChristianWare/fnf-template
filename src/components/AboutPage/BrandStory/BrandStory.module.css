@@ -39,14 +39,12 @@
   gap: 10rem;
 }
 
-
 .heading {
   font-family: var(--Merriweather);
   font-size: 4rem;
   letter-spacing: -1px;
   white-space: nowrap;
 }
-
 
 .mapDataBox {
   display: flex;
@@ -61,6 +59,9 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
+  border-bottom: 1px solid var(--gray);
+  padding-bottom: 2rem;
+  width: 100%;
 }
 
 .iconBox {

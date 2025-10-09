@@ -189,7 +189,7 @@ export default function Values() {
               Values that drive <br />
               everything we do
             </h2>
-            <p className={styles.copy}>
+            <p className={`${styles.copy} subheading`}>
               We are committed to delivering exceptional service and value. Our
               core values guide us in everything we do:
             </p>

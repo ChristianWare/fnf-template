@@ -48,7 +48,7 @@ export default function BrandStory() {
                 A new studio with a <br /> fresh take on booking websites.
               </h2>
 
-              <p className={styles.copy}>
+              <p className={`${styles.copy} subheading`}>
                 Fonts &amp; Footers is a new company focused on one thing:
                 turning visitors into paid, confirmed bookings for service-based
                 businesses. Being new means we’re not carrying legacy templates
@@ -56,7 +56,7 @@ export default function BrandStory() {
                 with Stripe-first payments and sensible ops baked in.
               </p>
 
-              <p className={styles.copy}>
+              <p className={`${styles.copy} subheading`}>
                 Our perspective is fresh: product thinking over pretty pages,
                 clarity over cleverness, and speed without sacrificing
                 standards. That shows up in flows that actually reduce no-shows,
