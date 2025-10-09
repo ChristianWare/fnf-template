@@ -5,6 +5,7 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
+import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
 
 export default function Hero() {
   return (
@@ -25,12 +26,12 @@ export default function Hero() {
             <h1 className={styles.heading}>
               Custom booking websites <br /> that actually book
             </h1>
-            <p className={`${styles.copy} subheading`}>
-              We design and build online booking websites for businesses based
-              in the service industry.
-               {/* Take deposits, prevent no-shows, and let
-              clients self-schedule 24/7. */}
-            </p>
+            <ScrollHorizontalText
+              text='We design and build online booking websites for service businesses.'
+              text2='Take deposits, prevent no-shows.'
+              text3='Let clients self-schedule 24/7.'
+              pxPerSec={50}
+            />
             <div className={styles.btnContainer}>
               <Button
                 href='/contact'

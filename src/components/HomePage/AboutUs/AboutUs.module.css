@@ -1,7 +1,7 @@
 .container {
   background-color: var(--darkerTan);
 
-  padding: 10rem 0rem;
+  padding: 20rem 0rem;
   padding-bottom: 0rem;
 }
 
@@ -102,6 +102,10 @@
 }
 
 @media screen and (max-width: 568px) {
+  .container {
+    padding: 10rem 0rem;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
