@@ -13,7 +13,7 @@ export default function AboutPageIntro() {
           <div className={styles.left}>
             <SectionIntroii title='About us' />
             <h1 className={styles.heading}>
-              Our custom booking websites empower entrepreneurs.
+              Our ethos
             </h1>
             <p className={`${styles.copy} subheading`}>
               {/* We empower entrepreneurs to elevate their businesses with custom

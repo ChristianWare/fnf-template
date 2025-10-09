@@ -61,14 +61,16 @@
   color: var(--tan) !important;
   z-index: 999;
   white-space: nowrap;
-  
 }
 
 .navItemActive {
   color: var(--lime) !important;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-weight: 700;
+  text-decoration: line-through !important;
+}
+
+.navItem:not(.navItemActive):hover {
+  color: var(--lime) !important;
+  text-decoration: line-through;
 }
 
 .black {
@@ -269,10 +271,10 @@
 }
 
 @media screen and (max-width: 568px) {
- .navbar {
-  padding: 1rem 2rem;
- }
- 
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
   .btnContainerii {
     display: grid;
     width: 100%;
