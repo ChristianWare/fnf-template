@@ -35,7 +35,6 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
-  /* margin-top: 5rem; */
 }
 
 .imageStack {
@@ -124,8 +123,7 @@
 .id {
   font-size: 2rem;
   line-height: 1;
-  font-family: var(--inter);
-  font-weight: 700;
+  font-family: var(--Merriweather);
 }
 
 .feature {

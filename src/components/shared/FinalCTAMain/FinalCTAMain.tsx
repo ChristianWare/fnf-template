@@ -6,7 +6,6 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
 import Button from "../Button/Button";
 import SectionIntroii from "../SectionIntroii/SectionIntroii";
-import Logo from "../Logo/Logo";
 import LinkedIn from "@/components/icons/LinkedIn/LinkedIn";
 import Instagram from "@/components/icons/Instagram/Instagram";
 import Facebook from "@/components/icons/Facebook/Facebook";
@@ -59,7 +58,7 @@ export default function FinalCTAMain() {
           <footer className={styles.footerContainer}>
             <div className={styles.footerTop}>
               <div className={styles.footerLeft}>
-                <Logo />
+                <SectionIntroii title='Fonts & Footers' />
                 <p className={styles.copy}>
                   We design and build online booking websites for businesses
                   based in the service industry. Take deposits, prevent
