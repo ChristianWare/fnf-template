@@ -3,7 +3,7 @@ import Link from "next/link";
 // import Image from "next/image";
 // import Img1 from "../../../../public/images/smileii.png";
 // import Calendar from "@/components/icons/Calendar/Calendar";
-import SectionIntroii from "../SectionIntroii/SectionIntroii";
+import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
 
 interface Props {
   size?: string;
@@ -25,8 +25,11 @@ const Logo = ({
     >
       {/* <Image src={Img1} alt='' title='' className={styles.img} /> */}
       {/* <Calendar className={styles.icon} />
-      <span className={styles.text}>Fonts & Footers</span> */}
-      <SectionIntroii title='Fonts & Footers' color="tan" />
+      //  */}
+      <FnfLogo className={styles.icon} />
+      <span className={styles.text}>Fonts & Footers</span>
+
+      {/* <SectionIntroii title='Fonts & Footers' color='tan' /> */}
     </Link>
   );
 };

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   z-index: 1;
 }
 
@@ -26,23 +26,34 @@
   color: var(--blackii);
 }
 
-.icon {
-  color: var(--lime);
-  font-size: 5rem;
-}
-
-.text {
+/* .text {
   font-family: var(--inter);
   font-weight: 600;
   font-size: 1.6rem;
   letter-spacing: -0.5px;
   color: var(--black);
+} */
+
+.text {
+  font-family: var(--DotSansRegular);
+  color: var(--tan);
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .titleContainer {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.icon {
+  color: var(--lime);
+  font-size: 2.2rem;
+  position: relative;
+  top: -1px;
 }
 
 @media screen and (max-width: 968px) {

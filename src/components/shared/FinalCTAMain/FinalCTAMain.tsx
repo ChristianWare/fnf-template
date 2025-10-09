@@ -11,6 +11,8 @@ import Instagram from "@/components/icons/Instagram/Instagram";
 import Facebook from "@/components/icons/Facebook/Facebook";
 import { footerData } from "@/lib/data";
 import Link from "next/link";
+// import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
+import Logo from "../Logo/Logo";
 
 const data3 = [
   {
@@ -39,8 +41,9 @@ export default function FinalCTAMain() {
         {/* <LayoutWrapper> */}
         <div className={styles.content}>
           <div className={styles.left}>
-            <SectionIntroii title='Fonts & Footers' color='tan' />
+            {/* <SectionIntroii title='Fonts & Footers' color='tan' /> */}
 
+            <Logo />
             <h2 className={styles.heading}>
               Ready to stop chasing <br /> and start booking?
             </h2>
