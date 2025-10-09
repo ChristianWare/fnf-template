@@ -1,35 +1,33 @@
-// src/icons/FnfLogo/FnfLogo.tsx
 import { SVGProps } from "react";
 
-export default function FnfLogo(props: SVGProps<SVGSVGElement>) {
-  // Original art bounds (approx):
-  // x: 149.598 → 225.395 (w ≈ 75.797)
-  // y: 123.188 → 251.812 (h ≈ 128.624)
-  // We fit height ~23.15 into a 24 box (scale ≈ 0.18) and center.
+export default function Cog(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox='0 0 24 24'
       width='1em'
       height='1em'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth={2}
+      strokeLinecap='round'
+      strokeLinejoin='round'
       xmlns='http://www.w3.org/2000/svg'
-      fill='currentColor'
-      aria-hidden='true'
-      focusable='false'
       {...props}
     >
-      <g transform='translate(5.18 0.42) scale(0.18) translate(-149.598 -123.188)'>
-        {/* Right-pointing triangle */}
-        <path d='M150.836 229.176 182.117 251.812 182.117 212.824Z' />
-
-        {/* Middle slanted bar */}
-        <path d='M149.598 222.527 225.395 182.906 225.395 156.914 149.598 196.504Z' />
-
-        {/* Top slanted bar */}
-        <path d='M149.598 188.676 225.395 149.086 225.395 123.188 149.598 162.777Z' />
-
-        {/* Dot */}
-        <circle cx='168.070312' cy='200.949219' r='6.929687' />
-      </g>
+      <path d='M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z' />
+      <path d='M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z' />
+      <path d='M12 2v2' />
+      <path d='M12 22v-2' />
+      <path d='m17 20.66-1-1.73' />
+      <path d='M11 10.27 7 3.34' />
+      <path d='m20.66 17-1.73-1' />
+      <path d='m3.34 7 1.73 1' />
+      <path d='M14 12h8' />
+      <path d='M2 12h2' />
+      <path d='m20.66 7-1.73 1' />
+      <path d='m3.34 17 1.73-1' />
+      <path d='m17 3.34-1 1.73' />
+      <path d='m11 13.73-4 6.93' />
     </svg>
   );
 }
