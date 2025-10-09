@@ -11,6 +11,12 @@ import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
 import Different from "@/components/AboutPage/Different/Different";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about Fonts & Footers, our mission to simplify booking, and how we help businesses reduce no-shows and increase revenue with custom booking websites.",
+};
+
 export default function AboutPage() {
   return (
     <main>

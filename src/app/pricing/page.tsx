@@ -9,6 +9,11 @@ import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Nav from "@/components/shared/Nav/Nav";
 
+export const metadata = {
+  title: "Pricing",
+  description: "Explore our pricing plans and find the perfect fit for your business needs.",
+};
+
 export default function PricingPage() {
   return (
     <main>

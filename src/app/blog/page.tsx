@@ -3,6 +3,12 @@ import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Nav from "@/components/shared/Nav/Nav";
 
+export const metadata = {
+  title: "Blog",
+  description:
+    "Stay updated with the latest news and insights from Fonts & Footers.",
+};
+
 export default function BlogPage() {
   return (
     <main>

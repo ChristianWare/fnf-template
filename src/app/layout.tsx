@@ -5,7 +5,6 @@ import "./globals.css";
 import { auth } from "../../auth";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
-// import SmoothScroll from "@/components/shared/SmoothScroll/SmoothScroll";
 import PlausibleProvider from "next-plausible";
 
 const inter = Inter({
@@ -62,7 +61,10 @@ export const metadata: Metadata = {
     template: "%s - Fonts & Footers | Custom Booking Websites",
   },
   description:
-    "Fonts & Footers builds lightning-fast, mobile-first booking platforms that sync calendars in real time, cut no-shows, and automate deposits for salons, spas, rentals, and service brands.",
+    "Fonts & Footers builds lightning-fast, mobile-first booking platforms that cut no-shows, and automate deposits for salons, spas, rentals, and service brands.",
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export const viewport: Viewport = {
@@ -94,17 +96,13 @@ export default async function RootLayout({
         <body
           className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${RaveoMedium.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
         >
-          {/* <Nav /> */}
           <Toaster
             position='bottom-right'
             toastOptions={{
               className: "toastFont",
             }}
           />
-          {/* <SmoothScroll> */}
           {children}
-          {/* </SmoothScroll> */}
-          {/* <FinalCTA /> */}
         </body>
       </html>
     </SessionProvider>
