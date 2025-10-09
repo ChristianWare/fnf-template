@@ -14,7 +14,7 @@ export default function Right(props: SVGProps<SVGSVGElement>) {
       strokeLinejoin='round'
       className='lucide lucide-move-right-icon'
       xmlns='http://www.w3.org/2000/svg'
-      {...props} // allows overriding size, className, etc.
+      {...props}
     >
       <path d='M18 8L22 12L18 16' />
       <path d='M2 12H22' />

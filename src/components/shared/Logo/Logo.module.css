@@ -27,11 +27,8 @@
 }
 
 .icon {
-  color: var(--black);
-  width: 1.6rem;
-  height: 1.6rem;
-  position: relative;
-  top: -1.3px;
+  color: var(--lime);
+  font-size: 5rem;
 }
 
 .text {
