@@ -23,7 +23,7 @@ export default function PricingPageIntro() {
           <h1 className={styles.heading}>
             From blank page <br /> to booked-solid.
           </h1>
-          <p className={styles.copy}>
+          <p className={`${styles.copy} subheading`}>
             Choose the engagement that matches your team size, locations, and
             growth goals. No contracts, cancel whenever you want.
           </p>

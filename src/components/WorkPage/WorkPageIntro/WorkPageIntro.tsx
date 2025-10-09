@@ -13,7 +13,7 @@ export default function WorkPageIntro() {
           <h1 className={styles.heading}>
             Proof that booking can be <br /> beautiful—and profitable
           </h1>
-          <p className={styles.copy}>
+          <p className={`${styles.copy} subheading`}>
             A few favorites and demos to show what a one-screen flow + deposit
             strategy can do.
           </p>

@@ -135,7 +135,7 @@ export default function BillingZone({
               >
                 {pending && modalType === "cancel"
                   ? "Cancelling…"
-                  : "Cancel at period end"}
+                  : "Cancel Account"}
               </button>
             </form>
           </div>
