@@ -14,7 +14,7 @@ export default function PricingPreview() {
             <h2 className={styles.heading}>
               Affordable plans for every budget
             </h2>
-            <p className={styles.copy}>
+            <p className={`${styles.copy} subheading`}>
               Explore our range of pricing options designed to fit any budget,
               offering exceptional value and flexibility to meet your unique
               needs. No contracts, cancel whenever you want.

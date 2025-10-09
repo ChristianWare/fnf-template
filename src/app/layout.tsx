@@ -44,6 +44,18 @@ const DotSansBold = localFont({
   display: "swap",
 });
 
+const SuisseIntlRegular = localFont({
+  src: "../../public/fonts/SuisseIntlRegular.woff2",
+  variable: "--SuisseIntlRegular",
+  display: "swap",
+});
+
+const SuisseIntlMono = localFont({
+  src: "../../public/fonts/SuisseIntlMono.woff2",
+  variable: "--SuisseIntlMono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -80,7 +92,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${RaveoMedium.variable}`}
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${RaveoMedium.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
         >
           {/* <Nav /> */}
           <Toaster

@@ -42,7 +42,7 @@ export default function ContactPageContainer() {
               Contact <br />{" "}
               <span className={styles.span}>Fonts & Footers</span>
             </h2>
-            <p className={styles.copy}>
+            <p className={`${styles.copy} subheading`}>
               Have a question, need a quote, or just curious whether a custom
               booking platform is right for you? Drop a line — no strings
               attached. We reply within one business day.
@@ -58,9 +58,10 @@ export default function ContactPageContainer() {
                 </div>
               ))}
             </div>
-            <span className={styles.subHeadingii}>
+            {/* <span className={styles.subHeadingii}>
               We&#39;ll get back to you within 24 hours
-            </span>
+            </span> */}
+            <br />
             <div className={styles.ownerbox}>
               <div className={styles.imgContainer}>
                 <Image src={Img1} alt='owner' className={styles.img} />

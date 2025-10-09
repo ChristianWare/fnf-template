@@ -162,7 +162,7 @@ export default function Nav({
             href='https://calendly.com/chris-ware-dev/discovery-call'
             target='_blank'
             text='Book your discovery call'
-            btnType='lime'
+            btnType='navLime'
           />
         </div>
 

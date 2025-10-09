@@ -45,7 +45,7 @@ export default function BlogCardOne({ post }: Props) {
         <div className={styles.bottom}>
           <SectionIntroii title={prettyDate} />
           <h5 className={styles.title}>{post.title}</h5>
-          <p className={styles.desc}>{post.excerpt}</p>
+          <p className={`${styles.desc} subheading`}>{post.excerpt}</p>
         </div>
       </Link>
     </article>

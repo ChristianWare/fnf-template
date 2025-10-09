@@ -25,7 +25,7 @@ export default function Hero() {
             <h1 className={styles.heading}>
               Custom booking websites <br /> that actually book
             </h1>
-            <p className={styles.copy}>
+            <p className={`${styles.copy} subheading`}>
               We design and build online booking websites for businesses based
               in the service industry.
                {/* Take deposits, prevent no-shows, and let

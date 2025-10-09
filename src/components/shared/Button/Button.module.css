@@ -33,6 +33,20 @@
   border: 1px solid var(--lime);
 }
 
+.navLime {
+  background-color: var(--lime);
+  color: var(--black);
+  border: 1px solid var(--lime);
+  padding: .5rem 1.5rem;
+  font-size: 1.3rem;
+}
+
+.navLime:hover {
+  background-color: var(--black);
+  color: var(--lime);
+  border: 1px solid var(--lime);
+}
+
 .black,
 .black:link,
 .black:visited {

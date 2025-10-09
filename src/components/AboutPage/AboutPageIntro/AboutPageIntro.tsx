@@ -15,12 +15,14 @@ export default function AboutPageIntro() {
             <h1 className={styles.heading}>
               Our custom booking websites empower entrepreneurs.
             </h1>
-            <p className={styles.copy}>
-              We empower entrepreneurs to elevate their businesses with custom
+            <p className={`${styles.copy} subheading`}>
+              {/* We empower entrepreneurs to elevate their businesses with custom
               booking websites tailored to their unique needs. Our custom
               websites are designed to enhance client engagement and streamline
               operations so you can focus on growing your brand, not managing
-              admin tasks.
+              admin tasks. */}
+              We empower entrepreneurs to elevate their businesses with custom
+              booking websites.
             </p>
           </div>
           <div className={styles.right}>

@@ -1,6 +1,6 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
-import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+// import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 // import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
 // import { AboutUsData } from "@/lib/data";
 // import Image from "next/image";
@@ -13,8 +13,9 @@ export default function AboutUs() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <SectionIntroii title='About Us' />
-            <h2 className={styles.heading}>
+            {/* <SectionIntroii title='About Us' /> */}
+            <h2>About Us</h2>
+            <h3 className={`${styles.heading} subheading`}>
               {/* Overbooked by busywork? You won’t be alone. We’ve helped salons,
             wellness studios, trainers, chauffeurs, pet groomers, clinics, and
             tutors replace DM juggling with reliable, paid-in-advance
@@ -32,7 +33,7 @@ export default function AboutUs() {
               {/* Start, grow, and scale your direct-booking website—at every stage of
             your business. From initial consultation to final delivery, our team
             is dedicated to ensuring your success. */}
-            </h2>
+            </h3>
           </div>
           <div className={styles.right}>
             {/* <ImageCluster /> */}

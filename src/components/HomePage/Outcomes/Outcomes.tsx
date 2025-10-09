@@ -50,8 +50,8 @@ export default function Outcomes() {
                 <h2 className={styles.heading}>
                   Why get a custom booking website for your business?
                 </h2>
-                {/* <SectionIntroii title='Outcomes' color='tan' /> */}
-                <p className={styles.copy}>
+
+                <p className={`${styles.copy} subheading`}>
                   A custom booking website can significantly enhance your
                   business operations and customer experience. Here are some key
                   benefits:

@@ -78,18 +78,14 @@ export default function WhyDB() {
                 {/* Why choose a custom booking website for your business? */}
                 Here&rsquo;s what we do:
               </h2>
-              <p className={styles.copy}>
+              <p className={`${styles.copy} subheading`}>
                 We build custom booking websites that allow you to have full
                 control over your bookings, reduce reliance on third-party
                 platforms, and improve your profit margins. Our sites also
                 enhance your brand identity and customer experience.
               </p>
               <div className={styles.btnContainer}>
-                <Button
-                  href='/about'
-                  btnType='grayOutline'
-                  text='About us'
-                />
+                <Button href='/about' btnType='grayOutline' text='About us' />
               </div>
             </div>
             <div className={styles.rightBottom}>
