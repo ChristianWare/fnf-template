@@ -56,7 +56,7 @@ export default function ServiceDetails() {
               <div className={styles.card} key={x.id} id={anchorId}>
                 <div className={styles.cardTop}>
                   <div className={styles.cardTopLeft}>
-                    <h3 className={styles.serviceNameHeading}>{x.service}</h3>
+                    <h3 className={styles.serviceNameHeading}>{x.service} Booking Website</h3>
                     <p className={styles.headline}>{x.desc}</p>
                   </div>
                   <h3 className={styles.price}>{x.price}</h3>
