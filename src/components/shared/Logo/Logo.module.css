@@ -3,7 +3,7 @@
   z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.8rem;
   z-index: 1;
 }
@@ -14,26 +14,6 @@
   border-bottom-left-radius: 15px;
 }
 
-.large {
-  font-size: 7rem;
-}
-
-.footerLarge {
-  font-size: inherit;
-}
-
-.blackii {
-  color: var(--blackii);
-}
-
-/* .text {
-  font-family: var(--inter);
-  font-weight: 600;
-  font-size: 1.6rem;
-  letter-spacing: -0.5px;
-  color: var(--black);
-} */
-
 .text {
   font-family: var(--DotSansRegular);
   color: var(--tan);
@@ -41,6 +21,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1;
 }
 
 .titleContainer {
@@ -51,7 +32,7 @@
 
 .icon {
   color: var(--lime);
-  font-size: 2.2rem;
+  font-size: 2rem;
   position: relative;
   top: -1px;
 }
@@ -60,5 +41,4 @@
   .logo {
     gap: 1rem;
   }
-
 }

@@ -2,8 +2,8 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Outcomes.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/newhero.png";
-// import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import Button from "@/components/shared/Button/Button";
+// import Button from "@/components/shared/Button/Button";
+import Clock from "@/components/icons/Clock/Clock";
 
 const data = [
   {
@@ -26,11 +26,6 @@ const data = [
     title: "Automate reminders",
     desc: "Send automated reminders to clients to reduce missed appointments and improve attendance.",
   },
-  // {
-  //   id: 5,
-  //   title: "Grow repeat business",
-  //   desc: "Easily offer loyalty rewards and rebooking options to encourage clients to return.",
-  // },
 ];
 
 export default function Outcomes() {
@@ -56,15 +51,17 @@ export default function Outcomes() {
                   business operations and customer experience. Here are some key
                   benefits:
                 </p>
-                <div className={styles.btnContainer}>
+                {/* <div className={styles.btnContainer}>
                   <Button href='/about' btnType='lime' text='More details' />
-                </div>
+                </div> */}
               </div>
               <div className={styles.rightBottom}>
                 <div className={styles.mapDataContainer}>
                   {data.map((item) => (
                     <div key={item.id} className={styles.card}>
-                      <div className={styles.title}>{item.title}</div>
+                        <Clock className={styles.icon} />
+                      <div className={styles.title}>
+                        {item.title}</div>
                       <p className={styles.desc}>{item.desc}</p>
                     </div>
                   ))}

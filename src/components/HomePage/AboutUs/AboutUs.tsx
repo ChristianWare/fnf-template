@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
 import Specialize from "../Specialize/Specialize";
-import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
+// import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
 
 export default function AboutUs() {
   return (
@@ -9,8 +9,8 @@ export default function AboutUs() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <FnfLogo className={styles.logo} />
-            <h2>About Us</h2>
+            {/* <FnfLogo className={styles.logo} /> */}
+            <h2>Industries we work with</h2>
             <p className={`${styles.copy} subheading`}>
               Fonts & Footers is a specialized web development agency focused on
               one thing: turning visitors into booked appointments. Here are

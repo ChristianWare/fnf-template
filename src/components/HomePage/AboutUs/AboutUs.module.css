@@ -96,7 +96,8 @@
     top: var(--stickyTop);
   }
 
-  .heading {
+  .heading,
+  .copy {
     text-align: center;
   }
 }
