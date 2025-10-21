@@ -1,7 +1,8 @@
+import AllBlogsPosts from "@/components/BlogPage/AllBlogsPosts/AllBlogsPosts";
 import BlogPageIntro from "@/components/BlogPage/BlogPageIntro/BlogPageIntro";
-import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Nav from "@/components/shared/Nav/Nav";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Blog",
@@ -14,7 +15,16 @@ export default function BlogPage() {
     <main>
       <Nav />
       <BlogPageIntro />
-      <BlogSection />
+      <Suspense
+        fallback={
+          <section style={{ padding: "2rem 0" }}>
+            <p>Loading posts…</p>
+          </section>
+        }
+      >
+        <AllBlogsPosts />
+      </Suspense>{" "}
+      {/* <BlogSection /> */}
       <FinalCTAMain />
     </main>
   );
