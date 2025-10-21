@@ -90,9 +90,9 @@
   padding-left: 2rem;
   border-left: 1px solid var(--lime);
   background-color: var(--lighterBlack);
-    padding: 2rem;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  padding: 2rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .title {

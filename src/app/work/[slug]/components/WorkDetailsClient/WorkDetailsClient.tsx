@@ -32,15 +32,18 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
     <main className={styles.container}>
       <LayoutWrapper>
         <div className={styles.top}>
-          <div className={styles.t1}>
-            <SectionIntroii title={project.title} color='tan' />
-            <h1 className={styles.heading}>{project.h1}</h1>
-          </div>
-          <div className={styles.t2}>
-            <div className={styles.imgContainer}>
-              <video preload='auto' autoPlay muted loop className={styles.img}>
-                <source src={project.video} />
-              </video>
+          <div className={styles.left}>
+            <SectionIntroii title='category here' color='tan' />
+            <h1 className={styles.heading}>{project.title}</h1>
+            <p className={styles.copy}>{project.h1}</p>
+            <div className={styles.btnContainer}>
+              <Button
+                href={project.href}
+                target='_blank'
+                btnType='tanOutline'
+                text='Live Website'
+                arrow
+              />
             </div>
             <div className={styles.detailsBox}>
               <div className={styles.db1}>
@@ -55,14 +58,20 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
                 <div className={styles.label}>Tech</div>
                 <div className={styles.value}>{project.tech}</div>
               </div>
-              <div className={styles.btnContainer}>
-                <Button
-                  href='/contact'
-                  btnType='tanOutline'
-                  text='Live Website'
-                  arrow
-                />
+              <div className={styles.db1}>
+                <div className={styles.label}>Tech</div>
+                <div className={styles.value}>{project.tech}</div>
               </div>
+            </div>
+          </div>
+          <div className={styles.right}>
+            <div className={styles.imgContainer}>
+              <Image
+                src={project.src}
+                alt={project.title}
+                fill
+                className={styles.img}
+              />
             </div>
           </div>
         </div>

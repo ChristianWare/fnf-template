@@ -1,5 +1,5 @@
 import Project1 from "../../public/images/thunder.jpg";
-import Project2 from "../../public/images/road.webp";
+import Nier from "../../public/images/nier.jpg";
 import Project3 from "../../public/images/dog.jpg";
 import Project4 from "../../public/images/er.png";
 import BookingSystem from "../../public/images/bookingSystemii.png";
@@ -217,13 +217,13 @@ export const projects = [
     testimonial:
       "We went from juggling DMs to a clean calendar with deposits and zero double-bookings. Our team spends weekends riding again—not reconciling spreadsheets.",
     src2: Project1,
-    src3: Project2,
+    src3: Nier,
   },
   {
     id: 2,
     title: "Nier Transportation",
     slug: "nier-transportation",
-    src: Project2,
+    src: Nier,
     video: "/videos/nier.mp4",
     description:
       "Nier Transportation provides high-end black-car service across Phoenix and all of Arizona—airport transfers, hourly charters, and long-distance city-to-city. They needed a luxury-grade booking experience with instant quotes, vehicle selection, deposits, and chauffeur/vehicle dispatch—without endless phone tag.",
@@ -235,7 +235,7 @@ export const projects = [
     year: 2025,
     platform: "Direct Booking",
     tech: "Next.js + Stripe + Maps/Distance Matrix + iCal/365 + Twilio",
-    href: "https://nier.vercel.app/",
+    href: "https://newnier-17bd.vercel.app/",
     challenge: [
       {
         id: 2.1,
@@ -279,7 +279,7 @@ export const projects = [
     testimonial:
       "Clients book in under a minute with a polished quote and deposit. Dispatch is effortless and our on-time rate speaks for itself.",
     src2: Project1,
-    src3: Project2,
+    src3: Nier,
   },
   {
     id: 3,
@@ -341,7 +341,7 @@ export const projects = [
     testimonial:
       "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
     src2: Project1,
-    src3: Project2,
+    src3: Nier,
   },
   {
     id: 4,
@@ -403,7 +403,7 @@ export const projects = [
     testimonial:
       "We reclaimed margins from OTA fees and finally control the guest journey. The guest portal and add-ons pay for themselves every month.",
     src2: Project1,
-    src3: Project2,
+    src3: Nier,
   },
 ] as const;
 
