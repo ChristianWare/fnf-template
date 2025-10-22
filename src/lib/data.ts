@@ -9,6 +9,10 @@ import NierHome from "../../public/images/nierHome.png";
 import NierAbout from "../../public/images/nierAbout.png";
 import NierServices from "../../public/images/nierServices.png";
 import NierOther from "../../public/images/NierOther.png";
+import GroomerHome from "../../public/images/groomerHome.png";
+import GroomerAbout from "../../public/images/groomerAbout.png";
+import GroomerServices from "../../public/images/groomerServices.png";
+import GroomerAdmin from "../../public/images/groomerAdmin.png";
 
 export const process = [
   {
@@ -348,10 +352,10 @@ export const projects = [
     ],
     testimonial:
       "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
-    src2: Project1,
-    src3: NierAbout,
-    src4: NierAbout,
-    src5: NierAbout,
+    src2: GroomerHome,
+    src3: GroomerAbout,
+    src4: GroomerServices,
+    src5: GroomerAdmin,
   },
   {
     id: 4,
