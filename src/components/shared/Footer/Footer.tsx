@@ -123,7 +123,7 @@ export default function Footer() {
       <footer className={styles.container}>
         <LayoutWrapper>
           <div className={styles.logoContainer}>
-            <Logo direction='center' backgroundColor='backgroundColorTan' />
+            <Logo />
           </div>
           <div className={styles.top}>
             <div className={styles.left}>
