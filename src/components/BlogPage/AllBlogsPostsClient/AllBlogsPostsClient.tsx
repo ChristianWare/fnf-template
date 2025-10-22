@@ -1,4 +1,3 @@
-// components/BlogPage/AllBlogsPosts/AllBlogsPostsClient.tsx
 "use client";
 
 import { useMemo, useState } from "react";
@@ -66,7 +65,8 @@ export default function AllBlogsPostsClient({
 
   return (
     <section>
-      <ul className={styles.tags}>
+      {/* Chips (desktop/tablet) */}
+      <ul className={styles.tags} role='tablist' aria-label='Filter by tag'>
         {tagOptions.map((t) => (
           <li key={t._id}>
             <button
@@ -82,6 +82,25 @@ export default function AllBlogsPostsClient({
           </li>
         ))}
       </ul>
+
+      {/* Dropdown (≤768px) */}
+      <div className={styles.tagsSelectWrap}>
+        <label htmlFor='tag-select' className='sr-only'>
+          Categories
+        </label>
+        <select
+          id='tag-select'
+          className={styles.tagsSelect}
+          value={selectedSlug}
+          onChange={(e) => selectTag(e.target.value)}
+        >
+          {tagOptions.map((t) => (
+            <option key={t._id} value={t.slug.current}>
+              {t.name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className={styles.content}>
         {filtered.map((p) => (

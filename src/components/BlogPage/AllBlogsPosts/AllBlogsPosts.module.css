@@ -1,5 +1,4 @@
 .container {
-  /* padding: 10rem 0rem; */
   background-color: var(--tan);
 }
 
@@ -8,24 +7,69 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   margin-bottom: 2rem;
+  width: 100%;
+  border-bottom: 1px solid var(--gray);
+  padding-bottom: 1rem;
+}
+
+/* Dropdown wrapper is hidden by default (desktop) */
+.tagsSelectWrap {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+/* Base select styling */
+.tagsSelect {
+  width: 100%;
+  /* max-width: 50%; */
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--gray);
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 600;
+  line-height: 1;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--black) 50%),
+    linear-gradient(135deg, var(--black) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 15px) calc(50% - 3px),
+    0 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Focus ring */
+.tagsSelect:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lime) 40%, transparent);
 }
 
 .tagChip {
   background-color: var(--yellow);
   color: var(--black);
   font-weight: 600;
-  padding: 1rem 1.5rem;
-  border-radius: 5px;
+  line-height: 1;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 }
 
-.tagChipActive, .tagChip:hover {
+.tagChipActive,
+.tagChip:hover {
   background-color: var(--black);
   color: var(--lime);
 }
@@ -41,8 +85,6 @@
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 2rem;
   grid-row-gap: 10rem;
-  border-top: 1px solid var(--darkGrayii);
-  padding-top: 2rem;
 }
 
 .filter {
@@ -78,9 +120,38 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  /* Hide chips, show dropdown */
+  .tags {
+    display: none;
+  }
+  .tagsSelectWrap {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
 @media screen and (max-width: 668px) {
   .content {
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 7rem;
   }
+}
+
+/* Optional: visually hidden class for the label */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
 }
