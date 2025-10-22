@@ -5,6 +5,10 @@ import Project4 from "../../public/images/er.png";
 import BookingSystem from "../../public/images/bookingSystemii.png";
 import AppointmentAlerts from "../../public/images/AppointmentAlerts.png";
 import NoShow from "../../public/images/NoShow.png";
+import NierHome from "../../public/images/nierHome.png";
+import NierAbout from "../../public/images/nierAbout.png";
+import NierServices from "../../public/images/nierServices.png";
+import NierOther from "../../public/images/NierOther.png";
 
 export const process = [
   {
@@ -217,7 +221,9 @@ export const projects = [
     testimonial:
       "We went from juggling DMs to a clean calendar with deposits and zero double-bookings. Our team spends weekends riding again—not reconciling spreadsheets.",
     src2: Project1,
-    src3: Nier,
+    src3: NierAbout,
+    src4: NierAbout,
+    src5: NierAbout,
   },
   {
     id: 2,
@@ -278,8 +284,10 @@ export const projects = [
     ],
     testimonial:
       "Clients book in under a minute with a polished quote and deposit. Dispatch is effortless and our on-time rate speaks for itself.",
-    src2: Project1,
-    src3: Nier,
+    src2: NierHome,
+    src3: NierAbout,
+    src4: NierServices,
+    src5: NierOther,
   },
   {
     id: 3,
@@ -341,7 +349,9 @@ export const projects = [
     testimonial:
       "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
     src2: Project1,
-    src3: Nier,
+    src3: NierAbout,
+    src4: NierAbout,
+    src5: NierAbout,
   },
   {
     id: 4,
@@ -403,7 +413,9 @@ export const projects = [
     testimonial:
       "We reclaimed margins from OTA fees and finally control the guest journey. The guest portal and add-ons pay for themselves every month.",
     src2: Project1,
-    src3: Nier,
+    src3: NierAbout,
+    src4: NierAbout,
+    src5: NierAbout,
   },
 ] as const;
 
