@@ -52,7 +52,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
               <Button
                 href={project.href}
                 target='_blank'
-                btnType='tanOutline'
+                btnType='limeOutline'
                 text='Live Website'
                 arrow
               />
@@ -178,7 +178,8 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
                   className={styles.imgii}
                 />
               </div>
-              <SectionIntroii title='Admin Dashboard' color='tan' />
+              {/* <SectionIntroii title='Admin Dashboard' color='tan' /> */}
+              <SectionIntroii title='more' color='tan' />
             </div>
           </button>
         </div>

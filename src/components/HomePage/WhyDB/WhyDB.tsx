@@ -73,7 +73,9 @@ export default function WhyDB() {
           </div>
           <div className={styles.right}>
             <div className={styles.rightTop}>
-              <SectionIntroii title='Our main service' />
+              <SectionIntroii
+                title='Our core expertise'
+              />
               <h2 className={styles.heading}>
                 {/* Why choose a custom booking website for your business? */}
                 Here&rsquo;s what we do:

@@ -1,5 +1,7 @@
 .container {
-  background-color: var(--tan);
+  background-color: var(--darkerTan);
+  background: #E6E8DD;
+background: linear-gradient(180deg, rgba(230, 232, 221, 1) 50%, rgba(244, 243, 234, 1) 100%);
   padding: 10rem 0rem;
 }
 

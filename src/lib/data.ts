@@ -1,7 +1,6 @@
 import Project1 from "../../public/images/thunder.jpg";
 import Nier from "../../public/images/nier.jpg";
 import Project3 from "../../public/images/dog.jpg";
-import Project4 from "../../public/images/er.png";
 import BookingSystem from "../../public/images/bookingSystemii.png";
 import AppointmentAlerts from "../../public/images/AppointmentAlerts.png";
 import NoShow from "../../public/images/NoShow.png";
@@ -170,7 +169,6 @@ export const projects = [
     title: "Thundertrails Clips",
     slug: "thundertrails",
     src: Project1,
-    video: "/videos/thunder.mp4",
     description:
       "Thundertrails started in 2019 renting premium mountain and e-bikes to riders exploring desert singletrack and high-country trails. Demand outgrew their manual, message-based booking flow—double-bookings, missed deposits, and no-shows were common. We built a direct-booking platform that fills calendars (not inboxes) with real-time availability, deposits, and guided add-ons like helmet, rack, or child-seat rentals.",
     tags: [
@@ -234,7 +232,6 @@ export const projects = [
     title: "Nier Transportation",
     slug: "nier-transportation",
     src: Nier,
-    video: "/videos/nier.mp4",
     description:
       "Nier Transportation provides high-end black-car service across Phoenix and all of Arizona—airport transfers, hourly charters, and long-distance city-to-city. They needed a luxury-grade booking experience with instant quotes, vehicle selection, deposits, and chauffeur/vehicle dispatch—without endless phone tag.",
     tags: [
@@ -298,7 +295,6 @@ export const projects = [
     title: "Great Groomers of California",
     slug: "great-groomers-of-california",
     src: Project3,
-    video: "/videos/ggc.mp4",
     description:
       "Great Groomers of California is a boutique dog-grooming salon in San Diego. They needed a stress-free booking flow that handled breed/size complexity, stylist selection, and add-ons—while reducing no-shows and phone time. We built a direct-booking experience with smart pricing, deposit-secured checkout, automated reminders, and an add-on step that lifts average order value.",
     tags: [
@@ -359,68 +355,131 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Elite Retreat Rentals",
-    slug: "elite-retreat-rentals",
-    src: Project4,
-    video: "/videos/rentals.mp4",
+    title: "Velvet & Vine",
+    slug: "velvet-and-vine",
+    src: Project3,
     description:
-      "Elite Retreat Rentals manages three luxury vacation properties in the Phoenix metro. We built a direct booking experience with real-time calendars, dynamic pricing, digital guidebooks, and a guest portal—reducing reliance on OTAs while improving margins and stay quality.",
+      "Great Groomers of California is a boutique dog-grooming salon in San Diego. They needed a stress-free booking flow that handled breed/size complexity, stylist selection, and add-ons—while reducing no-shows and phone time. We built a direct-booking experience with smart pricing, deposit-secured checkout, automated reminders, and an add-on step that lifts average order value.",
     tags: [
-      { id: 4.98, tag: "Hospitality" },
-      { id: 4.99, tag: "Booking Platform" },
+      { id: 3.98, tag: "Dog Spa" },
+      { id: 3.99, tag: "Salon Booking" },
     ],
-    h1: "A premium direct-booking engine for luxury vacation rentals in Phoenix",
+    h1: "A no-stress spa booking flow for pups—and their humans",
     year: 2025,
     platform: "Direct Booking",
-    tech: "Next.js + Prisma/PostgreSQL + Stripe + iCal/OTA Sync + NextAuth",
-    href: "https://case-study-one-git-main-christianwares-projects.vercel.app/",
+    tech: "Next.js + Stripe + Prisma/PostgreSQL + NextAuth + Twilio",
+    href: "https://muchacho-grooming-demo.vercel.app/",
     challenge: [
       {
-        id: 4.1,
+        id: 3.1,
         challengeDetail:
-          "OTA fees eroded margins and limited brand storytelling; manual calendars created double-booking risk.",
+          "Breed/size complexity made quoting inconsistent. Staff capacity and service durations varied by stylist and service.",
       },
       {
-        id: 4.2,
+        id: 3.2,
         challengeDetail:
-          "No integrated upsells for add-on experiences (early check-in, private chef, pool heat), leaving revenue on the table.",
+          "High day-of cancellations and no-shows from pay-later flow; phones tied up with reschedule calls.",
       },
       {
-        id: 4.3,
+        id: 3.3,
         challengeDetail:
-          "Guest communication was scattered across email threads; property ops (cleaning, maintenance) weren’t synced.",
+          "Upsells (teeth brushing, de-shed, paw balm) were forgotten at the counter instead of captured online.",
       },
     ],
     results: [
       {
-        id: 4.4,
+        id: 3.4,
         resultDetail:
-          "Direct bookings now drive 78% of reservations. Integrated OTA/iCal sync eliminated conflicts and stabilized occupancy.",
+          "Smart pricing by breed/size with service-duration templates. Calendar shows only realistic time slots per stylist.",
       },
       {
-        id: 4.5,
+        id: 3.5,
         resultDetail:
-          "Add-on marketplace increased ancillary revenue by 45%; dynamic pricing improved shoulder-season occupancy by 41%.",
+          "Deposit-required checkout with automated reminders and self-serve reschedule link cut no-shows by 58% and phone time by 41%.",
       },
       {
-        id: 4.6,
+        id: 3.6,
         resultDetail:
-          "Guest portal centralizes messages, digital guidebooks, and check-in. Ops calendar syncs cleans/turnovers to reduce misses.",
+          "Add-on step in flow increased attachment rate to 63% and lifted AOV by 29%.",
       },
     ],
     stats: [
-      { id: 1, title: "Bookings made directly", desc: "78%" },
-      { id: 2, title: "Profit-margin increase", desc: "+32%" },
-      { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
-      { id: 4, title: "Occupancy lift in slow periods", desc: "+41%" },
+      { id: 1, title: "No-show reduction", desc: "-58%" },
+      { id: 2, title: "AOV lift from add-ons", desc: "+29%" },
+      { id: 3, title: "Phone time reduction", desc: "-41%" },
+      { id: 4, title: "Online reschedules self-serve", desc: "87%" },
     ],
     testimonial:
-      "We reclaimed margins from OTA fees and finally control the guest journey. The guest portal and add-ons pay for themselves every month.",
-    src2: Project1,
-    src3: NierAbout,
-    src4: NierAbout,
-    src5: NierAbout,
+      "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
+    src2: GroomerHome,
+    src3: GroomerAbout,
+    src4: GroomerServices,
+    src5: GroomerAdmin,
   },
+  // {
+  //   id: 4,
+  //   title: "Elite Retreat Rentals",
+  //   slug: "elite-retreat-rentals",
+  //   src: Project4,
+  //   video: "/videos/rentals.mp4",
+  //   description:
+  //     "Elite Retreat Rentals manages three luxury vacation properties in the Phoenix metro. We built a direct booking experience with real-time calendars, dynamic pricing, digital guidebooks, and a guest portal—reducing reliance on OTAs while improving margins and stay quality.",
+  //   tags: [
+  //     { id: 4.98, tag: "Hospitality" },
+  //     { id: 4.99, tag: "Booking Platform" },
+  //   ],
+  //   h1: "A premium direct-booking engine for luxury vacation rentals in Phoenix",
+  //   year: 2025,
+  //   platform: "Direct Booking",
+  //   tech: "Next.js + Prisma/PostgreSQL + Stripe + iCal/OTA Sync + NextAuth",
+  //   href: "https://case-study-one-git-main-christianwares-projects.vercel.app/",
+  //   challenge: [
+  //     {
+  //       id: 4.1,
+  //       challengeDetail:
+  //         "OTA fees eroded margins and limited brand storytelling; manual calendars created double-booking risk.",
+  //     },
+  //     {
+  //       id: 4.2,
+  //       challengeDetail:
+  //         "No integrated upsells for add-on experiences (early check-in, private chef, pool heat), leaving revenue on the table.",
+  //     },
+  //     {
+  //       id: 4.3,
+  //       challengeDetail:
+  //         "Guest communication was scattered across email threads; property ops (cleaning, maintenance) weren’t synced.",
+  //     },
+  //   ],
+  //   results: [
+  //     {
+  //       id: 4.4,
+  //       resultDetail:
+  //         "Direct bookings now drive 78% of reservations. Integrated OTA/iCal sync eliminated conflicts and stabilized occupancy.",
+  //     },
+  //     {
+  //       id: 4.5,
+  //       resultDetail:
+  //         "Add-on marketplace increased ancillary revenue by 45%; dynamic pricing improved shoulder-season occupancy by 41%.",
+  //     },
+  //     {
+  //       id: 4.6,
+  //       resultDetail:
+  //         "Guest portal centralizes messages, digital guidebooks, and check-in. Ops calendar syncs cleans/turnovers to reduce misses.",
+  //     },
+  //   ],
+  //   stats: [
+  //     { id: 1, title: "Bookings made directly", desc: "78%" },
+  //     { id: 2, title: "Profit-margin increase", desc: "+32%" },
+  //     { id: 3, title: "Increase in avg. stay length", desc: "+2.4 nights" },
+  //     { id: 4, title: "Occupancy lift in slow periods", desc: "+41%" },
+  //   ],
+  //   testimonial:
+  //     "We reclaimed margins from OTA fees and finally control the guest journey. The guest portal and add-ons pay for themselves every month.",
+  //   src2: Project1,
+  //   src3: NierAbout,
+  //   src4: NierAbout,
+  //   src5: NierAbout,
+  // },
 ] as const;
 
 export const pricingData = [

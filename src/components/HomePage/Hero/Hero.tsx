@@ -24,7 +24,10 @@ export default function Hero() {
             </div>
             <SectionIntroii title='Web Development Agency' />
             <h1 className={styles.heading}>
-              Custom booking websites <br /> that actually book
+              {/* Custom booking websites <br /> that actually book */}
+              {/* <span>Custom booking websites <br /> that actually book</span> */}
+              Custom booking websites <br />
+              that actually book
             </h1>
             <ScrollHorizontalText
               text='We design and build online booking websites for service businesses.'

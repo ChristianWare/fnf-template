@@ -11,20 +11,22 @@ import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
-import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
+// import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 import Faq from "@/components/Faq/Faq";
 import Features from "@/components/HomePage/Features/Features";
+import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 
 export default function HomePage() {
   return (
     <main>
       <Nav />
       <Hero />
-      <AboutUs />
       <WhyDB />
-      <ProjectSection />
-      <Industries />
+      <AboutUs />
       <Outcomes />
+      <ProjectSection />
+      <HowItWorks />
+      <Industries />
       {/* <Different /> */}
       <OurTeam
         text='I’m Chris, founder of Fonts & Footers. We focus on building
@@ -33,7 +35,7 @@ export default function HomePage() {
         src={ChrisImg}
         signatureBox
       />
-      <PricingPreview />
+      {/* <PricingPreview /> */}
       <Features />
       <Faq />
       <BlogSection />
