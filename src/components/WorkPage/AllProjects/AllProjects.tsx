@@ -5,35 +5,58 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AllProjects.module.css";
 import { projects } from "@/lib/data";
 import Link from "next/link";
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import Arrow from "@/components/icons/Arrow/Arrow";
 
 export default function AllProjects() {
   return (
-    <section className={styles.container}>
+    <section className={styles.containerParent}>
       <LayoutWrapper>
         <div className={styles.container}>
           <div className={styles.mapDataContainer}>
-            {projects.slice().reverse().map((project, index) => (
+            {projects.slice().reverse().map((item, i) => (
               <Link
-                href={`/work/${project.slug}`}
-                key={project.slug ?? index}
-                className={styles.card}
-                aria-label={`${project.title} case study`}
-              >
-                <div className={styles.imgContainer}>
-                  <Image
-                    src={project.src2}
-                    alt={project.title}
-                    fill
-                    className={styles.img}
-                    sizes='(max-width: 568px) 100vw, (max-width: 1068px) 50vw, 33vw'
-                    priority={index < 3}
-                  />
+              href={`/work/${item.slug}`}
+              key={`${item.id}-${i}`}
+              className={`${styles.card} card`}
+            >
+              <div className={styles.sectionIntro}>
+                <SectionIntroii title={item.title} color='tan' />
+              </div>
+
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                className={styles.img}
+                // priority={i === index}
+                sizes='(max-width: 1200px) 90vw, 1200px'
+              />
+              <div className={styles.imgOverlay} />
+              <div className={styles.textLayer}>
+                <SectionIntroii title={item.title} color='tan' />
+
+                <h3 className={styles.feature}>
+                  &ldquo;{item.testimonial}&rdquo;
+                </h3>
+                <div className={styles.cardBottom}>
+                  <div className={styles.smallContainer}>
+                    <small>— {item.owner}</small>
+                    <small className={styles.smallTitle}>
+                      Founder of {item.title}
+                    </small>
+                  </div>
+                  <div className={styles.btnContainer}>
+                    <div
+                      
+                      className={styles.caseStudyBtn}
+                    >
+                      View case study <Arrow className={styles.arrowii} />
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.textLayer}>
-                  <h3 className={styles.title}>{project.title}</h3>
-                  <p className={styles.desc}>{project.h1}</p>
-                </div>
-              </Link>
+              </div>
+            </Link>
             ))}
           </div>
         </div>

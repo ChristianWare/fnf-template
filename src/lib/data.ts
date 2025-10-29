@@ -17,6 +17,10 @@ import VelvetHome from "../../public/images/velvetHome.png";
 import VelvetAbout from "../../public/images/velvetAbout.png";
 import VelvetServices from "../../public/images/velvetServices.png";
 import VelvetGallery from "../../public/images/velvetGallery.png";
+import ThunderHome from "../../public/images/thunderHome.png";
+import ThunderProduct from "../../public/images/thunderProduct.png";
+import ThunderProductii from "../../public/images/thunderProductii.png";
+import ThunderAbout from "../../public/images/thunderAbout.png";
 
 export const process = [
   {
@@ -233,10 +237,10 @@ export const projects = [
     testimonial:
       "From juggling DMs to a clean calendar with deposits and no double-bookings.",
     owner: "Chris Barton",
-    src2: Project1,
-    src3: NierAbout,
-    src4: NierAbout,
-    src5: NierAbout,
+    src2: ThunderHome,
+    src3: ThunderProduct,
+    src4: ThunderProductii,
+    src5: ThunderAbout,
   },
   {
     id: 2,
