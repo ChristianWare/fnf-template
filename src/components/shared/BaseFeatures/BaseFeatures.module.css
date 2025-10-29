@@ -12,6 +12,17 @@
   margin-bottom: 5rem;
 }
 
+.imgContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.img {
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
 .topLeft,
 .topRight {
   display: flex;
@@ -200,6 +211,10 @@
   .twoThree {
     grid-column: span 1;
   }
+
+  .imgContainer {
+    margin-left: 8rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -222,5 +237,10 @@
 
   .featureCard {
     padding: 3rem;
+  }
+
+  .imgContainer {
+    width: 200px;
+    height: 200px;
   }
 }

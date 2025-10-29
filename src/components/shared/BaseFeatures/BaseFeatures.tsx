@@ -21,6 +21,7 @@ import Edit from "@/components/icons/Edit/Edit";
 import Modal from "../Modal/Modal";
 import Image, { StaticImageData } from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
+import Img2 from "../../../../public/images/work.png";
 
 type Feature = {
   icon: React.ReactNode;
@@ -191,6 +192,9 @@ export default function BaseFeatures() {
         <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.topLeft}>
+              <div className={styles.imgContainer}>
+                <Image src={Img2} alt='' fill className={styles.img} />
+              </div>
               <SectionIntroii title='Modular blocks' />
               <h2 className={styles.heading}>
                 What&apos;s included <br /> in every website we build
