@@ -133,7 +133,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 3rem;
+  margin-top: 1rem;
 }
 
 .smallContainer {
@@ -210,8 +212,49 @@
 }
 
 @media screen and (max-width: 568px) {
+  
+  .top, .topLeft {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+
+  .carouselViewport {
+    width: 100%;
+    padding-bottom: 0;
+    overflow: visible;
+    padding: 0rem 1rem;
+  }
+
+  .track {
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: none !important;    /* override inline translateX */
+  }
+
+  .trackAnimating {
+    transition: none;               /* no slide animation on stacked view */
+  }
+
   .card {
-    width: 250px;
-    height: 390px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;            /* keeps your fill image happy */
+    border-radius: 10px;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    display: none;                   /* optional: hide nav buttons on stack */
+  }
+
+  .sectionIntro {
+    padding: 1rem;                   /* optional: tighter padding on mobile */
+  }
+
+  .cardBottom {
+    margin-top: 3rem;
   }
 }

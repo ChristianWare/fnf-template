@@ -6,6 +6,20 @@
   overflow: hidden;
   border-top: 1px solid var(--gray);
   border-bottom: 1px solid var(--gray);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--tan) 10%,
+    var(--tan) 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--tan) 10%,
+    var(--tan) 90%,
+    transparent 100%
+  );
 }
 
 .track {
