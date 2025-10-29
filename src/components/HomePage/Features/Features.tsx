@@ -11,8 +11,7 @@ import Edit from "@/components/icons/Edit/Edit";
 import Clock from "@/components/icons/Clock/Clock";
 import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import Image from "next/image";
-import Img1 from "../../../../public/images/smileii.png";
+
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
 import { usePathname } from "next/navigation";
@@ -242,9 +241,6 @@ export default function Features() {
     <section className={styles.container} id='features'>
       <LayoutWrapper>
         <div className={styles.top}>
-          <div className={styles.imgContainer}>
-            <Image src={Img1} alt='' fill className={styles.img} />
-          </div>
           <div className={styles.sectionHeadingContainer}>
             <SectionIntroii title='services' />
           </div>

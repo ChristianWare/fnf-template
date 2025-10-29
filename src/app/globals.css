@@ -83,7 +83,9 @@ h1 {
   font-size: 4.5rem;
   font-family: var(--Merriweather);
   letter-spacing: -2px;
-  line-height: 1.1;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
