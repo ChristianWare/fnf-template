@@ -21,6 +21,15 @@ import Edit from "@/components/icons/Edit/Edit";
 import Modal from "../Modal/Modal";
 import Image, { StaticImageData } from "next/image";
 import Img1 from "../../../../public/images/whydb.jpg";
+import Reminder from "../../../../public/images/reminder.jpg";
+import Seo from "../../../../public/images/seo.jpg";
+import OnlineBooking from "../../../../public/images/onlineBooking.jpg";
+import Staff from "../../../../public/images/staff.jpg";
+import Blog from "../../../../public/images/blog.jpg";
+import Reviews from "../../../../public/images/reviews.jpg";
+import AnalyticsImg from "../../../../public/images/analytics.jpg";
+import RevisionsImg from "../../../../public/images/revisions.jpg";
+import CreditCard from "../../../../public/images/creditcard.jpg";
 import Img2 from "../../../../public/images/work.png";
 
 type Feature = {
@@ -53,7 +62,7 @@ const featureData: Feature[] = [
       "Clear policy and deposit messaging",
       "Mobile-first performance",
     ],
-    src: Img1,
+    src: OnlineBooking,
   },
   {
     icon: <Payment className={styles.icon} />,
@@ -81,7 +90,7 @@ const featureData: Feature[] = [
       "Localized messaging support",
       "Reduced no-shows and gaps",
     ],
-    src: Img1,
+    src: Reminder,
   },
   {
     icon: <Integration className={styles.icon} />,
@@ -95,7 +104,7 @@ const featureData: Feature[] = [
       "Clean URLs and strong headings",
       "Calendar and PMS/CRM sync",
     ],
-    src: Img1,
+    src: Seo,
   },
   {
     icon: <Multiple className={styles.icon} />,
@@ -109,7 +118,7 @@ const featureData: Feature[] = [
       "Per-provider calendars",
       "Actionable staff dashboards",
     ],
-    src: Img1,
+    src: Staff,
   },
   {
     icon: <Hosting className={styles.icon} />,
@@ -123,7 +132,7 @@ const featureData: Feature[] = [
       "Image optimization",
       "Mobile-first performance",
     ],
-    src: Img1,
+    src: Blog,
   },
   {
     icon: <Money className={styles.icon} />,
@@ -137,7 +146,7 @@ const featureData: Feature[] = [
       "Transparent price breakdown",
       "Config-driven, no deploys",
     ],
-    src: Img1,
+    src: CreditCard,
   },
   {
     icon: <Stariii className={styles.icon} />,
@@ -151,7 +160,7 @@ const featureData: Feature[] = [
       "Private issue routing",
       "Fresh social proof for SEO",
     ],
-    src: Img1,
+    src: Reviews,
   },
   {
     icon: <Analytics className={styles.icon} />,
@@ -165,7 +174,7 @@ const featureData: Feature[] = [
       "GA4 and Meta exports",
       "Insights tied to revenue",
     ],
-    src: Img1,
+    src: AnalyticsImg,
   },
   {
     icon: <Edit className={styles.icon} />,
@@ -179,7 +188,7 @@ const featureData: Feature[] = [
       "Brand-consistent polish",
       "Launch-ready confidence",
     ],
-    src: Img1,
+    src: RevisionsImg,
   },
 ];
 
