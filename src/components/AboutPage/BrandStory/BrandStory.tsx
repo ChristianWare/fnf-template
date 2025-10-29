@@ -43,26 +43,35 @@ export default function BrandStory() {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.leftTop}>
-              <SectionIntroii title='About Fonts & Footers' />
+              <SectionIntroii title='Who we are — and why it matters' />
               <h2 className={styles.heading}>
-                A new studio with a <br /> fresh take on booking websites.
+                {/* A new studio with a <br /> fresh take on booking websites. */}
+                We&apos;re experts who think in terms of bookings — helping you
+                sell the appointment, not just the aesthetic.
               </h2>
 
               <p className={`${styles.copy} subheading`}>
-                Fonts &amp; Footers is a new company focused on one thing:
-                turning visitors into paid, confirmed bookings for service-based
-                businesses. Being new means we’re not carrying legacy templates
-                or bloated stacks—we build lean, modern, conversion-first sites
-                with Stripe-first payments and sensible ops baked in.
+                Fonts & Footers builds direct-booking websites that turn
+                visitors into confirmed appointments. We started from a simple
+                truth: beautiful sites that don’t book are just expensive
+                brochures.
               </p>
-
               <p className={`${styles.copy} subheading`}>
-                Our perspective is fresh: product thinking over pretty pages,
-                clarity over cleverness, and speed without sacrificing
-                standards. That shows up in flows that actually reduce no-shows,
-                deposits and BNPL (buy now pay later) that unlock bigger
-                services without slowing cash flow, and policy UX (user
-                experience) that prevents “DM me” chaos before it starts.
+                We combine brand, UX, and revenue ops into one system:
+                lightning-fast website performance, Stripe deposits and
+                payments, scheduling for teams and locations, and
+                local/programmatic SEO that targets real intent. No fluff. No
+                vanity metrics. Just clearer offers, faster pages, and more paid
+                bookings.
+              </p>
+              <p className={`${styles.copy} subheading`}>
+                We ask the hard questions—about your services, capacity,
+                pricing, and locations—then turn the answers into a concrete
+                plan: a conversion-ready brand kit, a booking-first website, an
+                SEO strategy built around your markets, and analytics that tie
+                clicks to revenue. That’s our Book-First framework: GEO + UX +
+                SEO + Payments, working together to grow your calendar and your
+                business.
               </p>
 
               <div className={styles.btnContainer}>

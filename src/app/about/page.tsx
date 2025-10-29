@@ -3,7 +3,7 @@ import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
 import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
 import Values from "@/components/AboutPage/Values/Values";
-import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
+// import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
@@ -26,7 +26,7 @@ export default function AboutPage() {
       <FinalCTA />
       <Values />
       <Different />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <OurTeam
         text='I’m Chris, founder of Fonts & Footers. We focus on building
             custom booking websites that cut no-shows, speed checkout to under a
