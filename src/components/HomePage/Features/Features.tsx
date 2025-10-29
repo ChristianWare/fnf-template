@@ -11,11 +11,21 @@ import Edit from "@/components/icons/Edit/Edit";
 import Clock from "@/components/icons/Clock/Clock";
 import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-
+import Img1 from "../../../../public/images/whydb.jpg";
+import Img2 from "../../../../public/images/howItWorks.jpg";
+import OnlineBooking from "../../../../public/images/onlineBooking.jpg";
+import CreditCard from "../../../../public/images/creditcard.jpg";
+import AnalyticsImage from "../../../../public/images/analytics.jpg";
+import Transform from "../../../../public/images/transform.jpg";
+import Empathy from "../../../../public/images/empathy.jpg";
+import Direct from "../../../../public/images/direct.jpg";
+import Branding from "../../../../public/images/ecomm.jpeg";
+import Access from "../../../../public/images/how.jpg";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
 import { usePathname } from "next/navigation";
 import Button from "@/components/shared/Button/Button";
+import { StaticImageData } from "next/image";
 
 export type Service = {
   slug: string;
@@ -25,6 +35,7 @@ export type Service = {
   outcomes: string[];
   ctaLabel: string;
   icon: JSX.Element | string;
+  src: string | StaticImageData;
 };
 
 const servicesData: Service[] = [
@@ -36,6 +47,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "",
@@ -45,6 +57,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "",
@@ -54,6 +67,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "direct-booking-website",
@@ -69,6 +83,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Multiple className={styles.icon} />,
+    src: OnlineBooking,
   },
   {
     slug: "",
@@ -78,6 +93,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "",
@@ -87,6 +103,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "booking-and-scheduling",
@@ -102,6 +119,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Integration className={styles.icon} />,
+    src: Transform,
   },
   {
     slug: "stripe-payments-and-deposits",
@@ -117,6 +135,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Money className={styles.icon} />,
+    src: CreditCard,
   },
   {
     slug: "",
@@ -126,6 +145,7 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
+    src: "",
   },
   {
     slug: "local-and-programmatic-seo",
@@ -141,6 +161,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Design className={styles.icon} />,
+    src: Img1,
   },
   {
     slug: "performance-and-core-web-vitals",
@@ -156,6 +177,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Hosting className={styles.icon} />,
+    src: Img2,
   },
   {
     slug: "migration-to-nextjs",
@@ -171,6 +193,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Edit className={styles.icon} />,
+    src: Direct,
   },
   {
     slug: "analytics-and-crm",
@@ -186,6 +209,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Analytics className={styles.icon} />,
+    src: AnalyticsImage,
   },
   {
     slug: "branding-and-visual-identity",
@@ -201,6 +225,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Stariii className={styles.icon} />,
+    src: Branding,
   },
   {
     slug: "accessibility-and-compliance",
@@ -216,6 +241,7 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Payment className={styles.icon} />,
+    src: Access,
   },
   {
     slug: "care-plans",
@@ -231,11 +257,14 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Clock className={styles.icon} />,
+    src: Empathy,
   },
 ];
 
 export default function Features() {
   const pathname = usePathname();
+  const srcToUrl = (s: string | StaticImageData) =>
+    typeof s === "string" ? s : s.src;
 
   return (
     <section className={styles.container} id='features'>
@@ -255,14 +284,20 @@ export default function Features() {
             </div>
           )}
         </div>
-
         <div className={styles.parent}>
           <div className={styles.dataContainer}>
             {servicesData.map((x, index) => (
               <div key={index} className={styles.content}>
-                <div className={styles.iconContainer}>{x.icon}</div>
-                <h3 className={styles.title}>{x.title}</h3>
-                <p className={styles.desc}>{x.description}</p>
+                <div
+                  className={styles.bg}
+                  style={{ backgroundImage: `url(${srcToUrl(x.src)})` }}
+                />
+                <div className={styles.overlay} />
+                <div className={styles.inner}>
+                  <div className={styles.iconContainer}>{x.icon}</div>
+                  <h3 className={styles.title}>{x.title}</h3>
+                  <p className={styles.desc}>{x.description}</p>
+                </div>
               </div>
             ))}
           </div>

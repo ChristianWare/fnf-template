@@ -10,6 +10,7 @@ import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
 import Different from "@/components/AboutPage/Different/Different";
+import Features from "@/components/HomePage/Features/Features";
 
 export const metadata = {
   title: "About Us",
@@ -33,6 +34,7 @@ export default function AboutPage() {
             minute, and turn busywork into predictable, prepaid revenue.'
         src={ChrisImg}
       />
+      <Features />
       <Faq />
       <BlogSection />
       <FinalCTAMain />
