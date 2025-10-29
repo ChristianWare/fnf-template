@@ -4,6 +4,7 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/newhero.png";
 // import Button from "@/components/shared/Button/Button";
 import Clock from "@/components/icons/Clock/Clock";
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 const data = [
   {
@@ -42,6 +43,7 @@ export default function Outcomes() {
             </div>
             <div className={styles.right}>
               <div className={styles.rightTop}>
+                <SectionIntroii title='benefits' color='tan' />
                 <h2 className={styles.heading}>
                   Why get a custom booking website for your business?
                 </h2>
@@ -59,9 +61,8 @@ export default function Outcomes() {
                 <div className={styles.mapDataContainer}>
                   {data.map((item) => (
                     <div key={item.id} className={styles.card}>
-                        <Clock className={styles.icon} />
-                      <div className={styles.title}>
-                        {item.title}</div>
+                      <Clock className={styles.icon} />
+                      <div className={styles.title}>{item.title}</div>
                       <p className={styles.desc}>{item.desc}</p>
                     </div>
                   ))}

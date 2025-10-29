@@ -44,7 +44,7 @@
 
 .heading {
   text-align: center;
-  width: 65%;
+  max-width: 650px;
   font-size: 3rem;
   letter-spacing: -1px;
 }

@@ -12,6 +12,11 @@ import GroomerHome from "../../public/images/groomerHome.png";
 import GroomerAbout from "../../public/images/groomerAbout.png";
 import GroomerServices from "../../public/images/groomerServices.png";
 import GroomerAdmin from "../../public/images/groomerAdmin.png";
+import velevtandvineImg from "../../public/images/velevtandvince.jpg";
+import VelvetHome from "../../public/images/velvetHome.png";
+import VelvetAbout from "../../public/images/velvetAbout.png";
+import VelvetServices from "../../public/images/velvetServices.png";
+import VelvetGallery from "../../public/images/velvetGallery.png";
 
 export const process = [
   {
@@ -226,7 +231,8 @@ export const projects = [
       { id: 4, title: "Double-booking incidents", desc: "0 after launch" },
     ],
     testimonial:
-      "We went from juggling DMs to a clean calendar with deposits and zero double-bookings. Our team spends weekends riding again—not reconciling spreadsheets.",
+      "From juggling DMs to a clean calendar with deposits and no double-bookings.",
+    owner: "Chris Barton",
     src2: Project1,
     src3: NierAbout,
     src4: NierAbout,
@@ -289,7 +295,8 @@ export const projects = [
       { id: 4, title: "Quote-to-book time", desc: "-68%" },
     ],
     testimonial:
-      "Clients book in under a minute with a polished quote and deposit. Dispatch is effortless and our on-time rate speaks for itself.",
+      "Clients book in under a minute with a polished quote and deposit.",
+    owner: "Chris Barton",
     src2: NierHome,
     src3: NierAbout,
     src4: NierServices,
@@ -352,7 +359,8 @@ export const projects = [
       { id: 4, title: "Online reschedules self-serve", desc: "87%" },
     ],
     testimonial:
-      "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
+      "Our calendar has real capacity by stylist. And no more no-shows!",
+    owner: "Chris Barton",
     src2: GroomerHome,
     src3: GroomerAbout,
     src4: GroomerServices,
@@ -362,7 +370,7 @@ export const projects = [
     id: 4,
     title: "Velvet & Vine",
     slug: "velvet-and-vine",
-    src: Project3,
+    src: velevtandvineImg,
     description:
       "Great Groomers of California is a boutique dog-grooming salon in San Diego. They needed a stress-free booking flow that handled breed/size complexity, stylist selection, and add-ons—while reducing no-shows and phone time. We built a direct-booking experience with smart pricing, deposit-secured checkout, automated reminders, and an add-on step that lifts average order value.",
     tags: [
@@ -415,11 +423,12 @@ export const projects = [
       { id: 4, title: "Online reschedules self-serve", desc: "87%" },
     ],
     testimonial:
-      "Our calendar finally reflects real capacity by stylist, and deposits nearly eliminated no-shows. Pet parents love the self-serve reschedule link.",
-    src2: GroomerHome,
-    src3: GroomerAbout,
-    src4: GroomerServices,
-    src5: GroomerAdmin,
+      "Our calendar has real capacity by stylist. And no more no-shows!",
+    owner: "Chris Barton",
+    src2: VelvetHome,
+    src3: VelvetAbout,
+    src4: VelvetServices,
+    src5: VelvetGallery,
   },
   // {
   //   id: 4,

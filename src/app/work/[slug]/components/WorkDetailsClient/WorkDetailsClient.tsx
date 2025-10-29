@@ -11,8 +11,8 @@ import Image from "next/image";
 import Button from "@/components/shared/Button/Button";
 import OurTeam from "@/components/AboutPage/OurTeam/OurTeam";
 import Chris from "../../../../../../public/images/chris.jpg";
-import MoreProjects from "@/components/WorkPage/MoreProjects/MoreProjects";
 import Modal from "@/components/shared/Modal/Modal";
+import Industries from "@/components/HomePage/Industries/Industries";
 
 type Project = (typeof projects)[number];
 
@@ -243,7 +243,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
         </section>
       </LayoutWrapper>
 
-      <MoreProjects excludeSlug={project.slug} />
+      <Industries excludeSlug={project.slug} />
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {selectedSrc && (

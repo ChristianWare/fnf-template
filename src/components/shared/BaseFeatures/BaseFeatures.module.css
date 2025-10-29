@@ -136,7 +136,9 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
   /* overflow: auto; */
   padding-right: 0.5rem;
 }
@@ -145,7 +147,7 @@
   font-family: var(--DotSansMedium);
   font-size: 2.5rem;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .modalCopy {
@@ -158,6 +160,7 @@
   display: grid;
   gap: 1rem;
   margin-top: 0.5rem;
+  width: 100%;
   /* padding-left: 1.25rem; */
 }
 

@@ -263,10 +263,12 @@ export default function BaseFeatures() {
         {selected && (
           <div className={styles.modalContent}>
             <div className={styles.modalText}>
-              <h3 className={styles.modalTitle}>{selected.title}</h3>
-              <p className={`${styles.modalCopy} subheading`}>
-                {selected.description}
-              </p>
+              <div>
+                <h3 className={styles.modalTitle}>{selected.title}</h3>
+                <p className={`${styles.modalCopy} subheading`}>
+                  {selected.description}
+                </p>
+              </div>
               <ul className={styles.modalList}>
                 {selected.bullets.map((b, i) => (
                   <li key={i} className={styles.modalListItem}>
@@ -275,7 +277,12 @@ export default function BaseFeatures() {
                 ))}
               </ul>
               <div className={styles.modalCta}>
-                <Button href='/contact' btnType='black' text='Talk to us' />
+                <Button
+                  href='/contact'
+                  btnType='black'
+                  text='Learn more'
+                  arrow
+                />
               </div>
             </div>
             <div className={styles.modalImage}>

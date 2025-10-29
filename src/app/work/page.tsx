@@ -1,5 +1,5 @@
 import Faq from "@/components/Faq/Faq";
-import Features from "@/components/HomePage/Features/Features";
+import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Nav from "@/components/shared/Nav/Nav";
@@ -18,7 +18,7 @@ export default function WorkPage() {
       <Nav />
       <WorkPageIntro />
       <AllProjects />
-      <Features />
+      <BaseFeatures />
       <Faq />
       <BlogSection />
       <FinalCTAMain />

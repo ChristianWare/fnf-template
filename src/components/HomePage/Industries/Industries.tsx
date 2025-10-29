@@ -10,10 +10,22 @@ import Arrow from "@/components/icons/Arrow/Arrow";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
 import Link from "next/link";
+import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 
-export default function Industries() {
-  const tripled = useMemo(() => [...projects, ...projects, ...projects], []);
-  const baseLen = projects.length;
+export default function Industries({
+  excludeSlug,
+}: {
+  excludeSlug?: string;
+}) {
+  const visible = useMemo(
+    () => projects.filter((p) => p.slug !== excludeSlug),
+    [excludeSlug]
+  );
+  const tripled = useMemo(
+    () => [...visible, ...visible, ...visible],
+    [visible]
+  );
+  const baseLen = visible.length;
   const startIndex = baseLen;
 
   const [index, setIndex] = useState<number>(startIndex);
@@ -44,6 +56,12 @@ export default function Industries() {
     };
   }, []);
 
+  useEffect(() => {
+    setIndex(startIndex);
+  }, [startIndex]);
+
+  if (baseLen === 0) return null;
+
   const offsetX = -index * (cardW + gapPx);
 
   const next = () => {
@@ -55,7 +73,7 @@ export default function Industries() {
   const prev = () => {
     if (isShifting || !isAnimating) return;
     setIsShifting(true);
-    setIndex((i) => i - 1);
+  setIndex((i) => i - 1);
   };
 
   const handleTransitionEnd = () => {
@@ -85,7 +103,7 @@ export default function Industries() {
           <div className={styles.top}>
             <div className={styles.topLeft}>
               <SectionIntroii title='Selected Works' />
-              <h2 className={styles.heading}>Featured work</h2>
+              <h2 className={styles.heading}>Featured case studies</h2>
               <div className={styles.btnContainer}>
                 <Button href='/work' btnType='lime' text='All case studies' />
               </div>
@@ -127,6 +145,10 @@ export default function Industries() {
               key={`${item.id}-${i}`}
               className={`${styles.card} card`}
             >
+              <div className={styles.sectionIntro}>
+                <SectionIntro title={item.title} color='tan' />
+              </div>
+
               <Image
                 src={item.src}
                 alt={item.title}
@@ -137,8 +159,27 @@ export default function Industries() {
               />
               <div className={styles.imgOverlay} />
               <div className={styles.textLayer}>
-                <h3 className={styles.feature}>{item.title}</h3>
-                <p className={styles.desc}>{item.h1}</p>
+                <SectionIntroii title={item.title} color='tan' />
+
+                <h3 className={styles.feature}>
+                  &ldquo;{item.testimonial}&rdquo;
+                </h3>
+                <div className={styles.cardBottom}>
+                  <div className={styles.smallContainer}>
+                    <small>— {item.owner}</small>
+                    <small className={styles.smallTitle}>
+                      Founder of {item.title}
+                    </small>
+                  </div>
+                  <div className={styles.btnContainer}>
+                    <div
+                      
+                      className={styles.caseStudyBtn}
+                    >
+                      View case study <Arrow className={styles.arrowii} />
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
