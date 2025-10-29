@@ -5,7 +5,6 @@ import "./globals.css";
 import { auth } from "../../auth";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
-import SmoothScroll from "@/components/shared/SmoothScroll/SmoothScroll";
 import PlausibleProvider from "next-plausible";
 
 const inter = Inter({
@@ -97,15 +96,13 @@ export default async function RootLayout({
         <body
           className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${RaveoMedium.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
         >
-          <SmoothScroll>
-            <Toaster
-              position='bottom-right'
-              toastOptions={{
-                className: "toastFont",
-              }}
-            />
-            {children}
-          </SmoothScroll>
+          <Toaster
+            position='bottom-right'
+            toastOptions={{
+              className: "toastFont",
+            }}
+          />
+          {children}
         </body>
       </html>
     </SessionProvider>

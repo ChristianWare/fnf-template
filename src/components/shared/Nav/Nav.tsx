@@ -95,7 +95,7 @@ export default function Nav({
      { text: "Services", href: "/services" },
      { text: "Case Studies", href: "/work" },
      { text: "About", href: "/about" },
-    //  { text: "Pricing", href: "/pricing" },
+     { text: "Pricing", href: "/pricing" },
     //  { text: "Blog", href: "/blog" },
      { text: "Contact", href: "/contact" },
      { text: "My Account", href: "/account" },

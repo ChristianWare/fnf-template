@@ -68,10 +68,10 @@
   background-color: var(--black);
 }
 
-/* Ensure .planNameii is targeted correctly; for example, if you want the third .headerCell: */
 .headerRow .headerCell:nth-child(3) .planHeadTop .planNameii,
-.headerRowii .headerCell:nth-child(3) .planHeadTop .planNameii {
-  color: var(--tan) !important;
+.headerRowii .headerCell:nth-child(3) .planHeadTop .planNameii,
+.headerRow .headerCell:nth-child(3) .planName {
+  color: var(--lime) !important;
 }
 
 .cornerCell {
@@ -174,17 +174,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--tan);
+  /* background-color: var(--tan); */
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
 }
 
+.row > .valueCell:nth-child(3) .icon {
+  color: var(--lime);
+}
+
 .icon {
   display: block;
   color: var(--black);
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .valueNo {
