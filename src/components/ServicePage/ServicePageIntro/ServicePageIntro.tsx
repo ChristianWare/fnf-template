@@ -24,15 +24,18 @@ export default function ServicePageIntro() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
-            <SectionIntroii title='Service Overview' />
+            <SectionIntroii title='About us ' />
             <h1 className={styles.heading}>
               Comprehensive solutions <br className={styles.br} /> tailored to
               your needs
             </h1>
             <p className={styles.copy}>
-              Our service offerings are designed to provide you with the tools
-              and support you need to succeed in today&apos;s competitive
-              landscape.
+              At Fonts & Footers, we specialize in creating custom booking
+              websites designed to help businesses reduce no-shows, speed up
+              checkout times, and increase revenue. Our mission is to simplify
+              the booking process for both businesses and their customers,
+              providing a seamless experience that drives growth and customer
+              satisfaction.
             </p>
           </div>
           <div className={styles.bottom}>

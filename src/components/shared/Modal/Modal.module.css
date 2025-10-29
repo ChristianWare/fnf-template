@@ -22,7 +22,7 @@
   border-radius: 10px;
   padding: 2rem;
   width: min(1100px, 90vw);
-  height: clamp(420px, 85vh, 900px);
+  /* height: clamp(420px, 85vh, 900px); */
   overflow: hidden;
   position: relative;
   transform: scale(0.98);

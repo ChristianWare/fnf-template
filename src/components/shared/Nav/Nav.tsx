@@ -92,11 +92,11 @@ export default function Nav({
   };
 
    const items = [
-     { text: "Services", href: "/services" },
+    //  { text: "Services", href: "/services" },
+    { text: "About", href: "/about" },
      { text: "Case Studies", href: "/work" },
-     { text: "About", href: "/about" },
      { text: "Pricing", href: "/pricing" },
-    //  { text: "Blog", href: "/blog" },
+     { text: "Blog", href: "/blog" },
      { text: "Contact", href: "/contact" },
      { text: "My Account", href: "/account" },
    ];

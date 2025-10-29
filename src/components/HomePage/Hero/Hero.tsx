@@ -26,8 +26,7 @@ export default function Hero() {
             <h1 className={styles.heading}>
               {/* Custom booking websites <br /> that actually book */}
               {/* <span>Custom booking websites <br /> that actually book</span> */}
-              Custom booking websites <br />
-              that actually book
+              We build custom booking <br /> websites that actually book
             </h1>
             <ScrollHorizontalText
               text='We design and build online booking websites for service businesses.'

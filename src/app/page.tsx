@@ -16,6 +16,7 @@ import Faq from "@/components/Faq/Faq";
 // import Features from "@/components/HomePage/Features/Features";
 import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
+import Features from "@/components/HomePage/Features/Features";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Hero />
       <WhyDB />
       <AboutUs />
+      <Features />
       <Outcomes />
       <ProjectSection />
       <HowItWorks />

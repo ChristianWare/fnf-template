@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   background-color: var(--tan);
-  padding-bottom: 5rem;
+  padding: 10rem 0rem;
 }
 
 .content {
@@ -102,7 +102,7 @@
 
 .modalImage {
   width: 100%;
-  height: auto;
+  height: 500px;
   display: block;
   border-radius: 10px;
 }
@@ -128,7 +128,7 @@
     padding: 3rem;
   }
 
-  .imgContainer {
+  .imgContainer, .modalImage {
     height: 350px;
   }
 

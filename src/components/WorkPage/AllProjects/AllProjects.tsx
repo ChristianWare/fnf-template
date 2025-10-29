@@ -12,7 +12,7 @@ export default function AllProjects() {
       <LayoutWrapper>
         <div className={styles.container}>
           <div className={styles.mapDataContainer}>
-            {projects.map((project, index) => (
+            {projects.slice().reverse().map((project, index) => (
               <Link
                 href={`/work/${project.slug}`}
                 key={project.slug ?? index}

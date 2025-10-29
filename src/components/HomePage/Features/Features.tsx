@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import styles from "./Features.module.css";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
@@ -23,8 +23,8 @@ import Branding from "../../../../public/images/ecomm.jpeg";
 import Access from "../../../../public/images/how.jpg";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
-import { usePathname } from "next/navigation";
-import Button from "@/components/shared/Button/Button";
+// import { usePathname } from "next/navigation";
+// import Button from "@/components/shared/Button/Button";
 import { StaticImageData } from "next/image";
 
 export type Service = {
@@ -262,7 +262,7 @@ const servicesData: Service[] = [
 ];
 
 export default function Features() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const srcToUrl = (s: string | StaticImageData) =>
     typeof s === "string" ? s : s.src;
 
@@ -273,8 +273,8 @@ export default function Features() {
           <div className={styles.sectionHeadingContainer}>
             <SectionIntroii title='services' />
           </div>
-          <h2 className={styles.heading}>What we offer</h2>
-          {pathname === "/" && (
+          <h2 className={styles.heading}>Services we offer</h2>
+          {/* {pathname === "/" && (
             <div className={styles.btnContainer}>
               <Button
                 href='/pricing/#compare'
@@ -282,7 +282,7 @@ export default function Features() {
                 text='See full feature list'
               />
             </div>
-          )}
+          )} */}
         </div>
         <div className={styles.parent}>
           <div className={styles.dataContainer}>
