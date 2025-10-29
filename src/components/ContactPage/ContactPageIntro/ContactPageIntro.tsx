@@ -5,7 +5,7 @@ import Img1 from "../../../../public/images/contact.jpg";
 import Img2 from "../../../../public/images/chris.jpg";
 import Img3 from "../../../../public/images/contactusiv.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import Clock from "@/components/icons/Clock/Clock";
+import Calendarii from "@/components/icons/Calendarii/Calendarii";
 import Email from "@/components/icons/Email/Email";
 import Instagram from "@/components/icons/Instagram/Instagram";
 // import Phone from "@/components/icons/Phone/Phone";
@@ -41,7 +41,7 @@ const data = [
     id: 5,
     title: "Calendly",
     desc: "calendly.com/fontsandfooter",
-    icon: <Clock className={styles.icon} />,
+    icon: <Calendarii className={styles.icon} />,
   },
   // {
   //   id: 6,

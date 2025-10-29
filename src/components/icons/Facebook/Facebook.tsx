@@ -6,9 +6,9 @@ export default function Facebook(props: SVGProps<SVGSVGElement>) {
       viewBox='0 0 24 24'
       width='1em'
       height='1em'
-      fill='none'
+      fill='currentColor'
       stroke='currentColor'
-      strokeWidth={2}
+      strokeWidth={1}
       strokeLinecap='round'
       strokeLinejoin='round'
       className='lucide lucide-facebook-icon'
