@@ -71,6 +71,11 @@ export const footerData = [
         href: "/blog",
       },
       {
+        id: 1.56,
+        option: "faqs",
+        href: "/faqs",
+      },
+      {
         id: 1.6,
         option: "Login",
         href: "/login",
