@@ -66,13 +66,6 @@ export default function Modal({ isOpen, onClose, children }: Props) {
       onClick={onClose}
       aria-hidden={!isOpen}
     >
-      <div
-        id='app-modal-dialog'
-        className={`${styles.dialog} ${isOpen ? styles.open : styles.closed}`}
-        onClick={stop}
-        role='dialog'
-        aria-modal='true'
-      >
         <button
           onClick={onClose}
           className={styles.closeBtn}
@@ -80,6 +73,13 @@ export default function Modal({ isOpen, onClose, children }: Props) {
         >
           <Close className={styles.icon} />
         </button>
+      <div
+        id='app-modal-dialog'
+        className={`${styles.dialog} ${isOpen ? styles.open : styles.closed}`}
+        onClick={stop}
+        role='dialog'
+        aria-modal='true'
+      >
         <div className={styles.body}>{children}</div>
       </div>
     </div>

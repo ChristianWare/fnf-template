@@ -1,3 +1,4 @@
+/* Modal.module.css */
 .backdrop {
   position: fixed;
   inset: 0;
@@ -5,7 +6,7 @@
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   transition: opacity 0.25s ease;
   pointer-events: none;
   opacity: 0;
@@ -20,13 +21,13 @@
   background: var(--white);
   border-radius: 10px;
   padding: 2rem;
-  width: 700px;
-  max-height: 95vh;
-  overflow: auto;
+  width: min(1100px, 90vw);
+  height: clamp(420px, 85vh, 900px);
+  overflow: hidden;
   position: relative;
   transform: scale(0.98);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .dialog.open {
@@ -43,23 +44,26 @@
   background: transparent;
   border: none;
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 2rem;
+  right: 2rem;
   z-index: 999;
 }
 
 .icon {
   width: 4rem;
   height: 4rem;
-  color: var(--black);
+  color: var(--tan);
+}
+
+.body {
+  height: 100%;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
   .dialog {
-    /* width: 100vw; */
     margin-left: 1rem;
     margin-right: 1rem;
-    /* min-height: 90vh; */
   }
 }
 

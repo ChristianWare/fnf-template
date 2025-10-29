@@ -15,6 +15,7 @@ import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
 import Features from "@/components/HomePage/Features/Features";
 import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
+import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 
 export default function HomePage() {
   return (
@@ -36,7 +37,8 @@ export default function HomePage() {
         signatureBox
       />
       {/* <PricingPreview /> */}
-      <Features />
+      {/* <Features /> */}
+      <BaseFeatures />
       <Faq />
       <BlogSection />
       <ContactPageContainer />
