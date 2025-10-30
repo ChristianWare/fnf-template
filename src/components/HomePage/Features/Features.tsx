@@ -21,11 +21,12 @@ import Empathy from "../../../../public/images/empathy.jpg";
 import Direct from "../../../../public/images/direct.jpg";
 import Branding from "../../../../public/images/ecomm.jpeg";
 import Access from "../../../../public/images/how.jpg";
+import ServiceIllustration from "../../../../public/images/serviceIllustration.png";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
 // import { usePathname } from "next/navigation";
 // import Button from "@/components/shared/Button/Button";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export type Service = {
   slug: string;
@@ -270,6 +271,15 @@ export default function Features() {
     <section className={styles.container} id='features'>
       <LayoutWrapper>
         <div className={styles.top}>
+          <div className={styles.imgContainer1}>
+            <Image
+              src={ServiceIllustration}
+              alt='Service Illustration'
+              fill
+              className={styles.img}
+              priority
+            />
+          </div>
           <div className={styles.sectionHeadingContainer}>
             <SectionIntroii title='services' />
           </div>
@@ -285,6 +295,17 @@ export default function Features() {
           )} */}
         </div>
         <div className={styles.parent}>
+          <div className={styles.imgParent}>
+            <div className={styles.imgContainer}>
+              <Image
+                src={ServiceIllustration}
+                alt='Service Illustration'
+                fill
+                className={styles.img}
+                priority
+              />
+            </div>
+          </div>
           <div className={styles.dataContainer}>
             {servicesData.map((x, index) => (
               <div key={index} className={styles.content}>

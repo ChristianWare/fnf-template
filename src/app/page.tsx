@@ -24,8 +24,8 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <WhyDB />
-      <AboutUs />
       <Features />
+      <AboutUs />
       <Outcomes />
       <ProjectSection />
       <HowItWorks />

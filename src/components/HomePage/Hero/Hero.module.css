@@ -7,7 +7,6 @@
   /* min-height: 100vh; */
 }
 
-
 .top {
   display: flex;
   flex-direction: column;
@@ -15,7 +14,6 @@
   justify-content: center;
   gap: 1.5rem;
 }
-
 
 .heading {
   text-align: center;
@@ -58,14 +56,12 @@
   .content {
     grid-template-columns: repeat(1, 1fr);
   }
-
 }
 @media screen and (max-width: 1068px) {
   .container {
     min-height: auto;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .copy {
