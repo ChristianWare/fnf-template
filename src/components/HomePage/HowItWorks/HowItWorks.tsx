@@ -1,5 +1,6 @@
 "use client";
 
+import styles from "./HowItWorks.module.css";
 import { useEffect, useRef, useState, useMemo } from "react";
 import {
   motion,
@@ -9,15 +10,14 @@ import {
   AnimatePresence,
 } from "motion/react";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
-import styles from "./HowItWorks.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import { process } from "@/lib/data";
 import Image, { StaticImageData } from "next/image";
-import Img1 from "../../../../public/images/discovery.jpg";
-import Img2 from "../../../../public/images/strategy.jpg";
-import Img3 from "../../../../public/images/design.jpg";
-import Img4 from "../../../../public/images/launch.jpg";
-import Img5 from "../../../../public/images/scale.jpg";
+import Img1 from "../../../../public/illustrations/telescopeIllustration.png";
+import Img2 from "../../../../public/illustrations/chessIllustration.png";
+import Img3 from "../../../../public/illustrations/designIllstration.png";
+import Img4 from "../../../../public/illustrations/launchIllustration.png";
+import Img5 from "../../../../public/illustrations/scaleIllustration.png";
 
 export default function HowItWorks() {
   const rightRef = useRef<HTMLDivElement>(null);

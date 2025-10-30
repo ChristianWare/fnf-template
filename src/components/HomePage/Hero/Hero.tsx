@@ -1,5 +1,5 @@
-import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Hero.module.css";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
@@ -26,13 +26,14 @@ export default function Hero() {
             <h1 className={styles.heading}>
               {/* Custom booking websites <br /> that actually book */}
               {/* Custom booking websites <br /> that actually book */}
-              Custom booking websites: <br />
-              Turn visitors into paid appointments
+              Turn visitors <br /> into paying clients <br /> with a custom
+              booking website
             </h1>
+            {/* bookings up, no‑shows down, admin time saved */}
             <ScrollHorizontalText
-              text='Fill calendars, not inboxes.'
-              text2='From browsers to bookings.'
-              text3='Click. Booked. Done.'
+              text='Bookings up.'
+              text2='No‑shows down.'
+              text3='Admin time saved'
               pxPerSec={50}
             />
             <div className={styles.btnContainer}>
