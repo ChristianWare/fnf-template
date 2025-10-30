@@ -25,13 +25,14 @@ export default function Hero() {
             <SectionIntroii title='Web Development Agency' />
             <h1 className={styles.heading}>
               {/* Custom booking websites <br /> that actually book */}
-              {/* <span>Custom booking websites <br /> that actually book</span> */}
-              We build custom booking <br /> websites that actually book
+              {/* Custom booking websites <br /> that actually book */}
+              Custom booking websites: <br />
+              Turn visitors into paid appointments
             </h1>
             <ScrollHorizontalText
-              text='We design and build online booking websites for service businesses.'
-              text2='Take deposits, prevent no-shows.'
-              text3='Let clients self-schedule 24/7.'
+              text='Fill calendars, not inboxes.'
+              text2='From browsers to bookings.'
+              text3='Click. Booked. Done.'
               pxPerSec={50}
             />
             <div className={styles.btnContainer}>

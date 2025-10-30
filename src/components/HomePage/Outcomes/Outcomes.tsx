@@ -9,23 +9,23 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 const data = [
   {
     id: 1,
-    title: "Own the relationship",
-    desc: "Stop renting your pipeline from marketplaces. Keep the data, the margins, and the repeat business.",
+    title: "More bookings, less back‑and‑forth",
+    desc: "one‑screen flow, 24/7 self‑serve → booking analytics screenshots",
   },
   {
     id: 2,
-    title: "Protect your time",
-    desc: "Card-on-file, deposits, and policy acceptance reduce no-shows and last-minute cancellations.",
+    title: "Fewer no‑shows",
+    desc: "deposit logic, SMS reminders → Stripe/Twilio integrations",
   },
   {
     id: 3,
-    title: "Delight on mobile",
-    desc: "One-screen flows and lightning-fast UX mean fewer drop-offs and more completed bookings.",
+    title: "Operational clarity",
+    desc: "monthly calendar, staff capacity, add‑ons → admin UI visuals",
   },
   {
     id: 4,
-    title: "Automate reminders",
-    desc: "Send automated reminders to clients to reduce missed appointments and improve attendance.",
+    title: "Faster cashflow",
+    desc: "instant payments, tips, upsells → Stripe receipts & dashboard",
   },
 ];
 
@@ -43,9 +43,9 @@ export default function Outcomes() {
             </div>
             <div className={styles.right}>
               <div className={styles.rightTop}>
-                <SectionIntroii title='benefits' color='tan' />
+                <SectionIntroii title='Core Value Pillars' color='tan' />
                 <h2 className={styles.heading}>
-                  Why get a custom booking website for your business?
+                  Why get a custom booking website for your business from us?
                 </h2>
 
                 <p className={`${styles.copy} subheading`}>
