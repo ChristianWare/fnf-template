@@ -44,7 +44,7 @@ export default function BrandStory() {
           <div className={styles.left}>
             <div className={styles.leftTop}>
               <SectionIntroii title='Who we are — and why it matters' />
-              <h2 className={styles.heading}>
+              <h2 className={`${styles.heading} h3`}>
                 {/* A new studio with a <br /> fresh take on booking websites. */}
                 We&apos;re experts who think in terms of bookings — helping you
                 sell the appointment, not just the aesthetic.
