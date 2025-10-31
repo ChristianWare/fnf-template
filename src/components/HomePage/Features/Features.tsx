@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Features.tsx
 // "use client";
 
 import styles from "./Features.module.css";
@@ -24,8 +26,6 @@ import Access from "../../../../public/images/how.jpg";
 import ServiceIllustration from "../../../../public/images/serviceIllustration.png";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
-// import { usePathname } from "next/navigation";
-// import Button from "@/components/shared/Button/Button";
 import Image, { StaticImageData } from "next/image";
 
 export type Service = {
@@ -263,10 +263,6 @@ const servicesData: Service[] = [
 ];
 
 export default function Features() {
-  // const pathname = usePathname();
-  const srcToUrl = (s: string | StaticImageData) =>
-    typeof s === "string" ? s : s.src;
-
   return (
     <section className={styles.container} id='features'>
       <LayoutWrapper>
@@ -284,15 +280,6 @@ export default function Features() {
             <SectionIntroii title='services' />
           </div>
           <h2 className={styles.heading}>Services we offer</h2>
-          {/* {pathname === "/" && (
-            <div className={styles.btnContainer}>
-              <Button
-                href='/pricing/#compare'
-                btnType='black'
-                text='See full feature list'
-              />
-            </div>
-          )} */}
         </div>
         <div className={styles.parent}>
           <div className={styles.imgParent}>
@@ -307,20 +294,40 @@ export default function Features() {
             </div>
           </div>
           <div className={styles.dataContainer}>
-            {servicesData.map((x, index) => (
-              <div key={index} className={styles.content}>
+            {servicesData.map((x, index) => {
+              const hasImage =
+                !!x.src &&
+                (typeof x.src === "string"
+                  ? x.src.trim().length > 0
+                  : !!(x.src as StaticImageData).src);
+              return (
                 <div
-                  className={styles.bg}
-                  style={{ backgroundImage: `url(${srcToUrl(x.src)})` }}
-                />
-                <div className={styles.overlay} />
-                <div className={styles.inner}>
-                  <div className={styles.iconContainer}>{x.icon}</div>
-                  <h3 className={styles.title}>{x.title}</h3>
-                  <p className={styles.desc}>{x.description}</p>
+                  key={index}
+                  className={`${styles.content} ${!hasImage ? styles.placeholder : ""}`}
+                >
+                  {hasImage ? (
+                    <Image
+                      src={x.src as any}
+                      alt={x.title || "Service background"}
+                      fill
+                      className={styles.bgImg}
+                      placeholder={
+                        typeof x.src === "object" ? "blur" : undefined
+                      }
+                      sizes='(max-width: 568px) 100vw, (max-width: 1268px) 33vw, 25vw'
+                    />
+                  ) : (
+                    <div className={styles.bgFallback} aria-hidden='true' />
+                  )}
+                  <div className={styles.overlay} />
+                  <div className={styles.inner}>
+                    <div className={styles.iconContainer}>{x.icon}</div>
+                    <h3 className={styles.title}>{x.title}</h3>
+                    <p className={styles.desc}>{x.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </LayoutWrapper>
