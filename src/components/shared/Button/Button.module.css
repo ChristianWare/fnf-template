@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
+  padding-right: 0.5rem;
   font-family: var(--DotSansRegular);
   font-size: 1.4rem;
   border-radius: 50px;
@@ -17,6 +18,17 @@
 .btn:link,
 .btn:visited {
   color: inherit;
+}
+
+.arrow {
+  transform: rotate(45deg);
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .lime,
@@ -50,15 +62,23 @@
   background-color: var(--lime);
   color: var(--black);
   border: 1px solid var(--lime);
-  padding: 0.5rem 1.5rem;
+  padding: 0.3rem 2rem;
+  padding-right: 0.3rem;
   font-size: 1.3rem;
-  border-radius: 3px;
+  border-radius: 100px;
 }
 
-.navLime:hover {
+.navLime .arrow {
+  background-color: var(--white);
+  color: var(--black);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.7rem;
+}
+
+.navLime:hover .arrow {
   background-color: var(--black);
-  color: var(--lime);
-  border: 1px solid var(--lime);
+  color: var(--white);
 }
 
 .black,
@@ -69,8 +89,8 @@
   border: 1px solid var(--black);
 }
 
-.black:hover {
-  background-color: transparent;
+.black:hover .arrow {
+  background-color: var(--lime);
   color: var(--black);
 }
 
@@ -130,10 +150,6 @@
 .tanOutline:hover {
   background-color: var(--tan);
   color: var(--black) !important;
-}
-
-.arrow {
-  transform: rotate(45deg);
 }
 
 @media (hover: hover) and (pointer: fine) {

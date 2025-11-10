@@ -56,7 +56,9 @@ export default function ServiceDetails() {
               <div className={styles.card} key={x.id} id={anchorId}>
                 <div className={styles.cardTop}>
                   <div className={styles.cardTopLeft}>
-                    <h3 className={styles.serviceNameHeading}>{x.service} Booking Website</h3>
+                    <h3 className={styles.serviceNameHeading}>
+                      {x.service} Booking Website
+                    </h3>
                     <p className={styles.headline}>{x.desc}</p>
                   </div>
                   <h3 className={styles.price}>{x.price}</h3>
@@ -95,7 +97,7 @@ export default function ServiceDetails() {
                       <strong>Billing:</strong> You’ll pay a one-time{" "}
                       <strong>$500 setup fee</strong> when you sign up. Your
                       monthly plan will start on the
-                      <strong>1st of the following month</strong>.
+                      <strong> 1st of the following month</strong>.
                     </div>
                   </div>
 

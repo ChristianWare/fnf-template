@@ -26,20 +26,23 @@ export default function Hero() {
             <h1 className={styles.heading}>
               {/* Custom booking websites <br /> that actually book */}
               {/* Custom booking websites <br /> that actually book */}
-              Turn visitors <br /> into paying clients <br /> with a custom
-              booking website
+              {/* Turn visitors <br /> into paying clients <br /> with a custom
+              booking website */}
+              Custom booking websites
+              <br />
+              your clients will love
             </h1>
-            {/* bookings up, no‑shows down, admin time saved */}
+
             <ScrollHorizontalText
-              text='Bookings up.'
-              text2='No‑shows down.'
+              text='Bookings up'
+              text2='No‑shows down'
               text3='Admin time saved'
               pxPerSec={50}
             />
             <div className={styles.btnContainer}>
               <Button
                 href='/contact'
-                btnType='lime'
+                btnType='black'
                 text='Book your discovery call'
               />
               <ImageCluster

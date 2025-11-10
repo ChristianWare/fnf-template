@@ -1,0 +1,92 @@
+.container {
+  background-color: var(--tan);
+  padding: 10rem 0rem;
+}
+
+.content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.heading {
+  font-family: var(--DotSansMedium);
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.pillsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background-color: var(--lime);
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  font-family: var(--SuisseIntlMono);
+  text-transform: uppercase;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.statNumber {
+  font-size: 9rem;
+}
+
+.statLabel {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat {
+    background-color: var(--darkTan);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    top: var(--stickyTop);
+    align-self: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  
+.stat:nth-last-child(1) {
+    grid-column: span 2;
+}
+
+  .statNumber {
+    font-size: 10vw;
+  }
+}

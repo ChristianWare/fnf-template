@@ -13,7 +13,7 @@ interface Props {
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
   children?: ReactNode;
-  arrow?: boolean;
+  // arrow?: boolean;
   image?: boolean;
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
@@ -29,7 +29,7 @@ export default function Button({
   disabled,
   children,
   onClick,
-  arrow,
+  // arrow,
   image,
   type = "button",
 }: Props) {
@@ -51,7 +51,7 @@ export default function Button({
           </span>
         )}
         {content}
-        {arrow && <Arrow className={styles.arrow} />}
+        <Arrow className={styles.arrow} />
       </Link>
     );
   }
@@ -70,7 +70,7 @@ export default function Button({
         </span>
       )}
       {content}
-      {arrow && <Arrow className={styles.arrow} />}
+      <Arrow className={styles.arrow} />
     </button>
   );
 }

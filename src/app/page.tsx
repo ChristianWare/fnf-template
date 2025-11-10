@@ -11,18 +11,19 @@ import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import ChrisImg from "../../public/images/chris.png";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
-// import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
+import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 import Faq from "@/components/Faq/Faq";
-// import Features from "@/components/HomePage/Features/Features";
 import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import Features from "@/components/HomePage/Features/Features";
+import PostHero from "@/components/HomePage/PostHero/PostHero";
 
 export default function HomePage() {
   return (
     <main>
       <Nav />
       <Hero />
+      <PostHero />
       <WhyDB />
       <Features />
       <AboutUs />
@@ -30,7 +31,6 @@ export default function HomePage() {
       <ProjectSection />
       <HowItWorks />
       <Industries />
-      {/* <Different /> */}
       <OurTeam
         text='I’m Chris, founder of Fonts & Footers. We focus on building
             custom booking websites that cut no-shows, speed checkout to under a
@@ -38,8 +38,8 @@ export default function HomePage() {
         src={ChrisImg}
         signatureBox
       />
-      {/* <PricingPreview /> */}
-      {/* <Features /> */}
+      <PricingPreview />
+
       <BaseFeatures />
       <Faq />
       <BlogSection />

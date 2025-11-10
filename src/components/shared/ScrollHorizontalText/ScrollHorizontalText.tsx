@@ -69,7 +69,7 @@ export default function ScrollHorizontalText({
         <div ref={rowRef} className={styles.row}>
           {items.map((_, index) => (
             <div key={`a-${index}`} className={`${styles.text} subheading`}>
-              {text}
+              <span className={styles.span}>•</span> {text}
               {text2 && (
                 <>
                   <span className={styles.span}>•</span>
