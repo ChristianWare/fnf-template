@@ -52,6 +52,15 @@
   object-fit: cover;
 }
 
+.span {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  display: block;
+  font-size: 1.4rem;
+}
+
 @media screen and (max-width: 1268px) {
   .content {
     grid-template-columns: repeat(1, 1fr);

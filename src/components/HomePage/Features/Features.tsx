@@ -196,70 +196,70 @@ const servicesData: Service[] = [
     icon: <Edit className={styles.icon} />,
     src: Direct,
   },
-  {
-    slug: "analytics-and-crm",
-    title: "Analytics & CRM",
-    subtitle: "Attribute bookings to revenue",
-    description:
-      "GA4 + server events, ad pixels, and CRM handoffs so you can see what actually fills your calendar.",
-    outcomes: [
-      "End-to-end funnel visibility",
-      "UTM hygiene & campaign mapping",
-      "Call tracking & form tracking",
-      "HubSpot/Close/Pipedrive integrations",
-    ],
-    ctaLabel: "View service",
-    icon: <Analytics className={styles.icon} />,
-    src: AnalyticsImage,
-  },
-  {
-    slug: "branding-and-visual-identity",
-    title: "Branding & Visual Identity",
-    subtitle: "A look that sells the appointment",
-    description:
-      "Conversion-ready brand kits: typography, color, components, and social/OG assets.",
-    outcomes: [
-      "Booking-first brand system",
-      "Reusable UI components",
-      "Ad & social variants",
-      "Guidelines for consistency",
-    ],
-    ctaLabel: "View service",
-    icon: <Stariii className={styles.icon} />,
-    src: Branding,
-  },
-  {
-    slug: "accessibility-and-compliance",
-    title: "Accessibility & Compliance",
-    subtitle: "Confident, inclusive experiences",
-    description:
-      "WCAG 2.2 AA, consent patterns, and PCI-aware flows aligned with Stripe best practices.",
-    outcomes: [
-      "WCAG AA patterns baked-in",
-      "Consent and privacy UX",
-      "Legal pages & policies",
-      "QA & ongoing audits",
-    ],
-    ctaLabel: "View service",
-    icon: <Payment className={styles.icon} />,
-    src: Access,
-  },
-  {
-    slug: "care-plans",
-    title: "Care Plans",
-    subtitle: "Continuous improvements & support",
-    description:
-      "Updates, CRO experiments, seasonal promos, and new service rollouts that keep bookings growing.",
-    outcomes: [
-      "Monthly updates & fixes",
-      "CRO testing roadmap",
-      "Promo & campaign launches",
-      "Priority support SLAs",
-    ],
-    ctaLabel: "View service",
-    icon: <Clock className={styles.icon} />,
-    src: Empathy,
-  },
+  // {
+  //   slug: "analytics-and-crm",
+  //   title: "Analytics & CRM",
+  //   subtitle: "Attribute bookings to revenue",
+  //   description:
+  //     "GA4 + server events, ad pixels, and CRM handoffs so you can see what actually fills your calendar.",
+  //   outcomes: [
+  //     "End-to-end funnel visibility",
+  //     "UTM hygiene & campaign mapping",
+  //     "Call tracking & form tracking",
+  //     "HubSpot/Close/Pipedrive integrations",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Analytics className={styles.icon} />,
+  //   src: AnalyticsImage,
+  // },
+  // {
+  //   slug: "branding-and-visual-identity",
+  //   title: "Branding & Visual Identity",
+  //   subtitle: "A look that sells the appointment",
+  //   description:
+  //     "Conversion-ready brand kits: typography, color, components, and social/OG assets.",
+  //   outcomes: [
+  //     "Booking-first brand system",
+  //     "Reusable UI components",
+  //     "Ad & social variants",
+  //     "Guidelines for consistency",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Stariii className={styles.icon} />,
+  //   src: Branding,
+  // },
+  // {
+  //   slug: "accessibility-and-compliance",
+  //   title: "Accessibility & Compliance",
+  //   subtitle: "Confident, inclusive experiences",
+  //   description:
+  //     "WCAG 2.2 AA, consent patterns, and PCI-aware flows aligned with Stripe best practices.",
+  //   outcomes: [
+  //     "WCAG AA patterns baked-in",
+  //     "Consent and privacy UX",
+  //     "Legal pages & policies",
+  //     "QA & ongoing audits",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Payment className={styles.icon} />,
+  //   src: Access,
+  // },
+  // {
+  //   slug: "care-plans",
+  //   title: "Care Plans",
+  //   subtitle: "Continuous improvements & support",
+  //   description:
+  //     "Updates, CRO experiments, seasonal promos, and new service rollouts that keep bookings growing.",
+  //   outcomes: [
+  //     "Monthly updates & fixes",
+  //     "CRO testing roadmap",
+  //     "Promo & campaign launches",
+  //     "Priority support SLAs",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Clock className={styles.icon} />,
+  //   src: Empathy,
+  // },
 ];
 
 export default function Features() {

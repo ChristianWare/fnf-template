@@ -10,6 +10,7 @@ import Faq from "@/components/Faq/Faq";
 import Different from "@/components/AboutPage/Different/Different";
 import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServicePageIntro";
 import Marquee from "@/components/shared/Marquee/Marquee";
+import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 
 export const metadata = {
   title: "About Us",
@@ -22,6 +23,7 @@ export default function AboutPage() {
     <main>
       <Nav />
       <ServicePageIntro />
+      <AboutUs />
       <BrandStory />
       <FinalCTA />
       <Values />

@@ -1,6 +1,7 @@
 .container {
   background-color: var(--tan);
-  padding: 10rem 0rem;
+  padding-bottom: 10rem;
+  /* padding: 10rem 0rem; */
 }
 
 .content {
@@ -36,10 +37,11 @@
   font-family: var(--SuisseIntlMono);
   text-transform: uppercase;
   color: var(--black);
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .statsContainer {
@@ -81,10 +83,10 @@
     position: -webkit-sticky;
     position: sticky;
   }
-  
-.stat:nth-last-child(1) {
+
+  .stat:nth-last-child(1) {
     grid-column: span 2;
-}
+  }
 
   .statNumber {
     font-size: 10vw;
