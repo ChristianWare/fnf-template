@@ -22,7 +22,7 @@
 }
 
 .copy {
-  width: 95%;
+  width: 80%;
 }
 
 .right {
@@ -98,7 +98,7 @@
 .answer {
   margin-top: 2rem;
   color: var(--grayii);
-  width: 90%;
+  /* width: 90%; */
 }
 
 .titleHeading {

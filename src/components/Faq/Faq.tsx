@@ -107,9 +107,10 @@ export default function Faq() {
                 <span className={styles.span}>{meta.headingSpan}</span> <br />
                 {meta.headingRest}
               </h2>
-              <p className={`${styles.copy} subheading`}>
-                Have more questions? We’ve collected our most helpful answers to
-                keep your project moving quickly and transparently.
+              <p className={styles.copy}>
+                We’ve gathered the most common questions our clients ask about
+                working with us. If you don’t find what you’re looking for, our
+                team is just a message away.
               </p>
 
               <div className={styles.btnContainer}>

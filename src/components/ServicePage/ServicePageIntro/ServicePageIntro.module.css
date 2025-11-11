@@ -4,12 +4,25 @@
   padding-bottom: 0rem;
 }
 
-.top {
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.left,
+.right {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 2rem;
+}
+
+.btnContainer {
+  margin-top: 2rem;
 }
 
 .imgContainer1 {
@@ -22,24 +35,9 @@
   object-fit: contain;
 }
 
-.heading {
-  text-align: center;
-}
-
 .copy {
   color: var(--lighterBlack);
-  max-width: 600px;
-  text-align: center;
-}
-
-.bottom {
-  margin-top: 5rem;
-}
-
-.mapDatContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  max-width: 500px;
 }
 
 .imgContainer {
@@ -53,6 +51,33 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1268px) {
+  .content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .heading,
+  .copy {
+    text-align: center;
+  }
+
+  .copy {
+    max-width: 700px;
+  }
+
+  .left, .right, .btnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  } 
+
+  .btnContainer {
+    margin-top: 0rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .imgContainer {
     height: 400px;
@@ -60,10 +85,6 @@
 }
 
 @media screen and (max-width: 568px) {
-  .bottom {
-    margin-top: 3rem;
-  }
-
   .mapDatContainer {
     grid-template-columns: 1fr;
   }
@@ -72,5 +93,9 @@
     position: relative;
     width: 200px;
     height: 200px;
+  }
+
+  .copy {
+    max-width: 95%;
   }
 }

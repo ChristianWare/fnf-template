@@ -4,6 +4,7 @@ import Design from "@/components/icons/Design/Design";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Money from "@/components/icons/Money/Money";
 import Hosting from "@/components/icons/Hosting/Hosting";
+import Button from "@/components/shared/Button/Button";
 
 const data = [
   {
@@ -23,26 +24,26 @@ const data = [
   },
 ];
 
-const stats = [
-  {
-    id: 4,
-    number: "40+",
-    label: "Websites Built",
-  },
-  { id: 5, number: "10K+", label: "Bookings", },
-  {
-    id: 6,
-    number: "5X",
-    label: "Average ROI Increase",
-  },
-];
+// const stats = [
+//   {
+//     id: 4,
+//     number: "40+",
+//     label: "Websites Built",
+//   },
+//   { id: 5, number: "10K+", label: "Bookings", },
+//   {
+//     id: 6,
+//     number: "5X",
+//     label: "Average ROI Increase",
+//   },
+// ];
 
 export default function PostHero() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <SectionIntroii title='About us' />
+          <SectionIntroii title='What we do' />
           <h2 className={styles.heading}>
             We build custom booking websites that allow you to have full control
             over your bookings, reduce reliance on third-party platforms, and
@@ -56,14 +57,17 @@ export default function PostHero() {
               </div>
             ))}
           </div>
-          <div className={styles.statsContainer}>
+          <div className={styles.btnContainer}>
+            <Button href='/contact' btnType='black' text='More about us' />
+          </div>
+          {/* <div className={styles.statsContainer}>
             {stats.map((stat) => (
               <div key={stat.id} className={styles.stat}>
                 <span className={styles.statNumber}>{stat.number}</span>
                 <span className={styles.statLabel}>{stat.label}</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </LayoutWrapper>
     </section>
