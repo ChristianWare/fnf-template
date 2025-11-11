@@ -277,12 +277,7 @@ export default function BaseFeatures() {
                 ))}
               </ul>
               <div className={styles.modalCta}>
-                <Button
-                  href='/contact'
-                  btnType='black'
-                  text='Learn more'
-                  arrow
-                />
+                <Button href='/contact' btnType='black' text='Learn more' />
               </div>
             </div>
             <div className={styles.modalImage}>

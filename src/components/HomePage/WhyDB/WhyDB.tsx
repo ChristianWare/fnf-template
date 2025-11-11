@@ -1,63 +1,58 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./WhyDB.module.css";
 import Image from "next/image";
-import Img1 from "../../../../public/images/whydb.jpg";
-import Button from "@/components/shared/Button/Button";
+import Img1 from "../../../../public/images/solution.jpg";
 import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Payment from "@/components/icons/Payment/Payment";
 import Support from "@/components/icons/Support/Support";
 import Analytics from "@/components/icons/Analytics/Analytics";
 import Design from "@/components/icons/Design/Design";
+import Check from "@/components/icons/Check/Check";
+import Img2 from "../../../../public/images/work.png";
 
 export const data = [
   {
     id: 1,
-    title: "Direct-Booking Website Development",
-    desc: "We design and build fast, on-brand websites with a one-screen booking flow (service → pro → time → pay) that converts on mobile.",
-    icon: <Design className={styles.icon} />,
+    title: "One-screen checkout",
+    desc: "No maze. Pick service → pick time → pay deposit → done.",
+    icon: <Check className={styles.icon} />,
   },
   {
     id: 2,
-    title: "Offer Architecture & UX",
-    desc: "We tidy your services, add-ons, memberships, gift cards, and deposit strategy—then shape a clear path from browse to booked.",
-    icon: <Analytics className={styles.icon} />,
-  },
-  {
-    id: 3,
-    title: "Staff, Location & Resource Logic",
-    desc: "Configure real-world rules: multi-location hours, buffers, rooms/equipment, permissions, and time zones—without the scheduling mess.",
-    icon: <Support className={styles.icon} />,
-  },
-  {
-    id: 4,
-    title: "Payments, Policies & No-Show Protection",
-    desc: "Stripe/Square/PayPal with deposits, tips, invoices, card-on-file, and policy acceptance—so your time is respected and your revenue is protected.",
+    title: "Deposit-first payments",
+    desc: "Reduce no-shows and stop chasing money. Apple Pay/Google Pay built-in.",
     icon: <Payment className={styles.icon} />,
   },
   {
-    id: 5,
-    title: "Intake, Reminders & Client Profiles",
-    desc: "Custom forms, confirmations, and reminders, plus simple client history—so every visit feels prepared and personal.",
+    id: 3,
+    title: "Automatic reminders & rescheduling",
+    desc: "Smart SMS/email via Twilio. Clients can self-serve changes.",
     icon: <Clock className={styles.icon} />,
+  },
+  {
+    id: 4,
+    title: "Calendar sync",
+    desc: "Staff, stylists, and drivers stay in sync (Google/iCal). Buffers and travel time logic included.",
+    icon: <Support className={styles.icon} />,
+  },
+  {
+    id: 5,
+    title: "Add-ons & upsells",
+    desc: "Tips, extras, distance fees, and packages at checkout (not on the phone).",
+    icon: <Analytics className={styles.icon} />,
   },
   {
     id: 6,
-    title: "Analytics, SEO & Reporting",
-    desc: "Track what matters (completion rate, AOV, no-show %, rebook velocity) and ship structured data for search visibility and smarter decisions.",
-    icon: <Clock className={styles.icon} />,
+    title: "SEO that matches your services",
+    desc: 'Location/service pages that rank and convert, not just "look pretty."',
+    icon: <Design className={styles.icon} />,
   },
   {
     id: 7,
-    title: "Migrations & Integrations",
-    desc: "Move from your current system with care. Sync calendars, connect Zoom/Meet, Mailchimp/Klaviyo, Meta/IG, and more—cleanly and securely.",
-    icon: <Clock className={styles.icon} />,
-  },
-  {
-    id: 8,
-    title: "Care Plans & Optimization",
-    desc: "Post-launch tuning to lift conversion: copy tests, deposit adjustments, add-on placement, performance passes, and accessibility checks.",
-    icon: <Clock className={styles.icon} />,
+    title: "Live analytics",
+    desc: "See bookings, revenue, and show-up rates at a glance.",
+    icon: <Analytics className={styles.icon} />,
   },
 ];
 
@@ -65,6 +60,19 @@ export default function WhyDB() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
+        <div className={styles.top}>
+          <div className={styles.imgContainerii}>
+            <Image src={Img2} alt='' fill className={styles.imgii} />
+          </div>
+          <SectionIntroii title='How we can help' />
+          <h2 className={styles.heading}>
+            The solution: a site that sells the appointment for you
+          </h2>
+          <p className={styles.copy}>
+            We can build you a custom direct-booking website that is fast, visually appealing, and mobile friendly - with zero
+            friction at checkout. Just more time for you to focus on what you do best: providing amazing service.
+          </p>
+        </div>
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.imgContainer}>
@@ -72,32 +80,14 @@ export default function WhyDB() {
             </div>
           </div>
           <div className={styles.right}>
-            <div className={styles.rightTop}>
-              <SectionIntroii
-                title='Our core expertise'
-              />
-              <h2 className={styles.heading}>
-                {/* Why choose a custom booking website for your business? */}
-                Here&rsquo;s what we do:
-              </h2>
-              <p className={`${styles.copy} subheading`}>
-                We build custom booking websites that allow you to have full
-                control over your bookings, reduce reliance on third-party
-                platforms, and improve your profit margins. Our sites also
-                enhance your brand identity and customer experience.
-              </p>
-              <div className={styles.btnContainer}>
-                <Button href='/about' btnType='grayOutline' text='About us' />
-              </div>
-            </div>
             <div className={styles.rightBottom}>
               <div className={styles.mapDataBox}>
-                {data.slice(0, 4).map((item) => (
+                {data.map((item) => (
                   <div key={item.id} className={styles.card}>
                     <div className={styles.iconBox}>{item.icon}</div>
                     <div className={styles.mapDataContent}>
                       <div className={styles.title}>{item.title}</div>
-                      <p className={styles.desc}>{item.desc}</p>
+                      <p className={`${styles.desc}`}>{item.desc}</p>
                     </div>
                   </div>
                 ))}
