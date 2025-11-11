@@ -2,7 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./TheProblem.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
-import Img1 from "../../../../public/images/stressed.jpg";
+import Img1 from "../../../../public/images/stressediii.jpg";
 
 export default function TheProblem() {
   return (

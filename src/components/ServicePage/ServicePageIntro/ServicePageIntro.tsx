@@ -60,10 +60,10 @@ export default function ServicePageIntro() {
                 </div>
               ))}
             </div> */}
-            <Marquee />
           </div>
         </div>
       </LayoutWrapper>
+            <Marquee />
     </section>
   );
 }

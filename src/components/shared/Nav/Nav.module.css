@@ -55,9 +55,9 @@
 
 .navItem {
   font-family: var(--SuisseIntlMono);
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1;
   color: var(--tan) !important;
   z-index: 999;
@@ -166,6 +166,12 @@
   font-family: var(--DotSansMedium);
   font-size: 1.4rem;
   letter-spacing: -0.02em;
+}
+
+@media screen and (max-width: 1468px) {
+.header {
+    width: 85%;
+  }
 }
 
 @media screen and (max-width: 1268px) {
