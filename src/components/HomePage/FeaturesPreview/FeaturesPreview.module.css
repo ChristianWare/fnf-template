@@ -1,6 +1,27 @@
 .container {
-  background-color: var(--darkGreen);
+  background-color: var(--black);
   padding: 10rem 0rem;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(var(--grayii) 2px, transparent 2px);
+  background-size: calc(10 * 1px) calc(10 * 1px);
+  background-size: 10px 10px;
+  width: 100%;
+  /* border-bottom-right-radius: 50%; */
+  /* border-bottom-left-radius: 50%; */
+  height: 15rem;
+  opacity: 0.5;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  mask-image: linear-gradient(to bottom, black, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .top {
@@ -41,7 +62,7 @@
   top: 50%;
   width: 95%;
   height: 30%;
-  background-color: var(--green);
+  background-color: var(--lightBlack);
   z-index: 0;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -53,11 +74,11 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  background-color: var(--green);
+  background-color: var(--lightBlack);
   border-radius: 10px;
   padding: 3rem;
   width: 100%;
-  min-height: 500px;
+  min-height: 400px;
   position: relative;
 }
 
@@ -69,7 +90,7 @@
   width: 2rem;
   height: 40%;
   border-radius: 10px;
-  background-color: var(--darkGreen);
+  background-color: var(--black);
   z-index: 1;
 }
 
@@ -81,13 +102,22 @@
   width: 2rem;
   height: 40%;
   border-radius: 10px;
-  background-color: var(--darkGreen);
+  background-color: var(--black);
   z-index: 1;
 }
 
 .icon {
   font-size: 5.6rem;
   color: var(--white);
+}
+
+.pattern1 {
+  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-size: 5px 5px;
+  width: 5.6rem;
+  height: 5.6rem;
+  opacity: 0.5;
+  border-radius: 50%;
 }
 
 .mapDataContent {
@@ -108,4 +138,25 @@
 .desc {
   font-size: 1.5rem;
   color: var(--whiteii);
+}
+
+@media screen and (max-width: 1468px) {
+  .bottom {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .mapDataBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mapDataBox::before {
+    top: 20%;
+  }
+
+  .card:last-child {
+    grid-column: span 2;
+    min-height: 350px;
+  }
 }

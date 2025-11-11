@@ -33,23 +33,19 @@ export default function FeaturesPreview() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
-            <SectionIntroii title='Features Preview' color='tan' />
+            <SectionIntroii title='How we can help' color='tan' />
             <h2 className={`${styles.heading} h3`}>
-              A Clear, Actionable Process to <br /> Drive Sustainable Impact
+              The solution: a site that <br /> sells the appointment for you
             </h2>
             <div className={styles.btnContainer}>
-              <Button
-                href='/services'
-                btnType='olive'
-                text='See all features'
-              />
+              <Button href='/services' btnType='lime' text='See all features' />
             </div>
           </div>
           <div className={styles.bottom}>
             <div className={styles.mapDataBox}>
               {data.map((item) => (
                 <div key={item.id} className={styles.card}>
-                  {item.icon}
+                  <div className={styles.pattern1} />
                   <div className={styles.mapDataContent}>
                     <div className={styles.title}>{item.title}</div>
                     <p className={`${styles.desc}`}>{item.desc}</p>

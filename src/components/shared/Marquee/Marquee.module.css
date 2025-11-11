@@ -2,7 +2,6 @@
   width: 100%;
   overflow: hidden;
   background-color: var(--tan);
-  /* padding: 1rem 0; */
   cursor: pointer;
   mask-image: linear-gradient(
     to right,
@@ -38,15 +37,13 @@
   width: 300px;
   height: 450px;
   flex-shrink: 0;
-  border-radius: 10px; /* ensure overlay + image share rounded corners */
-  overflow: hidden; /* clip overlay + image to radius */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .img {
   object-fit: cover;
 }
-
-/* subtle dark overlay for readability */
 .overlay {
   position: absolute;
   inset: 0;
@@ -70,7 +67,6 @@
   letter-spacing: 0.02em;
   text-transform: none;
   pointer-events: none;
-  /* gentle legibility boost */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 

@@ -3,7 +3,7 @@ import styles from "./TheProblem.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Img1 from "../../../../public/images/stressediii.jpg";
-import Img2 from "../../../../public/images/solutioniii.jpg";
+import Img2 from "../../../../public/images/stressediv.jpg";
 
 export default function TheProblem() {
   return (
@@ -11,41 +11,84 @@ export default function TheProblem() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <div className={styles.imgContainer}>
+            <div className={styles.imgContaineri}>
               <Image src={Img1} alt='Hero Image' fill className={styles.img} />
-              <div className={styles.overlay} />
-              <div className={styles.textOver}>
-                <SectionIntroii
-                  title='Problem '
-                  color='tan'
-                />
-                <h2 className={styles.heading}>
-                  We get it. Your day is packed. Phones ring, texts pile up, and
-                  your “Bookings” button dumps people into a form that’s
-                  confusing on mobile. Clients bounce. No-shows creep up. You
-                  chase payments. Staff double-books. You’re paying for three
-                  different tools that still don’t talk to each other.
-                </h2>
-              </div>
             </div>
           </div>
+          <div className={styles.middle}>
+            <SectionIntroii title='Problem' color='tan' />
+            <h2 className={`${styles.heading} h3`}>
+              The problem most <br /> service businesses face
+            </h2>
+            {/* <p className={styles.copy}>
+              Your day is packed. Phones ring, texts pile up, and your
+              “Bookings” button dumps people into a form that’s confusing on
+              mobile. Clients bounce. No-shows creep up. You chase payments.
+              Staff double-books. You’re paying for three different tools that
+              still don’t talk to each other.
+            </p>
+            <b className={styles.bold}>
+              Meanwhile, competitors with simpler checkouts win the
+              booking—often from your own Instagram traffic.
+            </b> */}
+          </div>
           <div className={styles.right}>
-            <div className={styles.imgContainer}>
+            <div className={styles.imgContainerii}>
               <Image src={Img2} alt='Hero Image' fill className={styles.img} />
-              <div className={styles.overlay} />
-              <div className={`${styles.textOver} ${styles.textOverTop}`}>
-                <SectionIntroii title='Solution' color='tan' />
-                <h2 className={styles.heading}>
-                  We can build you a custom direct-booking website that is fast,
-                  visually appealing, and mobile friendly - with zero friction
-                  at checkout. Just more time for you to focus on what you do
-                  best: providing amazing service.
-                </h2>
-              </div>
             </div>
           </div>
         </div>
+        {/* <div className={styles.copyContainer}>
+          <p className={styles.copy}>
+            Your day is packed. Phones ring, texts pile up, and your “Bookings”
+            button dumps people into a form that’s confusing on mobile. Clients
+            bounce. No-shows creep up. You chase payments. Staff double-books.
+            You’re paying for three different tools that still don’t talk to
+            each other.
+          </p>
+          <b className={styles.bold}>
+            Meanwhile, competitors with simpler checkouts win the booking—often
+            from your own Instagram traffic.
+          </b>
+        </div> */}
       </LayoutWrapper>
     </section>
   );
 }
+
+// <div className={styles.content}>
+//   <div className={styles.left}>
+//     <div className={styles.imgContainer}>
+//       <Image src={Img1} alt='Hero Image' fill className={styles.img} />
+//       <div className={styles.overlay} />
+//       <div className={styles.textOver}>
+//         <SectionIntroii
+//           title='Problem '
+//           color='tan'
+//         />
+//         <h2 className={styles.heading}>
+//           We get it. Your day is packed. Phones ring, texts pile up, and
+//           your “Bookings” button dumps people into a form that’s
+//           confusing on mobile. Clients bounce. No-shows creep up. You
+//           chase payments. Staff double-books. You’re paying for three
+//           different tools that still don’t talk to each other.
+//         </h2>
+//       </div>
+//     </div>
+//   </div>
+//   <div className={styles.right}>
+//     <div className={styles.imgContainer}>
+//       <Image src={Img2} alt='Hero Image' fill className={styles.img} />
+//       <div className={styles.overlay} />
+//       <div className={`${styles.textOver} ${styles.textOverTop}`}>
+//         <SectionIntroii title='Solution' color='tan' />
+//         <h2 className={styles.heading}>
+//           We can build you a custom direct-booking website that is fast,
+//           visually appealing, and mobile friendly - with zero friction
+//           at checkout. Just more time for you to focus on what you do
+//           best: providing amazing service.
+//         </h2>
+//       </div>
+//     </div>
+//   </div>
+// </div>
