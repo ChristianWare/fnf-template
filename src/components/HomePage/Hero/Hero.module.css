@@ -21,7 +21,8 @@
 
 .copy {
   text-align: center;
-  /* width: 475px; */
+  max-width: 600px;
+  color: var(--lighterBlack)
 }
 
 .btnContainer {

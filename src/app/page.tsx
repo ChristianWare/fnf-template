@@ -17,6 +17,7 @@ import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import Features from "@/components/HomePage/Features/Features";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
+import TheProblem from "@/components/HomePage/TheProblem/TheProblem";
 
 export default function HomePage() {
   return (
@@ -24,9 +25,10 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <PostHero />
+      <TheProblem />
       {/* <WhyDB /> */}
-      <Outcomes />
       <Features />
+      <Outcomes />
       {/* <AboutUs /> */}
       {/* <ProjectSection /> */}
       <HowItWorks />

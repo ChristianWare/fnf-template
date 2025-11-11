@@ -25,15 +25,15 @@ export default function Hero() {
             </div>
             <SectionIntroii title='Web Development Agency' />
             <h1 className={styles.heading}>
-              {/* Custom booking websites <br /> that actually book */}
-              {/* Custom booking websites <br /> that actually book */}
-              {/* Turn visitors <br /> into paying clients <br /> with a custom
-              booking website */}
               Custom booking websites
               <br />
               your clients will love
             </h1>
-
+            <p className={styles.copy}>
+              Fonts & Footers turns your website into a 24/7 front desk that
+              reduces no-shows, collects deposits, and fills your calendar
+              without endless calls and DMs.
+            </p>
             {/* <ScrollHorizontalText
               text='Bookings up'
               text2='No‑shows down'

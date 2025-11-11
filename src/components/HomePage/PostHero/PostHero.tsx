@@ -1,25 +1,25 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./PostHero.module.css";
-import Multiple from "@/components/icons/Multiple/Multiple";
 import Design from "@/components/icons/Design/Design";
-import Lightning from "@/components/icons/Lightning/Lightning";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import Money from "@/components/icons/Money/Money";
+import Hosting from "@/components/icons/Hosting/Hosting";
 
 const data = [
   {
     id: 1,
-    title: "Creativity",
+    title: "Full Controll",
     icon: <Design className={styles.icon} />,
   },
   {
     id: 2,
-    title: "Innovation",
-    icon: <Lightning className={styles.icon} />,
+    title: "Reduced Reliance",
+    icon: <Hosting className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Strategy",
-    icon: <Multiple className={styles.icon} />,
+    title: "Improved Profit",
+    icon: <Money className={styles.icon} />,
   },
 ];
 
@@ -29,7 +29,7 @@ const stats = [
     number: "40+",
     label: "Websites Built",
   },
-  { id: 5, number: "10K+", label: "Bookings" },
+  { id: 5, number: "10K+", label: "Bookings", },
   {
     id: 6,
     number: "5X",
