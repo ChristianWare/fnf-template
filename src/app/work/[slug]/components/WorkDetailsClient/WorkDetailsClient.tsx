@@ -233,7 +233,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
                     href='/contact'
                     btnType='greenOutline'
                     text='Book a call Today'
-w                  />
+                  />
                 </div>
               </div>
             </div>
