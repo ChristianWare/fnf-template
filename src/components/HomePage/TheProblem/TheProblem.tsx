@@ -38,19 +38,23 @@ export default function TheProblem() {
             </div>
           </div>
         </div>
-        {/* <div className={styles.copyContainer}>
-          <p className={styles.copy}>
+        <div className={styles.copyContainer}>
+          {/* <p className={styles.copy}>
             Your day is packed. Phones ring, texts pile up, and your “Bookings”
             button dumps people into a form that’s confusing on mobile. Clients
             bounce. No-shows creep up. You chase payments. Staff double-books.
             You’re paying for three different tools that still don’t talk to
             each other.
-          </p>
+          </p> */}
+          {/* Todo:
+          
+          make an unordered list wwith an X before each line instead of a paragraph
+          */}
           <b className={styles.bold}>
             Meanwhile, competitors with simpler checkouts win the booking—often
             from your own Instagram traffic.
           </b>
-        </div> */}
+        </div>
       </LayoutWrapper>
     </section>
   );
