@@ -29,6 +29,7 @@
 
 .copy {
   width: 80%;
+  color: var(--lighterBlack);
 }
 
 .imgContainer {
@@ -71,7 +72,6 @@
   width: 100%;
   font-family: var(--DotSansMedium);
 }
-
 
 @media screen and (max-width: 1068px) {
   .content {
@@ -126,7 +126,6 @@
     width: 200px;
     height: 200px;
   }
-
 
   .btnContainer {
     display: flex;

@@ -2,30 +2,39 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Outcomes.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/newhero.png";
-// import Button from "@/components/shared/Button/Button";
 import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 const data = [
   {
     id: 1,
-    title: "More bookings, less back‑and‑forth",
-    desc: "one‑screen flow, 24/7 self‑serve → booking analytics screenshots",
+    title: "You want more completed bookings",
+    desc: "Mobile-first, one-screen checkout that reduces friction and increases finished checkouts.",
   },
   {
     id: 2,
-    title: "Fewer no‑shows",
-    desc: "deposit logic, SMS reminders → Stripe/Twilio integrations",
+    title: "You’re ready to use deposits",
+    desc: "Deposit-first logic to cut no-shows, with clear, plain-English reschedule policies.",
   },
   {
     id: 3,
-    title: "Operational clarity",
-    desc: "monthly calendar, staff capacity, add‑ons → admin UI visuals",
+    title: "You want to own your platform",
+    desc: "Your Stripe, your Twilio, your domain, your data. No lock-in or surprise fees.",
   },
   {
     id: 4,
-    title: "Faster cashflow",
-    desc: "instant payments, tips, upsells → Stripe receipts & dashboard",
+    title: "You have staff, drivers, or resources to coordinate",
+    desc: "Google/iCal sync, buffers, travel time, blackout dates, and role-based access.",
+  },
+  {
+    id: 5,
+    title: "You sell add-ons and care about AOV",
+    desc: "Upsells and extras at checkout—tips, packages, child seats, treatments, insurance.",
+  },
+  {
+    id: 6,
+    title: "You value measurable outcomes",
+    desc: "Analytics for completion rate, show-up rate, Apple/Google Pay share, and revenue.",
   },
 ];
 
@@ -38,24 +47,27 @@ export default function Outcomes() {
           <div className={styles.bottom}>
             <div className={styles.left}>
               <div className={styles.imgContainer}>
-                <Image src={Img1} fill alt='' className={styles.img} />
+                <Image
+                  src={Img1}
+                  fill
+                  alt='Booking flow preview on mobile and dashboard analytics'
+                  className={styles.img}
+                />
               </div>
             </div>
             <div className={styles.right}>
               <div className={styles.rightTop}>
-                <SectionIntroii title='Core Value Pillars' color='tan' />
+                <SectionIntroii title="Who we're a fit for" color='tan' />
                 <h2 className={styles.heading}>
-                  Why get a custom booking website for your business from us?
+                  {/* The right partner if you want <br /> your site to book itself */}
+                  Who we&apos;re a fit for
                 </h2>
-
-                <p className={`${styles.copy} subheading`}>
-                  A custom booking website can significantly enhance your
-                  business operations and customer experience. Here are some key
-                  benefits:
+                <p className={styles.copy}>
+                  Fonts &amp; Footers is built for service businesses that want
+                  a fast, deposit-first booking flow, clear policies, and
+                  calendars that don’t collide—backed by analytics you can act
+                  on.
                 </p>
-                {/* <div className={styles.btnContainer}>
-                  <Button href='/about' btnType='lime' text='More details' />
-                </div> */}
               </div>
               <div className={styles.rightBottom}>
                 <div className={styles.mapDataContainer}>

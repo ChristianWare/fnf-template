@@ -61,9 +61,9 @@ export default function FinalCTAMain() {
               <div className={styles.footerLeft}>
                 {/* <SectionIntroii title='Fonts & Footers' /> */}
                 <p className={`${styles.copy} subheading`}>
-                  We design and build online booking websites for businesses
-                  based in the service industry. Take deposits, prevent
-                  no-shows, and let clients self-schedule 24/7.
+                  Built in Phoenix, AZ - serving everywhere. If you’re a salon,
+                  med-spa, rental fleet, fitness gym, or black-car service, this
+                  was designed for you.
                 </p>
               </div>
               <div className={styles.footerRight}>

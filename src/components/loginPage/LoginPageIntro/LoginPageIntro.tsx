@@ -3,7 +3,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 // import LoginSvg from "@/components/icons/LoginSvg/LoginSvg";
 import LoginForm from "@/components/auth/LoginForm/LoginForm";
 import Image from "next/image";
-import Img1 from '../../../../public/images/login.jpg'
+import Img1 from '../../../../public/images/loginii.jpg'
 
 export default function LoginPageIntro() {
   return (

@@ -8,26 +8,32 @@ import Calendar from "@/components/icons/Calendar/Calendar";
 const data = [
   {
     id: 1,
-    title: "Booking-First Expertise",
-    desc: "We’re not a generalist web shop. We specialize in direct-booking: deposit mechanics, policy enforcement, staff/location logic, and one-screen flows that convert—especially on mobile.",
+    title: "“Text to book only” (no deposits or automation)",
+    desc: "If you insist on manual texting, DMs, or calls with no deposit or reminders, our system won’t have room to lift completion or reduce no-shows.",
     icon: <Calendar className={styles.icon} />,
   },
   {
     id: 2,
-    title: "Win-Win Partnership",
-    desc: "We ask operator questions (not just design ones), align on real goals, and shape your offers so the front desk, staff, and clients all have a smoother day.",
+    title: "Custom features without a conversion goal",
+    desc: "If the feature can’t be tied to completion rate, show-up rate, AOV, or ops efficiency, it’s probably scope creep—not progress.",
     icon: <Calendar className={styles.icon} />,
   },
   {
     id: 3,
-    title: "Honesty & Transparency",
-    desc: "If complexity hurts conversions, we’ll say so—and show the tradeoffs. You’ll see the metrics we track (completion, AOV, no-show %, rebook rate) and how decisions impact them.",
+    title: "Build-and-forget (no plan to measure or iterate)",
+    desc: "If you don’t want dashboards, tests, or a 30-day tune-up, we’re not aligned. We optimize live numbers, not opinions.",
     icon: <Calendar className={styles.icon} />,
   },
   {
     id: 4,
-    title: "No Fluff, Just Outcomes",
-    desc: "No drama, no vanity deliverables. We ship measurable improvements, provide dashboards, and run a 30-day tune-up to lift bookings and reduce no-shows.",
+    title: "No clear policies",
+    desc: "Refusing to publish plain-English deposit, reschedule, and late policies creates friction and support tickets we can’t design around.",
+    icon: <Calendar className={styles.icon} />,
+  },
+  {
+    id: 5,
+    title: "Price-only shoppers",
+    desc: "If the goal is the cheapest site rather than the highest booking completion, a template mill will serve you better than we will.",
     icon: <Calendar className={styles.icon} />,
   },
 ];
@@ -36,17 +42,27 @@ export default function Different() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
-        <div className={styles.container}>
-          {/* <div className={styles.imgContainer}>
-            <Image src={IMg1} alt='workman' fill className={styles.img} />
-          </div> */}
+        <div className={styles.content}>
           <div className={styles.top}>
             <div className={styles.imgContaineriii}>
-              <Image src={IMg2} alt='workwoman' fill className={styles.img} />
+              <Image
+                src={IMg2}
+                alt='Owner comparing chaotic texting with a clean, automated booking flow'
+                fill
+                className={styles.img}
+              />
             </div>
-            <SectionIntroii title='what sets us apart' />
-            <h2 className={styles.heading}>How we’re different</h2>
+            <SectionIntroii title="Who we're not a fit for" />
+            <h2 className={styles.heading}>
+              We’re candid about fit <br /> so your project succeeds
+            </h2>
+            <p className={styles.intro}>
+              Fonts &amp; Footers is built to maximize completed bookings and
+              operational clarity. If any of the points below describe your
+              current plan, we’ll happily point you to a better-suited option.
+            </p>
           </div>
+
           <div className={styles.bottom}>
             <div className={styles.mapDataContainer}>
               {data.map((item) => (
@@ -61,9 +77,25 @@ export default function Different() {
                 </div>
               ))}
             </div>
+
             <div className={styles.bottomRight}>
+              <div className={styles.note}>
+                <p className={styles.noteHeading}>If you’re on the fence…</p>
+                <p className={styles.noteCopy}>
+                  Try our <strong>14-Day Pilot Page</strong>. It runs alongside
+                  your current system and proves lift in completion and show-up
+                  rates—before any full build. 100% of the pilot fee credits to
+                  your project if you continue.
+                </p>
+              </div>
+
               <div className={styles.imgContainerii}>
-                <Image src={IMg2} alt='workwoman' fill className={styles.img} />
+                <Image
+                  src={IMg2}
+                  alt='Happy client reviewing booking analytics after launching deposit-first checkout'
+                  fill
+                  className={styles.img}
+                />
               </div>
             </div>
           </div>

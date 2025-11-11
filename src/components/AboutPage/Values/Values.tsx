@@ -6,7 +6,6 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Values.module.css";
 import Button from "@/components/shared/Button/Button";
 import Image, { StaticImageData } from "next/image";
-import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Arrow from "@/components/icons/Arrow/Arrow";
 
 import Img1 from "../../../../public/images/customer.jpg";
@@ -14,9 +13,8 @@ import Img2 from "../../../../public/images/innovate.jpg";
 import Img3 from "../../../../public/images/glasses.jpg";
 import Img4 from "../../../../public/images/quality.jpg";
 import Img5 from "../../../../public/images/integrity.jpg";
-import Img6 from "../../../../public/images/teamwork.jpg";
-import Img7 from "../../../../public/images/responsibility.jpg";
-import Img8 from "../../../../public/images/empathy.jpg";
+
+import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 type ValueItem = {
   id: number;
@@ -28,59 +26,33 @@ type ValueItem = {
 const data: readonly ValueItem[] = [
   {
     id: 1,
-    title: "Transparency",
-    description:
-      "We believe in open communication and honesty in all our dealings, ensuring our customers are always informed.",
-    src: Img3,
+    title: "Mobile-first, thumb-ready",
+    description: "60 seconds from intent to paid deposit.",
+    src: Img1,
   },
   {
     id: 2,
-    title: "Innovation",
-    description:
-      "We are committed to continuous improvement and embracing new technologies to provide the best solutions.",
+    title: "Plain-English policies",
+    description: "$25 holds your spot. Reschedule up to 24h with one tap.",
     src: Img2,
   },
   {
     id: 3,
-    title: "Customer-Centricity",
-    description:
-      "Our customers are at the heart of everything we do. We strive to exceed their expectations and deliver exceptional value.",
-    src: Img1,
+    title: "Real-world logic",
+    description: "Buffers, travel time, flight fields, prep instructions.",
+    src: Img3,
   },
   {
     id: 4,
-    title: "Quality",
-    description:
-      "We maintain the highest standards in our services and products, ensuring reliability and satisfaction for our customers.",
+    title: "Accessibility + performance",
+    description: "Fast, readable, and inclusive by default.",
     src: Img4,
   },
   {
     id: 5,
-    title: "Integrity",
-    description:
-      "We act ethically and responsibly, building trust through our actions and decisions.",
+    title: "Test, don't guess",
+    description: "We watch completion rate, not opinions.",
     src: Img5,
-  },
-  {
-    id: 6,
-    title: "Teamwork",
-    description:
-      "Collaboration and mutual respect empower us to achieve more together and deliver outstanding results.",
-    src: Img6,
-  },
-  {
-    id: 7,
-    title: "Responsibility",
-    description:
-      "We take ownership of our commitments and strive to make a positive impact on our community and environment.",
-    src: Img7,
-  },
-  {
-    id: 8,
-    title: "Empathy",
-    description:
-      "We listen and respond to the needs of our customers and colleagues, fostering a caring and supportive culture.",
-    src: Img8,
   },
 ];
 
@@ -184,12 +156,11 @@ export default function Values() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <SectionIntro title='Values' />
+            <SectionIntroii title='Values' />
             <h2 className={styles.heading}>
-              Values that drive <br />
-              everything we do
+              Principles <br /> we won’t bend
             </h2>
-            <p className={`${styles.copy} subheading`}>
+            <p className={styles.copy}>
               We are committed to delivering exceptional service and value. Our
               core values guide us in everything we do:
             </p>

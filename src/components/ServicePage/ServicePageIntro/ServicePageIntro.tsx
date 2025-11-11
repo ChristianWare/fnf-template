@@ -2,22 +2,23 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./ServicePageIntro.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
-import Img1 from "../../../../public/images/spintro1.jpg";
-import Img2 from "../../../../public/images/spintro2.jpg";
+// import Img1 from "../../../../public/images/spintro1.jpg";
+// import Img2 from "../../../../public/images/spintro2.jpg";
 import llustration from "../../../../public/illustrations/aboutIllustration.png";
+import Marquee from "@/components/shared/Marquee/Marquee";
 
-const data = [
-  {
-    id: 1,
-    src: Img1,
-    alt: "Service Image 1",
-  },
-  {
-    id: 2,
-    src: Img2,
-    alt: "Service Image 2",
-  },
-];
+// const data = [
+//   {
+//     id: 1,
+//     src: Img1,
+//     alt: "Service Image 1",
+//   },
+//   {
+//     id: 2,
+//     src: Img2,
+//     alt: "Service Image 2",
+//   },
+// ];
 
 export default function ServicePageIntro() {
   return (
@@ -39,17 +40,15 @@ export default function ServicePageIntro() {
               Comprehensive solutions <br className={styles.br} /> tailored to
               your needs
             </h1>
-            {/* <p className={styles.copy}>
-              At Fonts & Footers, we specialize in creating custom booking
-              websites designed to help businesses reduce no-shows, speed up
-              checkout times, and increase revenue. Our mission is to simplify
-              the booking process for both businesses and their customers,
-              providing a seamless experience that drives growth and customer
-              satisfaction.
-            </p> */}
+            <p className={styles.copy}>
+              We build booking websites that act like a 24/7 front desk—so your
+              clients can book, pay, reschedule, and show up without phone tag.
+              Built in Phoenix. Serving salons, med-spas, rentals, and black-car
+              services everywhere.
+            </p>
           </div>
           <div className={styles.bottom}>
-            <div className={styles.mapDatContainer}>
+            {/* <div className={styles.mapDatContainer}>
               {data.map((item) => (
                 <div key={item.id} className={styles.imgContainer}>
                   <Image
@@ -60,7 +59,8 @@ export default function ServicePageIntro() {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
+            <Marquee />
           </div>
         </div>
       </LayoutWrapper>

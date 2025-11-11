@@ -36,7 +36,11 @@
 }
 
 .left {
-  gap: 10rem;
+  gap: 5rem;
+}
+
+.subHeading {
+  margin-bottom: 3rem;
 }
 
 .mapDataBox {
@@ -98,8 +102,15 @@
   }
 
   .imgContainer {
-    height: 40rem;
+    height: 50rem;
+    object-position: top;
   }
+
+  .img {
+  object-fit: cover;
+  object-position: top; /* or: center top; or: 50% 0; */
+  border-radius: 10px;
+}
 
   .right {
     gap: 20rem;

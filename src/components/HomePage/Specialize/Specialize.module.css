@@ -77,6 +77,10 @@
   top: 150px;
 }
 
+.right {
+  width: 100%;
+}
+
 .mapDataBox {
   display: grid;
   grid-template-columns: 1fr;
@@ -101,6 +105,7 @@
     transform var(--fadeDur) ease,
     box-shadow var(--fadeDur) ease;
   transform-origin: center top;
+  width: 100%;
 }
 
 .blackDot {
