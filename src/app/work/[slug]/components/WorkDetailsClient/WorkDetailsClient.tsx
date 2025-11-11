@@ -54,7 +54,6 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
                 target='_blank'
                 btnType='limeOutline'
                 text='Live Website'
-                arrow
               />
             </div>
             <div className={styles.detailsBox}>
@@ -234,8 +233,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
                     href='/contact'
                     btnType='greenOutline'
                     text='Book a call Today'
-                    arrow
-                  />
+w                  />
                 </div>
               </div>
             </div>
