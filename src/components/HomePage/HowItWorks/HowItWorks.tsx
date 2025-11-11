@@ -148,7 +148,7 @@ export default function HowItWorks() {
                     </span>
                     <strong className={styles.title}>{item.title}</strong>
                   </div>
-                  <p className={`${styles.desc} subheading`}>{item.desc}</p>
+                  <p className={styles.desc}>{item.desc}</p>
                   <div className={styles.imgContainerii}>
                     <AnimatePresence mode='wait'>
                       <motion.div

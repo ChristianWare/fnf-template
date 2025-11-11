@@ -27,18 +27,17 @@ export default function HomePage() {
       <WhyDB />
       <Industries />
       <Features />
-      <Outcomes />
-      {/* <AboutUs /> */}
-      {/* <ProjectSection /> */}
       <HowItWorks />
-
-      <PricingPreview />
-
       <BaseFeatures />
+      <PricingPreview />
       <Faq />
       <BlogSection />
       <ContactPageContainer />
       <FinalCTAMain />
+      {/* <AboutUs /> */}
+      {/* <ProjectSection /> */}
+
+      {/* <Outcomes /> */}
     </main>
   );
 }

@@ -2,21 +2,22 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./WhyDB.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/solution.jpg";
-import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Payment from "@/components/icons/Payment/Payment";
-import Support from "@/components/icons/Support/Support";
 import Analytics from "@/components/icons/Analytics/Analytics";
-import Design from "@/components/icons/Design/Design";
-import Check from "@/components/icons/Check/Check";
 import Img2 from "../../../../public/images/work.png";
+import Seo from "@/components/icons/Seo/Seo";
+import Sync from "@/components/icons/Sync/Sync";
+import Receipt from "@/components/icons/Receipt/Receipt";
+import Bell from "@/components/icons/Bell/Bell";
+import Plus from "@/components/icons/Plus/Plus";
 
 export const data = [
   {
     id: 1,
     title: "One-screen checkout",
     desc: "No maze. Pick service → pick time → pay deposit → done.",
-    icon: <Check className={styles.icon} />,
+    icon: <Receipt className={styles.icon} />,
   },
   {
     id: 2,
@@ -28,25 +29,25 @@ export const data = [
     id: 3,
     title: "Automatic reminders & rescheduling",
     desc: "Smart SMS/email via Twilio. Clients can self-serve changes.",
-    icon: <Clock className={styles.icon} />,
+    icon: <Bell className={styles.icon} />,
   },
   {
     id: 4,
     title: "Calendar sync",
     desc: "Staff, stylists, and drivers stay in sync (Google/iCal). Buffers and travel time logic included.",
-    icon: <Support className={styles.icon} />,
+    icon: <Sync className={styles.icon} />,
   },
   {
     id: 5,
     title: "Add-ons & upsells",
     desc: "Tips, extras, distance fees, and packages at checkout (not on the phone).",
-    icon: <Analytics className={styles.icon} />,
+    icon: <Plus className={styles.icon} />,
   },
   {
     id: 6,
     title: "SEO that matches your services",
     desc: 'Location/service pages that rank and convert, not just "look pretty."',
-    icon: <Design className={styles.icon} />,
+    icon: <Seo className={styles.icon} />,
   },
   {
     id: 7,
@@ -69,8 +70,10 @@ export default function WhyDB() {
             The solution: a site that sells the appointment for you
           </h2>
           <p className={styles.copy}>
-            We can build you a custom direct-booking website that is fast, visually appealing, and mobile friendly - with zero
-            friction at checkout. Just more time for you to focus on what you do best: providing amazing service.
+            We can build you a custom direct-booking website that is fast,
+            visually appealing, and mobile friendly - with zero friction at
+            checkout. Just more time for you to focus on what you do best:
+            providing amazing service.
           </p>
         </div>
         <div className={styles.content}>

@@ -15,7 +15,7 @@ import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Img1 from "../../../../public/images/whydb.jpg";
 import Img2 from "../../../../public/images/howItWorks.jpg";
-import OnlineBooking from "../../../../public/images/onlineBooking.jpg";
+import OnlineBooking from "../../../../public/images/salon.jpg";
 import CreditCard from "../../../../public/images/creditcard.jpg";
 import AnalyticsImage from "../../../../public/images/analytics.jpg";
 import Transform from "../../../../public/images/transform.jpg";
@@ -71,11 +71,11 @@ const servicesData: Service[] = [
     src: "",
   },
   {
-    slug: "direct-booking-website",
-    title: "Direct-Booking Website",
+    slug: "salons-and-med-spas",
+    title: "Salons & Med-Spas",
     subtitle: "Turn visits into confirmed appointments",
     description:
-      "A conversion-focused Next.js website that makes it effortless to book, pay a deposit, and get on your calendar.",
+      "Service menus with durations and price ranges, stylist calendars, add-on treatments, consultation deposits, and series/packages. Waitlist logic and stylist bios reduce back-and-forth.",
     outcomes: [
       "Higher booking conversion across mobile & desktop",
       "Clear services, pricing, and add-ons",
@@ -277,9 +277,9 @@ export default function Features() {
             />
           </div>
           <div className={styles.sectionHeadingContainer}>
-            <SectionIntroii title='services' />
+            <SectionIntroii title='Who we service' />
           </div>
-          <h2 className={styles.heading}>Services we offer</h2>
+          <h2 className={styles.heading}>Built for your world</h2>
         </div>
         <div className={styles.parent}>
           <div className={styles.imgParent}>
@@ -321,7 +321,7 @@ export default function Features() {
                   )}
                   <div className={styles.overlay} />
                   <div className={styles.inner}>
-                    <div className={styles.iconContainer}>{x.icon}</div>
+                    {/* <div className={styles.iconContainer}>{x.icon}</div> */}
                     <h3 className={styles.title}>{x.title}</h3>
                     <p className={styles.desc}>{x.description}</p>
                   </div>
