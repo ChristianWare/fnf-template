@@ -503,6 +503,7 @@ export const projects = [
 export const pricingData = [
   {
     id: 1,
+    btnColor: "black",
     service: "Solo",
     headline: "One-person calendar, zero double-bookings",
     desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with payments.",
@@ -549,6 +550,7 @@ export const pricingData = [
   },
   {
     id: 2,
+    btnColor: "lime",
     service: "Team",
     headline: "Up to 15 stylists, trainers, or practitioners—one dashboard",
     desc: "Built for salons, fitness studios, and clinics where clients choose a staff member and pay a deposit.",
@@ -602,6 +604,7 @@ export const pricingData = [
   },
   {
     id: 3,
+    btnColor: "black",
     service: "Rental/Fleet",
     headline: "Real-time stock, deposits, and damage-hold authorisations",
     desc: "For car-hire companies, equipment rental shops, or kayak fleets that rent assets by time or day.",
@@ -656,6 +659,7 @@ export const pricingData = [
   },
   {
     id: 4,
+    btnColor: "black",
     service: "Multi-Location",
     headline: "One backend, many branches or villas",
     desc: "Ideal for spa chains, franchise gyms, or vacation-rental portfolios with 2-10 locations.",

@@ -210,7 +210,7 @@ export default function BaseFeatures() {
               </h2>
             </div>
             <div className={styles.topRight}>
-              <p className={`${styles.copy} subheading`}>
+              <p className={styles.copy}>
                 We start from a basic structure and then we add the
                 functionalities that are used for your business. You keep
                 control of your site and your budget.

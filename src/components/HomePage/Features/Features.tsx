@@ -1,28 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Features.tsx
-// "use client";
 
 import styles from "./Features.module.css";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Integration from "@/components/icons/Integration/Integration";
 import Design from "@/components/icons/Design/Design";
-import Analytics from "@/components/icons/Analytics/Analytics";
 import Multiple from "@/components/icons/Multiple/Multiple";
-import Hosting from "@/components/icons/Hosting/Hosting";
-import Edit from "@/components/icons/Edit/Edit";
-import Clock from "@/components/icons/Clock/Clock";
 import Payment from "@/components/icons/Payment/Payment";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import Img1 from "../../../../public/images/whydb.jpg";
-import Img2 from "../../../../public/images/howItWorks.jpg";
 import OnlineBooking from "../../../../public/images/salon.jpg";
-import CreditCard from "../../../../public/images/creditcard.jpg";
-import AnalyticsImage from "../../../../public/images/analytics.jpg";
-import Transform from "../../../../public/images/transform.jpg";
-import Empathy from "../../../../public/images/empathy.jpg";
-import Direct from "../../../../public/images/direct.jpg";
+import CreditCard from "../../../../public/images/equipment.jpg";
+import Transform from "../../../../public/images/transport.jpg";
+import Empathy from "../../../../public/images/medical.jpg";
 import Branding from "../../../../public/images/ecomm.jpeg";
-import Access from "../../../../public/images/how.jpg";
+import Access from "../../../../public/images/vacation.jpg";
 import ServiceIllustration from "../../../../public/images/serviceIllustration.png";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
@@ -107,8 +97,8 @@ const servicesData: Service[] = [
     src: "",
   },
   {
-    slug: "booking-and-scheduling",
-    title: "Booking & Scheduling",
+    slug: "black-car-and-private-transport",
+    title: "Black-Car & Private Transport",
     subtitle: "Frictionless calendars for teams & locations",
     description:
       "Role-aware scheduling, add-ons, duration rules, and multi-location management made simple.",
@@ -123,11 +113,11 @@ const servicesData: Service[] = [
     src: Transform,
   },
   {
-    slug: "stripe-payments-and-deposits",
-    title: "Stripe Payments & Deposits",
+    slug: "rentals-and-experiences",
+    title: "Rentals & Experiences",
     subtitle: "Reduce no-shows, improve cash flow",
     description:
-      "Deposits, holds, BNPL, tips, refunds—implemented with dispute-ready receipts and tax handling.",
+      "Inventory-aware time slots, damage deposits, add-ons (helmets, insurance), waivers, and weather messaging. Easy reschedules reduce refunds and headaches.",
     outcomes: [
       "Deposit vs. full prepay flows",
       "Saved cards & vaulted customers",
@@ -149,117 +139,53 @@ const servicesData: Service[] = [
     src: "",
   },
   {
-    slug: "local-and-programmatic-seo",
-    title: "Local & Programmatic SEO",
-    subtitle: "Get discovered where people book",
+    slug: "medspas-and-clinics",
+    title: "MedSpas & Clinics",
+    subtitle: "Professional scheduling for aesthetic treatments",
     description:
-      "Local packs, service-city landing pages, and structured data to grow inbound bookings.",
+      "Treatment menus with consultation requirements, provider credentials, before/after galleries, consent forms, and package management. HIPAA-aware workflows and cancellation policies.",
     outcomes: [
-      "Service-city page frameworks",
-      "GBP optimization & review ingestion",
-      "Schema: LocalBusiness, Service, FAQ",
-      "Editorial calendar aligned to demand",
+      "Treatment-specific booking flows",
+      "Provider licensing & bio showcases",
+      "Package series and membership handling",
+      "Secure patient data collection",
+    ],
+    ctaLabel: "View service",
+    icon: <Stariii className={styles.icon} />,
+    src: Empathy,
+  },
+  {
+    slug: "vacation-rentals",
+    title: "Vacation Rentals",
+    subtitle: "Streamline bookings and guest management",
+    description:
+      "Multi-night calendars with dynamic pricing, cleaning fees, seasonal rates, guest limits, and check-in instructions. Damage deposit handling and house rules acceptance built in.",
+    outcomes: [
+      "Flexible night-based availability",
+      "Dynamic pricing by season/demand",
+      "Guest verification & deposit collection",
+      "Automated check-in details & house rules",
     ],
     ctaLabel: "View service",
     icon: <Design className={styles.icon} />,
-    src: Img1,
+    src: Access,
   },
   {
-    slug: "performance-and-core-web-vitals",
-    title: "Performance & Core Web Vitals",
-    subtitle: "Speed that converts",
+    slug: "ecommerce-shopify",
+    title: "E-Commerce & Shopify",
+    subtitle: "Convert browsers into buyers",
     description:
-      "Image pipeline, caching, and font strategy for a snappy site that drives more completed checkouts.",
+      "Custom Shopify themes, headless commerce with Next.js, cart optimization, checkout flows, and product configurators. Performance-tuned for mobile conversions with analytics integration.",
     outcomes: [
-      "Image/CDN optimization",
-      "Font loading & CLS control",
-      "Edge caching & route splitting",
-      "Performance KPIs with targets",
+      "Headless Shopify with Next.js for speed",
+      "Custom product pages & collections",
+      "Optimized checkout & abandoned cart recovery",
+      "Analytics, A/B testing, and conversion tracking",
     ],
     ctaLabel: "View service",
-    icon: <Hosting className={styles.icon} />,
-    src: Img2,
+    icon: <Payment className={styles.icon} />,
+    src: Branding,
   },
-  {
-    slug: "migration-to-nextjs",
-    title: "Migration to Next.js",
-    subtitle: "Replatform without losing SEO",
-    description:
-      "From Webflow/Wix/WordPress to a modern, scalable stack with clean redirects and content mapping.",
-    outcomes: [
-      "301s and content parity plan",
-      "Sanity CMS migration",
-      "Launch checklist & DNS/HTTPS",
-      "No-loss rankings approach",
-    ],
-    ctaLabel: "View service",
-    icon: <Edit className={styles.icon} />,
-    src: Direct,
-  },
-  // {
-  //   slug: "analytics-and-crm",
-  //   title: "Analytics & CRM",
-  //   subtitle: "Attribute bookings to revenue",
-  //   description:
-  //     "GA4 + server events, ad pixels, and CRM handoffs so you can see what actually fills your calendar.",
-  //   outcomes: [
-  //     "End-to-end funnel visibility",
-  //     "UTM hygiene & campaign mapping",
-  //     "Call tracking & form tracking",
-  //     "HubSpot/Close/Pipedrive integrations",
-  //   ],
-  //   ctaLabel: "View service",
-  //   icon: <Analytics className={styles.icon} />,
-  //   src: AnalyticsImage,
-  // },
-  // {
-  //   slug: "branding-and-visual-identity",
-  //   title: "Branding & Visual Identity",
-  //   subtitle: "A look that sells the appointment",
-  //   description:
-  //     "Conversion-ready brand kits: typography, color, components, and social/OG assets.",
-  //   outcomes: [
-  //     "Booking-first brand system",
-  //     "Reusable UI components",
-  //     "Ad & social variants",
-  //     "Guidelines for consistency",
-  //   ],
-  //   ctaLabel: "View service",
-  //   icon: <Stariii className={styles.icon} />,
-  //   src: Branding,
-  // },
-  // {
-  //   slug: "accessibility-and-compliance",
-  //   title: "Accessibility & Compliance",
-  //   subtitle: "Confident, inclusive experiences",
-  //   description:
-  //     "WCAG 2.2 AA, consent patterns, and PCI-aware flows aligned with Stripe best practices.",
-  //   outcomes: [
-  //     "WCAG AA patterns baked-in",
-  //     "Consent and privacy UX",
-  //     "Legal pages & policies",
-  //     "QA & ongoing audits",
-  //   ],
-  //   ctaLabel: "View service",
-  //   icon: <Payment className={styles.icon} />,
-  //   src: Access,
-  // },
-  // {
-  //   slug: "care-plans",
-  //   title: "Care Plans",
-  //   subtitle: "Continuous improvements & support",
-  //   description:
-  //     "Updates, CRO experiments, seasonal promos, and new service rollouts that keep bookings growing.",
-  //   outcomes: [
-  //     "Monthly updates & fixes",
-  //     "CRO testing roadmap",
-  //     "Promo & campaign launches",
-  //     "Priority support SLAs",
-  //   ],
-  //   ctaLabel: "View service",
-  //   icon: <Clock className={styles.icon} />,
-  //   src: Empathy,
-  // },
 ];
 
 export default function Features() {
@@ -323,7 +249,7 @@ export default function Features() {
                   <div className={styles.inner}>
                     {/* <div className={styles.iconContainer}>{x.icon}</div> */}
                     <h3 className={styles.title}>{x.title}</h3>
-                    <p className={styles.desc}>{x.description}</p>
+                    {/* <p className={styles.desc}>{x.description}</p> */}
                   </div>
                 </div>
               );

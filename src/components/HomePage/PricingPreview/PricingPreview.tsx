@@ -11,14 +11,7 @@ export default function PricingPreview() {
         <div className={styles.content}>
           <div className={styles.top}>
             <SectionIntroii title='Pricing' />
-            <h2 className={styles.heading}>
-              Affordable plans for every budget
-            </h2>
-            <p className={`${styles.copy} subheading`}>
-              Explore our range of pricing options designed to fit any budget,
-              offering exceptional value and flexibility to meet your unique
-              needs. No contracts, cancel whenever you want.
-            </p>
+            <h2 className={styles.heading}>Plans made simple</h2>
           </div>
           <div className={styles.bottom}>
             <ServiceDetails />

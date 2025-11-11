@@ -94,7 +94,9 @@ export default function HowItWorks() {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.leftContent}>
-              <SectionIntroii title='A proven methodology' />
+              <div className={styles.SectionIntroContainer}>
+                <SectionIntroii title='Our Processes' />
+              </div>
               <h2 className={styles.heading}>How we work together</h2>
               <div className={styles.imgContainer}>
                 <AnimatePresence mode='wait'>

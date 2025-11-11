@@ -171,9 +171,9 @@
 }
 
 @media screen and (max-width: 568px) {
-.copy {
-  width: 95%;
-}
+  .copy {
+    width: 95%;
+  }
 
   .imgContainerii {
     width: 200px;
@@ -186,5 +186,18 @@
 
   .btnContainer {
     margin-top: 2rem;
+  }
+
+  .mapDataBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    width: fit-content;
+    width: 100%;
+    border: 1px solid var(--tan600)
   }
 }

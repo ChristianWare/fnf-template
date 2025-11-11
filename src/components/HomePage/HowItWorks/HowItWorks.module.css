@@ -9,22 +9,26 @@
   gap: 5rem;
 }
 
-/* .left {
-  border-top: 1px solid var(--gray);
-  padding-top: 2rem;
-} */
-
 .leftContent {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-self: flex-start;
-  justify-content: flex-start;
+  align-self: center;
+  justify-content: center;
   position: -webkit-sticky;
   position: sticky;
   top: var(--stickyTop);
   width: fit-content;
   width: 100%;
+}
+
+.SectionIntroContainer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  text-align: center;
 }
 
 .imgContainer,
@@ -41,7 +45,7 @@
 }
 
 .imgContainer {
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 .imgLayer {
@@ -49,11 +53,12 @@
   inset: 0;
   width: 275px;
   height: 275px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img {
   object-fit: contain;
-  border-radius: 10px;
 }
 
 .heading {
@@ -63,7 +68,7 @@
 
 .right {
   position: relative;
-  padding-left: 7rem;
+  padding-left: 5rem;
 }
 
 .progressTrack {
@@ -106,6 +111,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
 }
 
 .isPast::before {
@@ -146,6 +154,13 @@
 
 .isActive .stepIndex {
   background-color: var(--lime);
+  transition: all 0.3s ease-in;
+}
+
+.isActive {
+  background-color: var(--darkTan);
+  padding: 2rem;
+  border-radius: 10px;
   transition: all 0.3s ease-in;
 }
 
@@ -190,14 +205,27 @@
     text-align: center;
   }
 
+  .cardHeader {
+    justify-content: center;
+  }
+
+  .desc {
+    text-align: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .imgContainer {
     display: none;
   }
 
   .imgContainerii {
     display: block;
-    height: 250px;
-    width: 250px;
+    height: 275px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .right {
@@ -216,5 +244,14 @@
 
   .right {
     padding-left: 5rem;
+  }
+
+  .imgLayer, .imgContainerii {
+    width: 200px;
+    height: 200px;
+  }
+
+  .imgContainerii {
+    margin-top: 3rem;
   }
 }

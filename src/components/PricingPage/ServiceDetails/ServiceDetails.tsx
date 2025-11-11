@@ -45,6 +45,7 @@ export default function ServiceDetails() {
           {data.map((x) => {
             const anchorId = toAnchorId(x.service);
             const plan = serviceToPlan(x.service);
+            const btnColor = x.btnColor;
             // Where the button goes:
             const href = isPricingPage
               ? `/account/upgrade?plan=${plan}` // Subscribe path
@@ -66,7 +67,7 @@ export default function ServiceDetails() {
                     <div className={styles.btnContainer}>
                       <Button
                         href={href}
-                        btnType='grayOutline'
+                        btnType={btnColor}
                         text={btnText}
                       />
                     </div>

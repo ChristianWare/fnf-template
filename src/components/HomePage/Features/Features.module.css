@@ -68,8 +68,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   padding: 2rem;
   border-radius: 10px;
@@ -141,7 +141,7 @@
 
 .title {
   font-size: 1.6rem;
-  font-family: var(--DotSansMedium);
+  font-family: var(--DotSansBold);
   letter-spacing: normal;
   color: var(--white);
   transition: color 0.2s ease;

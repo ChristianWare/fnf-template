@@ -42,7 +42,8 @@ export default function FinalCTAMain() {
 
             <Logo />
             <h2 className={styles.heading}>
-              Ready to stop chasing <br /> and start booking?
+              Ready to turn <br /> browsers into bookings?
+              {/* Ready to stop chasing <br /> and start booking? */}
             </h2>
 
             <div className={styles.btnContainer}>
