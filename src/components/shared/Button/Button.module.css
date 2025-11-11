@@ -95,6 +95,18 @@
   color: var(--black);
 }
 
+.olive,
+.olive:link,
+.olive:visited {
+  background-color: var(--olive);
+  color: var(--black);
+}
+
+.olive:hover .arrow {
+  background-color: var(--lime);
+  color: var(--black);
+}
+
 .grayOutline {
   background-color: var(--white);
   border: 1px solid var(--grayiii);

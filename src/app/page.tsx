@@ -12,6 +12,7 @@ import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import Features from "@/components/HomePage/Features/Features";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
 import TheProblem from "@/components/HomePage/TheProblem/TheProblem";
+import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
 
 export default function HomePage() {
   return (
@@ -20,7 +21,8 @@ export default function HomePage() {
       <Hero />
       <PostHero />
       <TheProblem />
-      <WhyDB />
+      {/* <WhyDB /> */}
+      <FeaturesPreview />
       <Industries />
       <Features />
       <HowItWorks />

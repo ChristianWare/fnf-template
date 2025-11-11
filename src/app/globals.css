@@ -13,8 +13,12 @@
   --tan700: #afa875;
   --darkTan: #e8eae0;
   --darkerTan: #e6e8dd;
+  --darkGreen: #021d15;
+  --olive: #D3E022;
+  --green: #0f2a20;
   --blue: #2563eb;
   --white: #f4f3ea;
+  --whiteii: #fff9;
   --lime: #b6e400;
   --stickyTop: 20vh;
   --cardGap: 1rem;
@@ -92,6 +96,7 @@ h2 {
   font-size: 4rem;
   font-family: var(--Merriweather);
   letter-spacing: -1px;
+  line-height: 1.4;
   font-weight: 500;
 }
 

@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./WhyDB.module.css";
 import Image from "next/image";
-import Img1 from "../../../../public/images/solutioniii.jpg";
+// import Img1 from "../../../../public/images/solutioniii.jpg";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Payment from "@/components/icons/Payment/Payment";
 import Analytics from "@/components/icons/Analytics/Analytics";
@@ -70,18 +70,17 @@ export default function WhyDB() {
             The solution: a site that sells the appointment for you
           </h2>
           <p className={styles.copy}>
-            We can build you a custom direct-booking website that is fast,
-            visually appealing, and mobile friendly - with zero friction at
-            checkout. Just more time for you to focus on what you do best:
-            providing amazing service.
+            Your clients want convenience and speed. With our all-in-one booking
+            system, they can book and pay in under 30 seconds — no calls, no
+            back-and-forth, no hassle.
           </p>
         </div>
         <div className={styles.content}>
-          <div className={styles.left}>
+          {/* <div className={styles.left}>
             <div className={styles.imgContainer}>
               <Image src={Img1} fill alt='' title='' className={styles.img} />
             </div>
-          </div>
+          </div> */}
           <div className={styles.right}>
             <div className={styles.rightBottom}>
               <div className={styles.mapDataBox}>
