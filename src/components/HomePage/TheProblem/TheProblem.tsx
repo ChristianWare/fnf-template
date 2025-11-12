@@ -4,6 +4,30 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import Img1 from "../../../../public/images/stressediii.jpg";
 import Img2 from "../../../../public/images/stressediv.jpg";
+import Close from "@/components/icons/Close/Close";
+
+const data = [
+  {
+    id: 1,
+    text: "Your day is packed. Phones ring, texts pile up",
+  },
+  {
+    id: 1.1,
+    text: 'Your "Bookings" button dumps people into a form that\'s confusing on mobile.',
+  },
+  {
+    id: 2,
+    text: "Clients bounce. No-shows creep up.",
+  },
+  {
+    id: 3,
+    text: "You chase payments. Staff double-books.",
+  },
+  {
+    id: 4,
+    text: "You're paying for three different tools that still don't talk to each other.",
+  },
+];
 
 export default function TheProblem() {
   return (
@@ -18,16 +42,17 @@ export default function TheProblem() {
           <div className={styles.middle}>
             <SectionIntroii title='Problem' color='tan' />
             <h2 className={`${styles.heading} h3`}>
-              The problem most <br /> service businesses face
+              The problems most <br /> service businesses face
             </h2>
-            {/* <p className={styles.copy}>
-              Your day is packed. Phones ring, texts pile up, and your
-              “Bookings” button dumps people into a form that’s confusing on
-              mobile. Clients bounce. No-shows creep up. You chase payments.
-              Staff double-books. You’re paying for three different tools that
-              still don’t talk to each other.
-            </p>
-            <b className={styles.bold}>
+            <div className={styles.mapDataContainer}>
+              {data.map((item) => (
+                <ul key={item.id} className={styles.dataItem}>
+                  <Close className={styles.closeIcon} />
+                  <li className={styles.dataText}>{item.text}</li>
+                </ul>
+              ))}
+            </div>
+            {/* <b className={styles.bold}>
               Meanwhile, competitors with simpler checkouts win the
               booking—often from your own Instagram traffic.
             </b> */}
@@ -50,10 +75,10 @@ export default function TheProblem() {
           
           make an unordered list wwith an X before each line instead of a paragraph
           */}
-          <b className={styles.bold}>
+          {/* <b className={styles.bold}>
             Meanwhile, competitors with simpler checkouts win the booking—often
             from your own Instagram traffic.
-          </b>
+          </b> */}
         </div>
       </LayoutWrapper>
     </section>
