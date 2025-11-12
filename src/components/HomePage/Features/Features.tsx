@@ -1,22 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import styles from "./Features.module.css";
-import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Integration from "@/components/icons/Integration/Integration";
 import Design from "@/components/icons/Design/Design";
 import Multiple from "@/components/icons/Multiple/Multiple";
 import Payment from "@/components/icons/Payment/Payment";
-import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
-import OnlineBooking from "../../../../public/images/salon.jpg";
-import CreditCard from "../../../../public/images/equipment.jpg";
-import Transform from "../../../../public/images/transport.jpg";
-import Empathy from "../../../../public/images/medical.jpg";
-import Branding from "../../../../public/images/ecomm.jpeg";
-import Access from "../../../../public/images/vacation.jpg";
-import ServiceIllustration from "../../../../public/images/serviceIllustration.png";
+import ServiceIllustration from "../../../../public/images/calendarii.png";
 import Money from "@/components/icons/Money/Money";
 import Stariii from "@/components/icons/Stariii/Stariii";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export type Service = {
   slug: string;
@@ -26,7 +16,6 @@ export type Service = {
   outcomes: string[];
   ctaLabel: string;
   icon: JSX.Element | string;
-  src: string | StaticImageData;
 };
 
 const servicesData: Service[] = [
@@ -38,7 +27,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "",
@@ -48,7 +36,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "",
@@ -58,7 +45,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "salons-and-med-spas",
@@ -74,7 +60,6 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Multiple className={styles.icon} />,
-    src: OnlineBooking,
   },
   {
     slug: "",
@@ -84,7 +69,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "",
@@ -94,7 +78,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "black-car-and-private-transport",
@@ -110,7 +93,6 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Integration className={styles.icon} />,
-    src: Transform,
   },
   {
     slug: "rentals-and-experiences",
@@ -126,7 +108,6 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Money className={styles.icon} />,
-    src: CreditCard,
   },
   {
     slug: "",
@@ -136,7 +117,6 @@ const servicesData: Service[] = [
     outcomes: [],
     ctaLabel: "",
     icon: "",
-    src: "",
   },
   {
     slug: "medspas-and-clinics",
@@ -152,7 +132,6 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Stariii className={styles.icon} />,
-    src: Empathy,
   },
   {
     slug: "vacation-rentals",
@@ -168,7 +147,6 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Design className={styles.icon} />,
-    src: Access,
   },
   {
     slug: "ecommerce-shopify",
@@ -184,79 +162,48 @@ const servicesData: Service[] = [
     ],
     ctaLabel: "View service",
     icon: <Payment className={styles.icon} />,
-    src: Branding,
   },
 ];
 
 export default function Features() {
   return (
     <section className={styles.container} id='features'>
-      <LayoutWrapper>
-        <div className={styles.top}>
-          <div className={styles.imgContainer1}>
-            <Image
-              src={ServiceIllustration}
-              alt='Service Illustration'
-              fill
-              className={styles.img}
-              priority
-            />
-          </div>
-          <div className={styles.sectionHeadingContainer}>
-            <SectionIntroii title='Who we service' />
-          </div>
-          <h2 className={styles.heading}>Built for your world</h2>
+      <div className={styles.top}>
+        <div className={styles.imgContainer1}>
+          <Image
+            src={ServiceIllustration}
+            alt='Service Illustration'
+            fill
+            className={styles.img}
+            priority
+          />
         </div>
-        <div className={styles.parent}>
-          <div className={styles.imgParent}>
-            <div className={styles.imgContainer}>
-              <Image
-                src={ServiceIllustration}
-                alt='Service Illustration'
-                fill
-                className={styles.img}
-                priority
-              />
+        <h2 className={styles.copy}>
+          Fonts & Footers builds direct-booking websites designed around how
+          real clients decide: fast, visual, on their phone, with zero friction
+          at checkout.
+        </h2>
+      </div>
+      <div className={styles.parent}>
+          <div className={styles.background} />
+        <div className={styles.imgContainer}>
+          <Image
+            src={ServiceIllustration}
+            alt='Service Illustration'
+            fill
+            className={styles.img}
+            priority
+          />
+        </div>
+
+        <div className={styles.dataContainer}>
+          {servicesData.map((x, index) => (
+            <div key={index} className={styles.content}>
+              <h3 className={styles.title}>{x.title}</h3>
             </div>
-          </div>
-          <div className={styles.dataContainer}>
-            {servicesData.map((x, index) => {
-              const hasImage =
-                !!x.src &&
-                (typeof x.src === "string"
-                  ? x.src.trim().length > 0
-                  : !!(x.src as StaticImageData).src);
-              return (
-                <div
-                  key={index}
-                  className={`${styles.content} ${!hasImage ? styles.placeholder : ""}`}
-                >
-                  {hasImage ? (
-                    <Image
-                      src={x.src as any}
-                      alt={x.title || "Service background"}
-                      fill
-                      className={styles.bgImg}
-                      placeholder={
-                        typeof x.src === "object" ? "blur" : undefined
-                      }
-                      sizes='(max-width: 568px) 100vw, (max-width: 1268px) 33vw, 25vw'
-                    />
-                  ) : (
-                    <div className={styles.bgFallback} aria-hidden='true' />
-                  )}
-                  <div className={styles.overlay} />
-                  <div className={styles.inner}>
-                    {/* <div className={styles.iconContainer}>{x.icon}</div> */}
-                    <h3 className={styles.title}>{x.title}</h3>
-                    {/* <p className={styles.desc}>{x.description}</p> */}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          ))}
         </div>
-      </LayoutWrapper>
+      </div>
     </section>
   );
 }

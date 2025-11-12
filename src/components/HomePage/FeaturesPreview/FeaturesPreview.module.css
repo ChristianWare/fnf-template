@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--black);
+  background-color: var(--tan);
   padding: 10rem 0rem;
   position: relative;
 }
@@ -9,8 +9,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: radial-gradient(var(--grayii) 2px, transparent 2px);
-  background-size: calc(10 * 1px) calc(10 * 1px);
+  background-image: radial-gradient(var(--darkerTan) 2px, transparent 2px);
   background-size: 10px 10px;
   width: 100%;
   height: 15rem;
@@ -30,13 +29,40 @@
   gap: 2rem;
 }
 
+.imgContainer1 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.imgContainer2 {
+  /* position: relative; */
+  /* width: 100px; */
+  /* height: 300px; */
+  border-radius: 10px;
+}
+
+.copy {
+  font-family: var(--DotSansMedium);
+  font-size: 1.6rem;
+  color: var(--lighterBlack);
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btnContainer {
   margin-top: 1rem;
 }
 
 .heading {
   text-align: center;
-  color: var(--white);
 }
 
 .bottom {
@@ -60,8 +86,20 @@
   top: 50%;
   width: 95%;
   height: 30%;
-  background-color: var(--lightBlack);
+  background-color: var(--darkerTan);
   z-index: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mapDataBox::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  width: 95%;
+  height: 20%;
+  background-color: var(--darkerTan);
+  z-index: -1;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -72,12 +110,13 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  background-color: var(--lightBlack);
+  background-color: var(--darkerTan);
   border-radius: 10px;
   padding: 3rem;
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   position: relative;
+  z-index: 1;
 }
 
 .card::after {
@@ -88,7 +127,7 @@
   width: 2rem;
   height: 40%;
   border-radius: 10px;
-  background-color: var(--black);
+  background-color: var(--tan);
   z-index: 1;
 }
 
@@ -100,8 +139,16 @@
   width: 2rem;
   height: 40%;
   border-radius: 10px;
-  background-color: var(--black);
+  background-color: var(--tan);
   z-index: 1;
+}
+
+.card:last-child {
+  padding: 0rem;
+}
+
+.cardWide {
+  grid-column: span 2;
 }
 
 .icon {
@@ -110,12 +157,11 @@
 }
 
 .pattern1 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
   opacity: 0.5;
-  /* border-radius: 50%; */
   clip-path: polygon(
     50% 0%,
     61% 35%,
@@ -131,7 +177,7 @@
 }
 
 .pattern2 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -140,7 +186,7 @@
 }
 
 .pattern3 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -167,13 +213,12 @@
 .title {
   font-family: var(--DotSansBold);
   font-size: 2rem;
-  color: var(--white);
   text-transform: capitalize;
 }
 
 .desc {
   font-size: 1.5rem;
-  color: var(--whiteii);
+  color: var(--lighterBlack);
 }
 
 @media screen and (max-width: 1468px) {
@@ -182,7 +227,7 @@
   }
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 968px) {
   .mapDataBox {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -191,8 +236,17 @@
     top: 20%;
   }
 
-  .card:last-child {
+  .cardWide {
     grid-column: span 2;
-    min-height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mapDataBox {
+    grid-template-columns: 1fr;
+  }
+
+  .cardWide {
+    grid-column: span 1;
   }
 }

@@ -28,6 +28,7 @@ const data = [
     id: 4,
     text: "You're paying for three different tools that still don't talk to each other.",
   },
+  
 ];
 
 export default function TheProblem() {

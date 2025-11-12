@@ -126,7 +126,7 @@
 }
 
 @media screen and (max-width: 568px) {
-  .imgContainer {
+  /* .imgContainer {
     width: 200px;
     height: 200px;
   }
@@ -136,5 +136,9 @@
 
   .middle {
     grid-column: span 1;
+  } */
+   .imgContaineri,
+  .imgContainerii {
+    height: 300px;
   }
 }
