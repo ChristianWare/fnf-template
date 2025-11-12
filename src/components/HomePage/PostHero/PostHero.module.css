@@ -16,6 +16,9 @@
 }
 
 .heading {
+      border-top: 1px solid var(--gray);
+      padding-top: 2rem;
+      margin-top: -1rem;
   font-family: var(--DotSansBold);
   font-size: 2.5rem;
   text-align: center;
