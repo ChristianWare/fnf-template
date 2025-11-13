@@ -22,32 +22,32 @@ export const data = [
   {
     id: 3,
     title: "Auto reminders",
-    desc: "Smart SMS and email notifications powered by Twilio keep everyone informed. Clients can easily reschedule or make changes on their own.",
+    desc: "Smart SMS and email notifications keep everyone informed. Clients can easily reschedule or make changes on their own.",
     icon: <div className={styles.pattern3} />,
   },
   {
     id: 4,
     title: "Calendar sync",
     desc: "Staff, stylists, and drivers stay in sync (Google/iCal). Buffers and travel time logic included.",
-    icon: <div className={styles.pattern2} />,
+    icon: <div className={styles.pattern4} />,
   },
   {
     id: 5,
     title: "Add-ons & upsells",
     desc: "Tips, extras, distance fees, and packages at checkout (not on the phone).",
-    icon: <div className={styles.pattern2} />,
+    icon: <div className={styles.pattern5} />,
   },
   {
     id: 6,
     title: "SEO that matches your services",
     desc: 'Location/service pages that rank and convert, not just "look pretty."',
-    icon: <div className={styles.pattern2} />,
+    icon: <div className={styles.pattern6} />,
   },
   {
     id: 7,
     title: "Live analytics",
     desc: "See bookings, revenue, and show-up rates at a glance.",
-    icon: <div className={styles.pattern2} />,
+    icon: <div className={styles.pattern7} />,
   },
   {
     id: 8,
