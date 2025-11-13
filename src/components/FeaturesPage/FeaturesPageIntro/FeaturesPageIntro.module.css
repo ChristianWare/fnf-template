@@ -14,12 +14,30 @@
   gap: 2rem;
 }
 
+.imgContainer {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  margin-left: 10rem;
+}
+
+.img {
+  object-fit: cover;
+}
+
 .heading {
   text-align: center;
 }
 
 .copy {
   text-align: center;
-  max-width: 650px;
+  max-width: 500px;
   color: var(--lighterBlack);
+}
+
+@media screen and (max-width: 568px) {
+  .imgContainer {
+    width: 200px;
+    height: 200px;
+  }
 }
