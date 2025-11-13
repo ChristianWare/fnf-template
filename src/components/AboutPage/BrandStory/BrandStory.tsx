@@ -2,12 +2,13 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./BrandStory.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/brandStoryii.jpg";
-import Button from "@/components/shared/Button/Button";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Design from "@/components/icons/Design/Design";
 import Listing from "@/components/icons/Listing/Listing";
 import Lightning from "@/components/icons/Lightning/Lightning";
+import ServiceIllustration from "../../../../public/images/specialize.png";
+
 
 const data = [
   {
@@ -46,55 +47,29 @@ export default function BrandStory() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
+        <div className={styles.top}>
+          <div className={styles.imgContainer1}>
+                        <Image
+                          src={ServiceIllustration}
+                          alt='Service Illustration'
+                          fill
+                          className={styles.img}
+                          priority
+                        />
+                      </div>
+          <SectionIntroii title='Our Ethos' />
+          <h2 className={styles.heading}>
+            Who we are <br /> — and why it matters
+          </h2>
+          {/* <p className={styles.copy}>
+            Most service businesses don’t have a marketing problem—they have a
+            booking problem. Clunky forms, mixed-up calendars, and payment
+            chases leak revenue every day. We started Fonts & Footers to fix
+            that single point of failure: the moment a customer decides to book.
+          </p> */}
+        </div>
         <div className={styles.content}>
           <div className={styles.left}>
-            <div className={styles.leftTop}>
-              <SectionIntroii title='Who we are — and why it matters' />
-              <h2 className={styles.heading}>Why we exist</h2>
-              <p className={styles.copy}>
-                Most service businesses don’t have a marketing problem—they have
-                a booking problem. Clunky forms, mixed-up calendars, and payment
-                chases leak revenue every day. We started Fonts & Footers to fix
-                that single point of failure: the moment a customer decides to
-                book.
-              </p>
-            </div>
-            <div className={styles.leftBottom}>
-              {/* <h3 className={`${styles.subHeadingii} h3`}>
-                What we do (in one line)
-              </h3>
-              <br />
-              <p className={styles.copy}>
-                We turn your site into a direct-booking machine with a
-                one-screen, deposit-first checkout, automatic reminders,
-                calendar sync, and service pages that convert.
-              </p>
-              <br />
-              <br /> */}
-              <h3 className={`${styles.subHeading} h3`}>Our point of view:</h3>
-              <div className={styles.mapDataBox}>
-                {data.map((item) => (
-                  <div key={item.id} className={styles.card}>
-                    <div className={styles.iconBox}>{item.icon}</div>
-                    <div className={styles.mapDataContent}>
-                      <div className={styles.title}>{item.title}</div>
-                      <p className={styles.desc}>{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className={styles.btnContainer}>
-              <Button
-                href='https://calendly.com/chris-ware-dev/discovery-call'
-                target='_blank'
-                btnType='grayOutline'
-                text='Schedule a discovery call'
-              />
-            </div>
-          </div>
-
-          <div className={styles.right}>
             <div className={styles.imgContainer}>
               <Image
                 src={Img1}
@@ -103,6 +78,33 @@ export default function BrandStory() {
                 title='High-value bookings without the busywork'
                 className={styles.img}
               />
+            </div>
+          </div>
+          <div className={styles.middle}>
+            <div className={styles.middleTop}>
+              <h3 className={styles.subHeadingii}>What we do (in one line)</h3>
+              <p className={styles.copyii}>
+                We turn your site into a direct-booking machine with a
+                one-screen, deposit-first checkout, automatic reminders,
+                calendar sync, and service pages that convert.
+              </p>
+            </div>
+            <div className={styles.middleBottom}>
+              <div className={styles.star} />
+            </div>
+          </div>
+          <div className={styles.right}>
+            {/* <h3 className={styles.subHeadingii}>Our point of view:</h3> */}
+            <div className={styles.mapDataBox}>
+              {data.map((item) => (
+                <div key={item.id} className={styles.card}>
+                  <div className={styles.iconBox}>{item.icon}</div>
+                  <div className={styles.mapDataContent}>
+                    <div className={styles.title}>{item.title}</div>
+                    <p className={styles.desc}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

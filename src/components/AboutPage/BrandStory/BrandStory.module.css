@@ -4,10 +4,47 @@
   padding-top: 20rem;
 }
 
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid var(--gray);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgContainer1 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.copy {
+  color: var(--grayii);
+  max-width: 700px;
+  text-align: center;
+}
+
 .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-gap: 1rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .imgContainer {
@@ -21,26 +58,81 @@
   border-radius: 10px;
 }
 
-.left {
-  border-top: 1px solid var(--gray);
-  padding-top: 2rem;
-}
-
-.left,
-.leftTop {
+.middle {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 3rem;
+  justify-content: flex-start;
+  gap: 1rem;
+  height: 100%;
 }
 
-.left {
-  gap: 5rem;
+.middleTop,
+.middleBottom {
+  background-color: var(--lightBlack);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 7rem;
+  height: 100%;
 }
 
-.subHeading {
-  margin-bottom: 3rem;
+.subHeadingii {
+  font-family: var(--DotSansBold);
+  font-size: 2rem;
+  letter-spacing: -0.05px;
+  color: var(--tan);
+}
+
+.copyii {
+  color: var(--whiteii);
+  font-size: 1.4rem;
+  /* font-family:var(--DotSansBold); */
+}
+
+.middleBottom {
+  background-color: var(--lime);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star {
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
+  background-size: 5px 5px;
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.5;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.right .subHeadingii,
+.middleBottom .copyii {
+  color: var(--black);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
 .mapDataBox {
@@ -48,7 +140,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 3rem;
+  gap: 1rem;
+  width: 100%;
 }
 
 .card {
@@ -56,9 +149,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  border-bottom: 1px solid var(--gray);
-  padding-bottom: 2rem;
+  background-color: var(--darkTan);
+  border-radius: 10px;
+  padding: 2rem;
   width: 100%;
+}
+
+.card:last-child {
+  border-bottom: none;
 }
 
 .iconBox {
@@ -83,12 +181,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .title {
   font-family: var(--DotSansBold);
-  font-size: 1.6rem;
-  text-transform: capitalize;
+  font-size: 1.4rem;
+  letter-spacing: 0.08px;
+  /* text-transform: capitalize; */
 }
 
 .desc {
@@ -98,43 +198,68 @@
 
 @media screen and (max-width: 1268px) {
   .content {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .top {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
   }
 
   .imgContainer {
-    height: 50rem;
+    height: 550px;
     object-position: top;
   }
 
-  .img {
-  object-fit: cover;
-  object-position: top; /* or: center top; or: 50% 0; */
-  border-radius: 10px;
-}
-
   .right {
-    gap: 20rem;
+    grid-column: span 2;
+    width: 100%;
+  }
+
+  .mapDataBox {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 568px) {
-  .heading {
-    font-size: 6.5vw;
-    letter-spacing: -1.5px;
-    white-space: normal;
+  .content,
+  .mapDataBox {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .middle {
+    gap: 2rem;
+  }
+
+  .right {
+    grid-column: span 1;
   }
 
   .imgContainer {
-    height: 30rem;
+    height: 300px;
+    object-position: top;
+    border-radius: 10px;
   }
 
-  .left {
-    gap: 5rem;
+  .middleBottom {
+    min-height: 150px;
   }
 
-  .card {
-    border-bottom: 1px solid var(--gray);
-    width: 100%;
-    padding-bottom: 2rem;
+  .title {
+    font-size: 2rem;
+    letter-spacing: 0px;
+  }
+
+  .imgContainer1 {
+    width: 200px;
+    height: 200px;
   }
 }
