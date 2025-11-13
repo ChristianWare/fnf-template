@@ -8,7 +8,7 @@ import Design from "@/components/icons/Design/Design";
 import Listing from "@/components/icons/Listing/Listing";
 import Lightning from "@/components/icons/Lightning/Lightning";
 import ServiceIllustration from "../../../../public/images/specialize.png";
-
+import OurTeam from "../OurTeam/OurTeam";
 
 const data = [
   {
@@ -49,24 +49,19 @@ export default function BrandStory() {
       <LayoutWrapper>
         <div className={styles.top}>
           <div className={styles.imgContainer1}>
-                        <Image
-                          src={ServiceIllustration}
-                          alt='Service Illustration'
-                          fill
-                          className={styles.img}
-                          priority
-                        />
-                      </div>
+            <Image
+              src={ServiceIllustration}
+              alt='Service Illustration'
+              fill
+              className={styles.img}
+              priority
+            />
+          </div>
           <SectionIntroii title='Our Ethos' />
-          <h2 className={styles.heading}>
+          <h2 className={`${styles.heading} h3`}>
             Who we are <br /> — and why it matters
           </h2>
-          {/* <p className={styles.copy}>
-            Most service businesses don’t have a marketing problem—they have a
-            booking problem. Clunky forms, mixed-up calendars, and payment
-            chases leak revenue every day. We started Fonts & Footers to fix
-            that single point of failure: the moment a customer decides to book.
-          </p> */}
+          
         </div>
         <div className={styles.content}>
           <div className={styles.left}>
@@ -108,6 +103,13 @@ export default function BrandStory() {
             </div>
           </div>
         </div>
+        <OurTeam
+          text='Most service businesses don’t have a marketing problem—they have a
+            booking problem. Clunky forms, mixed-up calendars, and payment
+            chases leak revenue every day. We started Fonts & Footers to fix
+            that single point of failure: the moment a customer decides to book.'
+          src={Img1}
+        />
       </LayoutWrapper>
     </section>
   );
