@@ -25,21 +25,15 @@
 }
 
 .imgContainer {
-  position: relative;
-  width: 175px;
-  height: 175px;
+  width: 167px;
+  height: 250px;
+  transform: scaleX(-1);
 }
 
-@media screen and (max-width: 768px) {
-  .imgContainer {
-    width: 275px;
-    height: 275px;
-  }
-}
 
 @media screen and (max-width: 568px) {
   .imgContainer {
-    width: 200px;
+    width: 134px;
     height: 200px;
   }
 }

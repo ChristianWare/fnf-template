@@ -2,9 +2,9 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Outcomes.module.css";
 // import Image from "next/image";
 // import Img1 from "../../../../public/images/newhero.png";
-import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
+import Check from "@/components/icons/Check/Check";
 
 const data = [
   {
@@ -45,17 +45,19 @@ export default function Outcomes() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.top}>
-            <SectionIntroii title="Who we're a fit for" color='tan' />
-            <h2 className={styles.heading}>Are we a fit for you?</h2>
-            <p className={styles.copy}>
+            <h2 className={styles.heading}>
+              Let&apos;s see if <br /> we&apos;re fit for you...
+            </h2>
+            <SectionIntroii title="We're a great fit if" color='tan' />
+            {/* <p className={styles.copy}>
               Fonts &amp; Footers is built for service businesses that want a
               fast, deposit-first booking flow, clear policies, and calendars
               that don’t collide—backed by analytics you can act on.
-            </p>
+            </p> */}
             <div className={styles.mapDataContainer}>
               {data.map((item) => (
                 <div key={item.id} className={styles.card}>
-                  <Clock className={styles.icon} />
+                  <Check className={styles.icon} />
                   <div className={styles.title}>{item.title}</div>
                   <p className={styles.desc}>{item.desc}</p>
                 </div>

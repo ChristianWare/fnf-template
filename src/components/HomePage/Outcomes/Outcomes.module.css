@@ -54,11 +54,11 @@
 }
 
 .icon {
-  color: var(--black);
+  color: var(--lime);
   font-size: 4rem;
-  padding: 0.8rem;
-  background-color: var(--lime);
-  border-radius: 5px;
+  /* padding: 0.8rem; */
+  /* background-color: var(--lime); */
+  /* border-radius: 5px; */
 }
 
 .desc {

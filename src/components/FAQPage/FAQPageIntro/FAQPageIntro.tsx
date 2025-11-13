@@ -2,7 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./FAQPageIntro.module.css";
 import FAQMenu from "../FAQMenu/FAQMenu";
 import Image from "next/image";
-import Img1 from "../../../../public/images/faq.png";
+import Img1 from "../../../../public/illustrations/ponderIllustrationii.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
 export default function FAQPageIntro() {
