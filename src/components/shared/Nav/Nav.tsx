@@ -93,10 +93,10 @@ export default function Nav({
 
    const items = [
     //  { text: "Services", href: "/services" },
-    { text: "Serivices", href: "/services" },
+    { text: "Features", href: "/features" },
+    { text: "Pricing", href: "/pricing" },
+    { text: "Work", href: "/work" },
     { text: "About", href: "/about" },
-     { text: "Work", href: "/work" },
-     { text: "Pricing", href: "/pricing" },
      { text: "Blog", href: "/blog" },
      { text: "Contact", href: "/contact" },
      { text: "My Account", href: "/account" },

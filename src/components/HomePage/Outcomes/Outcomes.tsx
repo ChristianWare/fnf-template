@@ -46,7 +46,7 @@ export default function Outcomes() {
         <div className={styles.content}>
           <div className={styles.top}>
             <h2 className={styles.heading}>
-              Let&apos;s see if <br /> we&apos;re fit for you...
+              Let&apos;s see if <br /> we&apos;re a fit for you...
             </h2>
             <SectionIntroii title="We're a great fit if" color='tan' />
             {/* <p className={styles.copy}>
