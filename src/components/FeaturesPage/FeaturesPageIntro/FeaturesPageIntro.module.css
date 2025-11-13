@@ -1,0 +1,25 @@
+.container {
+  background-color: var(--tan);
+  padding: 1rem;
+  background-image: radial-gradient(#efeded 2px, transparent 2px);
+  background-size: calc(10 * 2px) calc(10 * 2px);
+  padding: 10rem 0rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.heading {
+  text-align: center;
+}
+
+.copy {
+  text-align: center;
+  max-width: 650px;
+  color: var(--lighterBlack);
+}
