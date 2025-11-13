@@ -8,6 +8,9 @@ import SectionIntroii from "../shared/SectionIntroii/SectionIntroii";
 import Button from "../shared/Button/Button";
 import Arrow from "@/components/icons/Arrow/Arrow";
 import { questions, type SectionKey, type QuestionItem } from "@/lib/data";
+import Image from "next/image";
+import ServiceIllustration from "../../../public/illustrations/ponderIllustration.png";
+
 
 /** Resolve current section from the pathname */
 function sectionFromPath(pathname: string): SectionKey {
@@ -95,7 +98,6 @@ export default function Faq() {
     })).filter((g) => g.items.length > 0);
   }, [isAllFaqPage]);
 
-  // Non-/faqs: single section block
   if (!isAllFaqPage) {
     return (
       <section className={styles.container}>
@@ -112,14 +114,18 @@ export default function Faq() {
                 working with us. If you don’t find what you’re looking for, our
                 team is just a message away.
               </p>
-
               <div className={styles.btnContainer}>
-                <Button
-                  href='/faqs'
-                  btnType='grayOutline'
-                  text='See all FAQ’s'
-                />
+                <Button href='/faqs' btnType='black' text='See all FAQ’s' />
               </div>
+              <div className={styles.imgContainer1}>
+                            <Image
+                              src={ServiceIllustration}
+                              alt='Service Illustration'
+                              fill
+                              className={styles.img}
+                              priority
+                            />
+                          </div>
             </div>
 
             <div className={styles.right}>

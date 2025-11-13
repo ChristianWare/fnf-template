@@ -1,5 +1,5 @@
 import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
-import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
+// import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
 import Values from "@/components/AboutPage/Values/Values";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import Nav from "@/components/shared/Nav/Nav";
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <ServicePageIntro />
       <BrandStory />
       <AboutUs />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
       <Values />
       <Outcomes />
       <Faq />

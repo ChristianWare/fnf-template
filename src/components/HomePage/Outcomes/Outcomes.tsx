@@ -1,9 +1,10 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Outcomes.module.css";
-import Image from "next/image";
-import Img1 from "../../../../public/images/newhero.png";
+// import Image from "next/image";
+// import Img1 from "../../../../public/images/newhero.png";
 import Clock from "@/components/icons/Clock/Clock";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
+import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
 
 const data = [
   {
@@ -43,6 +44,34 @@ export default function Outcomes() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
+          <div className={styles.top}>
+            <SectionIntroii title="Who we're a fit for" color='tan' />
+            <h2 className={styles.heading}>Are we a fit for you?</h2>
+            <p className={styles.copy}>
+              Fonts &amp; Footers is built for service businesses that want a
+              fast, deposit-first booking flow, clear policies, and calendars
+              that don’t collide—backed by analytics you can act on.
+            </p>
+            <div className={styles.mapDataContainer}>
+              {data.map((item) => (
+                <div key={item.id} className={styles.card}>
+                  <Clock className={styles.icon} />
+                  <div className={styles.title}>{item.title}</div>
+                  <p className={styles.desc}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.bottom}>
+            <ScrollHorizontalText
+              text='Bookings up'
+              text2='No‑shows down'
+              text3='Admin time saved'
+              pxPerSec={50}
+            />
+          </div>
+        </div>
+        {/* <div className={styles.content}>
           <div className={styles.top}></div>
           <div className={styles.bottom}>
             <div className={styles.left}>
@@ -59,7 +88,6 @@ export default function Outcomes() {
               <div className={styles.rightTop}>
                 <SectionIntroii title="Who we're a fit for" color='tan' />
                 <h2 className={styles.heading}>
-                  {/* The right partner if you want <br /> your site to book itself */}
                   Who we&apos;re a fit for
                 </h2>
                 <p className={styles.copy}>
@@ -82,7 +110,7 @@ export default function Outcomes() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </LayoutWrapper>
     </section>
   );

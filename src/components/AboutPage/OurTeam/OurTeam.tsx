@@ -1,4 +1,4 @@
-import LayoutWrapper from "@/components/shared/LayoutWrapper";
+// import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./OurTeam.module.css";
 import Image, { StaticImageData } from "next/image";
 
@@ -22,7 +22,7 @@ export default function OurTeam({
 }: Props) {
   return (
     <section className={`${styles.container} ${styles[backgroundColor]}`}>
-      <LayoutWrapper>
+      {/* <LayoutWrapper> */}
         <div className={styles.content}>
           <SectionIntroii title='From Founder' color={textColor} />
           <h2 className={`${styles.heading} ${styles[textColor]}`}>
@@ -46,7 +46,7 @@ export default function OurTeam({
             </div>
           )}
         </div>
-      </LayoutWrapper>
+      {/* </LayoutWrapper> */}
     </section>
   );
 }
