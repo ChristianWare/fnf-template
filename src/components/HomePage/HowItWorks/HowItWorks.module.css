@@ -117,6 +117,7 @@
   padding: 2rem;
   border-radius: 10px;
   transition: all 0.3s ease-in;
+  border: 2px solid var(--tan);
 }
 
 .isPast::before {
@@ -256,11 +257,11 @@
     padding-left: 5rem;
   }
 
-  .imgLayer,
+  /* .imgLayer,
   .imgContainerii {
     width: 200px;
     height: 200px;
-  }
+  } */
 
   .imgContainerii {
     margin-top: 3rem;
