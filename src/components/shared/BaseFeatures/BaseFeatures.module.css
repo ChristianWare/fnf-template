@@ -120,8 +120,9 @@
 
 .featureTitle {
   font-family: var(--DotSansMedium);
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: normal;
+  text-align: left;
 }
 
 .modalContent {
@@ -213,6 +214,9 @@
 
   .bottom {
     grid-template-columns: 1fr;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .twoThree {
@@ -238,6 +242,12 @@
     max-height: none;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .bottom {
+width: 100%;  }
+}
+
 
 @media screen and (max-width: 568px) {
   .twoThree {

@@ -71,8 +71,11 @@
 }
 
 .copy {
-  color: var(--lightBlack);
+  color: var(--lighterBlack);
+  font-family: var(--inter);
+  font-size: 1.4rem;
   width: 50%;
+  font-weight: 600;
 }
 
 .footerRight {
@@ -86,6 +89,8 @@
   text-transform: uppercase;
   color: var(--lightBlack);
   font-size: 1.4rem;
+  font-family: var(--inter);
+  font-weight: 700;
 }
 
 .optionList {
@@ -94,7 +99,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: .5rem;
   margin-top: 3rem;
 }
 

@@ -59,8 +59,7 @@ export default function FinalCTAMain() {
           <footer className={styles.footerContainer}>
             <div className={styles.footerTop}>
               <div className={styles.footerLeft}>
-                {/* <SectionIntroii title='Fonts & Footers' /> */}
-                <p className={`${styles.copy} subheading`}>
+                <p className={styles.copy}>
                   Built in Phoenix, AZ - serving everywhere. If you’re a salon,
                   med-spa, rental fleet, fitness gym, or black-car service, this
                   was designed for you.

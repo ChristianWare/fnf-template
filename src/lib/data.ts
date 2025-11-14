@@ -81,7 +81,7 @@ export const footerData = [
       },
       {
         id: 1.56,
-        option: "faqs",
+        option: "Faqs",
         href: "/faqs",
       },
       {

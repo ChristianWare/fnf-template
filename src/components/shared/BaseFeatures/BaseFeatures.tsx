@@ -76,7 +76,6 @@ const featureData: Feature[] = [
 ];
 
 export default function BaseFeatures() {
-
   return (
     <section className={styles.container}>
       <LayoutWrapper>
@@ -127,20 +126,15 @@ export default function BaseFeatures() {
             </div>
             <div className={styles.twoThree}>
               {featureData.map((feature, index) => (
-                <button
-                  key={index}
-                  className={styles.featureCard}
-                  aria-label={`Open details for ${feature.title}`}
-                >
+                <div key={index} className={styles.featureCard}>
                   <h3 className={styles.featureTitle}>{feature.title}</h3>
                   {feature.icon}
-                </button>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </LayoutWrapper>
-     
     </section>
   );
 }
