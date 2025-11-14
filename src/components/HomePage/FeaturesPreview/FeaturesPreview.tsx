@@ -31,24 +31,24 @@ export const data = [
     desc: "Staff, stylists, and drivers stay in sync (Google/iCal). Buffers and travel time logic included.",
     icon: <div className={styles.pattern4} />,
   },
-  {
-    id: 5,
-    title: "Add-ons & upsells",
-    desc: "Tips, extras, distance fees, and packages at checkout (not on the phone).",
-    icon: <div className={styles.pattern5} />,
-  },
-  {
-    id: 6,
-    title: "SEO that matches your services",
-    desc: 'Location/service pages that rank and convert, not just "look pretty."',
-    icon: <div className={styles.pattern6} />,
-  },
-  {
-    id: 7,
-    title: "Live analytics",
-    desc: "See bookings, revenue, and show-up rates at a glance.",
-    icon: <div className={styles.pattern7} />,
-  },
+  // {
+  //   id: 5,
+  //   title: "Add-ons & upsells",
+  //   desc: "Tips, extras, distance fees, and packages at checkout (not on the phone).",
+  //   icon: <div className={styles.pattern5} />,
+  // },
+  // {
+  //   id: 6,
+  //   title: "SEO that matches your services",
+  //   desc: 'Location/service pages that rank and convert, not just "look pretty."',
+  //   icon: <div className={styles.pattern6} />,
+  // },
+  // {
+  //   id: 7,
+  //   title: "Live analytics",
+  //   desc: "See bookings, revenue, and show-up rates at a glance.",
+  //   icon: <div className={styles.pattern7} />,
+  // },
   {
     id: 8,
     title: "",
@@ -86,7 +86,7 @@ export default function FeaturesPreview() {
               <Button
                 href='/services'
                 btnType='black'
-                text='See entire solution'
+                text='See all features'
               />
             </div>
           </div>

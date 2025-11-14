@@ -1,7 +1,8 @@
 .container {
   background-color: var(--tan);
-  padding: 10rem 0rem;
-  padding-top: 20rem;
+  /* padding: 10rem 0rem; */
+    padding-bottom: 0rem;
+
 }
 
 .top {
@@ -20,8 +21,8 @@
 
 .imgContainer1 {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 175px;
+  height: 175px;
 }
 
 .img {

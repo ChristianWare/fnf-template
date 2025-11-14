@@ -1,6 +1,7 @@
 .container {
   background-color: var(--tan);
   padding: 10rem 0rem;
+  padding-bottom: 0rem;
   position: relative;
 }
 
@@ -91,25 +92,25 @@
   z-index: 1;
 }
 
-.mapDataBox::before {
+/* .mapDataBox::before {
   content: "";
   position: absolute;
   top: 50%;
   width: 95%;
   height: 30%;
-  background-color: var(--lightBlack);
+  background-color: var(--darkerTan);
   z-index: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .mapDataBox::after {
   content: "";
   position: absolute;
-  top: 5%;
+  top: 15%;
   width: 95%;
   height: 20%;
-  background-color: var(--lightBlack);
+  background-color: var(--darkerTan);
   z-index: -1;
   left: 0%;
   /* transform: translate(-50%, -50%); */
@@ -121,11 +122,11 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  background-color: var(--lightBlack);
+  background-color: var(--darkerTan);
   border-radius: 10px;
   padding: 3rem;
   width: 100%;
-  min-height: 300px;
+  min-height: 250px;
   position: relative;
   z-index: 1;
 }
@@ -168,7 +169,7 @@
 }
 
 .pattern1 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 6rem;
   height: 6rem;
@@ -188,7 +189,7 @@
 }
 
 .pattern2 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -197,7 +198,7 @@
 }
 
 .pattern3 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -214,7 +215,7 @@
 }
 
 .pattern4 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5rem;
   height: 5rem;
@@ -223,7 +224,7 @@
 }
 
 .pattern5 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -232,7 +233,7 @@
 }
 
 .pattern6 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -241,7 +242,7 @@
 }
 
 .pattern7 {
-  background-image: linear-gradient(0deg, transparent 50%, var(--lime) 50%);
+  background-image: linear-gradient(0deg, transparent 50%, var(--black) 50%);
   background-size: 5px 5px;
   width: 5.6rem;
   height: 5.6rem;
@@ -259,14 +260,13 @@
 
 .title {
   font-family: var(--DotSansBold);
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: capitalize;
-  color: var(--tan);
+  /* color: var(--tan); */
 }
 
 .desc {
   font-size: 1.5rem;
-  color: var(--lighterBlack);
   color: var(--grayii);
 }
 
@@ -281,16 +281,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .mapDataBox::before {
+  /* .mapDataBox::before {
     top: 37%;
     width: 100%;
-    height: 10%;
+    height: 10%; */
     /* background-color: red; */
-  }
+  /* } */
 
   .mapDataBox::after {
     /* background-color: blue; */
-    top: 6%;
+    top: 10%;
     height: 10%;
   }
 
@@ -304,7 +304,7 @@
     top: auto;
     bottom: 25%;
     width: 50%;
-    background-color: var(--lightBlack);
+    background-color: var(--darkerTan);
     left: 50%;
     transform: translateX(-50%);
   }
@@ -320,7 +320,7 @@
   }
 
   .mapDataBox::after {
-    height: 80%;
+    height: 65%;
     width: 40%;
     left: 50%;
     transform: translateX(-50%);
@@ -345,7 +345,7 @@
   }
 
   .card {
-    min-height: 250px;
+    min-height: 200px;
     align-items: center;
     justify-content: center;
     gap: 3rem;

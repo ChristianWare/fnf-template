@@ -28,7 +28,7 @@
 }
 
 .card {
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -37,13 +37,13 @@
   height: 100%;
   gap: 5rem;
   position: relative;
-  background-color: var(--darkTan);
+  background-color: var(--darkerTan);
   /* border: 1px solid var(--gray); */
 }
 
-.card:nth-child(2) {
+/* .card:nth-child(2) {
   background-color: var(--black);
-}
+} */
 
 .index {
   font-size: 3.2rem;
@@ -57,8 +57,9 @@
   grid-gap: 3rem;
   background-color: var(--tan);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 100%;
+  min-height: 310px;
 }
 
 .cardTopLeft {
@@ -81,10 +82,10 @@
 }
 
 .serviceNameHeading {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
-.card:nth-child(2) .serviceNameHeading,
+/* .card:nth-child(2) .serviceNameHeading,
 .card:nth-child(2) .price,
 .card:nth-child(2) .descii,
 .card:nth-child(2) .headline,
@@ -93,16 +94,15 @@
 .card:nth-child(2) .descriptionMobile,
 .card:nth-child(2) .title {
   color: var(--tan);
-}
+} */
 
-.card:nth-child(2) .addonSectionTableHeadings {
+/* .card:nth-child(2) .addonSectionTableHeadings {
   border-bottom: 1px solid var(--tan);
-}
+} */
 
-.card:nth-child(2) .cardTop {
+/* .card:nth-child(2) .cardTop {
   background-color: var(--lighterBlack);
-  /* border: 1px solid var(--tan); */
-}
+} */
 
 .price {
   width: 100%;
@@ -135,6 +135,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  font-size: 1.4rem;
 }
 
 .check {
@@ -164,8 +165,10 @@
 }
 
 .serviceName {
-  font-size: 1.6rem;
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--grayiii) !important;
+  padding-bottom: .5rem;
   font-family: var(--inter);
   letter-spacing: -0.2px;
   display: flex;
@@ -173,6 +176,7 @@
   justify-content: flex-start;
   position: relative;
 }
+
 
 .serviceCardDots {
   display: grid;
@@ -193,9 +197,9 @@
   font-family: var(--inter);
 }
 
-.card:nth-child(2) .notice {
+/* .card:nth-child(2) .notice {
   color: var(--tan);
-}
+} */
 
 .servicesCardBottom {
   display: grid;
@@ -296,6 +300,7 @@
 .btnContainer {
   display: grid;
   width: 100%;
+  margin-top: auto;
 }
 
 .btnContainerii {

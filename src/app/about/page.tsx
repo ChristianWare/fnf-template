@@ -1,4 +1,4 @@
-import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
+// import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 // import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
 import Values from "@/components/AboutPage/Values/Values";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
@@ -20,7 +20,6 @@ export default function AboutPage() {
     <main>
       <Nav />
       <ServicePageIntro />
-      <BrandStory />
       <AboutUs />
       {/* <FinalCTA /> */}
       <Values />

@@ -6,11 +6,12 @@ import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 import Faq from "@/components/Faq/Faq";
-import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
+// import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
 import TheProblem from "@/components/HomePage/TheProblem/TheProblem";
 import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
+import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 
 export default function HomePage() {
   return (
@@ -20,9 +21,10 @@ export default function HomePage() {
       <PostHero />
       <TheProblem />
       <FeaturesPreview />
+      <BrandStory />
       <BaseFeatures />
       <Industries />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <PricingPreview />
       <Faq />
       <BlogSection />
