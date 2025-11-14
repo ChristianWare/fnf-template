@@ -5,7 +5,6 @@ import styles from "./ContactForm.module.css";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import FalseButton from "../FalseButton/FalseButton";
 import Button from "../Button/Button";
 
 interface Inputs {
@@ -247,7 +246,7 @@ export default function ContactForm() {
       <div className={styles.btnBtnContainer}>
         <Button
           type='submit'
-          btnType='lime'
+          btnType='black'
           disabled={loading}
           text={loading ? "Sending..." : "Submit"}
         />

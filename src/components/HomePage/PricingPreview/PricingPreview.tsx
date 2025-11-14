@@ -19,7 +19,7 @@ export default function PricingPreview() {
           <div className={styles.btnContainer}>
             <Button
               href='/pricing'
-              btnType='lime'
+              btnType='black'
               text='See all pricing details'
             />
           </div>

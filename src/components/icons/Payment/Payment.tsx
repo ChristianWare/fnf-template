@@ -9,7 +9,7 @@ export default function Payment(props: SVGProps<SVGSVGElement>) {
       height='1em'
       fill='none'
       stroke='currentColor'
-      strokeWidth={.5}
+      strokeWidth={2}
       strokeLinecap='round'
       strokeLinejoin='round'
       xmlns='http://www.w3.org/2000/svg'

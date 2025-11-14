@@ -14,8 +14,8 @@
 
 .imgContainer {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 175px;
+  height: 175px;
 }
 
 .img {
@@ -34,6 +34,7 @@
 
 .copy {
   max-width: 500px;
+  color: var(--lighterBlack);
 }
 
 .bottom {
@@ -99,7 +100,6 @@
   background-color: var(--darkTan);
   padding: 2rem;
   border-radius: 10px;
-  cursor: pointer;
   border: 1px solid transparent;
   transition: all 160ms ease;
 }
@@ -109,10 +109,10 @@
   border-color: var(--black);
 }
 
-.featureCard:hover {
+/* .featureCard:hover {
   transform: translateY(-2px);
   background-color: var(--lime);
-}
+} */
 
 .icon {
   font-size: 3rem;
