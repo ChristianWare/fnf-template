@@ -113,7 +113,6 @@
   background-color: var(--darkerTan);
   z-index: -1;
   left: 0%;
-  /* transform: translate(-50%, -50%); */
 }
 
 .card {
@@ -287,7 +286,7 @@
     top: 37%;
     width: 100%;
     height: 10%; */
-    /* background-color: red; */
+  /* background-color: red; */
   /* } */
 
   .mapDataBox::after {
