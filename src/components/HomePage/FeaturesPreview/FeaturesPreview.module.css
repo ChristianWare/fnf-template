@@ -118,13 +118,14 @@
 
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
   background-color: var(--darkerTan);
   border-radius: 10px;
   padding: 3rem;
+  padding-bottom: 2rem;
   width: 100%;
   min-height: 250px;
   position: relative;
@@ -186,6 +187,7 @@
     2% 35%,
     39% 35%
   );
+  margin-top: auto;
 }
 
 .pattern2 {
@@ -260,13 +262,13 @@
 
 .title {
   font-family: var(--DotSansBold);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-transform: capitalize;
   /* color: var(--tan); */
 }
 
 .desc {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--grayii);
 }
 
