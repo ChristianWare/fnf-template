@@ -187,6 +187,13 @@
   .footerRight {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .copy {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -229,12 +236,6 @@
     align-items: flex-end;
     justify-content: flex-end;
     display: block;
-  }
-
-  .optionSection:nth-child(2) .title,
-  .optionSection:nth-child(2) .option {
-    text-align: right;
-    width: 100%;
   }
 
   .footerBottom {

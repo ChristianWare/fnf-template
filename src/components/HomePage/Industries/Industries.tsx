@@ -12,11 +12,7 @@ import Button from "@/components/shared/Button/Button";
 import Link from "next/link";
 import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 
-export default function Industries({
-  excludeSlug,
-}: {
-  excludeSlug?: string;
-}) {
+export default function Industries({ excludeSlug }: { excludeSlug?: string }) {
   const visible = useMemo(
     () => projects.filter((p) => p.slug !== excludeSlug),
     [excludeSlug]
@@ -73,7 +69,7 @@ export default function Industries({
   const prev = () => {
     if (isShifting || !isAnimating) return;
     setIsShifting(true);
-  setIndex((i) => i - 1);
+    setIndex((i) => i - 1);
   };
 
   const handleTransitionEnd = () => {
@@ -105,7 +101,7 @@ export default function Industries({
               <SectionIntroii title='Selected Works' />
               <h2 className={styles.heading}>Featured case studies</h2>
               <div className={styles.btnContainer}>
-                <Button href='/work' btnType='lime' text='All case studies' />
+                <Button href='/work' btnType='black' text='All case studies' />
               </div>
             </div>
             <div className={styles.topRight}>
@@ -172,10 +168,7 @@ export default function Industries({
                     </small>
                   </div>
                   <div className={styles.btnContainer}>
-                    <div
-                      
-                      className={styles.caseStudyBtn}
-                    >
+                    <div className={styles.caseStudyBtn}>
                       View case study <Arrow className={styles.arrowii} />
                     </div>
                   </div>

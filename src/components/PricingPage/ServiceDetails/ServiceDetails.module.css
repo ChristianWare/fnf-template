@@ -487,4 +487,9 @@
   .copy {
     width: 90%;
   }
+
+  .cardTop {
+    min-height: auto;
+    grid-gap: 3rem;
+  }
 }
