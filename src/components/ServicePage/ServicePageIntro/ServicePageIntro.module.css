@@ -104,3 +104,19 @@
     height: 100%;
   }
 }
+
+@media screen and (max-width: 568px) {
+
+
+  .imgContainerii {
+    display: none;
+  }
+
+  .imgContainer {
+    height: 275px;
+  }
+
+  .copyii  {
+    height: 100%;
+  }
+}
