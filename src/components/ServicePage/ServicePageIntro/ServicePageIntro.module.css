@@ -18,6 +18,14 @@
   gap: 2rem;
 }
 
+.leftLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
 .right {
   display: flex;
   flex-direction: column;
@@ -47,9 +55,14 @@
   margin-top: auto;
 }
 
-.copy, .copyii {
+.copy,
+.copyii {
   color: var(--lighterBlack);
   max-width: 500px;
+}
+
+.copyii {
+  display: none;
 }
 
 @media screen and (max-width: 1068px) {
@@ -67,6 +80,16 @@
 
   .copy {
     display: none;
+  }
+
+  .copyii {
+    display: block;
+    /* margin-top: 2rem; */
+    background-color: var(--lightBlack);
+    border-radius: 15px;
+    padding: 2rem;
+    color: var(--whiteii);
+    font-size: 1.4rem;
   }
 
   .btnContainer {

@@ -3,7 +3,7 @@ import styles from "./ServicePageIntro.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import llustration from "../../../../public/images/whydb.jpg";
-import Marquee from "@/components/shared/Marquee/Marquee";
+// import Marquee from "@/components/shared/Marquee/Marquee";
 import Button from "@/components/shared/Button/Button";
 
 export default function ServicePageIntro() {
@@ -61,7 +61,7 @@ export default function ServicePageIntro() {
           </div>
         </div>
       </LayoutWrapper>
-      <Marquee />
+      {/* <Marquee /> */}
     </section>
   );
 }
