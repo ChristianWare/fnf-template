@@ -1,6 +1,4 @@
 .container {
-  padding: 10rem 0rem;
-  padding-bottom: 0rem;
   background-color: var(--tan);
 }
 
@@ -86,11 +84,8 @@
   height: 3.5rem;
   border-radius: 50%;
   margin-left: auto;
-  transition: all 0.3s ease-in-out;
-}
-
-.qaContainer:hover .arrowContainer {
   background-color: var(--lime);
+  transition: all 0.3s ease-in-out;
 }
 
 .icon {

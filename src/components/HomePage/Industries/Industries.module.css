@@ -1,6 +1,5 @@
 .container {
   background-color: var(--tan);
-  padding-bottom: 20rem;
 }
 
 .top {
@@ -213,14 +212,12 @@
 }
 
 @media screen and (max-width: 568px) {
-  
-  .top, .topLeft {
+  .top,
+  .topLeft {
     align-items: center;
     justify-content: center;
     text-align: center;
   }
-
-
 
   .carouselViewport {
     width: 100%;
@@ -232,27 +229,27 @@
   .track {
     flex-direction: column;
     gap: 1.5rem;
-    transform: none !important;    /* override inline translateX */
+    transform: none !important; /* override inline translateX */
   }
 
   .trackAnimating {
-    transition: none;               /* no slide animation on stacked view */
+    transition: none; /* no slide animation on stacked view */
   }
 
   .card {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 5;            /* keeps your fill image happy */
+    aspect-ratio: 4 / 5; /* keeps your fill image happy */
     border-radius: 10px;
   }
 
   .arrowLeft,
   .arrowRight {
-    display: none;                   /* optional: hide nav buttons on stack */
+    display: none; /* optional: hide nav buttons on stack */
   }
 
   .sectionIntro {
-    padding: 1rem;                   /* optional: tighter padding on mobile */
+    padding: 1rem; /* optional: tighter padding on mobile */
   }
 
   .cardBottom {

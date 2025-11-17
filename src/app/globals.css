@@ -14,12 +14,13 @@
   --darkTan: #e8eae0;
   --darkerTan: #dddfd4;
   --darkGreen: #021d15;
-  --olive: #D3E022;
-  --green: #0F2A21;
+  --olive: #d3e022;
+  --green: #0f2a21;
   --blue: #2563eb;
-  --white: #f4f3ea;
+  --white: #ffffff;
   --whiteii: #fff9;
   --lime: #b6e400;
+  --text: #6c6f75;
   --stickyTop: 20vh;
   --cardGap: 1rem;
   --cardMinH: clamp(300px, 20vh, 480px);
@@ -92,7 +93,8 @@ h1 {
   -moz-osx-font-smoothing: grayscale; */
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 4rem;
   font-family: var(--Merriweather);
   letter-spacing: -1px;
@@ -219,7 +221,8 @@ button {
     font-size: 4.5rem;
   }
 
-  h2, .h2 {
+  h2,
+  .h2 {
     font-size: 3rem;
     letter-spacing: 0px;
   }
@@ -247,7 +250,8 @@ button {
     /* line-height: 1.2; */
   }
 
-  h2, .h2 {
+  h2,
+  .h2 {
     letter-spacing: -1px;
     /* line-height: 1.2; */
   }

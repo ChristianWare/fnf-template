@@ -48,20 +48,10 @@ export default function BrandStory() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.top}>
-          <div className={styles.imgContainer1}>
-            <Image
-              src={ServiceIllustration}
-              alt='Service Illustration'
-              fill
-              className={styles.img}
-              priority
-            />
-          </div>
           <SectionIntroii title='Our Ethos' />
           <h2 className={`${styles.heading} h3`}>
             Who we are <br /> — and why it matters
           </h2>
-          
         </div>
         <div className={styles.content}>
           <div className={styles.left}>
@@ -85,7 +75,16 @@ export default function BrandStory() {
               </p>
             </div>
             <div className={styles.middleBottom}>
-              <div className={styles.star} />
+              {/* <div className={styles.star} /> */}
+              <div className={styles.imgContainer1}>
+                <Image
+                  src={ServiceIllustration}
+                  alt='Service Illustration'
+                  fill
+                  className={styles.img}
+                  priority
+                />
+              </div>
             </div>
           </div>
           <div className={styles.right}>

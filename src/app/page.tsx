@@ -12,6 +12,7 @@ import PostHero from "@/components/HomePage/PostHero/PostHero";
 import TheProblem from "@/components/HomePage/TheProblem/TheProblem";
 import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
 import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
+import Problemii from "@/components/HomePage/Problemii/Problemii";
 
 export default function HomePage() {
   return (
@@ -19,7 +20,8 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <PostHero />
-      <TheProblem />
+      {/* <TheProblem /> */}
+      <Problemii />
       <FeaturesPreview />
       <BrandStory />
       <BaseFeatures />

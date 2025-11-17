@@ -92,7 +92,6 @@ export default function FeaturesPreview() {
           </div>
           <div className={styles.bottom}>
             <div className={styles.background} />
-
             <div className={styles.mapDataBox}>
               {data.map((item) => (
                 <div

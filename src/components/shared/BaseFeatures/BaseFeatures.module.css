@@ -1,7 +1,5 @@
-/* BaseFeatures.module.css */
 .container {
   background-color: var(--tan);
-  padding: 10rem 0rem;
 }
 
 .top {
@@ -245,9 +243,9 @@
 
 @media screen and (max-width: 768px) {
   .bottom {
-width: 100%;  }
+    width: 100%;
+  }
 }
-
 
 @media screen and (max-width: 568px) {
   .twoThree {
