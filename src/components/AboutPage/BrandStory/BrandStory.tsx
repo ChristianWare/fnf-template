@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./BrandStory.module.css";
 import Image from "next/image";
-import Img1 from "../../../../public/images/brandStoryii.jpg";
+import Img1 from "../../../../public/images/brandStoryiii.jpg";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Design from "@/components/icons/Design/Design";
@@ -67,7 +67,7 @@ export default function BrandStory() {
           </div>
           <div className={styles.middle}>
             <div className={styles.middleTop}>
-              <h3 className={styles.subHeadingii}>What we do (in one line)</h3>
+              <h3 className={styles.subHeadingii}>What we do, <br /> and what we believe</h3>
               <p className={styles.copyii}>
                 We turn your site into a direct-booking machine with a
                 one-screen, deposit-first checkout, automatic reminders,

@@ -2,6 +2,7 @@ import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Problemii.module.css";
 import Image from "next/image";
 import Img1 from "../../../../public/images/stressediii.jpg";
+import Img2 from "../../../../public/images/stressedv.jpg";
 import Button from "@/components/shared/Button/Button";
 import Close from "@/components/icons/Close/Close";
 
@@ -47,17 +48,6 @@ export default function Problemii() {
           </div>
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
-              {/* <p className={styles.copy}>
-                Your day is packed. Phones ring, texts pile up, and your
-                “Bookings” button dumps people into a form that’s confusing on
-                mobile. Clients bounce. No-shows creep up. You chase payments.
-                Staff double-books. You’re paying for three different tools that
-                still don’t talk to each other.
-                <br />
-                <br />
-                Meanwhile, competitors with simpler checkouts win the
-                booking—often from your own Instagram traffic.
-              </p> */}
               <div className={styles.mapDataContainer}>
                 <ul className={styles.dataItem}>
                   {data.map((item) => (
@@ -81,8 +71,23 @@ export default function Problemii() {
                   className={styles.img}
                 />
               </div>
+              <div className={styles.imgContainer}>
+                <Image
+                  src={Img2}
+                  alt='Hero Image'
+                  fill
+                  className={styles.img}
+                />
+              </div>
             </div>
           </div>
+        </div>
+        <div className={styles.btnContainerMobile}>
+          <Button
+            href='/contact'
+            btnType='black'
+            text='Book your discovery call'
+          />
         </div>
       </LayoutWrapper>
     </section>

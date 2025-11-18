@@ -25,6 +25,13 @@
   border-radius: 10px;
 }
 
+.img2 {
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--gray) !important;
+  object-position: center 20%;
+}
+
 .copy {
   font-family: var(--DotSansMedium);
   font-size: 1.6rem;
@@ -135,10 +142,6 @@
 
 .card:last-child {
   padding: 1rem;
-}
-
-.cardWide {
-  grid-column: span 2;
 }
 
 .icon {
@@ -286,11 +289,19 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+    .imgContainer2 {
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 568px) {
   .mapDataBox {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-last-child(n + 3) {
+    grid-column: span 2;
   }
 
   .mapDataBox::before {
@@ -298,7 +309,7 @@
   }
 
   .mapDataBox::after {
-    height: 65%;
+    height: 50%;
     width: 40%;
     left: 50%;
     transform: translateX(-50%);
@@ -358,4 +369,6 @@
     width: 200px;
     height: 200px;
   }
+
+
 }

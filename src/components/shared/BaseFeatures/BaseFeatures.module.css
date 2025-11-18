@@ -117,7 +117,7 @@
 }
 
 .featureTitle {
-  font-family: var(--DotSansMedium);
+  font-family: var(--DotSansBold);
   font-size: 1.6rem;
   letter-spacing: normal;
   text-align: left;

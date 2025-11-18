@@ -4,6 +4,7 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
 import ServiceIllustration from "../../../../public/images/calendarii.png";
 import Img1 from "../../../../public/images/relief.jpg";
+import Img2 from "../../../../public/images/reliefii.jpg";
 import Image from "next/image";
 
 export const data = [
@@ -50,11 +51,18 @@ export const data = [
   //   icon: <div className={styles.pattern7} />,
   // },
   {
-    id: 8,
+    id: 7,
     title: "",
     desc: "",
     icon: "",
     src: Img1,
+  },
+  {
+    id: 8,
+    title: "",
+    desc: "",
+    icon: "",
+    src: Img2,
   },
 ];
 
@@ -112,7 +120,7 @@ export default function FeaturesPreview() {
                           src={item.src}
                           alt={item.title || "Relief"}
                           fill
-                          className={styles.img}
+                          className={styles.img2}
                         />
                       </div>
                     )}
