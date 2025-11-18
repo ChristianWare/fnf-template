@@ -119,6 +119,7 @@ export default function FeaturesPreview() {
                         <Image
                           src={item.src}
                           alt={item.title || "Relief"}
+                          title={item.title || "Relief"}
                           fill
                           className={styles.img2}
                         />

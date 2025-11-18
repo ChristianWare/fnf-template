@@ -14,10 +14,9 @@ export default function ServicePageIntro() {
           <div className={styles.left}>
             <div className={styles.leftLeft}>
               <p className={styles.copyii}>
-                We build booking websites that act like a 24/7 front desk—so
-                your clients can book, pay, reschedule, and show up without
-                phone tag. Built in Phoenix. Serving salons, med-spas, rentals,
-                and black-car services everywhere.
+                We turn service websites into 24/7 front desks—so more people
+                finish checkout, fewer people no-show, and your team stops
+                chasing payments and DMs.
               </p>
               <div className={styles.imgContainerii}>
                 <Image
@@ -46,10 +45,9 @@ export default function ServicePageIntro() {
               your needs
             </h1>
             <p className={styles.copy}>
-              We build booking websites that act like a 24/7 front desk—so your
-              clients can book, pay, reschedule, and show up without phone tag.
-              Built in Phoenix. Serving salons, med-spas, rentals, and black-car
-              services everywhere.
+              We turn service websites into 24/7 front desks—so more people
+              finish checkout, fewer people no-show, and your team stops chasing
+              payments and DMs.
             </p>
             <div className={styles.btnContainer}>
               <Button

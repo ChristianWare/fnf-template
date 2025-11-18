@@ -11,7 +11,6 @@ import { questions, type SectionKey, type QuestionItem } from "@/lib/data";
 import Image from "next/image";
 import ServiceIllustration from "../../../public/illustrations/ponderIllustration.png";
 
-
 /** Resolve current section from the pathname */
 function sectionFromPath(pathname: string): SectionKey {
   if (pathname.startsWith("/pricing")) return "pricing";
@@ -104,7 +103,16 @@ export default function Faq() {
         <LayoutWrapper>
           <div className={styles.content}>
             <div className={styles.left}>
-              <SectionIntroii title={meta.title} />
+              {/* <SectionIntroii title={meta.title} /> */}
+              <div className={styles.imgContainer1}>
+                <Image
+                  src={ServiceIllustration}
+                  alt='Service Illustration'
+                  fill
+                  className={styles.img}
+                  priority
+                />
+              </div>
               <h2 className={styles.heading}>
                 <span className={styles.span}>{meta.headingSpan}</span> <br />
                 {meta.headingRest}
@@ -117,15 +125,6 @@ export default function Faq() {
               <div className={styles.btnContainer}>
                 <Button href='/faqs' btnType='black' text='See all FAQ’s' />
               </div>
-              <div className={styles.imgContainer1}>
-                            <Image
-                              src={ServiceIllustration}
-                              alt='Service Illustration'
-                              fill
-                              className={styles.img}
-                              priority
-                            />
-                          </div>
             </div>
 
             <div className={styles.right}>

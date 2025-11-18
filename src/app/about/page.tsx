@@ -8,6 +8,7 @@ import Faq from "@/components/Faq/Faq";
 import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServicePageIntro";
 import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import Outcomes from "@/components/HomePage/Outcomes/Outcomes";
+import Fit from "@/components/AboutPage/Fit/Fit";
 
 export const metadata = {
   title: "About Us",
@@ -21,6 +22,7 @@ export default function AboutPage() {
       <Nav />
       <ServicePageIntro />
       <AboutUs />
+      <Fit />
       {/* <FinalCTA /> */}
       <Values />
       <Outcomes />
