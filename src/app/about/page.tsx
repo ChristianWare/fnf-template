@@ -1,5 +1,3 @@
-// import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
-// import FinalCTA from "@/components/AboutPage/FinalCTA/FinalCTA";
 import Values from "@/components/AboutPage/Values/Values";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import Nav from "@/components/shared/Nav/Nav";
@@ -7,7 +5,6 @@ import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
 import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServicePageIntro";
 import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
-import Outcomes from "@/components/HomePage/Outcomes/Outcomes";
 import Fit from "@/components/AboutPage/Fit/Fit";
 
 export const metadata = {
@@ -25,7 +22,7 @@ export default function AboutPage() {
       <Fit />
       {/* <FinalCTA /> */}
       <Values />
-      <Outcomes />
+      {/* <Outcomes /> */}
       <Faq />
       <BlogSection />
       <FinalCTAMain />
