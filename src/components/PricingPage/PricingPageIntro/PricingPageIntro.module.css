@@ -29,8 +29,9 @@
 
 .copy {
   text-align: center;
-  width: 50%;
+  max-width: 500px;
   margin-bottom: 2rem;
+  color: var(--lighterBlack);
 }
 
 @media screen and (max-width: 1068px) {

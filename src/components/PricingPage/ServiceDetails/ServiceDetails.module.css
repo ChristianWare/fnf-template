@@ -37,13 +37,35 @@
   height: 100%;
   gap: 5rem;
   position: relative;
-  background-color: var(--darkerTan);
+  background-color: var(--lighterTan);
   /* border: 1px solid var(--gray); */
 }
 
-/* .card:nth-child(2) {
-  background-color: var(--black);
-} */
+.card:nth-child(2) {
+  background-color: var(--darkTan);
+}
+
+.card:nth-child(3) {
+  background-color: var(--darkerTan);
+}
+
+.card:nth-child(4) .serviceName {
+  border-bottom: 1px solid var(--lighterBlack) !important;
+}
+
+.card:nth-child(3) .notice,
+.card:nth-child(4) .notice {
+  border: 1px solid var(--lighterBlack);
+}
+
+.card:nth-child(4) {
+  background-color: var(--darkestTan);
+  border: 1px solid var(--darkestTan);
+}
+
+.card:nth-child(4) .cardTop {
+  border: 1px solid var(--darkestTan);
+}
 
 .index {
   font-size: 3.2rem;
@@ -168,7 +190,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   border-bottom: 1px solid var(--grayiii) !important;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   font-family: var(--inter);
   letter-spacing: -0.2px;
   display: flex;
@@ -176,7 +198,6 @@
   justify-content: flex-start;
   position: relative;
 }
-
 
 .serviceCardDots {
   display: grid;
@@ -467,7 +488,7 @@
 
   .right {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 4rem;
+    grid-gap: 7rem;
   }
 
   .cardTop {
