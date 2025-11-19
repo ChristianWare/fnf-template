@@ -1,6 +1,7 @@
 .container {
-  background-color: var(--lightBlack);
+  background-color: var(--tan);
   padding: 10rem 0rem;
+  padding-top: 0rem;
 }
 
 .content {
@@ -39,12 +40,8 @@
   gap: 2rem;
 }
 
-.heading {
-  color: var(--tan);
-}
-
 .copy {
-  color: var(--tan);
+  color: var(--text);
   width: 80%;
 }
 
@@ -61,10 +58,9 @@
 }
 
 .card {
-  background-color: var(--lighterBlack);
+  background-color: var(--darkTan);
   padding: 2rem;
   border-radius: 10px;
-  border: 1px solid var(--adminGray);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -73,14 +69,14 @@
 }
 
 .title {
-  color: var(--tan);
+  /* color: var(--tan); */
   font-family: var(--DotSansBold);
   font-size: 1.6rem;
   letter-spacing: -0.5px;
 }
 
 .desc {
-  color: var(--whiteii);
+  color: var(--lighterBlack);
 }
 
 @media screen and (max-width: 1268px) {
@@ -121,7 +117,7 @@
   }
 
   .imgContainer {
-    height: 350px;
+    height: 300px;
   }
 
   .rightTop {

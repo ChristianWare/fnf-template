@@ -34,7 +34,7 @@ export default function Approach() {
             </div>
           </div>
           <div className={styles.right}>
-            <div className={styles. rightTop}>
+            <div className={styles.rightTop}>
               <h2 className={`${styles.heading} h3`}>
                 Our approach to winning clients <br /> (and helping you win
                 yours)
@@ -46,7 +46,7 @@ export default function Approach() {
               <div className={styles.btnContainer}>
                 <Button
                   href='/contact'
-                  btnType='lime'
+                  btnType='black'
                   text='Book your discovery call'
                 />
               </div>
