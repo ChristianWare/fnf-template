@@ -6,10 +6,9 @@ const Logo = () => {
   return (
     <Link href='/' className={styles.logo}>
       <Calendar className={styles.icon} />
-      {/* <div className={styles.icon} /> */}
-      <span className={styles.text1}>Fonts</span>
-      <span className={styles.text2}>&</span>
-      <span className={styles.text3}>Footers</span>
+      <span className={styles.text1}>Fonts-</span>
+      <span className={styles.text1}>&-</span>
+      <span className={styles.text1}>Footers</span>
     </Link>
   );
 };

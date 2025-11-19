@@ -57,7 +57,7 @@
 
 .stat {
   font-size: 8rem;
-  font-family: var(--DotSansBold);
+    font-family: var(--Merriweather);
   letter-spacing: -3px;
 }
 
@@ -131,7 +131,7 @@
 .card {
   padding: 1rem 0rem;
   border-bottom: 1px solid var(--lighterBlack);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: var(--DotSansBold);
   width: 100%;
   display: flex;

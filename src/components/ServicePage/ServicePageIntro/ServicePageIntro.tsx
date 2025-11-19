@@ -3,8 +3,8 @@ import styles from "./ServicePageIntro.module.css";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Image from "next/image";
 import llustration from "../../../../public/images/whydb.jpg";
-// import Marquee from "@/components/shared/Marquee/Marquee";
 import Button from "@/components/shared/Button/Button";
+import Illustration from "../../../../public/illustrations/aboutIllustration.png";
 
 export default function ServicePageIntro() {
   return (
@@ -12,30 +12,23 @@ export default function ServicePageIntro() {
       <LayoutWrapper>
         <div className={styles.content}>
           <div className={styles.left}>
-            <div className={styles.leftLeft}>
-              <p className={styles.copyii}>
-                We turn service websites into 24/7 front desks—so more people
-                finish checkout, fewer people no-show, and your team stops
-                chasing payments and DMs.
-              </p>
-              <div className={styles.imgContainerii}>
-                <Image
-                  src={llustration}
-                  alt='thinking'
-                  fill
-                  className={styles.img}
-                />
-              </div>
+            <div className={styles.illustrationContainer}>
+              <Image
+                src={Illustration}
+                alt='thinking'
+                fill
+                className={styles.illustration}
+              />
             </div>
-            <div className={styles.leftRight}>
-              <div className={styles.imgContainer}>
-                <Image
-                  src={llustration}
-                  alt='thinking'
-                  fill
-                  className={styles.img}
-                />
-              </div>
+          </div>
+          <div className={styles.middle}>
+            <div className={styles.imgContainer}>
+              <Image
+                src={llustration}
+                alt='thinking'
+                fill
+                className={styles.img}
+              />
             </div>
           </div>
           <div className={styles.right}>

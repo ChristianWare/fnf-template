@@ -44,7 +44,7 @@
   color: var(--text);
   /* width: 80%; */
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 1268px) {
@@ -72,7 +72,7 @@
   .container {
     min-height: 50rem;
   }
-  
+
   .content {
     width: 96%;
     height: 94%;

@@ -1,29 +1,31 @@
 .container {
-  background-color: var(--tan);
+  background-color: var(--darkTan);
   padding: 10rem 0rem;
   padding-bottom: 0rem;
 }
 
 .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 5rem;
   margin-bottom: 5rem;
 }
 
 .left {
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.leftLeft {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 2rem;
+.illustrationContainer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.illustration {
+  object-fit: contain;
 }
 
 .right {
@@ -38,8 +40,7 @@
   margin-top: 2rem;
 }
 
-.imgContainer,
-.imgContainerii {
+.imgContainer {
   position: relative;
   width: 100%;
   height: 500px;
@@ -50,25 +51,17 @@
   border-radius: 15px;
 }
 
-.imgContainerii {
-  height: 180px;
-  margin-top: auto;
-}
 
-.copy,
-.copyii {
+.copy {
   color: var(--lighterBlack);
   max-width: 500px;
 }
 
-.copyii {
-  display: none;
-}
-
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1268px) {
   .content {
-    grid-template-columns: 1fr;
-    grid-gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+    grid-row-gap: 5rem;
   }
 
   .right {
@@ -76,47 +69,40 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    grid-column: span 2;
   }
 
   .copy {
-    display: none;
-  }
-
-  .copyii {
-    display: block;
-    /* margin-top: 2rem; */
-    background-color: var(--lightBlack);
-    border-radius: 15px;
-    padding: 2rem;
-    color: var(--whiteii);
-    font-size: 1.4rem;
+    max-width: 650px;
   }
 
   .btnContainer {
-    margin-top: 0rem;
+    margin-top: 1rem;
   }
 
   .left {
     justify-content: center;
   }
 
-  .imgContainerii {
-    height: 100%;
+  .imgContainer {
+    height: 350px;
   }
 }
 
 @media screen and (max-width: 568px) {
-
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   .imgContainerii {
     display: none;
   }
 
-  .imgContainer {
+  .illustrationContainer {
     height: 275px;
   }
 
-  .copyii  {
-    height: 100%;
+  .middle {
+    display: none;
   }
 }

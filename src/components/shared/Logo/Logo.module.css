@@ -12,7 +12,7 @@
   font-family: var(--Merriweather);
   color: var(--tan);
   font-size: 1.6rem;
-  text-transform: lowercase;
+  text-transform: capitalize;
   line-height: 1;
 }
 
@@ -30,8 +30,8 @@
   font-weight: 700;
   color: var(--tan);
   font-size: 1.6rem;
-  text-transform: lowercase;
-  line-height: 1;
+  text-transform: capitalize;
+  /* line-height: 1; */
 }
 
 .titleContainer {
@@ -50,10 +50,4 @@
   font-size: 1.8rem;
   position: relative;
   top: -1px;
-}
-
-@media screen and (max-width: 968px) {
-  .logo {
-    gap: 1rem;
-  }
 }

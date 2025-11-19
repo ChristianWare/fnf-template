@@ -9,6 +9,9 @@ import Fit from "@/components/AboutPage/Fit/Fit";
 import WhyWeExist from "@/components/AboutPage/WhyWeExist/WhyWeExist";
 import Approach from "@/components/AboutPage/Approach/Approach";
 import Believe from "@/components/AboutPage/Believe/Believe";
+import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
+import Benefits from "@/components/AboutPage/Benefits/Benefits";
+import Chris from "@/components/AboutPage/Chris/Chris";
 
 export const metadata = {
   title: "About Us",
@@ -24,9 +27,11 @@ export default function AboutPage() {
       <WhyWeExist />
       <Approach />
       <Believe />
-      {/* <AboutUs /> */}
+      <AboutUs />
+      {/* <HowWeWork /> */}
       <Fit />
-      {/* <FinalCTA /> */}
+      <Benefits />
+      <Chris />
       {/* <Values /> */}
       {/* <Outcomes /> */}
       <Faq />
