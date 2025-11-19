@@ -31,10 +31,15 @@
   width: 100%;
 }
 
-.heading,
-.subHeadingii {
+.heading {
   font-size: 2rem;
   font-family: var(--DotSansBold);
+  letter-spacing: -0.5px;
+}
+
+.subHeadingii {
+  font-size: 1.4rem;
+  font-family: var(--DotSansMedium);
   letter-spacing: -0.5px;
 }
 
@@ -59,7 +64,7 @@
 .right {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid var(--grayiii);
+  border: 1px solid var(--darkTan);
   border-radius: 15px;
 }
 
@@ -126,6 +131,8 @@
 .card {
   padding: 1rem 0rem;
   border-bottom: 1px solid var(--lighterBlack);
+  font-size: 1.4rem;
+  font-family: var(--DotSansBold);
   width: 100%;
   display: flex;
   align-items: center;

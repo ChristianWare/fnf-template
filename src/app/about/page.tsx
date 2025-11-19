@@ -7,6 +7,7 @@ import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServiceP
 // import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import Fit from "@/components/AboutPage/Fit/Fit";
 import WhyWeExist from "@/components/AboutPage/WhyWeExist/WhyWeExist";
+import Approach from "@/components/AboutPage/Approach/Approach";
 
 export const metadata = {
   title: "About Us",
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <Nav />
       <ServicePageIntro />
       <WhyWeExist />
+      <Approach />
       {/* <AboutUs /> */}
       <Fit />
       {/* <FinalCTA /> */}

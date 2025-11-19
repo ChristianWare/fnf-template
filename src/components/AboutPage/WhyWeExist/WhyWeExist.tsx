@@ -72,11 +72,11 @@ export default function WhyWeExist() {
                   {/* <SectionIntro title='The psychology' /> */}
                   The psychology
                 </div>
-                <h3 className={styles.subHeadingii}>
+                <p className={styles.subHeadingii}>
                   Buying services isn’t like buying a product. People need to
                   know, like, and trust you before they commit. So we design
                   every page to do one of three jobs:
-                </h3>
+                </p>
                 <Calendar className={styles.icon} />
               </div>
               <div className={styles.rightTwoB}>
