@@ -1,11 +1,12 @@
-import Values from "@/components/AboutPage/Values/Values";
+// import Values from "@/components/AboutPage/Values/Values";
 import BlogSection from "@/components/shared/BlogSection/BlogSection";
 import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import Faq from "@/components/Faq/Faq";
 import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServicePageIntro";
-import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
+// import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import Fit from "@/components/AboutPage/Fit/Fit";
+import WhyWeExist from "@/components/AboutPage/WhyWeExist/WhyWeExist";
 
 export const metadata = {
   title: "About Us",
@@ -18,10 +19,11 @@ export default function AboutPage() {
     <main>
       <Nav />
       <ServicePageIntro />
-      <AboutUs />
+      <WhyWeExist />
+      {/* <AboutUs /> */}
       <Fit />
       {/* <FinalCTA /> */}
-      <Values />
+      {/* <Values /> */}
       {/* <Outcomes /> */}
       <Faq />
       <BlogSection />

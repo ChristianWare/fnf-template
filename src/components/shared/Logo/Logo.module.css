@@ -8,11 +8,10 @@
   z-index: 1;
 }
 
-
 .text1 {
   font-family: var(--Merriweather);
   color: var(--tan);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-transform: lowercase;
   line-height: 1;
 }
@@ -20,7 +19,7 @@
 .text2 {
   font-family: var(--inter);
   font-weight: 300;
-  color: var(--lime);
+  color: var(--darkTan);
   font-size: 1.8rem;
   text-transform: lowercase;
   line-height: 1;
@@ -30,7 +29,7 @@
   font-family: var(--inter);
   font-weight: 700;
   color: var(--tan);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-transform: lowercase;
   line-height: 1;
 }
@@ -42,14 +41,15 @@
 }
 
 .icon {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--lime);
+  /* width: 1rem; */
+  /* height: 1rem; */
+  /* border-radius: 50%; */
+  /* background-color: var(--lime); */
+  color: var(--lime);
   margin-right: 1rem;
-  /* font-size: 2rem; */
-  /* position: relative; */
-  /* top: -1px; */
+  font-size: 1.8rem;
+  position: relative;
+  top: -1px;
 }
 
 @media screen and (max-width: 968px) {
