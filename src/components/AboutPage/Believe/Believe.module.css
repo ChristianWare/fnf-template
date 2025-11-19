@@ -1,10 +1,11 @@
 .parent {
-  background-color: var(--floral-white);
+  background-color: var(--tan);
 }
 
 .container {
   position: relative;
   min-height: 60rem;
+  border-radius: 15px;
 }
 
 .imgOverlay {
@@ -13,66 +14,67 @@
   height: 100%;
   width: 100%;
   background: linear-gradient(rgba(10, 7, 27, 0.7), rgba(10, 7, 27, 0.7));
+  border-radius: 15px;
 }
 
 .img {
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .content {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -1px;
   padding: 5rem;
-  width: 50%;
+  width: 45%;
   z-index: 3;
   flex: 2;
-  background-color: var(--tan);
+  background-color: var(--darkTan);
   border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
+.heading {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
 
 .copy {
   color: var(--text);
-  width: 80%;
+  /* width: 80%; */
   font-weight: 500;
   font-size: 1.6rem;
 }
 
 @media screen and (max-width: 1268px) {
   .content {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .heading,
-  .copy {
-    text-align: center;
-  }
-
-  .copy {
-    width: 80%;
+    width: 60%;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .content {
-    padding: 10rem 5rem;
+@media screen and (max-width: 868px) {
+  .container {
+    min-height: 65rem;
   }
 
-  .copy {
-    width: 100%;
+  .content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4rem;
+    border-radius: 15px;
+    height: fit-content;
   }
 }
 
 @media screen and (max-width: 568px) {
+  .container {
+    min-height: 50rem;
+  }
+  
   .content {
-    padding: 10rem 5rem;
+    width: 96%;
+    height: 94%;
   }
 }
