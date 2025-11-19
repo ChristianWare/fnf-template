@@ -6,7 +6,6 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/WhyWeExist.jpg";
 import Calendar from "@/components/icons/Calendar/Calendar";
 import Arrow from "@/components/icons/Arrow/Arrow";
-import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 
 const data = [
   {
@@ -69,7 +68,10 @@ export default function WhyWeExist() {
             </div>
             <div className={styles.rightTwo}>
               <div className={styles.rightTwoA}>
-                <SectionIntro title='The psychology behind our sites' />
+                <div className={styles.SectionIntroContainer}>
+                  {/* <SectionIntro title='The psychology' /> */}
+                  The psychology
+                </div>
                 <h3 className={styles.subHeadingii}>
                   Buying services isn’t like buying a product. People need to
                   know, like, and trust you before they commit. So we design
