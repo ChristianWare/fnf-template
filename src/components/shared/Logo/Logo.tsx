@@ -1,11 +1,11 @@
 import styles from "./Logo.module.css";
 import Link from "next/link";
-import Calendar from "@/components/icons/Calendar/Calendar";
+// import Refresh from "@/components/icons/Refresh/Refresh";
 
 const Logo = () => {
   return (
     <Link href='/' className={styles.logo}>
-      <Calendar className={styles.icon} />
+      {/* <Refresh className={styles.icon} /> */}
       <span className={styles.text1}>Fonts & Footers</span>
       {/* <span className={styles.text1}>&-</span> */}
       {/* <span className={styles.text1}>Footers</span> */}

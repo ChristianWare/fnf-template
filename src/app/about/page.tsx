@@ -8,8 +8,8 @@ import ServicePageIntro from "@/components/ServicePage/ServicePageIntro/ServiceP
 import Fit from "@/components/AboutPage/Fit/Fit";
 import WhyWeExist from "@/components/AboutPage/WhyWeExist/WhyWeExist";
 import Approach from "@/components/AboutPage/Approach/Approach";
-import Believe from "@/components/AboutPage/Believe/Believe";
-import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
+// import Believe from "@/components/AboutPage/Believe/Believe";
+// import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 import Benefits from "@/components/AboutPage/Benefits/Benefits";
 import Chris from "@/components/AboutPage/Chris/Chris";
 
@@ -26,8 +26,8 @@ export default function AboutPage() {
       <ServicePageIntro />
       <WhyWeExist />
       <Approach />
-      <Believe />
-      <AboutUs />
+      {/* <Believe /> */}
+      {/* <AboutUs /> */}
       {/* <HowWeWork /> */}
       <Fit />
       <Benefits />

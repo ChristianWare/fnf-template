@@ -49,13 +49,9 @@ export default function WhyWeExist() {
                 />
               </div>
             </div>
-            <div className={styles.leftBottom}>
-              <h4 className={styles.subHeading}>Total Revenue Generated</h4>
-              <div className={styles.stat}>50M +</div>
-            </div>
+            
           </div>
-          <div className={styles.right}>
-            <div className={styles.rightOne}>
+          <div className={styles.middle}>
               <div className={styles.imgContainer}>
                 <Image
                   src={Img1}
@@ -65,7 +61,10 @@ export default function WhyWeExist() {
                   className={styles.img}
                 />
               </div>
-            </div>
+
+          </div>
+          <div className={styles.right}>
+            
             <div className={styles.rightTwo}>
               <div className={styles.rightTwoA}>
                 <div className={styles.SectionIntroContainer}>

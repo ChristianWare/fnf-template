@@ -8,7 +8,7 @@
   --darkGray: rgb(139, 139, 139);
   --grayii: #706f6f;
   --grayiii: #aba8a8;
-  --lighterTan: #F8F7F0;
+  --lighterTan: #f8f7f0;
   --tan: #f4f3ea;
   --tan600: #d1cdab;
   --tan700: #afa875;
@@ -22,6 +22,7 @@
   --white: #ffffff;
   --whiteii: #fff9;
   --lime: #b6e400;
+  --darkLime: #5b7102;
   --text: #6c6f75;
   --stickyTop: 20vh;
   --cardGap: 1rem;
