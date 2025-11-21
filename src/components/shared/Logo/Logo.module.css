@@ -4,13 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* gap: 0.2rem; */
   z-index: 1;
 }
 
 .text1 {
   font-family: var(--Merriweather);
-  color: var(--tan);
+  color: var(--black);
   font-size: 1.6rem;
   text-transform: capitalize;
   line-height: 1;
@@ -45,7 +44,7 @@
   /* height: 1rem; */
   /* border-radius: 50%; */
   /* background-color: var(--lime); */
-  color: var(--lime);
+  color: var(--black);
   margin-right: 1rem;
   font-size: 1.8rem;
   position: relative;

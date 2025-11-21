@@ -70,16 +70,16 @@
 }
 
 .navLime .arrow {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.7rem;
 }
 
 .navLime:hover .arrow {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .black,

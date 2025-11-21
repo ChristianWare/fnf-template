@@ -50,7 +50,7 @@ export default function BrandStory() {
         <div className={styles.top}>
           <SectionIntroii title='Our Ethos' />
           <h2 className={`${styles.heading} h3`}>
-            Who we are <br /> — and why it matters
+            Who we are <br /> and what we believe
           </h2>
         </div>
         <div className={styles.content}>
@@ -67,7 +67,9 @@ export default function BrandStory() {
           </div>
           <div className={styles.middle}>
             <div className={styles.middleTop}>
-              <h3 className={styles.subHeadingii}>What we do, <br /> and what we believe</h3>
+              <h3 className={styles.subHeadingii}>
+                What we do, <br /> in one line
+              </h3>
               <p className={styles.copyii}>
                 We turn your site into a direct-booking machine with a
                 one-screen, deposit-first checkout, automatic reminders,
@@ -88,7 +90,6 @@ export default function BrandStory() {
             </div>
           </div>
           <div className={styles.right}>
-            {/* <h3 className={styles.subHeadingii}>Our point of view:</h3> */}
             <div className={styles.mapDataBox}>
               {data.map((item) => (
                 <div key={item.id} className={styles.card}>
