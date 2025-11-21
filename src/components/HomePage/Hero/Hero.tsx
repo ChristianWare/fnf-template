@@ -5,8 +5,8 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
-// import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
 import Marquee from "@/components/shared/Marquee/Marquee";
+import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
 
 export default function Hero() {
   return (
@@ -23,7 +23,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <SectionIntroii title='Web Development Agency' />
+            <SectionIntroii title='Web development Agency' />
             <h1 className={styles.heading}>
               Custom booking websites
               <br />
@@ -34,12 +34,12 @@ export default function Hero() {
               reduces no-shows, collects deposits, and fills your calendar
               without endless calls and DMs.
             </p>
-            {/* <ScrollHorizontalText
+            <ScrollHorizontalText
               text='Bookings up'
               text2='No‑shows down'
               text3='Admin time saved'
               pxPerSec={50}
-            /> */}
+            />
             <div className={styles.btnContainer}>
               <Button
                 href='/contact'

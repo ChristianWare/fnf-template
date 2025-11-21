@@ -20,11 +20,6 @@ const Merriweather = localFont({
   display: "swap",
 });
 
-const RaveoMedium = localFont({
-  src: "../../public/fonts/Raveo_Medium.woff2",
-  variable: "--RaveoMedium",
-  display: "swap",
-});
 
 const DotSansRegular = localFont({
   src: "../../public/fonts/DotSansRegular.ttf",
@@ -95,7 +90,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${RaveoMedium.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
         >
           <SmoothScroll>
             <Toaster

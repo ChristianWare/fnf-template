@@ -1,11 +1,9 @@
 .logo {
   cursor: pointer;
   z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  /* gap: 0.2rem; */
-  z-index: 1;
+  background-color: var(--black);
+  padding: 1rem 2rem;
+  border-radius: 50px;
 }
 
 .text1 {
@@ -14,30 +12,7 @@
   font-size: 1.6rem;
   text-transform: capitalize;
   line-height: 1;
-}
-
-.text2 {
-  font-family: var(--inter);
-  font-weight: 300;
-  color: var(--darkTan);
-  font-size: 1.8rem;
-  text-transform: lowercase;
-  line-height: 1;
-}
-
-.text3 {
-  font-family: var(--inter);
-  font-weight: 700;
-  color: var(--tan);
-  font-size: 1.6rem;
-  text-transform: capitalize;
-  /* line-height: 1; */
-}
-
-.titleContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  white-space: nowrap;
 }
 
 .icon {
@@ -50,4 +25,22 @@
   font-size: 1.8rem;
   position: relative;
   top: -1px;
+}
+
+.imgContainer {
+  position: relative;
+  aspect-ratio: 365 / 180;
+  height: 15%;
+  width: 15%;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 568px) {
+  .logo {
+    padding: 1.2rem 2rem;
+  }
 }

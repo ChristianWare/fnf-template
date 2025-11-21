@@ -4,7 +4,7 @@ import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import Img1 from "../../../../public/images/WhyWeExist.jpg";
-import Calendar from "@/components/icons/Calendar/Calendar";
+// import Calendar from "@/components/icons/Calendar/Calendar";
 import Arrow from "@/components/icons/Arrow/Arrow";
 
 const data = [
@@ -76,7 +76,7 @@ export default function WhyWeExist() {
                   know, like, and trust you before they commit. So we design
                   every page to do one of three jobs:
                 </p>
-                <Calendar className={styles.icon} />
+                {/* <Calendar className={styles.icon} /> */}
               </div>
               <div className={styles.rightTwoB}>
                 <ul className={styles.mapDataContainer}>

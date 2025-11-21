@@ -62,9 +62,6 @@
 }
 
 .right {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid var(--darkTan); */
   border-radius: 15px;
 }
 
@@ -79,6 +76,8 @@
   border-radius: 15px;
 }
 
+/* squareCircle.svg */
+
 .rightTwo {
   background-color: var(--lime);
   padding: 3rem;
@@ -87,7 +86,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 15rem;
 }
 
 .rightTwoA {
@@ -128,9 +127,10 @@
 
 .card {
   padding: 1rem 0rem;
-  border-bottom: 1px solid var(--lighterBlack);
+  border-bottom: 1px solid var(--darkLime);
   font-size: 1.6rem;
   font-family: var(--DotSansBold);
+  color: var(--darkLime);
   width: 100%;
   display: flex;
   align-items: center;
@@ -139,6 +139,7 @@
 }
 
 .arrow {
+  color: var(--darkLime);
   transform: rotate(45deg);
 }
 
@@ -181,7 +182,7 @@
   }
 
   .rightTwo {
-    gap: 0rem
+    gap: 3rem;
   }
 }
 

@@ -4,8 +4,8 @@
   user-select: none;
   padding: 1rem 0;
   overflow: hidden;
-  border-top: 1px solid var(--gray);
-  border-bottom: 1px solid var(--gray);
+  border-top: 2px solid var(--gray);
+  border-bottom: 2px solid var(--gray);
   mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -39,7 +39,7 @@
 }
 
 .text {
-  color: var(--gray);
+  color: var(--lightBlack);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -66,8 +66,12 @@
 
 /* Seamless loop: track is two rows wide; move by exactly one row (50%) */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .slider:hover .track {
@@ -75,5 +79,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .track { animation: none; }
+  .track {
+    animation: none;
+  }
 }
