@@ -12,7 +12,6 @@
 }
 
 .bottom {
-  border: 1px solid var(--gray);
   border-radius: 2rem;
   width: 80%;
   margin-left: auto;
@@ -22,6 +21,7 @@
 .mapDataContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
 }
 
 .card {
@@ -33,17 +33,16 @@
   padding: 2rem;
   min-height: 250px;
   position: relative;
-}
-
-.card:nth-child(1),
-.card:nth-child(5) {
-  border-right: 1px solid var(--gray);
+  background-color: var(--darkTan);
+  border: 1px solid var(--gray);
 }
 
 .card:nth-child(3) {
   grid-column: span 2;
-
   padding: 0rem;
+  border: none;
+    border-top-right-radius: 2rem;
+
 }
 
 .card:nth-child(4) {
@@ -81,12 +80,11 @@
   border-top-right-radius: 2rem;
   overflow: hidden;
   grid-column: span 2;
+  border: none;
 }
 
 .img {
   object-fit: cover;
-  border: 1px solid var(--gray) !important;
-  object-position: center 20%;
 }
 
 .btnContainer {
