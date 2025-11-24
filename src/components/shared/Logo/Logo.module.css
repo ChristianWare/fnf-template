@@ -2,8 +2,15 @@
   cursor: pointer;
   z-index: 999;
   background-color: var(--black);
+  border: 1px solid var(--adminGray);
   padding: 1rem 2rem;
   border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: fit-content;
+      /* mix-blend-mode: difference; */
 }
 
 .text1 {
@@ -15,28 +22,40 @@
   white-space: nowrap;
 }
 
-.icon {
-  /* width: 1rem; */
-  /* height: 1rem; */
-  /* border-radius: 50%; */
-  /* background-color: var(--lime); */
-  color: var(--black);
-  margin-right: 1rem;
-  font-size: 1.8rem;
-  position: relative;
-  top: -1px;
-}
-
 .imgContainer {
   position: relative;
-  aspect-ratio: 365 / 180;
-  height: 15%;
-  width: 15%;
+  width: 40px;
+  height: 20px;
 }
 
 .img {
-  object-fit: cover;
-  border-radius: 10px;
+  /* width: 100%; */
+  object-fit: contain;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: fit-content;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--lime);
+}
+
+.text {
+  font-family: var(--DotSansRegular);
+  color: var(--tan);
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 568px) {

@@ -6,10 +6,8 @@ import Nav from "@/components/shared/Nav/Nav";
 import FinalCTAMain from "@/components/shared/FinalCTAMain/FinalCTAMain";
 import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview";
 import Faq from "@/components/Faq/Faq";
-// import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
-import TheProblem from "@/components/HomePage/TheProblem/TheProblem";
 import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
 import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import Problemii from "@/components/HomePage/Problemii/Problemii";
@@ -20,13 +18,11 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <PostHero />
-      {/* <TheProblem /> */}
       <Problemii />
       <FeaturesPreview />
       <BrandStory />
       <BaseFeatures />
       <Industries />
-      {/* <HowItWorks /> */}
       <PricingPreview />
       <Faq />
       <BlogSection />
