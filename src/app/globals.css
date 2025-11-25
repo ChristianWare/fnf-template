@@ -88,10 +88,10 @@ span {
 }
 
 h1 {
-  font-size: 4.5rem;
-  font-family: var(--Merriweather);
-  letter-spacing: -1.5px;
-  line-height: 1.2;
+  font-size: 5rem;
+  font-family: var(--BDOGroteskRegular);
+  letter-spacing: -1.8px;
+  line-height: 1.1;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }

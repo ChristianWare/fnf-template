@@ -51,6 +51,18 @@ const SuisseIntlMono = localFont({
   display: "swap",
 });
 
+const BDOGroteskDemiBold = localFont({
+  src: "../../public/fonts/BDOGrotesk-DemiBold.ttf",
+  variable: "--BDOGroteskDemiBold",
+  display: "swap",
+});
+
+const BDOGroteskRegular = localFont({
+  src: "../../public/fonts/BDOGrotesk-Regular.ttf",
+  variable: "--BDOGroteskRegular",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -90,7 +102,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable} `}
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable}`}
         >
           <SmoothScroll>
             <Toaster
