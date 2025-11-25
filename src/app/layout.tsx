@@ -63,6 +63,12 @@ const BDOGroteskRegular = localFont({
   display: "swap",
 });
 
+const BDOGroteskMedium = localFont({
+  src: "../../public/fonts/BDOGroteskMedium.ttf",
+  variable: "--BDOGroteskMedium",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -102,7 +108,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable}`}
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable} ${BDOGroteskMedium.variable}`}
         >
           <SmoothScroll>
             <Toaster

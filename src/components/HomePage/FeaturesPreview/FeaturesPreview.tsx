@@ -71,6 +71,7 @@ export default function FeaturesPreview() {
     <section className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
+          <div className={styles.bottom}>
           <div className={styles.top}>
             <div className={styles.imgContainer1}>
               <Image
@@ -98,7 +99,6 @@ export default function FeaturesPreview() {
               />
             </div>
           </div>
-          <div className={styles.bottom}>
             <div className={styles.background} />
             <div className={styles.mapDataBox}>
               {data.map((item) => (

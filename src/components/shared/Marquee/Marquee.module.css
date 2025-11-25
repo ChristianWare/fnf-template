@@ -1,22 +1,22 @@
+.parent {
+  padding: 10rem 0rem;
+  background-color: var(--tan);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
 .slider {
   width: 100%;
   overflow: hidden;
-  background-color: var(--tan);
   cursor: pointer;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--tan) 10%,
-    var(--tan) 90%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--tan) 10%,
-    var(--tan) 90%,
-    transparent 100%
-  );
+  padding: 2rem;
 }
 
 .title {
@@ -35,39 +35,58 @@
 .imgContainer {
   position: relative;
   width: 300px;
-  height: 450px;
+  height: 370px;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
+  background-color: var(--darkerTan);
+  transition: all 0.2s ease-in;
 }
 
 .img {
   object-fit: cover;
 }
-.overlay {
+
+.contentContainer {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.28);
-  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
 }
 
-/* centered white title */
+.iconBox {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.icon {
+  width: 6rem;
+  height: 6rem;
+  transition: all 0.2s ease-in;
+}
+
 .label {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 0 1rem;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.4rem;
-  font-family: var(--inter);
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  pointer-events: none;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  color: var(--black);
+  margin-bottom: 2rem;
+  transition: all 0.2s ease-in;
+}
+
+.desc {
+  color: var(--lighterBlack);
+  font-size: 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+  line-height: 1.35;
 }
 
 @keyframes scroll {
@@ -79,8 +98,18 @@
   }
 }
 
-.slider:hover .track {
-  animation-play-state: paused;
+.imgContainer:hover {
+  background-color: var(--black);
+  transform: rotate(-3deg);
+}
+
+.imgContainer:hover .label,
+.imgContainer:hover .icon {
+  color: var(--darkTan);
+}
+
+.imgContainer:hover .desc {
+  color: var(--darkestTan);
 }
 
 @media screen and (max-width: 568px) {

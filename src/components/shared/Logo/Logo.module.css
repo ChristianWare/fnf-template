@@ -3,7 +3,7 @@
   z-index: 999;
   background-color: var(--black);
   border: 1px solid var(--adminGray);
-  padding: 1rem 2rem;
+  padding: .7rem 2rem;
   border-radius: 50px;
   display: flex;
   align-items: center;

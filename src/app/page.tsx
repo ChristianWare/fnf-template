@@ -9,8 +9,9 @@ import Faq from "@/components/Faq/Faq";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
 import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
-import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
+// import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import Problemii from "@/components/HomePage/Problemii/Problemii";
+import Marquee from "@/components/shared/Marquee/Marquee";
 
 export default function HomePage() {
   return (
@@ -18,9 +19,10 @@ export default function HomePage() {
       <Nav />
       <Hero />
       <PostHero />
+      <Marquee />
       <Problemii />
       <FeaturesPreview />
-      <BrandStory />
+      {/* <BrandStory /> */}
       <BaseFeatures />
       <Industries />
       <PricingPreview />

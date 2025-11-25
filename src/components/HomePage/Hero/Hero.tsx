@@ -5,15 +5,16 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/thinking.png";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import ImageCluster from "@/components/shared/ImageCluster/ImageCluster";
-import Marquee from "@/components/shared/Marquee/Marquee";
-import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
+// import Marquee from "@/components/shared/Marquee/Marquee";
+import Features from "../Features/Features";
+// import ScrollHorizontalText from "@/components/shared/ScrollHorizontalText/ScrollHorizontalText";
 
 export default function Hero() {
   return (
     <div className={styles.container}>
       <LayoutWrapper>
         <div className={styles.content}>
-          <div className={styles.top}>
+          <div className={styles.left}>
             <div className={styles.imgContainer}>
               <Image
                 src={Img1}
@@ -34,12 +35,12 @@ export default function Hero() {
               reduces no-shows, collects deposits, and fills your calendar
               without endless calls and DMs.
             </p>
-            <ScrollHorizontalText
+            {/* <ScrollHorizontalText
               text='Bookings up'
               text2='No‑shows down'
               text3='Admin time saved'
               pxPerSec={50}
-            />
+            /> */}
             <div className={styles.btnContainer}>
               <Button
                 href='/contact'
@@ -53,11 +54,14 @@ export default function Hero() {
               />
             </div>
           </div>
+          <div className={styles.right}>
+            <Features />
+          </div>
           <div className={styles.bottom}></div>
         </div>
       </LayoutWrapper>
-      <span className={styles.span}>Industries we work with:</span>
-      <Marquee />
+      {/* <span className={styles.span}>Industries we work with:</span> */}
+      {/* <Marquee /> */}
     </div>
   );
 }

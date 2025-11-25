@@ -38,15 +38,6 @@ const servicesData: Service[] = [
     icon: "",
   },
   {
-    slug: "",
-    title: "",
-    subtitle: "",
-    description: "",
-    outcomes: [],
-    ctaLabel: "",
-    icon: "",
-  },
-  {
     slug: "salons-and-med-spas",
     title: "Salons & Med-Spas",
     subtitle: "Turn visits into confirmed appointments",
@@ -133,68 +124,43 @@ const servicesData: Service[] = [
     ctaLabel: "View service",
     icon: <Stariii className={styles.icon} />,
   },
-  {
-    slug: "vacation-rentals",
-    title: "Vacation Rentals",
-    subtitle: "Streamline bookings and guest management",
-    description:
-      "Multi-night calendars with dynamic pricing, cleaning fees, seasonal rates, guest limits, and check-in instructions. Damage deposit handling and house rules acceptance built in.",
-    outcomes: [
-      "Flexible night-based availability",
-      "Dynamic pricing by season/demand",
-      "Guest verification & deposit collection",
-      "Automated check-in details & house rules",
-    ],
-    ctaLabel: "View service",
-    icon: <Design className={styles.icon} />,
-  },
-  {
-    slug: "ecommerce-shopify",
-    title: "E-Commerce & Shopify",
-    subtitle: "Convert browsers into buyers",
-    description:
-      "Custom Shopify themes, headless commerce with Next.js, cart optimization, checkout flows, and product configurators. Performance-tuned for mobile conversions with analytics integration.",
-    outcomes: [
-      "Headless Shopify with Next.js for speed",
-      "Custom product pages & collections",
-      "Optimized checkout & abandoned cart recovery",
-      "Analytics, A/B testing, and conversion tracking",
-    ],
-    ctaLabel: "View service",
-    icon: <Payment className={styles.icon} />,
-  },
+  // {
+  //   slug: "vacation-rentals",
+  //   title: "Vacation Rentals",
+  //   subtitle: "Streamline bookings and guest management",
+  //   description:
+  //     "Multi-night calendars with dynamic pricing, cleaning fees, seasonal rates, guest limits, and check-in instructions. Damage deposit handling and house rules acceptance built in.",
+  //   outcomes: [
+  //     "Flexible night-based availability",
+  //     "Dynamic pricing by season/demand",
+  //     "Guest verification & deposit collection",
+  //     "Automated check-in details & house rules",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Design className={styles.icon} />,
+  // },
+  // {
+  //   slug: "ecommerce-shopify",
+  //   title: "E-Commerce & Shopify",
+  //   subtitle: "Convert browsers into buyers",
+  //   description:
+  //     "Custom Shopify themes, headless commerce with Next.js, cart optimization, checkout flows, and product configurators. Performance-tuned for mobile conversions with analytics integration.",
+  //   outcomes: [
+  //     "Headless Shopify with Next.js for speed",
+  //     "Custom product pages & collections",
+  //     "Optimized checkout & abandoned cart recovery",
+  //     "Analytics, A/B testing, and conversion tracking",
+  //   ],
+  //   ctaLabel: "View service",
+  //   icon: <Payment className={styles.icon} />,
+  // },
 ];
 
 export default function Features() {
   return (
     <section className={styles.container} id='features'>
-      <div className={styles.top}>
-        <div className={styles.imgContainer1}>
-          <Image
-            src={ServiceIllustration}
-            alt='Service Illustration'
-            fill
-            className={styles.img}
-            priority
-          />
-        </div>
-        <h2 className={styles.copy}>
-          Fonts & Footers builds direct-booking websites designed around how
-          real clients decide: fast, visual, on their phone, with zero friction
-          at checkout.
-        </h2>
-      </div>
       <div className={styles.parent}>
-          <div className={styles.background} />
-        <div className={styles.imgContainer}>
-          <Image
-            src={ServiceIllustration}
-            alt='Service Illustration'
-            fill
-            className={styles.img}
-            priority
-          />
-        </div>
+        <div className={styles.background} />
 
         <div className={styles.dataContainer}>
           {servicesData.map((x, index) => (
