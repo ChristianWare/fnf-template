@@ -4,7 +4,7 @@ import Image from "next/image";
 import Img1 from "../../../../public/images/stressediii.jpg";
 import Img2 from "../../../../public/images/stressedv.jpg";
 import Button from "@/components/shared/Button/Button";
-import Close from "@/components/icons/Close/Close";
+// import Close from "@/components/icons/Close/Close";
 
 const data = [
   {
@@ -31,61 +31,65 @@ const data = [
 
 export default function Problemii() {
   return (
-    <section className={styles.container}>
-      <LayoutWrapper>
-        <div className={styles.top}>
-          <h2 className={`${styles.heading} `}>
-            The <span className={`${styles.span1} span1`}>problems</span> most{" "}
-            <br />{" "}
-            <span className={`${styles.span2} span2`}>service businesses</span>{" "}
-            face
-          </h2>
-        </div>
-        <div className={styles.content}>
-          <div className={styles.bottom}>
-            <div className={styles.bottomLeft}>
-              <div className={styles.mapDataContainer}>
-                <ul className={styles.dataItem}>
-                  {data.map((item) => (
-                    <li key={item.id} className={styles.dataText}>
-                      <Close className={styles.closeIcon} />
-                      {item.text}
-                    </li>
-                  ))}
-                </ul>
+    <section className={styles.parent}>
+      <div className={styles.container}>
+        <LayoutWrapper>
+          <div className={styles.top}>
+            <h2 className={`${styles.heading} `}>
+              The <span className={`${styles.span1} span1`}>problems</span> most{" "}
+              <br />{" "}
+              <span className={`${styles.span2} span2`}>
+                service businesses
+              </span>{" "}
+              experience
+            </h2>
+          </div>
+          <div className={styles.content}>
+            <div className={styles.bottom}>
+              <div className={styles.bottomLeft}>
+                <div className={styles.mapDataContainer}>
+                  <ul className={styles.dataItem}>
+                    {data.map((item) => (
+                      <li key={item.id} className={styles.dataText}>
+                        <span className={styles.closeIcon}>•</span>
+                        {item.text}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* <b className={styles.bold}>
+                  Does this sound like you? <br /> We can help!
+                </b> */}
               </div>
-              <b className={styles.bold}>
-                Does this sound like you? <br /> We can help!
-              </b>
-            </div>
-            <div className={styles.bottomRight}>
-              <div className={styles.imgContainer}>
-                <Image
-                  src={Img1}
-                  alt='Hero Image'
-                  fill
-                  className={styles.img}
-                />
-              </div>
-              <div className={styles.imgContainer}>
-                <Image
-                  src={Img2}
-                  alt='Hero Image'
-                  fill
-                  className={styles.img}
-                />
+              <div className={styles.bottomRight}>
+                <div className={styles.imgContainer}>
+                  <Image
+                    src={Img1}
+                    alt='Hero Image'
+                    fill
+                    className={styles.img}
+                  />
+                </div>
+                <div className={styles.imgContainer}>
+                  <Image
+                    src={Img2}
+                    alt='Hero Image'
+                    fill
+                    className={styles.img}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.btnContainerMobile}>
-          <Button
-            href='/contact'
-            btnType='black'
-            text='Book your discovery call'
-          />
-        </div>
-      </LayoutWrapper>
+          <div className={styles.btnContainerMobile}>
+            <Button
+              href='/contact'
+              btnType='black'
+              text='Book your discovery call'
+            />
+          </div>
+        </LayoutWrapper>
+      </div>
     </section>
   );
 }

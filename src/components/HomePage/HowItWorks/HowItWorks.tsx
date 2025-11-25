@@ -89,95 +89,99 @@ export default function HowItWorks() {
   }, [activeIndex, gallery.length]);
 
   return (
-    <section className={styles.container}>
-      <LayoutWrapper>
-        <div className={styles.content}>
-          <div className={styles.left}>
-            <div className={styles.leftContent}>
-              <div className={styles.SectionIntroContainer}>
-                <SectionIntroii title='Our Processes' />
-              </div>
-              <h2 className={styles.heading}>How we work together</h2>
-              <div className={styles.imgContainer}>
-                <AnimatePresence mode='wait'>
-                  <motion.div
-                    key={imageIndex}
-                    className={styles.imgLayer}
-                    initial={{ opacity: 0, scale: 1.02 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.985 }}
-                    transition={{ duration: 0.15, ease: "easeOut" }}
-                  >
-                    <Image
-                      src={gallery[imageIndex]}
-                      alt=''
-                      fill
-                      priority
-                      className={styles.img}
-                      sizes='(min-width:1068px) 40vw, 100vw'
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.right} ref={rightRef}>
-            <div className={styles.progressTrack} aria-hidden='true'>
-              <motion.div
-                className={styles.progressBar}
-                style={{ height: heightTransform, opacity: opacityTransform }}
-              />
-            </div>
-
-            <div ref={listRef} className={styles.mapDataBox}>
-              {process.map((item, i) => (
-                <div
-                  key={item.id}
-                  ref={(el) => {
-                    stepRefs.current[i] = el;
-                  }}
-                  data-index={i}
-                  className={[
-                    styles.card,
-                    i < activeIndex ? styles.isPast : "",
-                    i === activeIndex ? styles.isActive : "",
-                  ].join(" ")}
-                >
-                  <div className={styles.cardHeader}>
-                    <span className={styles.stepIndex}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <strong className={styles.title}>{item.title}</strong>
-                  </div>
-                  <p className={styles.desc}>{item.desc}</p>
-                  <div className={styles.imgContainerii}>
-                    <AnimatePresence mode='wait'>
-                      <motion.div
-                        key={i}
-                        className={styles.imgLayer}
-                        initial={{ opacity: 0, scale: 1.02 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.985 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                      >
-                        <Image
-                          src={gallery[i]}
-                          alt=''
-                          fill
-                          priority={i === 0}
-                          className={styles.img}
-                          sizes='(min-width:1068px) 40vw, 100vw'
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
+    <section className={styles.parent}>
+      <div className={styles.container}>
+        <LayoutWrapper>
+          <div className={styles.content}>
+            <div className={styles.left}>
+              <div className={styles.leftContent}>
+                <div className={styles.SectionIntroContainer}>
+                  <SectionIntroii title='Our Processes' color='tan' />
                 </div>
-              ))}
+                <h2 className={styles.heading}>
+                  How we work <span className='span2'>together</span>
+                </h2>
+                <div className={styles.imgContainer}>
+                  <AnimatePresence mode='wait'>
+                    <motion.div
+                      key={imageIndex}
+                      className={styles.imgLayer}
+                      initial={{ opacity: 0, scale: 1.02 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.985 }}
+                      transition={{ duration: 0.15, ease: "easeOut" }}
+                    >
+                      <Image
+                        src={gallery[imageIndex]}
+                        alt=''
+                        fill
+                        priority
+                        className={styles.img}
+                        sizes='(min-width:1068px) 40vw, 100vw'
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.right} ref={rightRef}>
+              <div className={styles.progressTrack} aria-hidden='true'>
+                <motion.div
+                  className={styles.progressBar}
+                  style={{ height: heightTransform, opacity: opacityTransform }}
+                />
+              </div>
+
+              <div ref={listRef} className={styles.mapDataBox}>
+                {process.map((item, i) => (
+                  <div
+                    key={item.id}
+                    ref={(el) => {
+                      stepRefs.current[i] = el;
+                    }}
+                    data-index={i}
+                    className={[
+                      styles.card,
+                      i < activeIndex ? styles.isPast : "",
+                      i === activeIndex ? styles.isActive : "",
+                    ].join(" ")}
+                  >
+                    <div className={styles.cardHeader}>
+                      <span className={styles.stepIndex}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <strong className={styles.title}>{item.title}</strong>
+                    </div>
+                    <p className={styles.desc}>{item.desc}</p>
+                    <div className={styles.imgContainerii}>
+                      <AnimatePresence mode='wait'>
+                        <motion.div
+                          key={i}
+                          className={styles.imgLayer}
+                          initial={{ opacity: 0, scale: 1.02 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.985 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
+                        >
+                          <Image
+                            src={gallery[i]}
+                            alt=''
+                            fill
+                            priority={i === 0}
+                            className={styles.img}
+                            sizes='(min-width:1068px) 40vw, 100vw'
+                          />
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </LayoutWrapper>
+        </LayoutWrapper>
+      </div>
     </section>
   );
 }

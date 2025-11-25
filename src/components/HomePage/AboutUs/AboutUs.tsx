@@ -1,7 +1,7 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./AboutUs.module.css";
 import Specialize from "../Specialize/Specialize";
-import IndustriesIllustration from "../../../../public/images/industriesIllustration.png";
+import IndustriesIllustration from "../../../../public/illustrations/chessIllustration.png";
 import Image from "next/image";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
@@ -22,10 +22,8 @@ export default function AboutUs() {
                 priority
               />
             </div>
-            <SectionIntroii title="What's included" />
-            <h2>
-              What you get with <br /> Fonts & Footers
-            </h2>
+            <SectionIntroii title='Process' />
+            <h2>How we work together</h2>
             <p className={styles.copy}>
               When you partner with Fonts & Footers, you get more than just a
               booking website. You get a team dedicated to helping your business

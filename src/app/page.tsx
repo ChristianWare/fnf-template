@@ -13,7 +13,8 @@ import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import Problemii from "@/components/HomePage/Problemii/Problemii";
 import Marquee from "@/components/shared/Marquee/Marquee";
 import Benefits from "@/components/AboutPage/Benefits/Benefits";
-import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
+// import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
+import AboutUs from "@/components/HomePage/AboutUs/AboutUs";
 
 export default function HomePage() {
   return (
@@ -27,7 +28,8 @@ export default function HomePage() {
       {/* <FeaturesPreview /> */}
       <BaseFeatures />
       <Benefits />
-      <HowItWorks />
+      <AboutUs />
+      {/* <HowItWorks /> */}
       <Industries />
       <PricingPreview />
       <Faq />

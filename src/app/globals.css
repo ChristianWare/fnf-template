@@ -200,11 +200,14 @@ button {
 .span1 {
   text-decoration: underline;
   font-size: inherit;
+  color: inherit;
 }
 
 .span2 {
   font-family: var(--LibreBaskerville);
   font-size: inherit;
+  color: inherit;
+  margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 968px) {

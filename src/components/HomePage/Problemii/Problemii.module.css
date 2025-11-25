@@ -1,5 +1,10 @@
+.parent {
+  background-color: var(--tan);
+  padding: 1rem;
+}
+
 .container {
-  background-color: var(--darkerTan);
+  background-color: var(--black);
   border-radius: 30px;
   padding: 5rem 0rem;
 }
@@ -12,11 +17,12 @@
   margin-bottom: 3rem;
 }
 
+.heading {
+  color: var(--tan);
+}
 
-
-.span2 {
-  letter-spacing: -1.5px;
-  /* color: var(--lighterBlack); */
+.span1 {
+  color: var(--lime);
 }
 
 .bottom {
@@ -25,18 +31,25 @@
   grid-gap: 2rem;
 }
 
-.bottomLeft,
+.bottomLeft {
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--lighterBlack);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 3rem;
+}
+
 .mapDataContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 5rem;
   width: 100%;
-}
-
-.bottomLeft {
-  gap: 15rem;
 }
 
 .copy {
@@ -48,26 +61,25 @@
   position: relative;
   /* margin-left: 1.5rem; */
   width: 100%;
-  list-style: none;
+  list-style: circle;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .closeIcon {
   flex-shrink: 0;
-  stroke: var(--grayiii);
+  color: var(--lime);
 }
 
 .dataText {
-  background-color: var(--tan);
-  padding: 1.5rem;
-  border-radius: 10px;
-  color: var(--lightBlack);
+  list-style: circle;
+  border-bottom: 1px solid var(--darkLime);
+  padding-bottom: 1.5rem;
+  color: var(--tan);
   font-family: var(--BDOGroteskDemiBold);
-  line-height: 1.4;
   width: 100%;
   display: flex;
   align-items: center;
@@ -109,7 +121,7 @@
   }
 }
 
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 1268px) {
   .content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

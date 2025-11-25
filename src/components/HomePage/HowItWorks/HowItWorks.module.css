@@ -1,5 +1,10 @@
+.parent {
+  background-color: var(--tan);
+  padding: 10rem 1rem;
+}
+
 .container {
-  background-color: var(--darkTan);
+  background-color: var(--black);
   border-radius: 30px;
   padding: 10rem 0rem;
 }
@@ -7,18 +12,15 @@
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 5rem;
 }
 
 .leftContent {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-self: center;
-  justify-content: center;
+  align-self: flex-start;
+  justify-content: flex-start;
   position: -webkit-sticky;
   position: sticky;
   top: var(--stickyTop);
@@ -26,13 +28,8 @@
   width: 100%;
 }
 
-.SectionIntroContainer {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .heading {
-  text-align: center;
+  color: var(--tan);
 }
 
 .imgContainer,
@@ -65,10 +62,6 @@
   object-fit: cover;
 }
 
-.heading {
-  font-size: 4rem;
-  line-height: 1.05;
-}
 
 .right {
   position: relative;
@@ -80,8 +73,8 @@
   left: 1rem;
   top: 0;
   bottom: 0;
-  width: 15px;
-  background-color: var(--gray);
+  width: 5px;
+  background-color: var(--lightBlack);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -114,11 +107,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: all 0.3s ease-in;
-  border: 2px solid var(--tan);
+  background-color: var(--lightBlack);
+  /* border: 2px solid var(--tan); */
 }
 
 .isPast::before {
@@ -164,22 +158,22 @@
 }
 
 .isActive {
-  background-color: var(--tan);
-  padding: 2rem;
-  border-radius: 10px;
+  background-color: var(--darkTan);
   transition: all 0.3s ease-in;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3.2rem;
+  font-family: var(--SwitzerMedium);
+  color: var(--black);
 }
 
 .desc {
   border-top: 1px solid var(--gray);
   padding-top: 2rem;
   color: var(--lighterBlack);
-  font-size: 1.6rem;
-  line-height: 140%;
+  font-size: 2rem;
+  /* line-height: 140%; */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -257,12 +251,6 @@
   .right {
     padding-left: 5rem;
   }
-
-  /* .imgLayer,
-  .imgContainerii {
-    width: 200px;
-    height: 200px;
-  } */
 
   .imgContainerii {
     margin-top: 3rem;

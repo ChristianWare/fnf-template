@@ -1,13 +1,14 @@
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./BrandStory.module.css";
 import Image from "next/image";
-import Img1 from "../../../../public/images/brandStoryiii.jpg";
+import Img1 from "../../../../public/images/relief.jpg";
+import Img2 from "../../../../public/images/reliefii.jpg";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 import Clock from "@/components/icons/Clock/Clock";
 import Design from "@/components/icons/Design/Design";
 import Listing from "@/components/icons/Listing/Listing";
 import Lightning from "@/components/icons/Lightning/Lightning";
-import ServiceIllustration from "../../../../public/images/specialize.png";
+// import ServiceIllustration from "../../../../public/images/specialize.png";
 // import OurTeam from "../OurTeam/OurTeam";
 
 const data = [
@@ -68,7 +69,7 @@ export default function BrandStory() {
             </div>
           </div>
           <div className={styles.middle}>
-            <div className={styles.middleTop}>
+            {/* <div className={styles.middleTop}>
               <h3 className={styles.subHeadingii}>
                 What we do, <br /> in one line
               </h3>
@@ -79,7 +80,6 @@ export default function BrandStory() {
               </p>
             </div>
             <div className={styles.middleBottom}>
-              {/* <div className={styles.star} /> */}
               <div className={styles.imgContainer1}>
                 <Image
                   src={ServiceIllustration}
@@ -89,6 +89,15 @@ export default function BrandStory() {
                   priority
                 />
               </div>
+            </div> */}
+            <div className={styles.imgContainer}>
+              <Image
+                src={Img2}
+                fill
+                alt='Client reviewing a full calendar of confirmed bookings'
+                title='High-value bookings without the busywork'
+                className={styles.img}
+              />
             </div>
           </div>
           <div className={styles.right}>

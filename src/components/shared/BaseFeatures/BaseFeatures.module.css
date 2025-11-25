@@ -33,6 +33,7 @@
 .copy {
   max-width: 500px;
   color: var(--lighterBlack);
+  font-size: 2rem;
 }
 
 .bottom {
@@ -117,8 +118,8 @@
 }
 
 .featureTitle {
-  font-family: var(--DotSansBold);
-  font-size: 1.6rem;
+  /* font-family: var(--DotSansBold); */
+  font-size: 2rem;
   letter-spacing: normal;
   text-align: left;
 }

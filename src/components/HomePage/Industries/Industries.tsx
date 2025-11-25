@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import styles from "./Industries.module.css";
 import { useMemo, useRef, useState, useEffect } from "react";
 import LayoutWrapper from "@/components/shared/LayoutWrapper";
-import styles from "./Industries.module.css";
 import Image from "next/image";
 import { projects } from "@/lib/data";
 import Arrow from "@/components/icons/Arrow/Arrow";

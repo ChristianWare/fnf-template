@@ -34,10 +34,10 @@
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--black);
   padding: 1rem;
   cursor: pointer;
-  background: transparent;
+  background-color: var(--lime);
 }
 
 .arrowLeft {
@@ -65,7 +65,7 @@
 .track {
   display: flex;
   align-items: stretch;
-  gap: 1rem;
+  gap: 2rem;
   will-change: transform;
 }
 
@@ -78,7 +78,7 @@
   flex: 0 0 auto;
   width: 550px;
   height: 640px;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   background: #000;
 }
