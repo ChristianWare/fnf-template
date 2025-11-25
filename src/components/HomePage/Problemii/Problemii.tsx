@@ -1,5 +1,5 @@
-import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Problemii.module.css";
+import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import Image from "next/image";
 import Img1 from "../../../../public/images/stressediii.jpg";
 import Img2 from "../../../../public/images/stressedv.jpg";
@@ -33,19 +33,15 @@ export default function Problemii() {
   return (
     <section className={styles.container}>
       <LayoutWrapper>
+        <div className={styles.top}>
+          <h2 className={`${styles.heading} `}>
+            The <span className={`${styles.span1} span1`}>problems</span> most{" "}
+            <br />{" "}
+            <span className={`${styles.span2} span2`}>service businesses</span>{" "}
+            face
+          </h2>
+        </div>
         <div className={styles.content}>
-          <div className={styles.top}>
-            <h2 className={`${styles.heading} `}>
-              The problems most <br /> service businesses face
-            </h2>
-            <div className={styles.btnContainer}>
-              <Button
-                href='/contact'
-                btnType='black'
-                text='Book your discovery call'
-              />
-            </div>
-          </div>
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
               <div className={styles.mapDataContainer}>

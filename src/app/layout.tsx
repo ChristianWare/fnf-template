@@ -69,6 +69,24 @@ const BDOGroteskMedium = localFont({
   display: "swap",
 });
 
+const LibreBaskerville = localFont({
+  src: "../../public/fonts/LibreBaskerville.woff2",
+  variable: "--LibreBaskerville",
+  display: "swap",
+});
+
+const SwitzerMedium = localFont({
+  src: "../../public/fonts/SwitzerMedium.otf",
+  variable: "--SwitzerMedium",
+  display: "swap",
+});
+
+const SwitzerRegular = localFont({
+  src: "../../public/fonts/SwitzerRegular.otf",
+  variable: "--SwitzerRegular",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -108,7 +126,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable} ${BDOGroteskMedium.variable}`}
+          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable} ${BDOGroteskMedium.variable} ${LibreBaskerville.variable} ${SwitzerMedium.variable} ${SwitzerRegular.variable}`}
         >
           <SmoothScroll>
             <Toaster

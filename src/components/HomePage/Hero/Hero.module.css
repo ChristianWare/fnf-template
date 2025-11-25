@@ -3,7 +3,7 @@
   padding: 1rem;
   background-image: radial-gradient(#efeded 2px, transparent 2px);
   background-size: calc(10 * 2px) calc(10 * 2px);
-  padding: 10rem 0rem;
+  /* padding: 10rem 0rem; */
   padding-top: 3rem;
 }
 
@@ -21,15 +21,20 @@
   justify-content: flex-end;
   gap: 2rem;
 }
-/* 
-.heading {
-  text-align: center;
-} */
+
+.span1 {
+  text-decoration: underline;
+}
+
+.span2 {
+  font-family: var(--LibreBaskerville);
+}
 
 .copy {
   /* text-align: center; */
   max-width: 500px;
   color: var(--lighterBlack);
+  font-size: 2rem;
 }
 
 .btnContainer {

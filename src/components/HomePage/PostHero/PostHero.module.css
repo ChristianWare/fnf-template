@@ -1,150 +1,40 @@
 .container {
   background-color: var(--tan);
-  padding-bottom: 10rem;
+  padding: 10rem 0rem;
 }
 
 .content {
-  /* max-width: 800px;
-  margin-left: auto;
-  margin-right: auto; */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 3rem;
-}
-
-.top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
-.bottom {
-  width: 100%;
-}
-
-.b1 {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  grid-gap: 2rem;
-  width: 80%;
-  margin-bottom: 3rem;
-}
-
-.imgContainer1,
-.imgContainer2,
-.imgContainer3 {
+.imgContainer1 {
   position: relative;
-  width: 100%;
-  height: 290px;
+  width: 200px;
+  height: 200px;
 }
 
 .img {
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
-.imgContainer3 {
-  background-color: var(--lime);
-  border-radius: 20px;
+
+.heading {
+  font-size: 3.5rem;
+  text-align: center;
+  max-width: 950px;
+  letter-spacing: -1px;
 }
 
-.logo {
-  padding: 5rem;
-  object-fit: contain;
-}
-
-.b2 {
-  margin-top: 2rem;
-}
-
-.headingii {
-  width: 55%;
+.span1 {
   color: var(--lighterBlack);
 }
 
-.b3 {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 2rem;
-}
-
-.b3Content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 3rem;
-}
-
-.illustrationContainer {
-  position: relative;
-  width: 275px;
-  height: 275px;
-}
-
-.imgIllustration {
-  object-fit: cover;
-}
-
-.copy {
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 150%;
+.span2 {
+  letter-spacing: -1.5px;
   color: var(--lighterBlack);
-  max-width: 375px;
-}
-
-@media screen and (max-width: 768px) {
-  .statsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat {
-    background-color: var(--darkTan);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--gray);
-  }
-
-  .stat:nth-last-child(1) {
-    grid-column: span 2;
-  }
-
-  .statNumber {
-    font-size: 10vw;
-  }
-}
-
-@media screen and (max-width: 568px) {
-  .heading {
-    font-size: 2rem;
-  }
-
-  .pillsContainer {
-    margin: 2rem 0rem;
-  }
-
-  .pill {
-    width: 100%;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    border-bottom: 1px solid var(--lighterBlack);
-    border-radius: 0px;
-    padding-bottom: 1rem;
-    font-size: 1.6rem;
-  }
-
-  .icon {
-    font-size: 3rem;
-  }
 }

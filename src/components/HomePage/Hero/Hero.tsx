@@ -28,7 +28,8 @@ export default function Hero() {
             <h1 className={styles.heading}>
               Custom booking websites
               <br />
-              your clients will love
+              <span className="span1">your clients</span> 
+              {" "} will <span className="span2">love.</span>
             </h1>
             <p className={styles.copy}>
               Fonts & Footers turns your website into a 24/7 front desk that

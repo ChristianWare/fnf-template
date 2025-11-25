@@ -8,7 +8,7 @@ import Design from "@/components/icons/Design/Design";
 import Listing from "@/components/icons/Listing/Listing";
 import Lightning from "@/components/icons/Lightning/Lightning";
 import ServiceIllustration from "../../../../public/images/specialize.png";
-import OurTeam from "../OurTeam/OurTeam";
+// import OurTeam from "../OurTeam/OurTeam";
 
 const data = [
   {
@@ -49,8 +49,10 @@ export default function BrandStory() {
       <LayoutWrapper>
         <div className={styles.top}>
           <SectionIntroii title='Our Ethos' />
-          <h2 className={`${styles.heading} h3`}>
-            Who we are <br /> and what we believe
+          <h2 className={styles.heading}>
+            <span className={`${styles.span1} span1`}>The solution:</span> a
+            site that sells the appointment{" "}
+            <span className={`${styles.span2} span2`}> for you.</span>
           </h2>
         </div>
         <div className={styles.content}>
@@ -103,13 +105,13 @@ export default function BrandStory() {
             </div>
           </div>
         </div>
-        <OurTeam
+        {/* <OurTeam
           text='Most service businesses don’t have a marketing problem—they have a
             booking problem. Clunky forms, mixed-up calendars, and payment
             chases leak revenue every day. We started Fonts & Footers to fix
             that single point of failure: the moment a customer decides to book.'
           src={Img1}
-        />
+        /> */}
       </LayoutWrapper>
     </section>
   );

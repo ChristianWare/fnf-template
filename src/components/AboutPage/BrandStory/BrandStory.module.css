@@ -1,14 +1,14 @@
 .container {
   background-color: var(--tan);
-  padding-bottom: 0rem;
+  padding-bottom: 10rem;
 }
 
 .top {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 1rem;
   border-bottom: 1px solid var(--gray);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
@@ -25,17 +25,27 @@
 
 .img {
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .heading {
-  text-align: center;
+  text-align: right;
+  max-width: 750px;
+}
+
+.span1 {
+  color: var(--lighterBlack);
+}
+
+.span2 {
+  letter-spacing: -1.5px;
+  color: var(--lighterBlack);
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   width: 80%;
   margin: 0 auto;
 }
@@ -48,7 +58,7 @@
 
 .img {
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .middle {
@@ -56,14 +66,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 2rem;
   height: 100%;
 }
 
 .middleTop,
 .middleBottom {
   background-color: var(--lightBlack);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -144,7 +154,7 @@
   justify-content: flex-start;
   gap: 2rem;
   background-color: var(--darkTan);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 2rem;
   width: 100%;
   height: 100%;
@@ -241,7 +251,7 @@
   .imgContainer {
     height: 300px;
     object-position: top;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 
   .title {

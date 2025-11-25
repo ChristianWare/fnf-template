@@ -8,22 +8,26 @@ import PricingPreview from "@/components/HomePage/PricingPreview/PricingPreview"
 import Faq from "@/components/Faq/Faq";
 import BaseFeatures from "@/components/shared/BaseFeatures/BaseFeatures";
 import PostHero from "@/components/HomePage/PostHero/PostHero";
-import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
-// import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
+// import FeaturesPreview from "@/components/HomePage/FeaturesPreview/FeaturesPreview";
+import BrandStory from "@/components/AboutPage/BrandStory/BrandStory";
 import Problemii from "@/components/HomePage/Problemii/Problemii";
 import Marquee from "@/components/shared/Marquee/Marquee";
+import Benefits from "@/components/AboutPage/Benefits/Benefits";
+import HowItWorks from "@/components/HomePage/HowItWorks/HowItWorks";
 
 export default function HomePage() {
   return (
     <main>
       <Nav />
       <Hero />
-      <PostHero />
       <Marquee />
+      <PostHero />
       <Problemii />
-      <FeaturesPreview />
-      {/* <BrandStory /> */}
+      <BrandStory />
+      {/* <FeaturesPreview /> */}
       <BaseFeatures />
+      <Benefits />
+      <HowItWorks />
       <Industries />
       <PricingPreview />
       <Faq />

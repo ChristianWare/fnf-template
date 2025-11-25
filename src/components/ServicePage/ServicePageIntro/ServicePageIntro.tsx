@@ -33,7 +33,7 @@ export default function ServicePageIntro() {
           </div>
           <div className={styles.right}>
             <SectionIntroii title='About us ' />
-            <h1 className={`${styles.heading} h2`}>
+            <h1 className={`${styles.heading}`}>
               Comprehensive solutions <br className={styles.br} /> tailored to
               your needs
             </h1>
