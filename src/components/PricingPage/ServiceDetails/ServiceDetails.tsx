@@ -63,6 +63,8 @@ export default function ServiceDetails() {
                     <p className={styles.headline}>{x.desc}</p>
                   </div>
                   <h3 className={styles.price}>{x.price}</h3>
+                  <p className={styles.headline}>Pause or cancel any time</p>
+
                   <div className={styles.cardTopRight}>
                     <div className={styles.btnContainer}>
                       <Button href={href} btnType='black' text={btnText} />

@@ -509,7 +509,7 @@ export const pricingData = [
     desc: "Perfect for solo stylists, consultants, and single-property hosts who need a simple booking flow with payments.",
     descii:
       "Built for independent pros who want to stop back-and-forth scheduling and double-bookings. A branded calendar with deposits, automated reminders, and easy rescheduling reduces no-shows and protects your income. Move from DMs to a reliable, professional booking experience—without the overhead of staff or multiple locations.",
-    price: "$375/mo",
+    price: "$375",
     servicesInclude: [
       {
         id: 1.1,
@@ -556,7 +556,7 @@ export const pricingData = [
     desc: "Built for salons, fitness studios, and clinics where clients choose a staff member and pay a deposit.",
     descii:
       "For growing teams—up to 15 stylists, trainers, or practitioners—who need a shared booking hub. Staff get color-coded schedules while admins control deposits and permissions; clients choose their provider at checkout and the front desk manages bookings without touching financial data. Upsells at checkout and Google/365 sync lift revenue and keep availability accurate.",
-    price: "$450/mo",
+    price: "$450",
     servicesInclude: [
       {
         id: 2.1,
@@ -610,7 +610,7 @@ export const pricingData = [
     desc: "For car-hire companies, equipment rental shops, or kayak fleets that rent assets by time or day.",
     descii:
       "Built for car hire, equipment shops, and adventure outfitters renting physical assets. Real-time inventory with maintenance/blackout controls prevents overbooking, while Stripe damage-hold pre-authorizations and QR check-in/out streamline handovers and protect revenue. Automated late-return fees and scalable options grow with your fleet.",
-    price: "$525/mo",
+    price: "$525",
     servicesInclude: [
       {
         id: 4.1,
@@ -665,7 +665,7 @@ export const pricingData = [
     desc: "Ideal for spa chains, franchise gyms, or vacation-rental portfolios with 2-10 locations.",
     descii:
       "Centralize multiple branches or properties under one backend. Guests pick a location first, while each branch keeps its own pricing, tax, and currency, and HQ tracks utilization and revenue in a single dashboard. Dynamic pricing rules help maximize occupancy as you scale.",
-    price: "$650/mo",
+    price: "$650",
     servicesInclude: [
       {
         id: 3.1,
