@@ -35,15 +35,13 @@ export default function FinalCTAMain() {
       <div className={styles.container}>
         <div className={styles.imgOverlay} />
         <Image src={Img1} alt='Hero Image' fill className={styles.img} />
-        {/* <LayoutWrapper> */}
         <div className={styles.content}>
           <div className={styles.left}>
-            {/* <SectionIntroii title='Fonts & Footers' color='tan' /> */}
-
             <Logo />
             <h2 className={styles.heading}>
-              Ready to turn <br /> browsers into bookings?
-              {/* Ready to stop chasing <br /> and start booking? */}
+              Ready to turn <br /> <span className='span1'>browsers</span> {" "}
+               into{" "}
+              <span className='span2'>bookings?</span>
             </h2>
 
             <div className={styles.btnContainer}>

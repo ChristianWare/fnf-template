@@ -5,8 +5,6 @@ import IndustriesIllustration from "../../../../public/illustrations/chessIllust
 import Image from "next/image";
 import SectionIntroii from "@/components/shared/SectionIntroii/SectionIntroii";
 
-// import FnfLogo from "@/components/icons/FnfLogo/FnfLogo";
-
 export default function AboutUs() {
   return (
     <section className={styles.container}>
@@ -23,7 +21,11 @@ export default function AboutUs() {
               />
             </div>
             <SectionIntroii title='Process' />
-            <h2>How we work together</h2>
+            <h2>
+              {" "}
+              <span className='span1'>How</span> {" "} we work {" "}
+              <span className='span2'>together</span>
+            </h2>
             <p className={styles.copy}>
               When you partner with Fonts & Footers, you get more than just a
               booking website. You get a team dedicated to helping your business

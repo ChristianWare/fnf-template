@@ -76,7 +76,7 @@
 
 .dataText {
   list-style: circle;
-  border-bottom: 1px solid var(--darkLime);
+  border-bottom: 1px solid var(--darkGray);
   padding-bottom: 1.5rem;
   color: var(--tan);
   font-family: var(--BDOGroteskDemiBold);

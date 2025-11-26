@@ -29,6 +29,7 @@
 .copy {
   width: 80%;
   color: var(--lighterBlack);
+  font-size: 2rem;
 }
 
 .imgContainer {

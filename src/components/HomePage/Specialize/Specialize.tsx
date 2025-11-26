@@ -1,9 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-// import LayoutWrapper from "@/components/shared/LayoutWrapper";
 import styles from "./Specialize.module.css";
-// import SectionIntro from "@/components/shared/SectionIntro/SectionIntro";
 import Image, { StaticImageData } from "next/image";
 
 import Img1 from "../../../../public/images/salon.jpg";
@@ -162,7 +160,6 @@ export default function Specialize() {
         </div>
 
         <div className={styles.right}>
-          {/* <span className={styles.subHeading}>Industries we work with:</span> */}
           <div className={styles.mapDataBox}>
             {specialties.map((x, idx) => {
               const isActive = idx === activeIndex;
@@ -197,16 +194,13 @@ export default function Specialize() {
                     willChange: "opacity, transform",
                   }}
                 >
-                  {/* <span className={styles.blackDot} /> */}
                   <Starii className={styles.blackDot} />
                   <div className={styles.cardLeft}>
-                    <span className={styles.id}>
-                      {/* {x.id.toString().padStart(2, "0")}.  */}
+                    <h3 className={styles.id}>
                       {x.feature}
-                    </span>
+                    </h3>
                   </div>
                   <div className={styles.cardRight}>
-                    {/* <h4 className={styles.feature}></h4> */}
                     <div className={styles.imgContainerii}>
                       <Image
                         src={x.src}

@@ -70,6 +70,7 @@
 
 .arrow {
   transform: rotate(90deg);
+  color: var(--lime);
 }
 
 .title {

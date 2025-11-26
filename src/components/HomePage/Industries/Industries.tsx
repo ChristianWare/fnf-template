@@ -99,7 +99,9 @@ export default function Industries({ excludeSlug }: { excludeSlug?: string }) {
           <div className={styles.top}>
             <div className={styles.topLeft}>
               <SectionIntroii title='Selected Works' />
-              <h2 className={styles.heading}>Featured case studies</h2>
+              <h2 className={styles.heading}>
+                Featured <span className='span2'>case studies:</span>
+              </h2>
               <div className={styles.btnContainer}>
                 <Button href='/work' btnType='black' text='All case studies' />
               </div>
