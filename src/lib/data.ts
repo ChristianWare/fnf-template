@@ -550,7 +550,7 @@ export const pricingData = [
   },
   {
     id: 2,
-    btnColor: "lime",
+    btnColor: "accent",
     service: "Team",
     headline: "Up to 15 stylists, trainers, or practitioners—one dashboard",
     desc: "Built for salons, fitness studios, and clinics where clients choose a staff member and pay a deposit.",

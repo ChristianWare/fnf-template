@@ -109,7 +109,7 @@
 .servicesSection {
   background-color: var(--tan);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   padding: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -213,10 +213,9 @@
 }
 
 .checkbox:checked {
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-color: var(--blue);
 }
-
 
 .checkboxLabel {
   display: inline-block;

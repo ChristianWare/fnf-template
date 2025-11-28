@@ -101,7 +101,7 @@
 }
 
 .iconBox {
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -198,6 +198,6 @@
     top: 20px;
     width: fit-content;
     width: 100%;
-    border: 1px solid var(--tan600)
+    border: 1px solid var(--tan600);
   }
 }

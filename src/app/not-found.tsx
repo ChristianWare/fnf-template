@@ -35,7 +35,7 @@ export default function NotFound() {
                 to life.
               </p>
               <div className={styles.btnContainer}>
-                <Button href='/' btnType='lime' text='Go back home' />
+                <Button href='/' btnType='accent' text='Go back home' />
               </div>
             </div>
             <div className={styles.bottom}></div>

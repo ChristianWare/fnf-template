@@ -52,7 +52,7 @@
 /* Focus ring */
 .tagsSelect:focus {
   outline: none;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lime) 40%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .tagChip {
@@ -71,7 +71,7 @@
 .tagChipActive,
 .tagChip:hover {
   background-color: var(--black);
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .top {

@@ -19,11 +19,11 @@
   transition: all 0.2s ease-in-out;
 }
 
-.lime {
-  background-color: var(--lime);
+.accent {
+  background-color: var(--accent);
 }
 
-.lime:hover {
+.accent:hover {
   background-color: var(--black);
   color: var(--white);
 }

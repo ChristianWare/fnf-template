@@ -13,7 +13,7 @@
 }
 
 .heading {
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .copy {
@@ -39,7 +39,7 @@
   justify-content: flex-start;
   gap: 2rem;
   padding-left: 2rem;
-  border-left: 1px solid var(--lime);
+  border-left: 1px solid var(--accent);
   background-color: var(--lightBlack);
   padding: 2rem;
   border-top-right-radius: 10px;
@@ -54,10 +54,10 @@
 }
 
 .icon {
-  color: var(--lime);
+  color: var(--accent);
   font-size: 4rem;
   /* padding: 0.8rem; */
-  /* background-color: var(--lime); */
+  /* background-color: var(--accent); */
   /* border-radius: 5px; */
 }
 
@@ -107,7 +107,7 @@
     align-self: flex-start;
     position: -webkit-sticky;
     position: sticky;
-    top:30px;
+    top: 30px;
   }
 }
 
@@ -189,7 +189,7 @@
   justify-content: flex-start;
   gap: 2rem;
   padding-left: 2rem;
-  border-left: 1px solid var(--lime);
+  border-left: 1px solid var(--accent);
   background-color: var(--lighterBlack);
   padding: 2rem;
   border-top-right-radius: 10px;
@@ -207,7 +207,7 @@
   color: var(--black);
   font-size: 4rem;
   padding: 0.8rem;
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-radius: 5px;
 }
 

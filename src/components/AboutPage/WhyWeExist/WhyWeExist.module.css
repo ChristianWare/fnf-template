@@ -39,7 +39,7 @@
   font-family: var(--DotSansBold);
   letter-spacing: -0.5px;
   font-family: var(--DotSansBold);
-  color: var(--darkLime);
+  color: var(--darkaccent);
   letter-spacing: -0.5px;
 }
 
@@ -79,7 +79,7 @@
 /* squareCircle.svg */
 
 .rightTwo {
-  background-color: var(--lime);
+  background-color: var(--accent);
   padding: 3rem;
   border-radius: 15px;
   display: flex;
@@ -127,10 +127,10 @@
 
 .card {
   padding: 1rem 0rem;
-  border-bottom: 1px solid var(--darkLime);
+  border-bottom: 1px solid var(--darkaccent);
   font-size: 1.6rem;
   font-family: var(--DotSansBold);
-  color: var(--darkLime);
+  color: var(--darkaccent);
   width: 100%;
   display: flex;
   align-items: center;
@@ -139,7 +139,7 @@
 }
 
 .arrow {
-  color: var(--darkLime);
+  color: var(--darkaccent);
   transform: rotate(45deg);
 }
 

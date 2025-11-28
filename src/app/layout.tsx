@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { auth } from "../../auth";
@@ -7,19 +7,19 @@ import { SessionProvider } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
 import PlausibleProvider from "next-plausible";
 import SmoothScroll from "@/components/shared/SmoothScroll/SmoothScroll";
+import AppShell from "@/components/AppShell/AppShell";
 
-const inter = Inter({
-  variable: "--inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
+// const inter = Inter({
+//   variable: "--inter",
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700", "800", "900"],
+// });
 
 const Merriweather = localFont({
   src: "../../public/fonts/Merriweather.ttf",
   variable: "--Merriweather",
   display: "swap",
 });
-
 
 const DotSansRegular = localFont({
   src: "../../public/fonts/DotSansRegular.ttf",
@@ -87,6 +87,18 @@ const SwitzerRegular = localFont({
   display: "swap",
 });
 
+const PPNeueMontrealMedium = localFont({
+  src: "../../public/fonts/PPNeueMontrealMedium.otf",
+  variable: "--PPNeueMontrealMedium",
+  display: "swap",
+});
+
+const PPEditorialOldItalic = localFont({
+  src: "../../public/fonts/PPEditorialOldItalic.otf",
+  variable: "--PPEditorialOldItalic",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Fonts & Footers | Custom Booking Websites",
@@ -126,7 +138,7 @@ export default async function RootLayout({
           />
         </head>
         <body
-          className={`${inter.variable}  ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable} ${BDOGroteskMedium.variable} ${LibreBaskerville.variable} ${SwitzerMedium.variable} ${SwitzerRegular.variable}`}
+          className={` ${Merriweather.variable} ${DotSansRegular.variable} ${DotSansMedium.variable} ${DotSansBold.variable} ${SuisseIntlRegular.variable} ${SuisseIntlMono.variable}  ${BDOGroteskDemiBold.variable} ${BDOGroteskRegular.variable} ${BDOGroteskMedium.variable} ${LibreBaskerville.variable} ${SwitzerMedium.variable} ${SwitzerRegular.variable} ${PPNeueMontrealMedium.variable} ${PPEditorialOldItalic.variable}`}
         >
           <SmoothScroll>
             <Toaster
@@ -135,7 +147,7 @@ export default async function RootLayout({
                 className: "toastFont",
               }}
             />
-            {children}
+            <AppShell>{children}</AppShell>
           </SmoothScroll>
         </body>
       </html>

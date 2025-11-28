@@ -9,7 +9,6 @@
   grid-gap: 2rem;
 }
 
-
 .card {
   position: relative;
   flex: 0 0 auto;
@@ -98,7 +97,7 @@
 .arrowii {
   width: 3rem;
   height: 3rem;
-  background-color: var(--lime);
+  background-color: var(--accent);
   color: var(--black);
   padding: 0.9rem;
   border-radius: 50%;

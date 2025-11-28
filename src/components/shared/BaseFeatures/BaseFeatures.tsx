@@ -87,7 +87,9 @@ export default function BaseFeatures() {
               </div>
               <SectionIntroii title='Modular blocks' />
               <h2 className={styles.heading}>
-                What&apos;s included <br /> in every website we build
+                What&apos;s <span className='span1'>included</span> <br /> in {" "}
+                <span className='span2'>every</span> {" "}
+                website we build
               </h2>
             </div>
             <div className={styles.topRight}>

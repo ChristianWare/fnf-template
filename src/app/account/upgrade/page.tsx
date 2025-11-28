@@ -100,7 +100,7 @@ export default async function UpgradePage({
             <div className={styles.btnContainer}>
               <Button
                 type='submit'
-                btnType='lime'
+                btnType='accent'
                 text='Pay $500 setup & continue'
               />
             </div>

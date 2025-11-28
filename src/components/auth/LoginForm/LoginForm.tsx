@@ -117,7 +117,7 @@ export default function LoginForm() {
           <FalseButton
             text={isPending ? "Submitting..." : "Sign In"}
             type='submit'
-            btnType='lime'
+            btnType='accent'
             disabled={isPending}
           />
         </div>

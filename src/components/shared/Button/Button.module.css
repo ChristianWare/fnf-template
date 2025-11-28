@@ -33,43 +33,42 @@
   transition: all 0.2s ease-in-out;
 }
 
-.lime,
-.lime:link,
-.lime:visited {
-  background-color: var(--lime);
+.accent,
+.accent:link,
+.accent:visited {
+  background-color: var(--accent);
   color: var(--black);
-  border: 1px solid var(--lime);
+  border: 1px solid var(--accent);
 }
 
-.lime:hover .arrow {
+.accent:hover .arrow {
   background-color: var(--black);
   color: var(--white);
-
 }
 
-.limeOutline,
-.limeOutline:link,
-.limeOutline:visited {
+.accentOutline,
+.accentOutline:link,
+.accentOutline:visited {
   background-color: transparent;
-  color: var(--lime);
-  border: 1px solid var(--lime);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
-.limeOutline:hover {
-  background-color: var(--lime);
+.accentOutline:hover {
+  background-color: var(--accent);
   color: var(--black);
 }
 
-.navLime {
-  background-color: var(--lime);
+.navaccent {
+  background-color: var(--accent);
   color: var(--black);
-  border: 1px solid var(--lime);
+  border: 1px solid var(--accent);
   padding: 0.3rem 2rem;
   padding-right: 0.3rem;
   border-radius: 100px;
 }
 
-.navLime .arrow {
+.navaccent .arrow {
   background-color: var(--black);
   color: var(--white);
   width: 2.5rem;
@@ -77,7 +76,7 @@
   padding: 0.7rem;
 }
 
-.navLime:hover .arrow {
+.navaccent:hover .arrow {
   background-color: var(--white);
   color: var(--black);
 }
@@ -91,7 +90,7 @@
 }
 
 .black:hover .arrow {
-  background-color: var(--lime);
+  background-color: var(--accent);
   color: var(--black);
 }
 
@@ -103,7 +102,7 @@
 }
 
 .olive:hover .arrow {
-  background-color: var(--lime);
+  background-color: var(--accent);
   color: var(--black);
 }
 
@@ -154,9 +153,9 @@
 }
 
 .greenOutline {
-  border: 1px solid var(--lime);
+  border: 1px solid var(--accent);
   background-color: transparent;
-  color: var(--lime) !important;
+  color: var(--accent) !important;
 }
 
 .tanOutline {

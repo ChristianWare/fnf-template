@@ -70,7 +70,7 @@
 
 .arrow {
   transform: rotate(90deg);
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .title {
@@ -111,7 +111,7 @@
 
 /* .featureCard:hover {
   transform: translateY(-2px);
-  background-color: var(--lime);
+  background-color: var(--accent);
 } */
 
 .icon {

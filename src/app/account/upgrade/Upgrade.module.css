@@ -20,7 +20,6 @@
 }
 
 .card {
-
   border-radius: 15px;
   /* padding: 2rem; */
   display: grid;
@@ -75,7 +74,7 @@
   /* margin-bottom: 2rem; */
   /* border-bottom: 1px solid var(--gray); */
   padding: 2rem;
-    background: var(--darkerTan);
+  background: var(--darkerTan);
   /* border: 1px solid var(--gray); */
   border-radius: 10px;
 }
@@ -110,7 +109,7 @@
 
 .notice strong {
   font-family: var(--inter);
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .actions {
@@ -149,11 +148,10 @@
 }
 
 @media screen and (max-width: 568px) {
-.price {
-  width: 100%;
-  text-align: center;
-  
-}
+  .price {
+    width: 100%;
+    text-align: center;
+  }
 
   .btnContainer {
     display: grid;

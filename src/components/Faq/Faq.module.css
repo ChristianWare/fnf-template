@@ -93,7 +93,7 @@
   height: 3.5rem;
   border-radius: 50%;
   margin-left: auto;
-  background-color: var(--lime);
+  background-color: var(--accent);
   transition: all 0.3s ease-in-out;
 }
 
@@ -114,11 +114,11 @@
 }
 
 .arrowContainer:has(.iconFlip) {
-  background-color: var(--lime);
+  background-color: var(--accent);
 }
 
 /* .arrowContainer .iconFlip {
-  background-color: var(--lime);
+  background-color: var(--accent);
 } */
 
 .question {

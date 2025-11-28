@@ -22,7 +22,7 @@
 }
 
 .span1 {
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .bottom {
@@ -71,7 +71,7 @@
 
 .closeIcon {
   flex-shrink: 0;
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .dataText {

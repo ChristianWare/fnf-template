@@ -71,7 +71,7 @@
 .headerRow .headerCell:nth-child(3) .planHeadTop .planNameii,
 .headerRowii .headerCell:nth-child(3) .planHeadTop .planNameii,
 .headerRow .headerCell:nth-child(3) .planName {
-  color: var(--lime) !important;
+  color: var(--accent) !important;
 }
 
 .cornerCell {
@@ -181,7 +181,7 @@
 }
 
 .row > .valueCell:nth-child(3) .icon {
-  color: var(--lime);
+  color: var(--accent);
 }
 
 .icon {

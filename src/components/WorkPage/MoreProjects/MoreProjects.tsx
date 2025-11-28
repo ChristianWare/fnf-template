@@ -105,7 +105,7 @@ export default function MoreProjects({
                 Different Challenges. <br /> Same precision.
               </h2>
               <div className={styles.btnContainer}>
-                <Button href='/work' btnType='lime' text='All case studies' />
+                <Button href='/work' btnType='accent' text='All case studies' />
               </div>
             </div>
             <div className={styles.topRight}>

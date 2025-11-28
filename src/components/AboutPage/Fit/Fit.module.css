@@ -41,8 +41,7 @@
   grid-column: span 2;
   padding: 0rem;
   border: none;
-    border-top-right-radius: 2rem;
-
+  border-top-right-radius: 2rem;
 }
 
 .card:nth-child(4) {
@@ -69,7 +68,7 @@
 .card:nth-child(4) .desc {
   font-family: var(--DotSansBold);
   font-size: 2rem;
-  color: var(--lime);
+  color: var(--accent);
   padding: 3rem;
 }
 

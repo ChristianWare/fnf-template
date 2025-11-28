@@ -62,7 +62,7 @@
 }
 
 .iconBox {
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-radius: 5px;
   justify-content: center;
   align-items: center;

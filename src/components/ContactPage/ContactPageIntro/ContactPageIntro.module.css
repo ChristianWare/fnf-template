@@ -73,7 +73,7 @@
 }
 
 .arrowContainer {
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -159,7 +159,7 @@
 }
 
 .iconBox {
-  background-color: var(--lime);
+  background-color: var(--accent);
   border-radius: 5px;
   display: flex;
   align-items: center;

@@ -91,16 +91,16 @@ export default function Nav({
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-   const items = [
+  const items = [
     //  { text: "Services", href: "/services" },
     { text: "Features", href: "/features" },
     { text: "Pricing", href: "/pricing" },
     { text: "Work", href: "/work" },
     { text: "About", href: "/about" },
-     { text: "Blog", href: "/blog" },
-     { text: "Contact", href: "/contact" },
-     { text: "My Account", href: "/account" },
-   ];
+    { text: "Blog", href: "/blog" },
+    { text: "Contact", href: "/contact" },
+    { text: "My Account", href: "/account" },
+  ];
 
   return (
     <header
@@ -164,7 +164,7 @@ export default function Nav({
             href='https://calendly.com/chris-ware-dev/discovery-call'
             target='_blank'
             text='Book your discovery call'
-            btnType='navLime'
+            btnType='navaccent'
           />
         </div>
 

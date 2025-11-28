@@ -52,7 +52,7 @@ export default function WorkDetailsClient({ project }: { project: Project }) {
               <Button
                 href={project.href}
                 target='_blank'
-                btnType='limeOutline'
+                btnType='accentOutline'
                 text='Live Website'
               />
             </div>

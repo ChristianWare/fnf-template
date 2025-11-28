@@ -75,7 +75,7 @@ export default function AdminNewPostForm({ action }: Props) {
         </label>
         <div className={styles.actions}>
           <Button
-            btnType='lime'
+            btnType='accent'
             type='submit'
             disabled={pending}
             text={pending ? "Saving…" : "Save"}

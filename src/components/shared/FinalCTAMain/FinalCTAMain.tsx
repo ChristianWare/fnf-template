@@ -39,8 +39,7 @@ export default function FinalCTAMain() {
           <div className={styles.left}>
             <Logo />
             <h2 className={styles.heading}>
-              Ready to turn <br /> <span className='span1'>browsers</span> {" "}
-               into{" "}
+              Ready to turn <br /> <span className='span1'>browsers</span> into{" "}
               <span className='span2'>bookings?</span>
             </h2>
 
@@ -48,7 +47,7 @@ export default function FinalCTAMain() {
               <Button
                 href='https://calendly.com/chris-ware-dev/discovery-call'
                 target='_blank'
-                btnType='lime'
+                btnType='accent'
                 text='Book your discovery call'
               />
               <Button href='/contact' btnType='grayOutline' text='Contact us' />

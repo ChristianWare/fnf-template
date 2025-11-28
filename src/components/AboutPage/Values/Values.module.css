@@ -55,7 +55,7 @@
 .leftArrow,
 .rightArrow {
   position: absolute;
-  background-color: var(--lime);
+  background-color: var(--accent);
   width: 6rem;
   height: 6rem;
   border-radius: 50%;

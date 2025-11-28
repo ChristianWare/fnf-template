@@ -70,7 +70,7 @@ export default async function MoreInsights({
             ))}
           </div>
           <div className={styles.btnContainer}>
-            <Button href='/blog' btnType='lime' text='See all blog posts' />
+            <Button href='/blog' btnType='accent' text='See all blog posts' />
           </div>
         </div>
       </LayoutWrapper>
